@@ -10,6 +10,8 @@
 
 [观看四段动画预览（MP4）](ArtSource/Moonveil/Preview/Moonveil_Motions.mp4) · [查看 Unity 实机画面](Boids_Proj/Captures/Moonveil_Unity.png) · [美术资源说明](ArtSource/Moonveil/README.md)
 
+**美术方向探索（讨论中）**：[四组 Shader 风格概念图](ArtSource/Concepts/ShaderStudies/README.md) 比较珠光丝绸、海玻璃、绘画色块与深海荧光。这些图片用于选择视觉方向，尚未转化为实机 Shader。
+
 ## 快速开始
 
 1. 克隆仓库：
