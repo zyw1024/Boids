@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "forwardPositiveZ": true,
+  "skinnedMeshes": 2,
+  "materials": 2,
+  "triangles": 11596,
+  "clips": [
+    {
+      "name": "Dart",
+      "seconds": 0.8000001,
+      "loop": true,
+      "maxSeam": 0.0,
+      "maxMotion": 0.261747837
+    },
+    {
+      "name": "Feed",
+      "seconds": 2.0,
+      "loop": false,
+      "maxSeam": 0.0,
+      "maxMotion": 0.106937572
+    },
+    {
+      "name": "Hover",
+      "seconds": 3.00000024,
+      "loop": true,
+      "maxSeam": 0.0,
+      "maxMotion": 0.0587990321
+    },
+    {
+      "name": "Swim",
+      "seconds": 1.60000014,
+      "loop": true,
+      "maxSeam": 0.0,
+      "maxMotion": 0.145564735
+    }
+  ]
+}

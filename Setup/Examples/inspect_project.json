@@ -1,0 +1,6 @@
+[
+  {"resource": "mcpforunity://project/info"},
+  {"resource": "mcpforunity://editor/state"},
+  {"tool": "manage_scene", "args": {"action": "get_active"}},
+  {"tool": "read_console", "args": {"action": "get", "types": ["error"], "count": 10}}
+]

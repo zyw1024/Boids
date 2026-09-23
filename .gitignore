@@ -1,0 +1,67 @@
+# Unity-generated state (the project lives in Boids_Proj/).
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/Assets/AssetStoreTools*
+**/Assets/Plugins/Editor/JetBrains*
+
+# IDE and operating system files.
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.opendb
+*.VC.db
+.DS_Store
+Thumbs.db
+Desktop.ini
+__pycache__/
+*.py[cod]
+.venv/
+
+# Credentials and local agent configuration are never project source.
+.env
+.env.*
+!.env.example
+.codex/
+.mcp.json
+*.pem
+*.key
+*.pfx
+*.keystore
+*.jks
+
+# Generated renders, logs, and Blender safety copies.
+*.log
+*.blend[0-9]*
+/ArtSource/**/Preview/Frames/
+
+# Keep reusable MCP utilities; leave local session probes and discovery dumps out.
+/Setup/*
+!/Setup/art_mcp.py
+!/Setup/README.md
+!/Setup/Examples/
+!/Setup/UnityMCP/
+/Setup/UnityMCP/*
+!/Setup/UnityMCP/Start-UnityMCP.ps1
+!/Setup/UnityMCP/inspect_connection.py
+!/Setup/UnityMCP/verify_connection.py
+
+# Keep the reviewed Unity screenshot and asset validation evidence.
+/Boids_Proj/Captures/*
+!/Boids_Proj/Captures/Moonveil_Unity.png
+!/Boids_Proj/Captures/Moonveil_Validation.json
+!/Boids_Proj/Captures/Moonveil_RuntimeValidation.json
