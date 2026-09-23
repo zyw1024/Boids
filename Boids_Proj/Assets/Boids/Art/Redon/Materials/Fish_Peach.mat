@@ -34,14 +34,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _BrushScale: 1.1
-    - _Rim: 0.13
-    - _Scumble: 0.28
-    - _Seed: 95
+    - _ColorUV: 0
+    - _Rim: 0.12
+    - _Scumble: 0.18
+    - _Seed: 5
     - _Underpaint: 0.06
     - _Veins: 0
     - _WorldUV: 0
     m_Colors:
-    - _BaseColor: {r: 0.8392157, g: 0.6784314, b: 0.59607846, a: 1}
-    - _LightColor: {r: 0.95686275, g: 0.83137256, b: 0.654902, a: 1}
-    - _ShadeColor: {r: 0.4117647, g: 0.47058824, b: 0.5294118, a: 1}
+    - _BaseColor: {r: 0.78039217, g: 0.5529412, b: 0.5019608, a: 1}
+    - _LightColor: {r: 0.9137255, g: 0.7254902, b: 0.6039216, a: 1}
+    - _ShadeColor: {r: 0.30588236, g: 0.40784314, b: 0.49019608, a: 1}
   m_BuildTextureStacks: []

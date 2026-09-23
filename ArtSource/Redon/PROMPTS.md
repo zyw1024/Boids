@@ -1,8 +1,8 @@
 # Redon 纹理生成提示词
 
-2026-09-23，通过 Codex 内置 imagegen 生成。以下记录实际成功生成、并导入 Unity 的三次提示词；超时且没有返回素材的尝试不作为资产来源。没有使用概念图作为贴图，没有外部参考图片输入，生成结果没有做图像后期修改。
+2026-09-23，通过 Codex 内置 imagegen 生成。以下记录实际成功生成、并导入 Unity 的四次提示词；超时且没有返回素材的尝试不作为资产来源。没有使用概念图作为贴图，没有外部参考图片输入，生成结果没有做图像后期修改。
 
-原始 PNG 保存在 `Boids_Proj/Assets/Boids/Art/Redon/Textures/`。Unity 将纹理导入为 1024 × 1024；前两张按线性数据读取，第三张按 sRGB 色彩读取。
+原始 PNG 保存在 `Boids_Proj/Assets/Boids/Art/Redon/Textures/`，Unity 导入时最长边上限为 2048。前两张按线性遮罩数据读取，后两张按 sRGB 色彩读取。叶脉纹理采用 Clamp，按叶片 UV 完整铺开；抽象底色采用 Mirror。
 
 ## PigmentScumble.png
 
@@ -20,4 +20,10 @@ Create a square black-and-white game texture: sixteen separate white dry-brush p
 
 ```text
 Square seamless color texture for painterly 3D plant surfaces. A flat scan of an original richly layered oil-and-pastel underpainting, with broad soft scumbled patches of dusty lavender, ultramarine, muted peacock blue, smoky plum, and sparse warm apricot and antique gold. Visible curved dry brush marks, irregular pigment islands, translucent color overlaps, quiet areas between marks. Medium dark overall, selectively luminous warm flecks. Poetic and atmospheric, inspired by Odilon Redon's late color paintings. No flowers, leaves, objects, scenery, border, text, symbols, perspective, baked shadows or specular reflections: only abstract pigment across the entire square, suitable as an albedo texture.
+```
+
+## PetalVeining.png
+
+```text
+Create one square 1024x1024 full-bleed albedo texture for a curved 3D flower petal in a dreamy underwater indie game. An original hand-painted oil and pastel surface in the poetic color language of Odilon Redon's late paintings. Deep dusty ultramarine and smoky violet below, translucent lavender and peacock blue washes above, irregular apricot and antique gold scumbled patches. Delicate naturally branching ochre-gold veins grow from the bottom center and fan outward and upward across the entire surface; veins vary in thickness and disappear into pigment in places. Broad curved paint strokes, broken dry-brush edges, layered color, quiet darker areas. Rich painterly color and visible brushwork, never photographic. Fill the whole square with painted material; no outer leaf silhouette, no separate objects, no background margin, no perspective, no cast shadows, no specular highlights, no border, no text. This is a surface texture for real 3D geometry, not a scene illustration.
 ```

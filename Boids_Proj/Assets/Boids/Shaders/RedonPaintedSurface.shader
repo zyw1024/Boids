@@ -8,6 +8,7 @@ Shader "Boids/Redon/Painted Surface"
         _PigmentTex("Scumbled pigment", 2D) = "gray" {}
         _ColorTex("Layered color underpainting", 2D) = "white" {}
         _Underpaint("Color underpainting strength", Range(0,1)) = .7
+        _ColorUV("Use authored petal UV for color", Range(0,1)) = 0
         _BrushScale("Brush scale", Float) = 1.5
         _Scumble("Broken color strength", Range(0,1)) = .48
         _Rim("Selective warm edge", Range(0,1)) = .16
@@ -25,7 +26,7 @@ Shader "Boids/Redon/Painted Surface"
         TEXTURE2D(_ColorTex); SAMPLER(sampler_ColorTex);
         CBUFFER_START(UnityPerMaterial)
         float4 _BaseColor, _ShadeColor, _LightColor;
-        float _BrushScale, _Scumble, _Rim, _Veins, _WorldUV, _Seed, _Underpaint;
+        float _BrushScale, _Scumble, _Rim, _Veins, _WorldUV, _Seed, _Underpaint, _ColorUV;
         CBUFFER_END
         struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; float2 uv:TEXCOORD0; float4 color:COLOR; };
         struct Varyings { float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; float3 normalWS:TEXCOORD1; float2 uv:TEXCOORD2; float4 color:COLOR; };
@@ -59,26 +60,28 @@ Shader "Boids/Redon/Painted Surface"
                 float coarse = SAMPLE_TEXTURE2D_LOD(_PigmentTex,sampler_PigmentTex,uv,3).r;
                 float3 n = normalize(i.normalWS) * (front ? 1 : -1);
                 n = normalize(n+float3(coarse-px,py-coarse,0)*_RedonRelief*5*_RedonPaint);
-                float light = saturate(dot(n,normalize(_RedonLight.xyz))*.48+.5);
-                light = saturate(light + (wide-.46)*1.6*_Scumble*_RedonPaint);
-                float3 color = lerp(_ShadeColor.rgb,_BaseColor.rgb,smoothstep(.02,.65,light));
-                color = lerp(color,_LightColor.rgb,smoothstep(.55,1.0,light)*.83);
-                float pigment = (p-.46)*1.9+(fine-.46)*.08;
+                float light = saturate(dot(n,normalize(_RedonLight.xyz))*.22+.48);
+                float patch=RedonNoise(uv*float2(7,11)+RedonNoise(uv*4)*2);
+                light = saturate(light + (patch-.48)*.27*_RedonPaint);
+                float3 color = lerp(_ShadeColor.rgb,_BaseColor.rgb,smoothstep(.08,.70,light));
+                color = lerp(color,_LightColor.rgb,smoothstep(.67,1.0,light)*.78);
+                float pigment = (p-.46)*.65+(fine-.46)*.015;
                 color *= 1 + pigment*_Scumble*_RedonPaint;
                 // Exposed underpainting stays colored rather than becoming a white noise layer.
                 float exposed = smoothstep(.40,.65,wide)*(1-smoothstep(.38,.63,p));
                 color = lerp(color,_ShadeColor.rgb*.9,exposed*.48*_Scumble*_RedonPaint);
                 float chroma=smoothstep(.3,.64,wide);
-                color=lerp(color,lerp(_ShadeColor.rgb,_LightColor.rgb,chroma),.24*_RedonPaint);
-                float3 under=SAMPLE_TEXTURE2D(_ColorTex,sampler_ColorTex,uv*.77).rgb;
+                color=lerp(color,lerp(_ShadeColor.rgb,_LightColor.rgb,chroma),.12*_RedonPaint);
+                float3 under=SAMPLE_TEXTURE2D(_ColorTex,sampler_ColorTex,lerp(uv*.77,i.uv,_ColorUV)).rgb;
                 float value=max(.25,dot(_BaseColor.rgb,float3(.3,.5,.2))*3.4);
                 under*=value*(.6+light*.7);
                 color=lerp(color,under,saturate(_Underpaint*_RedonPaint));
-                float veinAngle = (i.uv.x-.5)*31 + sin(i.uv.y*3)*.3;
+                float veinAngle = (i.uv.x-.5)*27 + sin(i.uv.y*4+i.uv.x*8)*.6;
                 float veins = pow(saturate(1-abs(sin(veinAngle))),32);
                 veins *= smoothstep(.15,.4,i.uv.y)*(1-smoothstep(.92,1,i.uv.y));
-                color = lerp(color,lerp(_LightColor.rgb,_RedonWarm.rgb,.4),veins*_Veins*(.35+.55*p));
-                float edge=smoothstep(.968,1,i.uv.y)*smoothstep(.33,.66,p);
+                color = lerp(color,lerp(_LightColor.rgb,_RedonWarm.rgb,.4),veins*_Veins*(.15+.25*p));
+                float sideEdge=1-smoothstep(.005,.025,min(i.uv.x,1-i.uv.x));
+                float edge=sideEdge*smoothstep(.18,.4,i.uv.y)*smoothstep(.33,.66,p);
                 color += _RedonWarm.rgb*edge*_Veins*.28;
                 float3 v = SafeNormalize(GetWorldSpaceViewDir(i.positionWS));
                 float rim = pow(1-saturate(abs(dot(n,v))),3.0);

@@ -13,7 +13,7 @@ using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 /// <summary>Deterministic authoring of a fixed-camera, three-dimensional painterly scene.</summary>
-public static class RedonSceneBuilder
+public static partial class RedonSceneBuilder
 {
     public const string Root = "Assets/Boids/Art/Redon";
     public const string ScenePath = "Assets/Boids/Scenes/RedonDream.unity";
@@ -22,8 +22,8 @@ public static class RedonSceneBuilder
     static readonly List<Color> colors = new List<Color>();
     static readonly List<int> triangles = new List<int>();
     static readonly List<Vector3> normals = new List<Vector3>();
-    static Texture2D pigment, atlas, underpainting;
-    static Mesh[] petals, petalBrushes, rocks, bouquets;
+    static Texture2D pigment, atlas, underpainting, petalVeining;
+    static Mesh[] rocks;
     static Material[] foliage, foliageBrushes, stone, fishPaint;
     static Material brushGold, brushDistant;
     static Transform plantsRoot, rockRoot, fishRoot, brushRoot;
@@ -54,8 +54,9 @@ public static class RedonSceneBuilder
         pigment = AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PigmentScumble.png");
         atlas = AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/DryBrushAtlas.png");
         underpainting = AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PetalUnderpainting.png");
-        if (!compositionDraft && (pigment == null || atlas == null || underpainting == null))
-            throw new InvalidOperationException("All three generated pigment textures must be imported first.");
+        petalVeining = AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PetalVeining.png");
+        if (!compositionDraft && (pigment == null || atlas == null || underpainting == null || petalVeining == null))
+            throw new InvalidOperationException("All four generated pigment textures must be imported first.");
         if (pigment == null) pigment = Texture2D.grayTexture;
         if (atlas == null) atlas = Texture2D.blackTexture;
         foreach (string dir in new[]{"Materials","Geometry","Rendering"})
@@ -63,10 +64,11 @@ public static class RedonSceneBuilder
         AssetDatabase.Refresh();
         ImportMask(pigment, TextureWrapMode.Mirror);
         ImportMask(atlas, TextureWrapMode.Clamp);
-        if(underpainting!=null)
+        foreach(var colorTexture in new[]{underpainting,petalVeining})
         {
-            var ti=(TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(underpainting));
-            ti.sRGBTexture=true;ti.wrapMode=TextureWrapMode.Mirror;ti.mipmapEnabled=true;
+            if(colorTexture==null)continue;
+            var ti=(TextureImporter)AssetImporter.GetAtPath(AssetDatabase.GetAssetPath(colorTexture));
+            ti.sRGBTexture=true;ti.wrapMode=colorTexture==petalVeining?TextureWrapMode.Clamp:TextureWrapMode.Mirror;ti.mipmapEnabled=true;
             ti.maxTextureSize=2048;ti.textureCompression=TextureImporterCompression.Uncompressed;
             ti.filterMode=FilterMode.Trilinear;ti.SaveAndReimport();
         }
@@ -76,15 +78,21 @@ public static class RedonSceneBuilder
         {
             BuildMaterials();
             BuildGeometry();
+            BuildGardenPalette();
+            BuildFlowerGeometry();
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
             var settings = new GameObject("Art Direction - Redon").AddComponent<RedonStyleSettings>();
-            settings.warmExtent = new Vector2(4.5f,4.5f);
-            settings.waterColor = Hex("396B83");
+            settings.warmExtent = new Vector2(3.8f,4.5f);
+            settings.waterColor = Hex("2B6987");
+            settings.upperWaterColor = Hex("65748E");
+            settings.warmColor = Hex("EDB17D");
+            settings.fogDensity = .019f;
+            settings.paintedNormals = 0;
             settings.fogStart = 31f;
             settings.Apply();
             plantsRoot = new GameObject("Petal Gardens").transform;
             rockRoot = new GameObject("Painted Cliffs").transform;
-            fishRoot = new GameObject("Fish - Static Composition").transform;
+            fishRoot = new GameObject("Fish - Living School").transform;
             brushRoot = new GameObject("Anchored Pigment and Golden Spores").transform;
             RenderSettings.skybox = null;
             RenderSettings.fog = false;
@@ -92,12 +100,10 @@ public static class RedonSceneBuilder
             RenderSettings.ambientLight = Hex("697484");
             CreateCamera();
             CreateAtmosphere();
-            CreateCliffs();
-            CreateGardens();
-            CreateBranchwork();
-            CreateCoralGardens();
-            CreateSchool();
-            CreateSpores();
+            CreateBotanicalGrove();
+            CreateHeroPetals();
+            CreateGardenAccents();
+            CreateLivingSchool();
             CreateVolume();
             settings.Apply();
             EditorSceneManager.SaveScene(scene,ScenePath);
@@ -107,7 +113,7 @@ public static class RedonSceneBuilder
             {
                 SceneView.lastActiveSceneView.LookAt(new Vector3(0,6,5),Quaternion.identity,18);
             }
-            Debug.Log("Redon fixed-camera art scene built. Fish are staged; no Boids or feeding is active.");
+            Debug.Log("Redon dream garden built with a fixed camera, living Boids and click-to-feed interaction.");
         }
         finally { Random.state = randomState; }
     }
@@ -168,6 +174,7 @@ public static class RedonSceneBuilder
         mat.SetTexture("_PigmentTex",pigment);mat.SetFloat("_Scumble",scumble);
         mat.SetTexture("_ColorTex",underpainting);
         mat.SetFloat("_Underpaint",name.StartsWith("Fish")?.06f:(name.Contains("Stems")?.1f:.38f));
+        mat.SetFloat("_ColorUV",0);
         mat.SetFloat("_Rim",rim);mat.SetFloat("_Veins",veins);mat.SetFloat("_WorldUV",world);
         mat.SetFloat("_BrushScale",world>.5f?1.35f:1.1f);mat.SetFloat("_Seed",Random.Range(0,100));
         EditorUtility.SetDirty(mat);return mat;
@@ -221,6 +228,20 @@ public static class RedonSceneBuilder
             renderer.rendererFeatures.Clear();
             AssetDatabase.CreateAsset(renderer,path);
         }
+        var finish=renderer.rendererFeatures.OfType<FullScreenPassRendererFeature>().FirstOrDefault();
+        if(finish==null)
+        {
+            finish=ScriptableObject.CreateInstance<FullScreenPassRendererFeature>();
+            finish.name="Painterly Resolve";
+            renderer.rendererFeatures.Add(finish);AssetDatabase.AddObjectToAsset(finish,renderer);
+        }
+        var finishMaterial=Mat("Painterly_Resolve","Boids/Redon/Painterly Resolve");
+        finishMaterial.SetFloat("_Radius",2.4f);finishMaterial.SetFloat("_Strength",.42f);
+        finish.passMaterial=finishMaterial;finish.fetchColorBuffer=true;
+        finish.injectionPoint=FullScreenPassRendererFeature.InjectionPoint.BeforeRenderingPostProcessing;
+        finish.requirements=ScriptableRenderPassInput.None;finish.Create();finish.SetActive(true);
+        renderer.SetDirty();EditorUtility.SetDirty(finish);EditorUtility.SetDirty(renderer);
+        EditorUtility.SetDirty(finishMaterial);
         var serialized=new SerializedObject(pipeline);
         var list=serialized.FindProperty("m_RendererDataList");
         for(int i=0;i<list.arraySize;i++)
@@ -234,10 +255,10 @@ public static class RedonSceneBuilder
     {
         var mat=Mat("Painted_Water","Boids/Redon/Painted Atmosphere");
         mat.SetTexture("_PigmentTex",pigment);
-        mat.SetColor("_DeepColor",Hex("264759"));
-        mat.SetColor("_GoldColor",Hex("DA9D70"));
-        mat.SetColor("_PearlColor",Hex("F5DBA5"));
-        mat.SetFloat("_TextureStrength",.7f);EditorUtility.SetDirty(mat);
+        mat.SetColor("_DeepColor",Hex("153D57"));
+        mat.SetColor("_GoldColor",Hex("E8A374"));
+        mat.SetColor("_PearlColor",Hex("FFE0A0"));
+        mat.SetFloat("_TextureStrength",.85f);EditorUtility.SetDirty(mat);
         ClearMesh();
         Quad(new Vector3(0,6,62),Vector3.right*30,Vector3.up*25,Color.white,0,false);
         var mesh=SaveMesh("Atmosphere",FinishMesh());
@@ -251,7 +272,7 @@ public static class RedonSceneBuilder
         var p=AssetDatabase.LoadAssetAtPath<VolumeProfile>(path);
         if(p==null){p=ScriptableObject.CreateInstance<VolumeProfile>();p.name="RedonVolume";AssetDatabase.CreateAsset(p,path);}
         var bloom=Effect<Bloom>(p);bloom.threshold.Override(1.12f);bloom.intensity.Override(.09f);bloom.scatter.Override(.55f);
-        var grade=Effect<ColorAdjustments>(p);grade.postExposure.Override(.1f);grade.contrast.Override(5);grade.saturation.Override(-3);
+        var grade=Effect<ColorAdjustments>(p);grade.postExposure.Override(.12f);grade.contrast.Override(10);grade.saturation.Override(8);
         var tone=Effect<Tonemapping>(p);tone.mode.Override(TonemappingMode.None);
         var vignette=Effect<Vignette>(p);vignette.intensity.Override(.12f);vignette.smoothness.Override(.78f);
         v.sharedProfile=p;EditorUtility.SetDirty(p);
@@ -265,39 +286,6 @@ public static class RedonSceneBuilder
 
     static void BuildGeometry()
     {
-        petals=new Mesh[8];petalBrushes=new Mesh[8];
-        for(int i=0;i<petals.Length;i++)
-        {
-            ClearMesh();const int across=40,along=36;
-            for(int y=0;y<=along;y++)for(int x=0;x<=across;x++)
-            {
-                float u=(float)x/across,t=(float)y/along;
-                vertices.Add(Petal(u,t,i));uvs.Add(new Vector2(u,t));
-                colors.Add(Color.white);
-            }
-            Grid(across,along);
-            petals[i]=SaveMesh("Petal_"+i,FinishMesh());
-            ClearMesh();
-            for(int b=0;b<110;b++)
-            {
-                float u=Random.Range(.06f,.94f),t=Random.Range(.10f,.96f);
-                float du=Random.Range(.02f,.12f),dt=Random.Range(.01f,.045f);
-                Vector3 center=Petal(u,t,i);
-                Vector3 right=(Petal(Mathf.Min(.99f,u+du),t,i)-Petal(Mathf.Max(.01f,u-du),t,i))*.5f;
-                Vector3 up=(Petal(u,Mathf.Min(.99f,t+dt),i)-Petal(u,Mathf.Max(.01f,t-dt),i))*.5f;
-                Quad(center+Vector3.back*.007f,right,up,new Color(Random.value,Random.value,1,Random.Range(.22f,.7f)),Random.Range(0,16));
-            }
-            // Short anchored marks soften selected contours without a screen-space filter.
-            for(int b=0;b<48;b++)
-            {
-                float u=(b+.5f)/48;
-                Vector3 center=Petal(u,.997f,i);
-                Vector3 tangent=(Petal(Mathf.Min(.999f,u+.018f),.997f,i)-Petal(Mathf.Max(.001f,u-.018f),.997f,i))*.65f;
-                Quad(center+Vector3.back*.009f,tangent,Vector3.up*Random.Range(.006f,.018f),
-                    new Color(Random.value,.6f,1,Random.Range(.4f,.9f)),Random.Range(0,16));
-            }
-            petalBrushes[i]=SaveMesh("Petal_Brushes_"+i,FinishMesh());
-        }
         rocks=new Mesh[5];
         for(int i=0;i<rocks.Length;i++)
         {
@@ -314,159 +302,12 @@ public static class RedonSceneBuilder
             Grid(sides,rings);
             rocks[i]=SaveMesh("Cliff_Form_"+i,FinishMesh());
         }
-        bouquets=new Mesh[3];
-        for(int variant=0;variant<3;variant++)
-        {
-            var pieces=new List<CombineInstance>();
-            for(int p=0;p<14;p++)
-            {
-                float a=p*137.5f*Mathf.Deg2Rad;
-                var pos=new Vector3(Mathf.Cos(a)*.33f,Random.Range(.05f,.45f),Mathf.Sin(a)*.23f);
-                var rot=Quaternion.Euler(Random.Range(-20,30),Random.Range(-40,40),Mathf.Cos(a)*70);
-                var scale=new Vector3(Random.Range(.4f,.85f),Random.Range(.5f,1.1f),.35f);
-                pieces.Add(new CombineInstance{mesh=petals[(p%4)*2],transform=Matrix4x4.TRS(pos,rot,scale)});
-            }
-            var mesh=new Mesh{indexFormat=IndexFormat.UInt32};mesh.CombineMeshes(pieces.ToArray(),true,true);
-            bouquets[variant]=SaveMesh("Coral_Bouquet_"+variant,mesh);
-        }
-    }
-    static Vector3 Petal(float u,float t,int variant)
-    {
-        float s=u*2-1,phase=variant*.83f;
-        if(variant%2==0)
-        {
-            float angle=s*1.35f;
-            float edge=1+.018f*Mathf.Sin(s*19+phase)+.012f*Mathf.Sin(s*37+phase);
-            float fx=Mathf.Sin(angle)*t*.60f*edge;
-            float fy=t*(.84f+.16f*Mathf.Cos(angle))*edge;
-            float fz=t*(s*s*.24f+.045f*Mathf.Cos(s*11+phase))+Mathf.Sin(t*Mathf.PI)*.14f;
-            return new Vector3(fx,fy,fz);
-        }
-        float outline=Mathf.Pow(Mathf.Max(.00001f,Mathf.Sin(Mathf.PI*t)),.62f);
-        float scallop=1+.045f*Mathf.Sin(t*36+phase)+.035f*Mathf.Sin(t*63+phase*2);
-        float x=s*outline*scallop*.5f + Mathf.Sin(t*Mathf.PI)*.13f*Mathf.Sin(phase);
-        float y=t + .05f*Mathf.Sin(s*3.2f+phase)*Mathf.Sin(t*Mathf.PI);
-        float z=(s*s*.26f + Mathf.Sin(t*Mathf.PI)*.16f + t*t*.13f*Mathf.Sin(phase*1.3f));
-        z+=Mathf.Sin(s*10+t*8+phase)*.016f*outline;
-        return new Vector3(x,y,z);
     }
 
-    static void CreateCliffs()
-    {
-        // Side masses frame an open middle-distance passage.
-        Cliff(new Vector3(-10,-2,0),new Vector3(4.5f,3.4f,2.6f),0);
-        Cliff(new Vector3(-7.5f,-2,4),new Vector3(3.4f,2.8f,2.2f),0);
-        Cliff(new Vector3(-4.8f,-3.2f,8),new Vector3(3.0f,2.1f,2),1);
-        Cliff(new Vector3(10,-2,0),new Vector3(3.4f,3.8f,2.4f),0);
-        Cliff(new Vector3(8.7f,.7f,8),new Vector3(1.7f,3.3f,1.6f),1);
-        Cliff(new Vector3(9.8f,6.6f,11),new Vector3(1.3f,4.7f,1.3f),1);
-        Cliff(new Vector3(-9.1f,8.3f,10),new Vector3(1.5f,5.0f,1.3f),1);
-        for(int i=0;i<28;i++)
-        {
-            float side=i%2==0?-1:1;
-            float z=Random.Range(5,32),x=side*Random.Range(5.4f,11.8f);
-            float h=Random.Range(.6f,3.0f);
-            Cliff(new Vector3(x,Random.Range(-3,4),z),new Vector3(Random.Range(.4f,1.4f),h,Random.Range(.4f,1.3f)),z>17?2:1);
-        }
-        // Small distant suspended islands supply scale without closing the opening.
-        for(int i=0;i<6;i++)
-        {
-            float x=Random.Range(-6.5f,7),y=Random.Range(-3,3);
-            if(x>-.2f&&x<5&&y>6)continue;
-            Cliff(new Vector3(x,y,Random.Range(27,43)),new Vector3(Random.Range(.3f,.8f),Random.Range(.7f,1.8f),.55f),2);
-        }
-    }
     static void Cliff(Vector3 p,Vector3 scale,int palette)
     {
         Instance("Painted Cliff",rocks[Random.Range(0,rocks.Length)],stone[palette],p,scale,
             Quaternion.Euler(Random.Range(-12,12),Random.Range(0,180),Random.Range(-12,12)),rockRoot);
-    }
-    static void CreateGardens()
-    {
-        // Hero broad petals: intentional silhouette and negative space.
-        Leaf(new Vector3(-9.4f,3.9f,-.5f),new Vector3(7.4f,5.8f,2.2f),new Vector3(-7,4,-18),0,0);
-        Leaf(new Vector3(-8.4f,1.4f,-1),new Vector3(4.8f,5.7f,2),new Vector3(7,-12,-40),3,2);
-        Leaf(new Vector3(-8.5f,3.6f,2.8f),new Vector3(4.7f,8.3f,2.8f),new Vector3(9,21,20),1,2);
-        Leaf(new Vector3(-8.5f,-.5f,-1.3f),new Vector3(4.9f,6.1f,2.6f),new Vector3(-8,-13,-65),0,3);
-        Leaf(new Vector3(-8.3f,.1f,-1.5f),new Vector3(4.6f,5.4f,2.6f),new Vector3(6,6,56),2,4);
-        Leaf(new Vector3(10,1,1),new Vector3(4.0f,8.2f,2.8f),new Vector3(5,-30,13),2,6);
-        Leaf(new Vector3(10,-1,-.5f),new Vector3(3.8f,7.2f,2.1f),new Vector3(-7,8,42),4,3);
-        Leaf(new Vector3(9.9f,-.7f,2.5f),new Vector3(3.2f,9.2f,2.4f),new Vector3(10,5,-25),0,7);
-        Leaf(new Vector3(8.9f,-1,5),new Vector3(3.4f,7.8f,2.7f),new Vector3(10,-20,16),3,2);
-        // Dark foreground curled fans establish the frame.
-        for(int i=0;i<10;i++)
-        {
-            float side=i%2==0?-1:1;
-            Leaf(new Vector3(side*Random.Range(6.2f,12),-2.0f,Random.Range(-6,-3)),
-                new Vector3(Random.Range(2.3f,4.2f),Random.Range(3.0f,5.6f),2.6f),
-                new Vector3(Random.Range(-20,20),Random.Range(-30,30),side*Random.Range(15,72)),4,i%8);
-        }
-        // Medium-distance petals and crowns.
-        for(int i=0;i<42;i++)
-        {
-            float side=i%2==0?-1:1;
-            float x=side*Random.Range(5.4f,12),y=Random.Range(-2,10),z=Random.Range(9,32);
-            float length=Random.Range(1.1f,4.4f);
-            Leaf(new Vector3(x,y,z),new Vector3(length*Random.Range(.36f,.65f),length,length*.3f),
-                new Vector3(Random.Range(-22,22),Random.Range(-40,40),Random.Range(-65,65)),
-                z>22?5:Random.Range(0,4),i%8);
-        }
-        for(int i=0;i<15;i++)
-        {
-            float side=i%2==0?-1:1;
-            Leaf(new Vector3(side*Random.Range(3.5f,7),Random.Range(-3,4),Random.Range(30,42)),
-                new Vector3(Random.Range(.8f,1.7f),Random.Range(1.8f,3.2f),1),
-                new Vector3(0,0,Random.Range(-45,45)),5,i%8);
-        }
-    }
-    static void Leaf(Vector3 p,Vector3 scale,Vector3 euler,int palette,int shape)
-    {
-        var leaf=Instance("Petal "+palette+"."+shape,petals[shape],foliage[palette],p,scale,Quaternion.Euler(euler),plantsRoot);
-        if(!compositionDraft)
-            Instance("Surface Brushwork",petalBrushes[shape],foliageBrushes[palette],Vector3.zero,Vector3.one,Quaternion.identity,leaf.transform);
-    }
-
-    static void CreateBranchwork()
-    {
-        Material stem=Paint("Golden_Stems","8C806D","354556","D9B17C",.3f,.05f,0,1);
-        ClearMesh();
-        Sprig(new Vector3(-9.0f,-1,-2),new Vector3(.23f,1,.06f),7.3f,.022f);
-        Sprig(new Vector3(-7.4f,-.9f,-.5f),new Vector3(-.1f,1,0),5.6f,.018f);
-        Sprig(new Vector3(-6.3f,-1,1.1f),new Vector3(-.2f,1,.1f),3.2f,.013f);
-        Sprig(new Vector3(9.2f,-1,1),new Vector3(-.05f,1,.1f),6.3f,.020f);
-        Instance("Gilded Branches",SaveMesh("Gilded_Branches",FinishMesh()),stem,Vector3.zero,Vector3.one,Quaternion.identity,plantsRoot);
-        // Smaller coral gardens break up the foreground masses.
-        for(int group=0;group<3;group++)
-        {
-            ClearMesh();
-            for(int i=0;i<14;i++)
-            {
-                float side=i%2==0?-1:1;
-                Vector3 root=new Vector3(side*Random.Range(4.7f,10.5f),Random.Range(-1.8f,.4f),Random.Range(-1,9));
-                Sprig(root,new Vector3(Random.Range(-.6f,.6f),1,0),Random.Range(.45f,1.65f),.01f);
-            }
-            Instance("Coral Filaments "+group,SaveMesh("Coral_Filaments_"+group,FinishMesh()),foliage[group],Vector3.zero,Vector3.one,Quaternion.identity,plantsRoot);
-        }
-    }
-    static void CreateCoralGardens()
-    {
-        for(int i=0;i<64;i++)
-        {
-            float side=i%2==0?-1:1;
-            Vector3 p=new Vector3(side*Random.Range(4.1f,10.8f),Random.Range(-.8f,1.9f),Random.Range(-3,13));
-            float scale=Random.Range(.45f,1.65f);
-            Instance("Coral Blossom",bouquets[i%3],foliage[i%4],p,new Vector3(scale,scale*.75f,scale),Quaternion.Euler(0,Random.Range(-45,45),Random.Range(-22,22)),plantsRoot);
-        }
-        for(int i=0;i<18;i++)
-        {
-            float side=i%2==0?-1:1;
-            Vector3 p=new Vector3(side*Random.Range(7.8f,12.0f),Random.Range(3.6f,12),Random.Range(24,42));
-            float scale=Random.Range(1.0f,2.4f);
-            Cliff(p-Vector3.up*1.4f,new Vector3(scale*.28f,1.5f,scale*.3f),2);
-            Instance("Distant Flower Crown",bouquets[i%3],foliage[5],p,new Vector3(scale,scale*.8f,scale),Quaternion.Euler(0,Random.Range(-30,30),Random.Range(-15,15)),plantsRoot);
-        }
-        Instance("Rose Dream Blossom",bouquets[1],foliage[3],new Vector3(-2.7f,7.1f,25),new Vector3(4.2f,3.2f,2),Quaternion.Euler(0,-8,-12),plantsRoot);
-        Cliff(new Vector3(-2.7f,3.6f,26),new Vector3(.6f,3.8f,.6f),2);
     }
     static void Sprig(Vector3 root,Vector3 direction,float length,float radius)
     {
@@ -515,69 +356,7 @@ public static class RedonSceneBuilder
         }
     }
 
-    static void CreateSchool()
-    {
-        var prefab=AssetDatabase.LoadAssetAtPath<GameObject>(MoonveilAssetSetup.PrefabPath);
-        if(prefab==null)throw new InvalidOperationException("Moonveil prefab missing.");
-        for(int i=0;i<FishCount;i++)
-        {
-            float t=(i+.2f)/FishCount;
-            Vector3 p=SchoolPath(t);
-            p+=new Vector3(Random.Range(-.5f,.5f),Random.Range(-.62f,.62f),Random.Range(-.8f,.8f));
-            Vector3 direction=SchoolPath(Mathf.Min(1,t+.012f))-SchoolPath(Mathf.Max(0,t-.012f));
-            direction+=new Vector3(Random.Range(-.2f,.2f),Random.Range(-.2f,.2f),Random.Range(-.3f,.3f));
-            var fish=(GameObject)PrefabUtility.InstantiatePrefab(prefab);
-            fish.name="Pigment Fish "+i.ToString("00");fish.transform.SetParent(fishRoot);
-            direction.z *= .15f;
-            fish.transform.position=p;fish.transform.rotation=Quaternion.LookRotation(direction.normalized,Vector3.up);
-            float size=Mathf.Lerp(.86f,.27f,t)*Random.Range(.78f,1.15f);
-            fish.transform.localScale=new Vector3(.86f,.86f,1.3f)*size;
-            var animator=fish.GetComponentInChildren<Animator>();
-            if(animator!=null)animator.enabled=false;
-            var motion=fish.GetComponent<MoonveilMotion>();if(motion!=null)motion.enabled=false;
-            int palette=t>.72f?3:Random.Range(0,fishPaint.Length);
-            foreach(var r in fish.GetComponentsInChildren<SkinnedMeshRenderer>())
-            {
-                r.sharedMaterial=fishPaint[palette];r.shadowCastingMode=ShadowCastingMode.Off;
-                r.receiveShadows=false;r.updateWhenOffscreen=false;
-            }
-        }
-    }
-    const int FishCount=70;
-    static Vector3 SchoolPath(float t)
-    {
-        Vector3 a=new Vector3(-7,5.8f,-.5f),b=new Vector3(11,3.7f,4),c=new Vector3(7,8.7f,13),d=new Vector3(2.1f,11.6f,22);
-        float u=1-t;return u*u*u*a+3*u*u*t*b+3*u*t*t*c+t*t*t*d;
-    }
-    static void CreateSpores()
-    {
-        if(compositionDraft)return;
-        ClearMesh();
-        for(int i=0;i<740;i++)
-        {
-            float t=Random.value;
-            Vector3 p=new Vector3(Mathf.Lerp(-8.5f,-4.0f,t)+Random.Range(-.7f,.7f),
-                Mathf.Lerp(1.6f,-1.1f,t)+Random.Range(-.7f,.7f),Random.Range(-.5f,7));
-            float size=Random.Range(.014f,.08f);
-            Quad(p,Vector3.right*size,Vector3.up*size*.7f,new Color(Random.value,Random.value,1,Random.Range(.3f,.9f)),Random.Range(0,16));
-        }
-        for(int i=0;i<120;i++)
-        {
-            var p=new Vector3(Random.Range(-8,9),Random.Range(-.8f,11.6f),Random.Range(5,28));
-            float size=Random.Range(.009f,.032f);
-            Quad(p,Vector3.right*size,Vector3.up*size,new Color(Random.value,Random.value,1,Random.Range(.2f,.7f)),Random.Range(0,16));
-        }
-        Instance("Golden Pigment Flecks",SaveMesh("Golden_Flecks",FinishMesh()),brushGold,Vector3.zero,Vector3.one,Quaternion.identity,brushRoot);
-        ClearMesh();
-        for(int i=0;i<250;i++)
-        {
-            Vector3 p=new Vector3(Random.Range(-12,12),Random.Range(-3,15),Random.Range(30,46));
-            float size=Random.Range(.14f,.8f);
-            Quad(p,Vector3.right*size,Vector3.up*size*Random.Range(.25f,.7f),
-                new Color(Random.value,Random.value,1,Random.Range(.15f,.6f)),Random.Range(0,16));
-        }
-        Instance("Distant Broken Pigment",SaveMesh("Distant_Brushes",FinishMesh()),brushDistant,Vector3.zero,Vector3.one,Quaternion.identity,brushRoot);
-    }
+    const int FishCount=96;
 
     static GameObject Instance(string name,Mesh mesh,Material mat,Vector3 pos,Vector3 scale,Quaternion rot,Transform parent)
     {
@@ -618,7 +397,15 @@ public static class RedonSceneBuilder
     {
         string path=Root+"/Geometry/"+name+".asset";mesh.name=name;
         var existing=AssetDatabase.LoadAssetAtPath<Mesh>(path);
-        if(existing!=null){EditorUtility.CopySerialized(mesh,existing);Object.DestroyImmediate(mesh);EditorUtility.SetDirty(existing);return existing;}
+        if(existing!=null)
+        {
+            // Update through Mesh's native setters so an existing renderer cannot retain stale GPU buffers.
+            existing.Clear();existing.indexFormat=mesh.indexFormat;
+            existing.vertices=mesh.vertices;existing.uv=mesh.uv;existing.colors=mesh.colors;
+            existing.normals=mesh.normals;existing.triangles=mesh.triangles;existing.bounds=mesh.bounds;
+            existing.UploadMeshData(false);
+            Object.DestroyImmediate(mesh);EditorUtility.SetDirty(existing);return existing;
+        }
         AssetDatabase.CreateAsset(mesh,path);return mesh;
     }
     static Color Hex(string value)
@@ -633,15 +420,15 @@ public static class RedonSceneBuilder
         if(camera==null)throw new InvalidOperationException("Open RedonDream first.");
         CaptureCamera(camera,"Captures/Redon_Style.png");
     }
-    public static void CaptureCamera(Camera camera,string path)
+    public static void CaptureCamera(Camera camera,string path,int width=1536,int height=1024)
     {
         var previous=camera.targetTexture;var active=RenderTexture.active;var rect=camera.rect;float aspect=camera.aspect;
-        var rt=RenderTexture.GetTemporary(1536,1024,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);
-        var image=new Texture2D(1536,1024,TextureFormat.RGB24,false);
+        var rt=RenderTexture.GetTemporary(width,height,24,RenderTextureFormat.ARGB32,RenderTextureReadWrite.sRGB);
+        var image=new Texture2D(width,height,TextureFormat.RGB24,false);
         try
         {
-            camera.rect=new Rect(0,0,1,1);camera.aspect=1.5f;camera.targetTexture=rt;camera.Render();
-            RenderTexture.active=rt;image.ReadPixels(new Rect(0,0,1536,1024),0,0);image.Apply();
+            camera.rect=new Rect(0,0,1,1);camera.aspect=(float)width/height;camera.targetTexture=rt;camera.Render();
+            RenderTexture.active=rt;image.ReadPixels(new Rect(0,0,width,height),0,0);image.Apply();
             Directory.CreateDirectory(Path.GetDirectoryName(path));File.WriteAllBytes(path,image.EncodeToPNG());
         }
         finally {camera.targetTexture=previous;camera.rect=rect;camera.aspect=aspect;RenderTexture.active=active;RenderTexture.ReleaseTemporary(rt);Object.DestroyImmediate(image);}
@@ -660,7 +447,8 @@ public static class RedonSceneBuilder
             && cameras[0].transform.position==new Vector3(0,6,-30)
             && Quaternion.Angle(cameras[0].transform.rotation,Quaternion.identity)<.01f;
         var renderers=roots.SelectMany(r=>r.GetComponentsInChildren<Renderer>(true)).ToArray();
-        var materials=renderers.SelectMany(r=>r.sharedMaterials).Distinct().ToArray();
+        var materials=renderers.SelectMany(r=>r.sharedMaterials)
+            .Append(AssetDatabase.LoadAssetAtPath<Material>(Root+"/Materials/Painterly_Resolve.mat")).Distinct().ToArray();
         var shaderErrors=materials.Where(m=>m!=null).Select(m=>m.shader).Distinct()
             .SelectMany(s=>ShaderUtil.GetShaderMessages(s))
             .Where(m=>m.severity==UnityEditor.Rendering.ShaderCompilerMessageSeverity.Error)
@@ -670,15 +458,17 @@ public static class RedonSceneBuilder
             && volume.sharedProfile.components.All(c=>c!=null && AssetDatabase.Contains(c));
         bool textureOk=AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PigmentScumble.png")!=null
             && AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/DryBrushAtlas.png")!=null
-            && AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PetalUnderpainting.png")!=null;
-        int fishCount=GameObject.Find("Fish - Static Composition").transform.childCount;
+            && AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PetalUnderpainting.png")!=null
+            && AssetDatabase.LoadAssetAtPath<Texture2D>(Root+"/Textures/PetalVeining.png")!=null;
+        int fishCount=roots.SelectMany(r=>r.GetComponentsInChildren<MoonveilMotion>(true)).Count();
+        bool schoolReady=Object.FindObjectOfType<DreamSchoolController>()!=null;
         bool passed=missing==0 && fixedCamera && profileOk && textureOk && fishCount==FishCount
-            && shaderErrors.Length==0 && materials.All(m=>m!=null && m.shader.isSupported);
-        var report=new {passed,scene=scene.path,missingScripts=missing,fixedCamera,fishCount,
+            && schoolReady && shaderErrors.Length==0 && materials.All(m=>m!=null && m.shader.isSupported);
+        var report=new {passed,scene=scene.path,missingScripts=missing,fixedCamera,fishCount,schoolReady,
             validPersistentVolume=profileOk,generatedTexturesImported=textureOk,shaderErrors,
             rendererCount=renderers.Length,materialCount=materials.Length,
             device=SystemInfo.graphicsDeviceName,unity=Application.unityVersion,
-            scope="Fixed-camera art study. Static staged fish; no Boids or feeding."};
+            scope="Fixed-camera painterly garden with live Boids, skeletal animation and click-to-feed interaction."};
         Directory.CreateDirectory("Captures");
         File.WriteAllText("Captures/Redon_Validation.json",Newtonsoft.Json.JsonConvert.SerializeObject(report,Newtonsoft.Json.Formatting.Indented));
         if(!passed)throw new InvalidOperationException("Redon scene validation failed; see Captures/Redon_Validation.json.");

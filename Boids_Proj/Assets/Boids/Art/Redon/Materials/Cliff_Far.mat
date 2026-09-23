@@ -34,6 +34,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BrushScale: 1.35
+    - _ColorUV: 0
     - _Rim: 0.03
     - _Scumble: 0.46
     - _Seed: 41

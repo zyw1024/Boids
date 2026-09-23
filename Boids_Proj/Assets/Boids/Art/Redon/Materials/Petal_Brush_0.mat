@@ -29,10 +29,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorVariation: 0.85
+    - _ColorVariation: 0.75
     - _FogAmount: 1
-    - _Opacity: 0.3
+    - _Opacity: 0.42
     m_Colors:
-    - _Accent: {r: 0.7764706, g: 0.6666667, b: 0.7607843, a: 1}
-    - _Tint: {r: 0.545098, g: 0.5490196, b: 0.67058825, a: 1}
+    - _Accent: {r: 0.76862746, g: 0.6431373, b: 0.7607843, a: 1}
+    - _Tint: {r: 0.45882344, g: 0.45098037, b: 0.6117647, a: 1}
   m_BuildTextureStacks: []

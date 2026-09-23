@@ -21,6 +21,10 @@ public static class RedonPlayCheck
     static string startHash;
     static double nextSample;
     static bool previousBackground;
+    static int phase;
+    static float feedingStarted,closestBefore,closestMinimum,completedAt;
+    static bool foodPlaced, outsideRejected, feedingCaptured;
+    static readonly Vector3 FoodPoint = new Vector3(0,5.6f,2.4f);
 
     static RedonPlayCheck()
     {
@@ -60,6 +64,7 @@ public static class RedonPlayCheck
             previousBackground = Application.runInBackground;
             Application.runInBackground = true;
             start = null;
+            phase=0;feedingCaptured=false;
             nextSample = EditorApplication.timeSinceStartup + 1;
             EditorApplication.update -= Tick;
             EditorApplication.update += Tick;
@@ -76,40 +81,73 @@ public static class RedonPlayCheck
         if (!Application.isPlaying || EditorApplication.timeSinceStartup < nextSample) return;
         try
         {
+            var school=UnityEngine.Object.FindObjectOfType<DreamSchoolController>();
+            if(school==null || school.AgentCount==0 || Time.frameCount<8)return;
             if (start == null)
             {
                 start = Snapshot();
                 RedonSceneBuilder.CaptureCamera(Camera.main, "Captures/Redon_PlayStart.png");
                 startHash = Hash("Captures/Redon_PlayStart.png");
-                nextSample = EditorApplication.timeSinceStartup + 3;
+                nextSample = EditorApplication.timeSinceStartup + 2;
                 return;
             }
+            if(phase==0)
+            {
+                closestBefore=ClosestFishDistance();closestMinimum=closestBefore;
+                outsideRejected=!school.TryFeedScreenPoint(new Vector2(-100,-100));
+                foodPlaced=school.TryFeedScreenPoint(Camera.main.WorldToScreenPoint(FoodPoint));
+                feedingStarted=Time.time;phase=1;nextSample=0;
+                return;
+            }
+            if(phase==1)
+            {
+                closestMinimum=Mathf.Min(closestMinimum,ClosestFishDistance());
+                if(school.ConsumedPortions>0 && !feedingCaptured)
+                {
+                    RedonSceneBuilder.CaptureCamera(Camera.main,"Captures/Redon_Feeding.png");
+                    feedingCaptured=true;
+                }
+                if(school.CompletedFeedings>0 && school.FoodCount==0)
+                {
+                    completedAt=Time.time;phase=2;
+                    return;
+                }
+                if(Time.time-feedingStarted<24)return;
+                throw new InvalidOperationException("Food was not consumed within 24 simulated seconds.");
+            }
+            if(Time.time-completedAt<4)return;
             JObject end = Snapshot();
             RedonSceneBuilder.CaptureCamera(Camera.main, "Captures/Redon_PlayEnd.png");
             string endHash = Hash("Captures/Redon_PlayEnd.png");
             var baseline = JObject.Parse(SessionState.GetString(BaselineKey, "{}"));
             bool persisted = (bool)baseline["reloadPixels"]["withinTolerance"];
-            var runtimePixels = ComparePixels("Captures/Redon_PlayStart.png", "Captures/Redon_PlayEnd.png");
-            var editorPixels = ComparePixels("Captures/Redon_Style.png", "Captures/Redon_PlayEnd.png");
             bool cameraStable = JToken.DeepEquals(start["camera"], end["camera"]);
             bool framesAdvanced = (int)end["frame"] > (int)start["frame"];
-            bool staticFish = (int)start["activeFishAnimationComponents"] == 0
-                && (int)end["activeFishAnimationComponents"] == 0;
+            bool fishMoved=(string)start["firstFishPosition"]!=(string)end["firstFishPosition"];
+            bool animationsRunning=(int)end["activeFishAnimationComponents"]>=school.AgentCount;
+            bool approached=closestMinimum<closestBefore*.85f;
+            float dispersedDistance=ClosestFishDistance();
+            bool dispersed=dispersedDistance>closestMinimum+.15f;
+            bool ate=school.ConsumedPortions>=school.portionsPerFeeding && school.CompletedFeedings==1 && school.FoodCount==0;
             RedonSceneBuilder.Validate();
-            bool passed = persisted && cameraStable && framesAdvanced && staticFish
-                && (bool)runtimePixels["withinTolerance"] && (bool)editorPixels["withinTolerance"];
+            for(int i=0;i<school.maxFoodClusters+2;i++)school.DropFood(FoodPoint+Vector3.right*i*.15f);
+            bool clusterLimit=school.FoodCount==school.maxFoodClusters;
+            bool passed = persisted && cameraStable && framesAdvanced && fishMoved && animationsRunning
+                && foodPlaced && outsideRejected && approached && ate && dispersed && clusterLimit;
             Write(new
             {
                 passed, checkedAtUtc = DateTime.UtcNow.ToString("O"),
                 scene = RedonSceneBuilder.ScenePath, sceneReloadStable = persisted,
-                cameraStable, framesAdvanced, fishAnimationsDisabled = staticFish,
-                runtimeFramesIdentical = startHash == endHash,
-                runtimeFramesStable = (bool)runtimePixels["withinTolerance"],
-                runtimeMatchesEditorWithinTolerance = (bool)editorPixels["withinTolerance"],
-                runtimePixels, editorPixels,
+                cameraStable, framesAdvanced, fishMoved, animationsRunning,
+                screenPointFeeding=foodPlaced, outsideViewportRejected=outsideRejected,
+                approached, foodConsumed=ate, dispersed, foodClusterLimit=clusterLimit,
+                closestSixBefore=closestBefore, closestSixWhileFeeding=closestMinimum,
+                closestSixAfterDispersal=dispersedDistance,
+                consumedPortions=school.ConsumedPortions, completedFeedings=school.CompletedFeedings,
+                feedingSeconds=completedAt-feedingStarted,
                 baseline, runtimeStartSha256 = startHash, runtimeEndSha256 = endHash,
                 firstSample = start, lastSample = end,
-                note = "Editor Play-mode stability check, not a performance benchmark or standalone build."
+                note = "Actual Play-mode movement, screen-ray feeding, consumption and dispersal. Fixed camera; runtime images are expected to change. Not a performance benchmark."
             });
             Cleanup();
             EditorApplication.isPlaying = false;
@@ -137,8 +175,15 @@ public static class RedonPlayCheck
                 orthographic = c.orthographic, size = c.orthographicSize, aspect = c.aspect
             },
             activeFishAnimationComponents = UnityEngine.Object.FindObjectsOfType<Animator>().Count(a => a.enabled)
-                + UnityEngine.Object.FindObjectsOfType<MoonveilMotion>().Count(m => m.enabled)
+                + UnityEngine.Object.FindObjectsOfType<MoonveilMotion>().Count(m => m.enabled),
+            firstFishPosition=UnityEngine.Object.FindObjectOfType<MoonveilMotion>().transform.position.ToString("F5")
         });
+    }
+
+    static float ClosestFishDistance()
+    {
+        return UnityEngine.Object.FindObjectsOfType<MoonveilMotion>()
+            .Select(m=>Vector3.Distance(m.transform.position,FoodPoint)).OrderBy(d=>d).Take(6).Average();
     }
 
     static void Cleanup()
