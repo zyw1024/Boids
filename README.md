@@ -10,9 +10,11 @@
 
 [观看四段动画预览（MP4）](ArtSource/Moonveil/Preview/Moonveil_Motions.mp4) · [查看 Unity 实机画面](Boids_Proj/Captures/Moonveil_Unity.png) · [美术资源说明](ArtSource/Moonveil/README.md)
 
-**美术方向与首版范围**：[只制作 E「彩色梦境」一个场景，暂不制作海域切换，F 保留为后续参考](ArtSource/Concepts/ArtHistoryStudies/README.md)。[第一轮四组 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md) 保留为材质探索参考。场景内镜头与具体渲染方式仍在讨论，概念图尚未转化为实机效果。
+**当前版本范围**：[E「彩色梦境」单场景、完全固定镜头，只验证美术风格](ArtSource/Concepts/ArtHistoryStudies/README.md)。Boids、投喂与海域切换留到后续；F 和[第一轮四组 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md) 保留为美术参考。风格样片尚未制作，概念图尚未转化为实机效果。
 
 ## 快速开始
+
+以下步骤运行现有 Moonveil 动画预览场景；固定机位的 E 风格样片尚未制作。
 
 1. 克隆仓库：
 
