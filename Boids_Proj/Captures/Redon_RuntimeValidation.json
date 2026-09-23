@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "checkedAtUtc": "2026-09-23T10:42:43.1308185Z",
+  "scene": "Assets/Boids/Scenes/RedonDream.unity",
+  "sceneReloadStable": true,
+  "cameraStable": true,
+  "framesAdvanced": true,
+  "fishAnimationsDisabled": true,
+  "runtimeFramesIdentical": false,
+  "runtimeFramesStable": true,
+  "runtimeMatchesEditorWithinTolerance": true,
+  "runtimePixels": {
+    "pixelCount": 1572864,
+    "differentPixels": 1,
+    "maxChannelDelta": 1,
+    "meanChannelDelta": 2.1192762586805554E-07,
+    "allowedMaxChannelDelta": 2,
+    "allowedDifferentPixelFraction": 0.0001,
+    "withinTolerance": true
+  },
+  "editorPixels": {
+    "pixelCount": 1572864,
+    "differentPixels": 1,
+    "maxChannelDelta": 1,
+    "meanChannelDelta": 2.1192762586805554E-07,
+    "allowedMaxChannelDelta": 2,
+    "allowedDifferentPixelFraction": 0.0001,
+    "withinTolerance": true
+  },
+  "baseline": {
+    "savedFrameSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
+    "reloadedFrameSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
+    "reloadPixels": {
+      "pixelCount": 1572864,
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "allowedMaxChannelDelta": 2,
+      "allowedDifferentPixelFraction": 0.0001,
+      "withinTolerance": true
+    }
+  },
+  "runtimeStartSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
+  "runtimeEndSha256": "6bd3e3ffd1bb8daa903a2cfc75f4ad0a6ac815cc346e823ad172a32b42af5fd1",
+  "firstSample": {
+    "playing": true,
+    "frame": 1,
+    "seconds": 0.0,
+    "camera": {
+      "position": "(0.00000, 6.00000, -30.00000)",
+      "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
+      "orthographic": true,
+      "size": 7.2,
+      "aspect": 1.5
+    },
+    "activeFishAnimationComponents": 0
+  },
+  "lastSample": {
+    "playing": true,
+    "frame": 1514,
+    "seconds": 3.0071137,
+    "camera": {
+      "position": "(0.00000, 6.00000, -30.00000)",
+      "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
+      "orthographic": true,
+      "size": 7.2,
+      "aspect": 1.5
+    },
+    "activeFishAnimationComponents": 0
+  },
+  "note": "Editor Play-mode stability check, not a performance benchmark or standalone build."
+}
