@@ -10,7 +10,7 @@
 
 [观看四段动画预览（MP4）](ArtSource/Moonveil/Preview/Moonveil_Motions.mp4) · [查看 Unity 实机画面](Boids_Proj/Captures/Moonveil_Unity.png) · [美术资源说明](ArtSource/Moonveil/README.md)
 
-**美术方向探索（讨论中）**：[第一轮：四组 Shader 风格概念图](ArtSource/Concepts/ShaderStudies/README.md) 比较珠光丝绸、海玻璃、绘画色块与深海荧光；[第二轮：艺术史与梦幻海洋](ArtSource/Concepts/ArtHistoryStudies/README.md) 探索象征主义的彩色梦境与印象主义的流动光海。这些图片用于选择视觉方向，尚未转化为实机 Shader。
+**美术方向（场景顺序已确定）**：[E「彩色梦境」作为引导，F「流动光海」作为后续豁然开朗的场景](ArtSource/Concepts/ArtHistoryStudies/README.md)。[第一轮四组 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md) 保留为材质探索参考。具体过渡与渲染方式仍在讨论，概念图尚未转化为实机效果。
 
 ## 快速开始
 
