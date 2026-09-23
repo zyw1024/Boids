@@ -1,35 +1,27 @@
 {
   "passed": true,
-  "checkedAtUtc": "2026-09-23T10:42:43.1308185Z",
+  "checkedAtUtc": "2026-09-23T11:17:47.4278672Z",
   "scene": "Assets/Boids/Scenes/RedonDream.unity",
   "sceneReloadStable": true,
   "cameraStable": true,
   "framesAdvanced": true,
-  "fishAnimationsDisabled": true,
-  "runtimeFramesIdentical": false,
-  "runtimeFramesStable": true,
-  "runtimeMatchesEditorWithinTolerance": true,
-  "runtimePixels": {
-    "pixelCount": 1572864,
-    "differentPixels": 1,
-    "maxChannelDelta": 1,
-    "meanChannelDelta": 2.1192762586805554E-07,
-    "allowedMaxChannelDelta": 2,
-    "allowedDifferentPixelFraction": 0.0001,
-    "withinTolerance": true
-  },
-  "editorPixels": {
-    "pixelCount": 1572864,
-    "differentPixels": 1,
-    "maxChannelDelta": 1,
-    "meanChannelDelta": 2.1192762586805554E-07,
-    "allowedMaxChannelDelta": 2,
-    "allowedDifferentPixelFraction": 0.0001,
-    "withinTolerance": true
-  },
+  "fishMoved": true,
+  "animationsRunning": true,
+  "screenPointFeeding": true,
+  "outsideViewportRejected": true,
+  "approached": true,
+  "foodConsumed": true,
+  "dispersed": true,
+  "foodClusterLimit": true,
+  "closestSixBefore": 1.824995,
+  "closestSixWhileFeeding": 0.480155557,
+  "closestSixAfterDispersal": 0.671042264,
+  "consumedPortions": 18,
+  "completedFeedings": 1,
+  "feedingSeconds": 3.19575763,
   "baseline": {
-    "savedFrameSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
-    "reloadedFrameSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
+    "savedFrameSha256": "cf76ae5f8231facb8c3748e0de4fbdf88dd16ea298128254d2b02e33f196622e",
+    "reloadedFrameSha256": "cf76ae5f8231facb8c3748e0de4fbdf88dd16ea298128254d2b02e33f196622e",
     "reloadPixels": {
       "pixelCount": 1572864,
       "differentPixels": 0,
@@ -40,12 +32,12 @@
       "withinTolerance": true
     }
   },
-  "runtimeStartSha256": "7a8175f72a42d56843932aa30045ebff2baa0e2dfcd81f46b8711927e15f0ee2",
-  "runtimeEndSha256": "6bd3e3ffd1bb8daa903a2cfc75f4ad0a6ac815cc346e823ad172a32b42af5fd1",
+  "runtimeStartSha256": "b23bd1374c8f7f6fca347426e9f16209603c2b7564dda7c40afb176e10c15bf1",
+  "runtimeEndSha256": "b063805ad58e70ed1dd19b5810477136c56ccdc5212e564e9803740550f7fe93",
   "firstSample": {
     "playing": true,
-    "frame": 1,
-    "seconds": 0.0,
+    "frame": 8,
+    "seconds": 0.2611119,
     "camera": {
       "position": "(0.00000, 6.00000, -30.00000)",
       "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
@@ -53,12 +45,13 @@
       "size": 7.2,
       "aspect": 1.5
     },
-    "activeFishAnimationComponents": 0
+    "activeFishAnimationComponents": 192,
+    "firstFishPosition": "(6.35246, 7.51156, 10.42909)"
   },
   "lastSample": {
     "playing": true,
-    "frame": 1514,
-    "seconds": 3.0071137,
+    "frame": 3123,
+    "seconds": 9.71744251,
     "camera": {
       "position": "(0.00000, 6.00000, -30.00000)",
       "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
@@ -66,7 +59,8 @@
       "size": 7.2,
       "aspect": 1.5
     },
-    "activeFishAnimationComponents": 0
+    "activeFishAnimationComponents": 192,
+    "firstFishPosition": "(2.39401, 7.18812, 7.17225)"
   },
-  "note": "Editor Play-mode stability check, not a performance benchmark or standalone build."
+  "note": "Actual Play-mode movement, screen-ray feeding, consumption and dispersal. Fixed camera; runtime images are expected to change. Not a performance benchmark."
 }

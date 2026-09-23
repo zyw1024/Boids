@@ -4,13 +4,13 @@
 
 目标是让 Boids 群体行为成为可交互、可欣赏的游戏体验：在海洋中点击投放食物，鱼群靠近、进食，再自然散开。课程将从视觉效果出发，逐步解释分离、对齐、聚合及目标吸引的实现。
 
-目前已完成 **Moonveil / 月光鱼** 的建模、骨骼与四段动画，以及 E「彩色梦境」的首版 Unity 风格样片：固定镜头、三维花瓣环境、绘画 Shader 和 70 条静态鱼。**Boids 算法与投喂交互尚未实现。**
+目前已完成 **Moonveil / 月光鱼** 的建模、骨骼与四段动画，以及 E「彩色梦境」的 Unity 交互样片：固定镜头、三维花瓣花园、绘画 Shader、96 条 Boids 鱼和鼠标投喂。鱼群会靠近金色食物，吃完后散开并恢复巡游。
 
 ![Redon dream sea — Unity camera render](Boids_Proj/Captures/Redon_Style.png)
 
 [观看四段动画预览（MP4）](ArtSource/Moonveil/Preview/Moonveil_Motions.mp4) · [查看 Unity 实机画面](Boids_Proj/Captures/Moonveil_Unity.png) · [美术资源说明](ArtSource/Moonveil/README.md)
 
-**当前版本范围**：[E「彩色梦境」单场景、完全固定镜头，只验证美术风格](ArtSource/Redon/README.md)。上图为实际 Unity 渲染；[E / F 概念图](ArtSource/Concepts/ArtHistoryStudies/README.md)和[第一轮 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md)保留为参考。当前是风格初稿，后续还需细化植物造型、边缘和笔触层次。
+**当前版本范围**：[E「彩色梦境」单场景、完全固定镜头、鱼群运动与投喂](ArtSource/Redon/README.md)。上图为实际 Unity 渲染；[观看实际运行视频](Boids_Proj/Captures/Redon_Interaction.mp4)。[E / F 概念图](ArtSource/Concepts/ArtHistoryStudies/README.md)和[第一轮 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md)保留为参考。当前植物轮廓和笔触仍比概念画明确，风格还需持续评审。
 
 ## 快速开始
 
@@ -19,12 +19,15 @@
 1. 克隆仓库：
 
    ```sh
-   git clone https://github.com/zyw1024/Boids.git
+   git clone --branch feat/redon-style-scene https://github.com/zyw1024/Boids.git
    ```
+
+   当前交互样片位于上述开发分支，见 [PR #2](https://github.com/zyw1024/Boids/pull/2)。
 
 2. 在 Unity Hub 中添加仓库内的 **`Boids_Proj`** 文件夹。
 3. 使用项目记录的 **Unity 2022.3.62f2c1** 打开，等待包恢复及资源导入。项目使用 **URP 14.0.12**；其他 Unity 版本尚未验证。
-4. 打开 `Assets/Boids/Scenes/RedonDream.unity`，切换到 **Game** 视图或按 **Play**。相机与鱼群保持静止，非 3:2 窗口会留边以保留构图。
+4. 打开 `Assets/Boids/Scenes/RedonDream.unity`，切换到 **Game** 视图并按 **Play**。鱼群自然游动；**鼠标左键点击中央水域投喂**，金色颗粒逐渐被吃完，鱼群随后散开。可同时放置三处食物，超过上限时替换最早的一处。
+5. 相机完全固定；非 3:2 窗口会留边以保留构图，留边区域点击无效。当前食物投放在固定的水下深度平面。
 
 如需单独检查鱼的四段动画，打开 `Assets/Boids/Scenes/MoonveilPreview.unity` 并按 Play。以下操作仅用于该动画预览：
 
@@ -59,7 +62,7 @@ Boids/
 - Blender 源文件包含贴图、骨骼、动画和展示灯光；GLB 包含贴图与四段动画，供后续 HTML / Three.js 版本使用。
 
 ```csharp
-// Animation interface; movement will be supplied by the Boids agent.
+// DreamSchoolController drives movement; MoonveilMotion drives skeletal animation.
 fish.SetSwimSpeed(0.45f); // 0 = hover, 0.45 = cruise, 1 = dart
 fish.Feed();             // One feeding motion, then resume swimming
 ```
@@ -79,8 +82,8 @@ Unity 使用可见 `.meta` 文件与文本序列化。仓库保留 `Assets`、`P
 - [x] 三维鱼模型、材质与配套动作
 - [x] Unity 动画预览与资源验证
 - [x] E 单场景固定镜头美术初稿、绘画 Shader 与 AI 颜料纹理
-- [ ] 三维 Boids 鱼群与自然转向
-- [ ] 鼠标投喂、食物消耗与鱼群散开
+- [x] 三维 Boids 鱼群与自然转向
+- [x] 鼠标投喂、食物消耗与鱼群散开
 - [ ] 根据实机评审细化环境造型、笔触和动态效果
 - [ ] 鱼群数量测试与 LOD / 渲染优化
 - [ ] HTML / Three.js 实现
