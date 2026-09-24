@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scene": "Assets/Boids/Scenes/SkyCity.unity",
+  "missingScripts": 0,
+  "birds": 64,
+  "wings": 128,
+  "modeledForms": 41,
+  "volumeClouds": true,
+  "reflectingWater": true,
+  "shaderErrors": []
+}

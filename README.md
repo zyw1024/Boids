@@ -1,6 +1,12 @@
 # Boids
 
-**用 AI Vibe Coding 制作一个梦幻海洋鱼群项目。**
+**用 AI Vibe Coding 制作可欣赏、可交互的 Boids 场景。**
+
+最新增加 **「天空之城 · 风之庭园」**：晨光云海中的三维宫殿、空中花园、悬桥、瀑布和 64 只振翅飞行的燕子。打开 `Assets/Boids/Scenes/SkyCity.unity` 后按 Play，左键点击天空可引导鸟群，右键环视、滚轮缩放、中键平移、F 复位、M 开关音乐。云海漂移、旗帜飘动，80 秒原创钢琴／竖琴／弦乐配乐循环播放。
+
+![天空之城 — Unity 实际相机渲染](Boids_Proj/Captures/SkyCity_Style.png)
+
+[观看有声交互预览](Boids_Proj/Captures/SkyCity_LivingWorld.mp4) · [Blender 源文件、制作边界与重建方法](ArtSource/SkyCity/README.md)。建筑、植物、悬崖和鸟是三维模型；云海使用真正的三维体积密度、动态光照与流动细节；新建水庭园具备实时倒影、折射和朝溢流口移动的水流。鸟群自主转向、侧倾、振翅与滑翔。原有海底场景继续保留。
 
 目标是让 Boids 群体行为成为可交互、可欣赏的游戏体验：在海洋中点击投放食物，鱼群靠近、进食，再自然散开。课程将从视觉效果出发，逐步解释分离、对齐、聚合及目标吸引的实现。
 
@@ -13,6 +19,12 @@
 **当前版本范围**：[E「彩色梦境」单场景、完全固定镜头、鱼群运动与投喂](ArtSource/Redon/README.md)。上图为实际 Unity 渲染；[观看实际运行视频](Boids_Proj/Captures/Redon_Interaction.mp4)。[E / F 概念图](ArtSource/Concepts/ArtHistoryStudies/README.md)和[第一轮 Shader 概念图](ArtSource/Concepts/ShaderStudies/README.md)保留为参考。当前植物轮廓和笔触仍比概念画明确，风格还需持续评审。
 
 ## 快速开始
+
+本地新增的美术重建场景是 `Assets/Boids/Scenes/RedonAtelier.unity`：巨型卷叶、层叠花冠、礁体与附生珊瑚均在 Blender 中建模，再以 FBX 接入 Unity。可编辑源文件、生成脚本和材质来源见 [Atelier 美术说明](ArtSource/Redon/Atelier/README.md)。
+
+![Atelier — modeled garden in Unity](Boids_Proj/Captures/Atelier_Style.png)
+
+[查看新版投喂运行视频](Boids_Proj/Captures/Atelier_Interaction.mp4)。新版保留固定相机、96 条带动画的鱼、Boids 与点击投喂；概念图仍作为美术参考，实机截图用于评价实际效果。
 
 以下步骤查看当前 E 风格样片。
 
@@ -49,6 +61,7 @@ Boids/
 ├── ArtSource/Moonveil/     # Blender source, procedural authoring scripts and GLB
 │   └── Preview/            # Stills and animation reel
 ├── ArtSource/Redon/        # Style implementation notes and AI texture prompts
+├── ArtSource/SkyCity/      # Sky city Blender source, concept and asset provenance
 ├── ArtSource/Concepts/     # Archived visual directions
 └── Setup/                  # Optional Blender / Unity MCP utilities
 ```

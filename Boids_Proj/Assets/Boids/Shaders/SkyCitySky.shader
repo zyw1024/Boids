@@ -1,0 +1,28 @@
+Shader "Boids/SkyCity/Dawn Sky"
+{
+    Properties {}
+    SubShader
+    {
+        Tags {"Queue"="Background" "RenderType"="Background" "PreviewType"="Skybox"}
+        Cull Off ZWrite Off
+        Pass
+        {
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            struct V {float4 positionCS:SV_POSITION;float3 direction:TEXCOORD0;};
+            V vert(float3 p:POSITION){V o;o.positionCS=TransformObjectToHClip(p);o.direction=p;return o;}
+            half4 frag(V i):SV_Target
+            {
+                float3 d=normalize(i.direction);
+                float t=smoothstep(-.34,.12,d.y);
+                float3 sky=lerp(float3(.58,.49,.51),float3(.10,.21,.42),t);
+                float glow=pow(saturate(dot(d,normalize(float3(.70,.28,1)))),24);
+                sky=lerp(sky,float3(1.20,.97,.68),glow*.50);
+                return half4(sky,1);
+            }
+            ENDHLSL
+        }
+    }
+}

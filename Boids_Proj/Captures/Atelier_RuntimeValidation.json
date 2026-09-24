@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "checkedAtUtc": "2026-09-24T03:53:13.5970839Z",
+  "scene": "Assets/Boids/Scenes/RedonAtelier.unity",
+  "sceneReloadStable": true,
+  "cameraStable": true,
+  "framesAdvanced": true,
+  "fishMoved": true,
+  "animationsRunning": true,
+  "screenPointFeeding": true,
+  "outsideViewportRejected": true,
+  "approached": true,
+  "foodConsumed": true,
+  "dispersed": true,
+  "foodClusterLimit": true,
+  "closestSixBefore": 1.53636765,
+  "closestSixWhileFeeding": 0.467820883,
+  "closestSixAfterDispersal": 0.6634433,
+  "consumedPortions": 18,
+  "completedFeedings": 1,
+  "feedingSeconds": 2.99795866,
+  "baseline": {
+    "savedFrameSha256": "85ac9289ea68c7eb4a564730a220c1128c6e386938246a56cd057d077e083a4a",
+    "reloadedFrameSha256": "85ac9289ea68c7eb4a564730a220c1128c6e386938246a56cd057d077e083a4a",
+    "reloadPixels": {
+      "pixelCount": 1572864,
+      "differentPixels": 0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "allowedMaxChannelDelta": 2,
+      "allowedDifferentPixelFraction": 0.0001,
+      "withinTolerance": true
+    }
+  },
+  "runtimeStartSha256": "a0ba80625cc5c4322a76a04d8bd7992a15193e24b38eb9e61b0514ef188e23a8",
+  "runtimeEndSha256": "668d51956239bc76e6e462605369620e1c2edcf4bfba6e4fc3435d6e5b09ab46",
+  "firstSample": {
+    "playing": true,
+    "frame": 221,
+    "seconds": 0.9332758,
+    "camera": {
+      "position": "(0.00000, 6.00000, -30.00000)",
+      "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
+      "orthographic": true,
+      "size": 7.2,
+      "aspect": 1.5
+    },
+    "activeFishAnimationComponents": 192,
+    "firstFishPosition": "(2.63613, 5.77031, 2.29949)"
+  },
+  "lastSample": {
+    "playing": true,
+    "frame": 3074,
+    "seconds": 10.0451965,
+    "camera": {
+      "position": "(0.00000, 6.00000, -30.00000)",
+      "rotation": "(0.00000, 0.00000, 0.00000, 1.00000)",
+      "orthographic": true,
+      "size": 7.2,
+      "aspect": 1.5
+    },
+    "activeFishAnimationComponents": 192,
+    "firstFishPosition": "(2.02747, 7.40798, 3.27839)"
+  },
+  "note": "Actual Play-mode movement, screen-ray feeding, consumption and dispersal. Fixed camera; runtime images are expected to change. Not a performance benchmark."
+}

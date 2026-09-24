@@ -1,0 +1,16 @@
+{
+  "clouds": {
+    "meanPixelChange": 14.7403,
+    "fractionChangedOver3": 0.7762
+  },
+  "flag": {
+    "meanPixelChange": 10.2945,
+    "fractionChangedOver3": 0.2278
+  },
+  "staticArchitecture": {
+    "meanPixelChange": 0.0,
+    "fractionChangedOver3": 0.0
+  },
+  "secondsBetweenFrames": 2.5,
+  "passed": true
+}

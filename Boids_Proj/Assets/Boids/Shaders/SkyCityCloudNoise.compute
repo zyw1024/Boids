@@ -1,0 +1,31 @@
+#pragma kernel BakeNoise
+RWTexture3D<float4> Result;
+int _Size;
+float hash(float3 p){return frac(sin(dot(p,float3(127.1,311.7,74.7)))*43758.5453);}
+float3 hash3(float3 p){return frac(sin(float3(dot(p,float3(127.1,311.7,74.7)),dot(p,float3(269.5,183.3,246.1)),dot(p,float3(113.5,271.9,124.6))))*43758.5453);}
+float3 wrap(float3 p,float period){return p-floor(p/period)*period;}
+float value(float3 p,float period)
+{
+    float3 a=floor(p),f=frac(p);f=f*f*(3-2*f);
+    return lerp(lerp(lerp(hash(wrap(a,period)),hash(wrap(a+float3(1,0,0),period)),f.x),lerp(hash(wrap(a+float3(0,1,0),period)),hash(wrap(a+float3(1,1,0),period)),f.x),f.y),
+        lerp(lerp(hash(wrap(a+float3(0,0,1),period)),hash(wrap(a+float3(1,0,1),period)),f.x),lerp(hash(wrap(a+float3(0,1,1),period)),hash(wrap(a+1,period)),f.x),f.y),f.z);
+}
+float worley(float3 uv,float period)
+{
+    float3 p=uv*period,a=floor(p),f=frac(p);float distance=9;
+    for(int z=-1;z<=1;z++)for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++)
+    {
+        float3 offset=float3(x,y,z),cellPoint=hash3(wrap(a+offset,period));
+        float3 d=offset+cellPoint-f;distance=min(distance,dot(d,d));
+    }
+    return 1-saturate(sqrt(distance));
+}
+[numthreads(4,4,4)]
+void BakeNoise(uint3 id:SV_DispatchThreadID)
+{
+    if(any(id>=(uint)_Size))return;
+    float3 uv=(id+.5)/(float)_Size;
+    float perlin=value(uv*4,4)*.55+value(uv*8,8)*.28+value(uv*16,16)*.17;
+    float w0=worley(uv,4),w1=worley(uv,8),w2=worley(uv,16),w3=worley(uv,32);
+    Result[id]=float4(saturate(perlin*.60+w0*.40),w1,w2,w3);
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Garden of Winds",
+  "durationSeconds": 80.0,
+  "sampleRate": 44100,
+  "channels": 2,
+  "peakDbFS": -2.16,
+  "rmsDbFS": -19.25,
+  "loopBoundaryJump": 0.0,
+  "noteEvents": 482,
+  "originalComposition": true,
+  "sampleLibrary": "VSCO 2 CE (CC0-1.0)"
+}

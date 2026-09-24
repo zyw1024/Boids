@@ -16,7 +16,11 @@ public static class RedonPlayCheck
 {
     const string RunningKey = "Boids.Redon.CheckRunning";
     const string BaselineKey = "Boids.Redon.CheckBaseline";
-    const string ReportPath = "Captures/Redon_RuntimeValidation.json";
+    static string Prefix => SessionState.GetBool("Boids.Redon.CheckAtelier",false)?"Atelier":"Redon";
+    static string CheckScene => Prefix=="Atelier"?AtelierSceneBuilder.ScenePath:RedonSceneBuilder.ScenePath;
+    static string ReportPath => "Captures/"+Prefix+"_RuntimeValidation.json";
+    static string CapturePath(string suffix) => "Captures/"+Prefix+"_"+suffix+".png";
+    static void ValidateScene(){if(Prefix=="Atelier")AtelierSceneBuilder.Validate();else RedonSceneBuilder.Validate();}
     static JObject start;
     static string startHash;
     static double nextSample;
@@ -34,23 +38,33 @@ public static class RedonPlayCheck
     [MenuItem("Boids/Redon/Check Reload and Play Mode")]
     public static void Run()
     {
+        RunScene(false);
+    }
+
+    [MenuItem("Boids/Atelier/Check Reload and Play Mode")]
+    public static void RunAtelier(){RunScene(true);}
+
+    static void RunScene(bool atelier)
+    {
         if (EditorApplication.isPlayingOrWillChangePlaymode)
             throw new InvalidOperationException("Start this check in Edit mode.");
         var scene = SceneManager.GetActiveScene();
-        if (scene.path != RedonSceneBuilder.ScenePath || scene.isDirty)
-            throw new InvalidOperationException("Open and save RedonDream before running the check.");
+        string requestedScene=atelier?AtelierSceneBuilder.ScenePath:RedonSceneBuilder.ScenePath;
+        if (scene.path != requestedScene || scene.isDirty)
+            throw new InvalidOperationException("Open and save "+requestedScene+" before running the check.");
+        SessionState.SetBool("Boids.Redon.CheckAtelier",atelier);
 
-        RedonSceneBuilder.Validate();
-        RedonSceneBuilder.Capture();
-        string savedHash = Hash("Captures/Redon_Style.png");
-        EditorSceneManager.OpenScene(RedonSceneBuilder.ScenePath);
-        RedonSceneBuilder.Validate();
-        RedonSceneBuilder.CaptureCamera(Camera.main, "Captures/Redon_Reload.png");
+        ValidateScene();
+        RedonSceneBuilder.CaptureCamera(Camera.main,CapturePath("Style"));
+        string savedHash = Hash(CapturePath("Style"));
+        EditorSceneManager.OpenScene(CheckScene);
+        ValidateScene();
+        RedonSceneBuilder.CaptureCamera(Camera.main, CapturePath("Reload"));
         SessionState.SetString(BaselineKey, new JObject
         {
             ["savedFrameSha256"] = savedHash,
-            ["reloadedFrameSha256"] = Hash("Captures/Redon_Reload.png"),
-            ["reloadPixels"] = ComparePixels("Captures/Redon_Style.png", "Captures/Redon_Reload.png")
+            ["reloadedFrameSha256"] = Hash(CapturePath("Reload")),
+            ["reloadPixels"] = ComparePixels(CapturePath("Style"), CapturePath("Reload"))
         }.ToString());
         SessionState.SetBool(RunningKey, true);
         EditorApplication.isPlaying = true;
@@ -86,8 +100,8 @@ public static class RedonPlayCheck
             if (start == null)
             {
                 start = Snapshot();
-                RedonSceneBuilder.CaptureCamera(Camera.main, "Captures/Redon_PlayStart.png");
-                startHash = Hash("Captures/Redon_PlayStart.png");
+                RedonSceneBuilder.CaptureCamera(Camera.main, CapturePath("PlayStart"));
+                startHash = Hash(CapturePath("PlayStart"));
                 nextSample = EditorApplication.timeSinceStartup + 2;
                 return;
             }
@@ -104,7 +118,7 @@ public static class RedonPlayCheck
                 closestMinimum=Mathf.Min(closestMinimum,ClosestFishDistance());
                 if(school.ConsumedPortions>0 && !feedingCaptured)
                 {
-                    RedonSceneBuilder.CaptureCamera(Camera.main,"Captures/Redon_Feeding.png");
+                    RedonSceneBuilder.CaptureCamera(Camera.main,CapturePath("Feeding"));
                     feedingCaptured=true;
                 }
                 if(school.CompletedFeedings>0 && school.FoodCount==0)
@@ -117,8 +131,8 @@ public static class RedonPlayCheck
             }
             if(Time.time-completedAt<4)return;
             JObject end = Snapshot();
-            RedonSceneBuilder.CaptureCamera(Camera.main, "Captures/Redon_PlayEnd.png");
-            string endHash = Hash("Captures/Redon_PlayEnd.png");
+            RedonSceneBuilder.CaptureCamera(Camera.main, CapturePath("PlayEnd"));
+            string endHash = Hash(CapturePath("PlayEnd"));
             var baseline = JObject.Parse(SessionState.GetString(BaselineKey, "{}"));
             bool persisted = (bool)baseline["reloadPixels"]["withinTolerance"];
             bool cameraStable = JToken.DeepEquals(start["camera"], end["camera"]);
@@ -129,7 +143,7 @@ public static class RedonPlayCheck
             float dispersedDistance=ClosestFishDistance();
             bool dispersed=dispersedDistance>closestMinimum+.15f;
             bool ate=school.ConsumedPortions>=school.portionsPerFeeding && school.CompletedFeedings==1 && school.FoodCount==0;
-            RedonSceneBuilder.Validate();
+            ValidateScene();
             for(int i=0;i<school.maxFoodClusters+2;i++)school.DropFood(FoodPoint+Vector3.right*i*.15f);
             bool clusterLimit=school.FoodCount==school.maxFoodClusters;
             bool passed = persisted && cameraStable && framesAdvanced && fishMoved && animationsRunning
@@ -137,7 +151,7 @@ public static class RedonPlayCheck
             Write(new
             {
                 passed, checkedAtUtc = DateTime.UtcNow.ToString("O"),
-                scene = RedonSceneBuilder.ScenePath, sceneReloadStable = persisted,
+                scene = CheckScene, sceneReloadStable = persisted,
                 cameraStable, framesAdvanced, fishMoved, animationsRunning,
                 screenPointFeeding=foodPlaced, outsideViewportRejected=outsideRejected,
                 approached, foodConsumed=ate, dispersed, foodClusterLimit=clusterLimit,
