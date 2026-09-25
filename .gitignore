@@ -103,6 +103,9 @@ __pycache__/
 !/Boids_Proj/Captures/SkyCityInfinite_WaterEarlierRuns.json
 !/Boids_Proj/Captures/SkyCityInfinite_Structure*.png
 !/Boids_Proj/Captures/SkyCityInfinite_Structure*.json
+!/Boids_Proj/Captures/SkyCity_Demo_Recorder.mp4
+!/Boids_Proj/Captures/SkyCity_Demo_Recorder.json
+!/Boids_Proj/Captures/SkyCity_Demo_Travel.png
 
 # Superseded local cloud-density experiments; the scene uses PerlinWorleyVolume.
 /Boids_Proj/Assets/Boids/Art/SkyCity/CloudDensity.asset*
