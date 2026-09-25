@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Boids/Scenes/SkyCityInfinite.unity
     guid: 58881be75401cad43b42219628a523f2
+  - enabled: 1
+    path: Assets/Boids/Scenes/SkyCityHangingGardens.unity
+    guid: 831b55ef91536814a9bc7cc078f6da16
   m_configObjects: {}

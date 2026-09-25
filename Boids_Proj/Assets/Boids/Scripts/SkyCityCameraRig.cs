@@ -8,6 +8,8 @@ namespace Boids.Art
     public sealed class SkyCityCameraRig : MonoBehaviour
     {
         public float minimumDistance=32,maximumDistance=95;
+        public float homeFocusDistance=62;
+        public Vector3 panLimits=new Vector3(5,4,4);
         public float orbitDegreesPerPixel=.18f;
         public float smoothing=.20f;
         Vector3 homeTarget,target,targetVelocity,panOffset,lastPointer;
@@ -23,7 +25,7 @@ namespace Boids.Art
         public int ResetInputs {get;private set;}
         void Awake()
         {
-            view=GetComponent<Camera>();homeDistance=62;
+            view=GetComponent<Camera>();homeDistance=Mathf.Clamp(homeFocusDistance,minimumDistance,maximumDistance);
             homeTarget=transform.position+transform.forward*homeDistance;
             Vector3 offset=transform.position-homeTarget;
             homeYaw=Mathf.Atan2(-offset.x,-offset.z)*Mathf.Rad2Deg;
@@ -68,7 +70,7 @@ namespace Boids.Art
             if(pixels.sqrMagnitude<.00001f)return;
             float scale=2*distance*Mathf.Tan(view.fieldOfView*.5f*Mathf.Deg2Rad)/Mathf.Max(1,view.pixelHeight);
             panOffset-=(transform.right*pixels.x+transform.up*pixels.y)*scale;
-            panOffset=new Vector3(Mathf.Clamp(panOffset.x,-5,5),Mathf.Clamp(panOffset.y,-4,4),Mathf.Clamp(panOffset.z,-4,4));
+            panOffset=new Vector3(Mathf.Clamp(panOffset.x,-panLimits.x,panLimits.x),Mathf.Clamp(panOffset.y,-panLimits.y,panLimits.y),Mathf.Clamp(panOffset.z,-panLimits.z,panLimits.z));
             PanInputs++;
         }
         public void ResetView()

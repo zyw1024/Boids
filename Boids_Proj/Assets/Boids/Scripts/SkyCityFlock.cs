@@ -12,6 +12,11 @@ namespace Boids.Art
         public float neighbourRadius=5.2f;
         public float separationRadius=1.35f;
         public float steeringLimit=12f;
+        [SerializeField] Vector3[] customObstacleCenters;
+        [SerializeField] Vector3[] customObstacleRadii;
+        Vector3[] ActiveCenters => customObstacleCenters!=null&&customObstacleRadii!=null&&customObstacleCenters.Length>0&&customObstacleCenters.Length==customObstacleRadii.Length?customObstacleCenters:obstacleCenters;
+        Vector3[] ActiveRadii => ActiveCenters==customObstacleCenters?customObstacleRadii:obstacleRadii;
+        public void ConfigureObstacles(Vector3[] centers,Vector3[] radii){customObstacleCenters=centers;customObstacleRadii=radii;}
         sealed class Bird
         {
             public Transform body,left,right;
@@ -151,18 +156,19 @@ namespace Boids.Art
                 p.y=Mathf.Clamp(group.center.y+(float)random.NextDouble()*17-8,2.0f,27);
                 p.x=Mathf.Clamp(p.x,-22,23);p.z=Mathf.Clamp(p.z,-15,42);
                 var vp=view.WorldToViewportPoint(p);
-                if(vp.z>0&&vp.x>.10f&&vp.x<.90f&&vp.y>.12f&&vp.y<.90f&&Clearance(p)>1.12f){best=p;break;}
+                if(vp.z>0&&vp.x>.10f&&vp.x<.90f&&vp.y>.12f&&vp.y<.90f&&ActiveClearance(p)>1.12f){best=p;break;}
                 best=new Vector3(9+index*2,18+index*2,5+index*8);
             }
             group.goal=best;group.changeAt=flightTime+4.5f+(float)random.NextDouble()*4;GroupDecisions++;
         }
-        static Vector3 ObstacleForce(Vector3 p,Vector3 velocity)
+        Vector3 ObstacleForce(Vector3 p,Vector3 velocity)
         {
             Vector3 force=Vector3.zero;
-            for(int j=0;j<obstacleCenters.Length;j++)
+            var centers=ActiveCenters;var radii=ActiveRadii;
+            for(int j=0;j<centers.Length;j++)
             {
-                var radius=obstacleRadii[j];var inverse=new Vector3(1/radius.x,1/radius.y,1/radius.z);
-                var d=p-obstacleCenters[j];var look=d+velocity*.8f;
+                var radius=radii[j];var inverse=new Vector3(1/Mathf.Max(.1f,radius.x),1/Mathf.Max(.1f,radius.y),1/Mathf.Max(.1f,radius.z));
+                var d=p-centers[j];var look=d+velocity*.8f;
                 float q=Vector3.Scale(d,inverse).magnitude;float predicted=Vector3.Scale(look,inverse).magnitude;
                 float near=Mathf.Min(q,predicted);
                 if(near<1.32f)
@@ -177,6 +183,12 @@ namespace Boids.Art
         {
             float result=100;
             for(int j=0;j<obstacleCenters.Length;j++){var r=obstacleRadii[j];result=Mathf.Min(result,Vector3.Scale(p-obstacleCenters[j],new Vector3(1/r.x,1/r.y,1/r.z)).magnitude);}
+            return result;
+        }
+        float ActiveClearance(Vector3 p)
+        {
+            float result=100;var centers=ActiveCenters;var radii=ActiveRadii;
+            for(int j=0;j<centers.Length;j++){var r=radii[j];result=Mathf.Min(result,Vector3.Scale(p-centers[j],new Vector3(1/Mathf.Max(.1f,r.x),1/Mathf.Max(.1f,r.y),1/Mathf.Max(.1f,r.z))).magnitude);}
             return result;
         }
         // Initial art direction only; live birds do not track this curve.

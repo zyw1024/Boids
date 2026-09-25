@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scene": "Assets/Boids/Scenes/SkyCityHangingGardens.unity",
+  "missingScripts": 0,
+  "shaderErrors": [],
+  "lodTriangles": [
+    1765953,
+    674436,
+    240437
+  ],
+  "volumetricClouds": true,
+  "lightmaps": 2,
+  "lightProbes": 325,
+  "planarReflection": true,
+  "birds": 64,
+  "note": "Structural/rendering checks only. Artistic acceptance still requires overview, close architecture, moving water and side-view review. Infinite streaming is a separate scene."
+}

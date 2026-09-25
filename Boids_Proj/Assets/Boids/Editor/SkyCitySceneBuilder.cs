@@ -121,7 +121,7 @@ public static class SkyCitySceneBuilder
     {
         return SkyCityFlock.Route(Mathf.Clamp(t,0,.9999f)*.6f);
     }
-    static void CreateBirds(GameObject model)
+    public static void CreateBirds(GameObject model)
     {
         var root=new GameObject("Swallows - Living Sky");var birds=new List<Transform>();
         var material=Material("Swallow pearl and slate");material.SetFloat("_Smoothness",.34f);
