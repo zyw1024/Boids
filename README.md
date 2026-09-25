@@ -1,6 +1,6 @@
-# Boids
+# Game Algorithms Implementation
 
-**用 AI Vibe Coding 制作可欣赏、可交互的 Boids 场景。**
+**用 AI Vibe Coding 实现可欣赏、可交互的游戏算法 Demo：Boids 群体行为、WFC 程序化生成与天空之城。**
 
 **无限世界：天空之城 · 无尽风之庭园。** 打开 `Assets/Boids/Scenes/SkyCityInfinite.unity`，用 W / A / S / D 在云海上旅行，右键环顾、Q / E 升降、Shift 加速、Space 自动前行、F 返回。WFC 使用 **128 个实际建模模块**生成街区，组合为宫殿、修道院、花园、书库、孤塔、水庭、村落和遗迹八种城市轮廓。群岛错落在不同高度，长桥跨过云谷，邻近区域避免相同地标。按相机位置加载和卸载，最多驻留 25 个区块。
 
@@ -39,10 +39,10 @@
 1. 克隆仓库：
 
    ```sh
-   git clone --branch feat/redon-style-scene https://github.com/zyw1024/Boids.git
+   git clone --branch feat/redon-style-scene https://github.com/zyw1024/Game-Algorithms-Implementation.git
    ```
 
-   当前交互样片位于上述开发分支，见 [PR #2](https://github.com/zyw1024/Boids/pull/2)。
+   当前交互样片位于上述开发分支，见 [PR #2](https://github.com/zyw1024/Game-Algorithms-Implementation/pull/2)。
 
 2. 在 Unity Hub 中添加仓库内的 **`Boids_Proj`** 文件夹。
 3. 使用项目记录的 **Unity 2022.3.62f2c1** 打开，等待包恢复及资源导入。项目使用 **URP 14.0.12**；其他 Unity 版本尚未验证。
@@ -62,7 +62,7 @@
 ## 目录
 
 ```text
-Boids/
+Game-Algorithms-Implementation/
 ├── Boids_Proj/              # Unity project: Assets, Packages, ProjectSettings
 │   ├── Assets/Boids/        # Fish, animations, painterly shaders and scenes
 │   └── Captures/           # Reviewed screenshot and validation results
