@@ -1,0 +1,96 @@
+#pragma kernel Shape
+#pragma kernel Lighting
+
+RWTexture3D<float4> Result;
+Texture3D<float4> Density;
+Texture3D<float4> Noise;
+SamplerState samplerNoise;
+SamplerState samplerDensity;
+StructuredBuffer<float4> Centers;
+StructuredBuffer<float4> Radii;
+int3 Size;
+int LobeCount;
+float3 BoundsMin,BoundsSize,SunDirection;
+float Extinction;
+
+float smoothUnion(float a,float b,float k)
+{
+    float h=saturate(.5+.5*(b-a)/k);
+    return lerp(b,a,h)-k*h*(1-h);
+}
+float ellipsoid(float3 p,float3 r)
+{
+    float k0=length(p/r),k1=length(p/(r*r));
+    return k0*(k0-1)/max(.0001,k1);
+}
+[numthreads(4,4,4)]
+void Shape(uint3 id:SV_DispatchThreadID)
+{
+    if(any(id>=uint3(Size)))return;
+    float3 p=BoundsMin+(id+.5)/Size*BoundsSize;
+    float4 broad=Noise.SampleLevel(samplerNoise,p*.004+float3(.15,.23,.61),0);
+    float4 detail=Noise.SampleLevel(samplerNoise,p*.017+float3(.52,.17,.31),0);
+    float3 warped=p+(broad.rgb-.5)*5;
+    float distance=80;
+    for(int j=0;j<LobeCount;j++)
+    {
+        float3 delta=warped-Centers[j].xyz;
+        // Most lobes are distant from this voxel. No expensive distance is
+        // evaluated outside a lobe's conservative bounding box.
+        if(any(abs(delta)>Radii[j].xyz+7))continue;
+        distance=smoothUnion(distance,ellipsoid(delta,Radii[j].xyz),1.8);
+    }
+    float weather=Noise.SampleLevel(samplerNoise,float3(p.x*.005,.3,p.z*.005),0).r;
+    // Three-dimensional cloud density, not a noisy height-field surface. The
+    // cellular structure continues inside the sea and between sculpted banks.
+    float top=-3+(weather-.40)*24;
+    float seaProfile=1-smoothstep(-34,top,p.y);
+    float envelope=max(1-smoothstep(-4,2,distance),seaProfile);
+    float4 billow=Noise.SampleLevel(samplerNoise,p*.029,0);
+    float4 small=Noise.SampleLevel(samplerNoise,p*.065+float3(.37,.13,.5),0);
+    float body=billow.r*.70+billow.g*.30;
+    float d=saturate((body*envelope-.29)/.24);
+    d=saturate((d-(1-small.g)*.13)/.87);
+    // Thin wind-stretched high cloud breaks the empty upper sky. It occupies
+    // its own altitude band and is not a billboard or part of the lower sea.
+    float veilHeight=43+weather*18;
+    float veilProfile=(1-smoothstep(1.5,5.5,abs(p.y-veilHeight)))*smoothstep(125,180,p.z)*(1-smoothstep(265,290,p.z));
+    float fibres=Noise.SampleLevel(samplerNoise,p*float3(.007,.023,.038)+float3(.27,.58,.31),0).r;
+    float veil=saturate((fibres-.48)*6)*veilProfile*.46;
+    d=max(d,veil);
+    d*=smoothstep(-64,-49,p.y);
+    float3 edge=min((p-BoundsMin)/BoundsSize,1-(p-BoundsMin)/BoundsSize);
+    d*=smoothstep(0,.045,min(edge.x,min(edge.y,edge.z)));
+    // This hint only skips space outside the envelope; density holes inside
+    // that envelope are marched so neighbouring small billows cannot be missed.
+    float gap=min(distance,p.y-top);
+    if(p.z>125)gap=min(gap,max(abs(p.y-veilHeight)-6,0));
+    Result[id]=float4(d,0,0,saturate(max(gap,0)/32));
+}
+float sampleDensity(float3 p)
+{
+    float3 uv=(p-BoundsMin)/BoundsSize;
+    if(any(uv<0)||any(uv>1))return 0;
+    float raw=Density.SampleLevel(samplerDensity,uv,0).r;
+    float micro=Noise.SampleLevel(samplerNoise,p*.045,0).g;
+    return saturate((raw-.16-(1-micro)*.13)*3.0);
+}
+[numthreads(4,4,4)]
+void Lighting(uint3 id:SV_DispatchThreadID)
+{
+    if(any(id>=uint3(Size)))return;
+    float3 p=BoundsMin+(id+.5)/Size*BoundsSize;
+    float4 field=Density.Load(int4(id,0));
+    if(field.r<.001){Result[id]=field;return;}
+    float optical=0,distance=0,step=1.4;
+    [unroll]for(int j=0;j<18;j++)
+    {
+        optical+=sampleDensity(p+SunDirection*(distance+step*.5))*step;
+        distance+=step;step*=1.16;
+    }
+    // Two UNorm channels retain optical-depth precision through interpolation
+    // without doubling the 3D field's memory allocation.
+    float tau=min(optical*Extinction/24,.99999);
+    float2 encoded=frac(float2(1,255)*tau);encoded.x-=encoded.y/255;
+    Result[id]=float4(field.r,encoded,field.a);
+}

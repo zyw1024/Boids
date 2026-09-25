@@ -23,7 +23,7 @@ public sealed class SkyCityHeroReview
         var lod=GameObject.Find("Hanging Gardens - authored architecture").GetComponent<LODGroup>();
         var reflection=UnityEngine.Object.FindObjectOfType<SkyCityWaterReflection>();
         var renderer=AssetDatabase.LoadAssetAtPath<UniversalRendererData>(SkyCityHeroBuilder.Root+"/GardensRenderer.asset");
-        bool clouds=renderer.rendererFeatures.OfType<SkyCityAtmosphereFeature>().Any(f=>f.isActive&&f.cloudMaterial.GetTexture("_NoiseTex") is Texture3D);
+        bool clouds=renderer.rendererFeatures.OfType<SkyCityAtmosphereFeature>().Any(f=>f.isActive&&f.cloudMaterial.GetTexture("_NoiseTex") is Texture3D&&f.cloudMaterial.GetTexture("_CloudField") is Texture3D);
         var geometries=lod.GetLODs().Select(l=>l.renderers.OfType<MeshRenderer>().Select(r=>r.GetComponent<MeshFilter>().sharedMesh).Where(m=>m!=null).ToArray()).ToArray();
         var counts=geometries.Select(ms=>ms.Sum(m=>(long)m.GetIndexCount(0)/3)).ToArray();
         var report=new {passed=missing==0&&errors.Length==0&&counts.Length==3&&counts[0]>counts[1]&&counts[1]>counts[2]&&clouds&&LightmapSettings.lightmaps.Length>0,

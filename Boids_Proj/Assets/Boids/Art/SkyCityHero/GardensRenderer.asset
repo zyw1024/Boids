@@ -117,4 +117,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   cloudMaterial: {fileID: 2100000, guid: ea5c0316570f1fa46b14dffd087f0d45, type: 2}
-  resolutionScale: 0.75
+  resolutionScale: 1

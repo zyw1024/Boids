@@ -241,8 +241,8 @@ def leaf(p,length,width,normal,angle,c):
     u.normalize();v=n.cross(u);u,v=u*cos(angle)+v*sin(angle),-u*sin(angle)+v*cos(angle)
     origin=Vector(p);k=len(garden.v)
     outline=[(-1,0),(-.48,-.75),(.1,-1),(.67,-.57),(1,0),(.67,.57),(.1,1),(-.48,.75)]
-    garden.vert(origin+n*width*.32,mul(c,1.06))
-    for x,y in outline:garden.vert(origin+u*(x*length)+v*(y*width),mul(c,.94+.10*x))
+    garden.vert(origin+n*width*.12,mul(c,1.03),(.5,.5))
+    for x,y in outline:garden.vert(origin+u*(x*length)+v*(y*width),mul(c,.96+.06*x),((x+1)*.5,(y+1)*.5))
     for j in range(8):garden.f.append((k,k+1+j,k+1+(j+1)%8))
 
 def cypress(p,h,seed):
@@ -269,15 +269,15 @@ def tree(p,r,seed):
             leaf(q,rng.uniform(.065,.115),rng.uniform(.04,.078),n,rng.random()*pi,mix(rgb('395F53'),rgb('A3B677'),rng.random()))
 def ivy(p,length,seed,spread=.40):
     rng=random.Random(seed)
-    for strand in range(5):
+    for strand in range(7):
         root=add(p,(rng.uniform(-spread,spread),0,rng.uniform(-.2,.2)))
         end=add(root,(rng.uniform(-.3,.3),-length*rng.uniform(.55,1),-.12))
         path=[]
-        for j in range(15):
-            t=j/14;path.append(tuple(Vector(root).lerp(Vector(end),t)+Vector((sin(t*7+seed)*.08,0,-sin(t*pi)*.22))))
+        for j in range(19):
+            t=j/18;path.append(tuple(Vector(root).lerp(Vector(end),t)+Vector((sin(t*7+seed)*.08,0,-sin(t*pi)*.22))))
         branches.tube(path,.021,WOOD,5,.7)
-        for j in range(15):
-            q=path[j];r=rng.uniform(.11,.20)*(1-j/24)
+        for j in range(19):
+            q=path[j];r=rng.uniform(.075,.14)*(1-j/32)
             for side in (-1,1):
                 pos=add(q,(side*r*.7,rng.uniform(-.05,.08),-.035))
                 leaf(pos,r*1.2,r*.72,(rng.uniform(-.3,.3),rng.uniform(-.5,.3),-1),side*.75,mix(rgb('30574A'),rgb('91A968'),rng.random()))

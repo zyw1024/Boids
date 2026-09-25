@@ -40,14 +40,14 @@
     },
     {
       "name": "07 - Terrace gardens and hanging ivy",
-      "vertices": 976158,
-      "triangles": 879248,
+      "vertices": 1123362,
+      "triangles": 1010096,
       "family": "Foliage"
     },
     {
       "name": "08 - Roots and cypress trunks",
-      "vertices": 148190,
-      "triangles": 209530,
+      "vertices": 189080,
+      "triangles": 288490,
       "family": "Wood"
     },
     {
@@ -81,5 +81,5 @@
       "family": "Pool"
     }
   ],
-  "seconds": 70.61
+  "seconds": 75.88
 }

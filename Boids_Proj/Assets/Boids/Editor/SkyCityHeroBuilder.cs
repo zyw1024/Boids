@@ -88,10 +88,8 @@ public static class SkyCityHeroBuilder
         }
         var cloud=Mat("Rolling sunlit cloud banks","Boids/SkyCity/Hanging Gardens Clouds");
         cloud.SetTexture("_NoiseTex",AssetDatabase.LoadAssetAtPath<Texture3D>(SkyCitySceneBuilder.Root+"/PerlinWorleyVolume.asset"));
-        cloud.SetFloat("_Steps",192);cloud.SetFloat("_LightSteps",6);cloud.SetFloat("_Coverage",.64f);cloud.SetFloat("_Density",.44f);cloud.SetFloat("_Detail",.09f);
-        cloud.SetColor("_SunColor",new Color(1.25f,1.19f,1.14f));cloud.SetColor("_ShadeColor",new Color(.30f,.34f,.50f));
-        cloud.SetVector("_Wind",new Vector4(.38f,.01f,.12f,0));
-        var feature=renderer.rendererFeatures.OfType<SkyCityAtmosphereFeature>().First();feature.cloudMaterial=cloud;feature.resolutionScale=.75f;feature.SetActive(true);feature.Create();
+        cloud.SetTexture("_CloudField",AssetDatabase.LoadAssetAtPath<Texture3D>(SkyCityHeroCloudBuilder.FieldPath));
+        var feature=renderer.rendererFeatures.OfType<SkyCityAtmosphereFeature>().First();feature.cloudMaterial=cloud;feature.resolutionScale=1f;feature.SetActive(true);feature.Create();
         EditorUtility.SetDirty(cloud);EditorUtility.SetDirty(feature);renderer.SetDirty();EditorUtility.SetDirty(renderer);
         var pipeline=(UniversalRenderPipelineAsset)GraphicsSettings.currentRenderPipeline;
         var serialized=new SerializedObject(pipeline);var list=serialized.FindProperty("m_RendererDataList");
@@ -120,7 +118,7 @@ public static class SkyCityHeroBuilder
         PrefabUtility.SaveAsPrefabAsset(root,Root+"/HangingGardens.prefab");
         var camera=new GameObject("Gardens camera").AddComponent<Camera>();camera.tag="MainCamera";
         camera.transform.position=new Vector3(5,24,-72);camera.transform.LookAt(new Vector3(0,9.5f,11));
-        camera.fieldOfView=37;camera.nearClipPlane=.2f;camera.farClipPlane=330;camera.allowHDR=true;
+        camera.fieldOfView=37;camera.nearClipPlane=.2f;camera.farClipPlane=460;camera.allowHDR=true;
         camera.gameObject.AddComponent<RedonFixedFrame>();camera.aspect=1.5f;
         var data=camera.GetUniversalAdditionalCameraData();data.SetRenderer(rendererIndex);data.requiresDepthTexture=true;data.requiresColorTexture=true;data.renderPostProcessing=true;
         data.antialiasing=AntialiasingMode.SubpixelMorphologicalAntiAliasing;
@@ -148,7 +146,7 @@ public static class SkyCityHeroBuilder
         // Local probe volumes receive the actual sky and colour bleed when baked.
         var probes=new GameObject("Terrace light probes").AddComponent<LightProbeGroup>();var positions=new List<Vector3>();
         for(int x=-36;x<=24;x+=5)for(int z=0;z<=23;z+=5)foreach(float y in new[]{4f,8f,13f,19f,25f})positions.Add(new Vector3(x,y,z));probes.probePositions=positions.ToArray();
-        DynamicGI.UpdateEnvironment();
+        SkyCityHeroCloudBuilder.Bake();DynamicGI.UpdateEnvironment();
         foreach(var m in materials.Values)EditorUtility.SetDirty(m);EditorUtility.SetDirty(sky);
         EditorSceneManager.SaveScene(scene,ScenePath);AssetDatabase.SaveAssets();
         if(!EditorBuildSettings.scenes.Any(s=>s.path==ScenePath))EditorBuildSettings.scenes=EditorBuildSettings.scenes.Concat(new[]{new EditorBuildSettingsScene(ScenePath,true)}).ToArray();
@@ -261,9 +259,12 @@ public static class SkyCityHeroBuilder
         EditorUtility.SetDirty(lighting);EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());AssetDatabase.SaveAssets();
         if(!Lightmapping.BakeAsync())throw new InvalidOperationException("Unity could not start the light bake.");
     }
-    public static void Capture(string name="Overview")
+    public static void Capture(string name="Overview",float cloudTime=-1)
     {
         Directory.CreateDirectory("Captures/HangingGardens");
-        RedonSceneBuilder.CaptureCamera(Camera.main,"Captures/HangingGardens/"+name+".png",1800,1200);
+        var cloud=AssetDatabase.LoadAssetAtPath<Material>(Root+"/Rolling sunlit cloud banks.mat");
+        float prior=cloud.GetFloat("_CloudTime");cloud.SetFloat("_CloudTime",cloudTime);
+        try{RedonSceneBuilder.CaptureCamera(Camera.main,"Captures/HangingGardens/"+name+".png",1800,1200);}
+        finally{cloud.SetFloat("_CloudTime",prior);}
     }
 }

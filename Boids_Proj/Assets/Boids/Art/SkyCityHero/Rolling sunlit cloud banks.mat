@@ -23,20 +23,27 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _CloudField:
+        m_Texture: {fileID: 11700000, guid: 4d8fa563f7bba084984d357834a6320d, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _NoiseTex:
         m_Texture: {fileID: 11700000, guid: 11f7c6e9222e370469242177dc56123f, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _CloudTime: -1
     - _Coverage: 0.64
-    - _Density: 0.44
-    - _Detail: 0.09
+    - _Density: 0.58
+    - _Detail: 0.13
     - _InfiniteMode: 0
     - _LightSteps: 6
-    - _Steps: 192
+    - _Steps: 1536
     m_Colors:
-    - _ShadeColor: {r: 0.3, g: 0.34, b: 0.5, a: 1}
-    - _SunColor: {r: 1.25, g: 1.19, b: 1.14, a: 1}
+    - _FieldMin: {r: -160, g: -65, b: -55, a: 0}
+    - _FieldSize: {r: 350, g: 165, b: 350, a: 0}
+    - _ShadeColor: {r: 0.52, g: 0.52, b: 0.68, a: 1}
+    - _SunColor: {r: 1.12, g: 1.04, b: 0.94, a: 1}
     - _Wind: {r: 0.38, g: 0.01, b: 0.12, a: 0}
   m_BuildTextureStacks: []

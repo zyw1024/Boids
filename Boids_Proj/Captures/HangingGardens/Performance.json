@@ -12,11 +12,11 @@
     "frames": 2400,
     "renderedFrames": 2400,
     "errors": 0,
-    "reflectionUpdates": 971,
-    "seconds": 40.006231099999997,
-    "p95FrameMs": 16.670100390911104,
-    "p99FrameMs": 16.72009937465191,
-    "maxFrameMs": 17.47320033609867,
-    "gpuP95Ms": 14.288896,
-    "allocatedMiB": 70.72277545928955
+    "reflectionUpdates": 972,
+    "seconds": 40.006264300000008,
+    "p95FrameMs": 16.67040027678013,
+    "p99FrameMs": 16.72930084168911,
+    "maxFrameMs": 17.307600006461145,
+    "gpuP95Ms": 7.462912,
+    "allocatedMiB": 70.62499713897705
 }

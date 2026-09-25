@@ -93,6 +93,14 @@ _LeafMotion("Leaf motion",Float)=0
                 }
                 float broad=noise3(i.world*1.8),fine=noise3(i.world*13.0);
                 float3 albedo=lerp(i.color.rgb,_PigmentMean.rgb,_PigmentSmoothing)*_BaseColor.rgb*(.94+.09*broad+.04*fine);
+                if(_LeafMotion>.5)
+                {
+                    float width=max(.005,fwidth(i.uv.y));
+                    float rib=1-smoothstep(width,width*2,abs(i.uv.y-.5));
+                    float veins=1-smoothstep(.035,.08,abs(frac(i.uv.x*6-abs(i.uv.y-.5)*3)-.5));
+                    float fade=1-saturate(max(fwidth(i.uv.x),fwidth(i.uv.y))*18);
+                    albedo*=1+(rib*.10+veins*.045)*fade;
+                }
                 if(_TextureAmount>.01)
                 {
                     float3 weights=pow(abs(n),4);weights/=max(.001,weights.x+weights.y+weights.z);
