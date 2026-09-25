@@ -239,7 +239,7 @@ namespace Boids.Art.Infinite
                 child.transform.SetParent(c.root.transform,false); if (i >= 4) child.layer = 4;
                 c.filters[i] = child.AddComponent<MeshFilter>(); var renderer = child.AddComponent<MeshRenderer>(); c.renderers[i] = renderer;
                 renderer.sharedMaterial = i == 5 ? cascadeMaterial : i == 4 ? waterMaterial : architectureMaterial;
-                renderer.lightProbeUsage = LightProbeUsage.Off; renderer.reflectionProbeUsage = ReflectionProbeUsage.Off;
+                renderer.lightProbeUsage = LightProbeUsage.BlendProbes; renderer.reflectionProbeUsage = ReflectionProbeUsage.Simple;
             }
             return c;
         }

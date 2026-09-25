@@ -27,18 +27,22 @@ Shader "Boids/SkyCity/Reflecting Garden Water"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+            #include "SkyCityDaylight.hlsl"
             TEXTURE2D(_SkySceneColor);SAMPLER(sampler_SkySceneColor);
             TEXTURE2D(_SkyPlanarReflection);SAMPLER(sampler_SkyPlanarReflection);
             CBUFFER_START(UnityPerMaterial)
             float4 _ShallowColor,_DeepColor;float _FlowSpeed,_ReflectionStrength,_RippleStrength,_MultipleElevations,_OpticalDepth,_Reveal;
             CBUFFER_END
             float _SkyPlanarHeight;
+            float4x4 _SkyPlanarVP;
+            float4 _SkyWorldOffset;
             struct A{float3 position:POSITION;float2 uv:TEXCOORD0;};
             struct V{float4 position:SV_POSITION;float3 world:TEXCOORD0;float2 uv:TEXCOORD1;float fog:TEXCOORD2;};
             V vert(A a)
             {
                 V o;o.world=TransformObjectToWorld(a.position);
-                o.world.y+=sin(o.world.x*2.2+o.world.z*1.7-_Time.y*1.5)*.016+sin(o.world.z*3.2+_Time.y*1.2)*.008;
+                float2 absolute=o.world.xz+_SkyWorldOffset.xz;
+                o.world.y+=sin(absolute.x*2.2+absolute.y*1.7-_Time.y*1.5)*.016+sin(absolute.y*3.2+_Time.y*1.2)*.008;
                 o.position=TransformWorldToHClip(o.world);o.uv=a.uv;o.fog=ComputeFogFactor(o.position.z);return o;
             }
             float hash(float2 p){return frac(sin(dot(p,float2(127.1,311.7)))*43758.5453);}
@@ -46,7 +50,7 @@ Shader "Boids/SkyCity/Reflecting Garden Water"
             float currentPattern(float2 p){return noise(p*float2(4.5,1.4))*.64+noise(p*float2(9.2,2.1))*.36;}
             half4 frag(V i):SV_Target
             {
-                float t=_Time.y*_FlowSpeed;float2 p=i.world.xz;
+                float t=_Time.y*_FlowSpeed;float2 p=i.world.xz+_SkyWorldOffset.xz;
                 float a=dot(p,float2(2.2,1.7))-t*1.8,b=dot(p,float2(-1.4,3.6))-t*2.7,c=dot(p,float2(7.3,4.2))+t*4.1;
                 float2 slope=cos(a)*float2(2.2,1.7)*.022+cos(b)*float2(-1.4,3.6)*.012+cos(c)*float2(7.3,4.2)*.003;
                 // Two spillways drive a continuous current through the modeled basin.
@@ -68,14 +72,18 @@ Shader "Boids/SkyCity/Reflecting Garden Water"
                 float3 absorption=exp(-(depth+_OpticalDepth)*float3(.70,.25,.18));
                 float3 tint=lerp(_ShallowColor.rgb,_DeepColor.rgb,1-exp(-(depth+_OpticalDepth)*.4));
                 float3 water=under*absorption+tint*(1-absorption);
-                float3 reflected=SAMPLE_TEXTURE2D(_SkyPlanarReflection,sampler_SkyPlanarReflection,uv+normal.xz*_RippleStrength*.8).rgb;
-                if(_MultipleElevations>.5&&abs(i.world.y-_SkyPlanarHeight)>.12)
-                {
-                    // The closest visible garden receives the live planar image;
-                    // other elevations use sky reflection, never a wrong-plane image.
-                    float3 ray=reflect(-view,normal);
+                // Project into the camera that actually rendered the reflection.
+                // A 30 Hz image remains attached to the world during 60 Hz camera movement.
+                float4 reflectedClip=mul(_SkyPlanarVP,float4(i.world,1));
+                float2 reflectionUV=reflectedClip.xy/max(reflectedClip.w,.001)*.5+.5;
+                reflectionUV+=normal.xz*_RippleStrength*.8;
+                float3 ray=reflect(-view,normal);
+                float3 reflected=SkyCitySkyRadiance(ray);
+                if(dot(_SkySunDirection.xyz,_SkySunDirection.xyz)<.5)
                     reflected=lerp(float3(.74,.75,.79),float3(.20,.37,.57),saturate(ray.y));
-                }
+                bool correctPlane=_MultipleElevations<.5||abs(i.world.y-_SkyPlanarHeight)<.12;
+                if(correctPlane&&reflectedClip.w>0&&all(reflectionUV>0)&&all(reflectionUV<1))
+                    reflected=SAMPLE_TEXTURE2D(_SkyPlanarReflection,sampler_SkyPlanarReflection,reflectionUV).rgb;
                 float fresnel=.035+.965*pow(1-saturate(dot(normal,view)),5);
                 water=lerp(water,reflected,saturate(.18+fresnel*_ReflectionStrength));
                 Light sun=GetMainLight(TransformWorldToShadowCoord(i.world));

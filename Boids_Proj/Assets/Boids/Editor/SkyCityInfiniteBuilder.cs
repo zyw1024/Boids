@@ -70,6 +70,7 @@ public static class SkyCityInfiniteBuilder
         var flock=new GameObject("Travelling swallows").AddComponent<SkyCityVoyagerBirds>();
         flock.view=camera;flock.world=world;flock.material=architecture;flock.birdMesh=BuildBird();
         var benchmark=new GameObject("Streaming verification").AddComponent<SkyCityStreamingProbe>();benchmark.world=world;benchmark.voyager=voyager;
+        SkyCityRenderingSetup.ApplyToScene();
         EditorSceneManager.SaveScene(scene,ScenePath);AssetDatabase.SaveAssets();
         if(!EditorBuildSettings.scenes.Any(s=>s.path==ScenePath))EditorBuildSettings.scenes=EditorBuildSettings.scenes.Concat(new[]{new EditorBuildSettingsScene(ScenePath,true)}).ToArray();
         Debug.Log("Infinite Sky City saved: bootstrap only; zero resident districts in the scene file.");

@@ -26,6 +26,6 @@ Material:
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Horizon: {r: 0.81, g: 0.73, b: 0.64, a: 1}
-    - _Zenith: {r: 0.23, g: 0.42, b: 0.61, a: 1}
+    - _Horizon: {r: 0.84, g: 0.8, b: 0.78, a: 1}
+    - _Zenith: {r: 0.4, g: 0.6, b: 0.79, a: 1}
   m_BuildTextureStacks: []

@@ -1,6 +1,14 @@
 Shader "Boids/SkyCity/Modular Architecture"
 {
-    Properties { _Reveal("Arrival",Range(0,1))=1 _BridgeReveal("Connected bridge ends",Vector)=(1,1,1,1) _StoneTex("Mineral strata",2D)="white"{} }
+    Properties
+    {
+        _Reveal("Arrival",Range(0,1))=1
+        _BridgeReveal("Connected bridge ends",Vector)=(1,1,1,1)
+        _StoneTex("Mineral strata",2D)="white"{}
+        _ArchitectureTex("Honed limestone",2D)="white"{}
+        _StoneRelief("Limestone surface relief",Range(0,.3))=.065
+        _StoneVariation("Limestone variation",Range(0,1))=.32
+    }
     SubShader
     {
         Tags { "RenderPipeline"="UniversalPipeline" "RenderType"="Opaque" }
@@ -11,8 +19,11 @@ Shader "Boids/SkyCity/Modular Architecture"
         CBUFFER_START(UnityPerMaterial)
         float _Reveal;
         float4 _BridgeReveal;
+        float _StoneRelief,_StoneVariation;
         CBUFFER_END
+        float4 _SkyWorldOffset;
         TEXTURE2D(_StoneTex);SAMPLER(sampler_StoneTex);
+        TEXTURE2D(_ArchitectureTex);SAMPLER(sampler_ArchitectureTex);
         struct A { float3 p:POSITION; float3 n:NORMAL; float4 c:COLOR; float2 uv:TEXCOORD0; UNITY_VERTEX_INPUT_INSTANCE_ID };
         struct V { float4 p:SV_POSITION; float3 world:TEXCOORD0; float3 n:TEXCOORD1; float4 c:TEXCOORD2; float fog:TEXCOORD3; float connected:TEXCOORD4; };
         V vert(A a)
@@ -58,31 +69,48 @@ Shader "Boids/SkyCity/Modular Architecture"
             #pragma multi_compile_fog
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS _MAIN_LIGHT_SHADOWS_CASCADE _MAIN_LIGHT_SHADOWS_SCREEN
             #pragma multi_compile_fragment _ _SHADOWS_SOFT
+            #pragma multi_compile_fragment _ _SCREEN_SPACE_OCCLUSION
             half4 frag(V i,bool front:SV_IsFrontFace):SV_Target
             {
                 arrival(i.p.xy,i.connected);
                 half3 n=normalize(i.n)*(front?1:-1);
                 if(i.c.a>.72) { half3 fold=normalize(cross(ddy(i.world),ddx(i.world)));n=dot(fold,n)<0?-fold:fold; }
-                half pigment=sin(i.world.x*2.9+sin(i.world.z*3.1))*sin(i.world.y*4.3+i.world.z)*.024;
-                half3 albedo=i.c.rgb*(1+pigment);
+                float3 p=i.world+_SkyWorldOffset.xyz;
+                half3 albedo=i.c.rgb;
                 half rock=1-step(.035,abs(i.c.a-.1));
-                if(rock>.5)
-                {
-                    half3 blend=pow(abs(n),4);blend/=max(.001,blend.x+blend.y+blend.z);
-                    half3 mineral=SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,i.world.zy*.10).rgb*blend.x
-                        +SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,i.world.xz*.10).rgb*blend.y
-                        +SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,i.world.xy*.10).rgb*blend.z;
-                    albedo*=lerp(.43,1.75,saturate(dot(mineral,half3(.3,.5,.2))*1.5));
-                }
+                half copper=1-step(.06,abs(i.c.a-.2));half gold=1-step(.06,abs(i.c.a-.6));
+                half stone=1-step(.035,i.c.a);
+                half leaf=1-step(.06,abs(i.c.a-.4));
+                half3 blend=pow(abs(n),4);blend/=max(.001,blend.x+blend.y+blend.z);
+                float scale=lerp(.18,.10,rock);
+                half3 mineral;
+                if(stone>.5)
+                    mineral=SAMPLE_TEXTURE2D(_ArchitectureTex,sampler_ArchitectureTex,p.zy*.65).rgb*blend.x
+                        +SAMPLE_TEXTURE2D(_ArchitectureTex,sampler_ArchitectureTex,p.xz*.65).rgb*blend.y
+                        +SAMPLE_TEXTURE2D(_ArchitectureTex,sampler_ArchitectureTex,p.xy*.65).rgb*blend.z;
+                else mineral=SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,p.zy*scale).rgb*blend.x
+                    +SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,p.xz*scale).rgb*blend.y
+                    +SAMPLE_TEXTURE2D(_StoneTex,sampler_StoneTex,p.xy*scale).rgb*blend.z;
+                float height=dot(mineral,half3(.3,.5,.2));
+                albedo*=lerp(1,lerp(.43,1.75,saturate(height*1.5)),rock);
+                albedo*=lerp(1,clamp(height/.72,.65,1.15),stone*_StoneVariation);
+                // Oxide is matte; exposed copper catches the sky in a softer highlight.
+                half patina=smoothstep(.15,.52,height);
+                albedo=lerp(albedo,lerp(albedo*half3(1.06,.91,.77),albedo*half3(.86,1.07,1.11),patina),copper*.45);
+                float relief=rock*.16+stone*_StoneRelief+copper*.008;
+                float3 dx=ddx(i.world),dy=ddy(i.world),r1=cross(dy,n),r2=cross(n,dx);
+                float det=dot(dx,r1);
+                float3 gradient=(r1*ddx(height)+r2*ddy(height))*sign(det)/max(abs(det),.00001);
+                n=normalize(n-gradient*relief);
                 InputData input=(InputData)0;input.positionWS=i.world;input.normalWS=n;
                 input.viewDirectionWS=SafeNormalize(GetWorldSpaceViewDir(i.world));input.shadowCoord=TransformWorldToShadowCoord(i.world);
-                input.bakedGI=lerp(half3(.12,.17,.24),half3(.34,.42,.53),n.y*.5+.5);
+                input.bakedGI=SampleSH(n);
                 input.normalizedScreenSpaceUV=GetNormalizedScreenSpaceUV(i.p);input.shadowMask=1;
                 SurfaceData s=(SurfaceData)0;s.albedo=albedo;s.alpha=1;s.occlusion=1;s.normalTS=half3(0,0,1);
-                half copper=1-step(.06,abs(i.c.a-.2));half gold=1-step(.06,abs(i.c.a-.6));
-                s.metallic=copper*.28+gold*.52;s.smoothness=.20+copper*.2+gold*.25;
+                s.metallic=copper*lerp(.60,.24,patina)+gold*.72;
+                s.smoothness=.16+stone*height*.16+copper*lerp(.32,.12,patina)+gold*.4;
                 Light sun=GetMainLight(input.shadowCoord);
-                half leaf=1-step(.06,abs(i.c.a-.4));s.emission=albedo*leaf*saturate(dot(-n,sun.direction))*.22;
+                s.emission=albedo*leaf*sun.color*saturate(dot(-n,sun.direction))*.12*sun.shadowAttenuation;
                 return half4(MixFog(UniversalFragmentPBR(input,s).rgb,i.fog),1);
             }
             ENDHLSL

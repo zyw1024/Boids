@@ -13,6 +13,8 @@ namespace Boids.Art
         [Range(1,60)] public int updatesPerSecond=60;
         public float maximumReflectionDistance=0;
         double nextUpdate;
+        Vector4 renderedOrigin;
+        float renderedHeight;
         Camera reflectedCamera;
         RenderTexture reflection;
         static bool rendering;
@@ -24,12 +26,15 @@ namespace Boids.Art
             RenderPipelineManager.beginCameraRendering-=RenderReflection;
             if(reflectedCamera!=null)DestroyOwned(reflectedCamera.gameObject);
             if(reflection!=null){reflection.Release();DestroyOwned(reflection);}
+            Shader.SetGlobalMatrix("_SkyPlanarVP",Matrix4x4.zero);
         }
         static void DestroyOwned(Object item){if(Application.isPlaying)Destroy(item);else DestroyImmediate(item);}
         void RenderReflection(ScriptableRenderContext context,Camera source)
         {
             if(rendering||source!=Camera.main||source.cameraType==CameraType.Reflection)return;
-            if(Application.isPlaying&&Time.unscaledTimeAsDouble<nextUpdate)return;
+            Vector4 origin=Shader.GetGlobalVector("_SkyWorldOffset");
+            // A rebase or a new pool plane invalidates the previous projection immediately.
+            if(Application.isPlaying&&reflection!=null&&origin==renderedOrigin&&Mathf.Abs(waterHeight-renderedHeight)<.001f&&Time.unscaledTimeAsDouble<nextUpdate)return;
             nextUpdate=Time.unscaledTimeAsDouble+1.0/Mathf.Max(1,updatesPerSecond);
             if(reflectedCamera==null)
             {
@@ -66,6 +71,8 @@ namespace Boids.Art
                 UniversalRenderPipeline.RenderSingleCamera(context,reflectedCamera);
 #pragma warning restore 0618
                 Shader.SetGlobalTexture("_SkyPlanarReflection",reflection);Shader.SetGlobalFloat("_SkyPlanarHeight",waterHeight);RenderCount++;
+                Shader.SetGlobalMatrix("_SkyPlanarVP",GL.GetGPUProjectionMatrix(reflectedCamera.projectionMatrix,true)*reflectedCamera.worldToCameraMatrix);
+                renderedOrigin=origin;renderedHeight=waterHeight;
             }
             finally{GL.invertCulling=previous;rendering=false;}
         }

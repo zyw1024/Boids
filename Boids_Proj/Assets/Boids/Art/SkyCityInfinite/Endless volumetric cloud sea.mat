@@ -30,14 +30,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Coverage: 0.53
-    - _Density: 0.48
-    - _Detail: 0.065
+    - _Coverage: 0.58
+    - _Density: 0.36
+    - _Detail: 0.085
     - _InfiniteMode: 1
-    - _LightSteps: 4
-    - _Steps: 96
+    - _LightSteps: 5
+    - _Steps: 112
     m_Colors:
-    - _ShadeColor: {r: 0.24, g: 0.27, b: 0.38, a: 1}
-    - _SunColor: {r: 1.85, g: 1.6, b: 1.3, a: 1}
+    - _ShadeColor: {r: 0.27, g: 0.35, b: 0.52, a: 1}
+    - _SunColor: {r: 1.08, g: 1.1, b: 1.18, a: 1}
     - _Wind: {r: 0.95, g: 0.025, b: 0.22, a: 0}
   m_BuildTextureStacks: []

@@ -22,6 +22,7 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DeclareDepthTexture.hlsl"
+        #include "SkyCityDaylight.hlsl"
         TEXTURE3D(_NoiseTex);SAMPLER(sampler_NoiseTex);
         TEXTURE2D(_SkyCloudVolume);SAMPLER(sampler_SkyCloudVolume);
         float4 _CloudTargetSize;
@@ -41,12 +42,17 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
                 // The low layer stays open around terraces; tall banks frame silhouettes.
                 float2 drift=absolute.xz-_Wind.xz*_Time.y*.32;
                 float bank=saturate(sin(drift.x*.018+sin(drift.y*.013))*cos(drift.y*.019-drift.x*.004));
-                float ceiling=-5+weather*32+pow(bank,3)*80;
+                float ceiling=-5+weather*32+pow(bank,2)*86;
+                // Cities are centered at (42,42) in each 168 m district. Keep the
+                // inhabited terraces clear, even as weather drifts across the grid.
+                float2 cityDelta=frac((absolute.xz-42+84)/168)*168-84;
+                float clearing=smoothstep(39,67,length(cityDelta));
+                ceiling=lerp(1,ceiling,clearing);
                 if(world.y<-58||world.y>ceiling)return 0;
                 float h=remap(world.y,-58,ceiling);
                 float profile=smoothstep(0,.16,h)*(1-smoothstep(.53,1,h));
                 float3 p=absolute-_Wind.xyz*_Time.y;
-                float4 n=SAMPLE_TEXTURE3D_LOD(_NoiseTex,sampler_NoiseTex,p*.015,0);
+                float4 n=SAMPLE_TEXTURE3D_LOD(_NoiseTex,sampler_NoiseTex,p*.011,0);
                 float base=n.r*.78+n.g*.22;
                 float d=remap(base*profile,1-(_Coverage+weather*.17),1);
                 if(detail&&d>.002)
@@ -132,7 +138,7 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
                 uint2 pixel=(uint2)floor(i.uv*_CloudTargetSize.xy);
                 uint bits=pixel.x*1973u+pixel.y*9277u+89173u;bits=(bits<<13)^bits;
                 float jitter=(bits*(bits*bits*15731u+789221u)+1376312589u)/4294967295.0;
-                float3 light=normalize(float3(.65,.65,.45));
+                float3 light=_InfiniteMode>.5?GetMainLight().direction:normalize(float3(.65,.65,.45));
                 float mu=dot(ray,light);float phase=.6+.4*pow(saturate(mu),5);
                 float transmittance=1;float3 color=0;
                 [loop]for(int j=0;j<steps;j++)
@@ -143,9 +149,11 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
                     float sun=sunlight(p,light);
                     float silver=pow(saturate(mu),9)*sun*.75;
                     float ambient=saturate((p.y+20)/40)*.17;
-                    float3 lightColor=_ShadeColor.rgb*(.9+ambient)+_SunColor.rgb*(sun*phase+silver);
+                    float3 sunTint=_InfiniteMode>.5?GetMainLight().color:float3(1,1,1);
+                    float3 lightColor=_ShadeColor.rgb*(.9+ambient)+_SunColor.rgb*sunTint*(sun*phase+silver);
                     float haze=1-exp(-distance*.0030);
-                    lightColor=lerp(lightColor,float3(.63,.70,.86),haze*.55);
+                    float3 horizon=_InfiniteMode>.5?SkyCitySkyRadiance(ray):float3(.63,.70,.86);
+                    lightColor=lerp(lightColor,horizon,haze*.45);
                     float alpha=1-exp(-d*step*_Density);
                     color+=lightColor*alpha*transmittance;transmittance*=1-alpha;
                     if(transmittance<.008)break;
