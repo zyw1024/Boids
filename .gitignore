@@ -89,6 +89,20 @@ __pycache__/
 !/Boids_Proj/Captures/SkyCity_Validation.json
 !/Boids_Proj/Captures/SkyCity_RuntimeValidation.json
 !/Boids_Proj/Captures/SkyCity_LongFlightValidation.json
+!/Boids_Proj/Captures/SkyCityInfinite_Style.png
+!/Boids_Proj/Captures/SkyCityInfinite_128Modules.png
+!/Boids_Proj/Captures/SkyCityInfinite_Travel.mp4
+!/Boids_Proj/Captures/SkyCityInfinite_SolverValidation.json
+!/Boids_Proj/Captures/SkyCityInfinite_AssetValidation.json
+!/Boids_Proj/Captures/SkyCityInfinite_PlayerPerformance.json
+!/Boids_Proj/Captures/SkyCityInfinite_Build.json
+!/Boids_Proj/Captures/SkyCityInfinite_District*.png
+!/Boids_Proj/Captures/SkyCityInfinite_Water.png
+!/Boids_Proj/Captures/SkyCityInfinite_Water.mp4
+!/Boids_Proj/Captures/SkyCityInfinite_WaterValidation.json
+!/Boids_Proj/Captures/SkyCityInfinite_WaterEarlierRuns.json
+!/Boids_Proj/Captures/SkyCityInfinite_Structure*.png
+!/Boids_Proj/Captures/SkyCityInfinite_Structure*.json
 
 # Superseded local cloud-density experiments; the scene uses PerlinWorleyVolume.
 /Boids_Proj/Assets/Boids/Art/SkyCity/CloudDensity.asset*

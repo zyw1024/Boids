@@ -2,6 +2,14 @@
 
 **用 AI Vibe Coding 制作可欣赏、可交互的 Boids 场景。**
 
+**无限世界：天空之城 · 无尽风之庭园。** 打开 `Assets/Boids/Scenes/SkyCityInfinite.unity`，用 W / A / S / D 在云海上旅行，右键环顾、Q / E 升降、Shift 加速、Space 自动前行、F 返回。WFC 使用 **128 个实际建模模块**生成街区，组合为宫殿、修道院、花园、书库、孤塔、水庭、村落和遗迹八种城市轮廓。群岛错落在不同高度，长桥跨过云谷，邻近区域避免相同地标。按相机位置加载和卸载，最多驻留 25 个区块。
+
+![无尽风之庭园 — Unity 实际运行画面](Boids_Proj/Captures/SkyCityInfinite_Style.png)
+
+[128 个模块总览](Boids_Proj/Captures/SkyCityInfinite_128Modules.png) · [制作与流式加载说明](ArtSource/SkyCity/Infinite/README.md) · [独立程序性能验证](Boids_Proj/Captures/SkyCityInfinite_PlayerPerformance.json)。采用后台 WFC、分帧网格上传、远近 LOD、区块容器复用和浮动原点；体积云、反射水面、飘旗、鸟群与原创配乐持续运行。
+
+[查看八种城市的实际画面](ArtSource/SkyCity/Infinite/Gallery.md)。地标高度、岛体比例、连接密度与植物配置共同形成变化；长期游览仍可能识别出有限的美术词汇。
+
 最新增加 **「天空之城 · 风之庭园」**：晨光云海中的三维宫殿、空中花园、悬桥、瀑布和 64 只振翅飞行的燕子。打开 `Assets/Boids/Scenes/SkyCity.unity` 后按 Play，左键点击天空可引导鸟群，右键环视、滚轮缩放、中键平移、F 复位、M 开关音乐。云海漂移、旗帜飘动，80 秒原创钢琴／竖琴／弦乐配乐循环播放。
 
 ![天空之城 — Unity 实际相机渲染](Boids_Proj/Captures/SkyCity_Style.png)

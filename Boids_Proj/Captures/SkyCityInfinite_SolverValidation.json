@@ -1,0 +1,18 @@
+{
+    "passed": true,
+    "deterministic": true,
+    "orderIndependent": true,
+    "cancellationObserved": true,
+    "chunks": 108,
+    "neighborChecks": 12096,
+    "seamChecks": 1152,
+    "observations": 3461,
+    "propagations": 843368,
+    "restarts": 0,
+    "fallbacks": 0,
+    "moduleCount": 128,
+    "distinctModulesObserved": 104,
+    "silhouetteChecks": 864,
+    "elapsedMilliseconds": 159.60490000000002,
+    "error": ""
+}

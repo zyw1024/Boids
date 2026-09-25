@@ -10,6 +10,9 @@ namespace Boids.Art
         public float waterHeight=2.42f;
         public int rendererIndex;
         public int textureWidth=1024;
+        [Range(1,60)] public int updatesPerSecond=60;
+        public float maximumReflectionDistance=0;
+        double nextUpdate;
         Camera reflectedCamera;
         RenderTexture reflection;
         static bool rendering;
@@ -26,6 +29,8 @@ namespace Boids.Art
         void RenderReflection(ScriptableRenderContext context,Camera source)
         {
             if(rendering||source!=Camera.main||source.cameraType==CameraType.Reflection)return;
+            if(Application.isPlaying&&Time.unscaledTimeAsDouble<nextUpdate)return;
+            nextUpdate=Time.unscaledTimeAsDouble+1.0/Mathf.Max(1,updatesPerSecond);
             if(reflectedCamera==null)
             {
                 var go=new GameObject("Water garden reflection camera"){hideFlags=HideFlags.HideAndDontSave};
@@ -41,6 +46,7 @@ namespace Boids.Art
             }
             reflectedCamera.CopyFrom(source);reflectedCamera.enabled=false;reflectedCamera.cameraType=CameraType.Reflection;
             reflectedCamera.targetTexture=reflection;reflectedCamera.rect=new Rect(0,0,1,1);
+            if(maximumReflectionDistance>0)reflectedCamera.farClipPlane=Mathf.Min(source.farClipPlane,maximumReflectionDistance);
             reflectedCamera.cullingMask=source.cullingMask&~(1<<4);reflectedCamera.allowMSAA=false;
             var data=reflectedCamera.GetUniversalAdditionalCameraData();data.SetRenderer(rendererIndex);
             data.renderPostProcessing=false;data.requiresDepthTexture=true;data.requiresColorTexture=true;
@@ -51,7 +57,7 @@ namespace Boids.Art
             var clipPoint=reflectedCamera.worldToCameraMatrix.MultiplyPoint(new Vector3(0,waterHeight+.035f,0));
             var normal=reflectedCamera.worldToCameraMatrix.MultiplyVector(Vector3.up).normalized;
             var plane=new Vector4(normal.x,normal.y,normal.z,-Vector3.Dot(clipPoint,normal));
-            reflectedCamera.projectionMatrix=source.CalculateObliqueMatrix(plane);
+            reflectedCamera.projectionMatrix=reflectedCamera.CalculateObliqueMatrix(plane);
             bool previous=GL.invertCulling;
             try
             {
@@ -59,7 +65,7 @@ namespace Boids.Art
 #pragma warning disable 0618
                 UniversalRenderPipeline.RenderSingleCamera(context,reflectedCamera);
 #pragma warning restore 0618
-                Shader.SetGlobalTexture("_SkyPlanarReflection",reflection);RenderCount++;
+                Shader.SetGlobalTexture("_SkyPlanarReflection",reflection);Shader.SetGlobalFloat("_SkyPlanarHeight",waterHeight);RenderCount++;
             }
             finally{GL.invertCulling=previous;rendering=false;}
         }

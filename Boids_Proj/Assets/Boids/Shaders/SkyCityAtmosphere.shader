@@ -9,6 +9,9 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
         _Wind("Wind velocity",Vector)=(.95,.025,.22,0)
         _SunColor("Sun scattering",Color)=(2.1,1.77,1.42,1)
         _ShadeColor("Sky scattering",Color)=(.22,.29,.48,1)
+        _InfiniteMode("Endless cloud field",Float)=0
+        _Steps("Ray samples",Range(32,224))=224
+        _LightSteps("Light samples",Range(3,7))=7
     }
     SubShader
     {
@@ -22,14 +25,42 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
         TEXTURE3D(_NoiseTex);SAMPLER(sampler_NoiseTex);
         TEXTURE2D(_SkyCloudVolume);SAMPLER(sampler_SkyCloudVolume);
         float4 _CloudTargetSize;
+        float4 _SkyWorldOffset;
         CBUFFER_START(UnityPerMaterial)
         float _Density,_Coverage,_Detail;float4 _Wind,_SunColor,_ShadeColor;
+        float _InfiniteMode,_Steps,_LightSteps;
         CBUFFER_END
         struct V {float4 positionCS:SV_POSITION;float2 uv:TEXCOORD0;};
         V vert(uint id:SV_VertexID){V o;o.positionCS=GetFullScreenTriangleVertexPosition(id);o.uv=GetFullScreenTriangleTexCoord(id);return o;}
         float remap(float v,float lo,float hi){return saturate((v-lo)/max(.001,hi-lo));}
+        float infiniteDensity(float3 world,bool detail)
+        {
+                float3 absolute=world+_SkyWorldOffset.xyz;
+                float weather=SAMPLE_TEXTURE3D_LOD(_NoiseTex,sampler_NoiseTex,float3(absolute.x*.0035,.17,absolute.z*.0035),0).r;
+                // Large drifting cloud towers occupy the spaces between cities.
+                // The low layer stays open around terraces; tall banks frame silhouettes.
+                float2 drift=absolute.xz-_Wind.xz*_Time.y*.32;
+                float bank=saturate(sin(drift.x*.018+sin(drift.y*.013))*cos(drift.y*.019-drift.x*.004));
+                float ceiling=-5+weather*32+pow(bank,3)*80;
+                if(world.y<-58||world.y>ceiling)return 0;
+                float h=remap(world.y,-58,ceiling);
+                float profile=smoothstep(0,.16,h)*(1-smoothstep(.53,1,h));
+                float3 p=absolute-_Wind.xyz*_Time.y;
+                float4 n=SAMPLE_TEXTURE3D_LOD(_NoiseTex,sampler_NoiseTex,p*.015,0);
+                float base=n.r*.78+n.g*.22;
+                float d=remap(base*profile,1-(_Coverage+weather*.17),1);
+                if(detail&&d>.002)
+                {
+                    float4 fine=SAMPLE_TEXTURE3D_LOD(_NoiseTex,sampler_NoiseTex,p*.067+_Time.y*float3(.009,.002,-.004),0);
+                    d=remap(d,(1-(fine.g*.55+fine.b*.3+fine.a*.15))*_Detail,1);
+                }
+                return d*5;
+        }
         float cloudDensity(float3 world,bool detail)
         {
+            #if defined(SKY_INFINITE_CLOUDS)
+            return infiniteDensity(world,detail);
+            #else
             // Near banks travel faster than the distant towers, with gentle vertical rolling.
             float shear=lerp(1.25,.60,saturate((world.z-10)/180));
             float3 p=world-_Wind.xyz*_Time.y*shear;
@@ -57,12 +88,14 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
                 d=remap(d,erosion,1);
             }
             return d*5;
+            #endif
         }
         float sunlight(float3 p,float3 direction)
         {
             float optical=0,distance=0,step=1.5;
             [unroll]for(int j=0;j<7;j++)
             {
+                if(j>=(int)_LightSteps)break;
                 distance+=step*.5;
                 optical+=cloudDensity(p+direction*distance,false)*step;
                 distance+=step*.5;step*=1.55;
@@ -77,6 +110,7 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            #pragma shader_feature_local_fragment _ SKY_INFINITE_CLOUDS
             half4 frag(V i):SV_Target
             {
                 float raw=SampleSceneDepth(i.uv);
@@ -85,21 +119,23 @@ Shader "Boids/SkyCity/Atmosphere Raymarch"
                 #endif
                 float3 farPoint=ComputeWorldSpacePosition(i.uv,raw,UNITY_MATRIX_I_VP);
                 float3 origin=GetCameraPositionWS(),ray=normalize(farPoint-origin);
-                float maxDistance=min(length(farPoint-origin),330);
+                float maxDistance=min(length(farPoint-origin),_InfiniteMode>.5?580:330);
                 float3 bmin=float3(-160,-60,-42),bmax=float3(160,84,275);
+                if(_InfiniteMode>.5){bmin=float3(origin.x-580,-60,origin.z-580);bmax=float3(origin.x+580,100,origin.z+580);}
                 float3 inv=rcp(ray),a=(bmin-origin)*inv,b=(bmax-origin)*inv;
                 float3 near3=min(a,b),far3=max(a,b);
                 float entry=max(0,max(near3.x,max(near3.y,near3.z)));
                 float end=min(maxDistance,min(far3.x,min(far3.y,far3.z)));
                 if(end<=entry)return 0;
-                float step=(end-entry)/224;
+                int steps=clamp((int)_Steps,32,224);
+                float step=(end-entry)/steps;
                 uint2 pixel=(uint2)floor(i.uv*_CloudTargetSize.xy);
                 uint bits=pixel.x*1973u+pixel.y*9277u+89173u;bits=(bits<<13)^bits;
                 float jitter=(bits*(bits*bits*15731u+789221u)+1376312589u)/4294967295.0;
                 float3 light=normalize(float3(.65,.65,.45));
                 float mu=dot(ray,light);float phase=.6+.4*pow(saturate(mu),5);
                 float transmittance=1;float3 color=0;
-                [loop]for(int j=0;j<224;j++)
+                [loop]for(int j=0;j<steps;j++)
                 {
                     float distance=entry+(j+jitter)*step;
                     float3 p=origin+ray*distance;

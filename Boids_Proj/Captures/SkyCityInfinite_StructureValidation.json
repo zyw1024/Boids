@@ -1,0 +1,17 @@
+{
+    "passed": true,
+    "nativeBridgeLods": 48,
+    "pointedRoofLods": 6,
+    "links": 388,
+    "seamPoints": 4656,
+    "compositions": 8,
+    "generatedLods": 96,
+    "triangles": 656616,
+    "steepSpans": 275,
+    "maxSeamError": 0.000003814697265625,
+    "maxEntranceRadius": 34.82990646362305,
+    "maxFootingRadius": 21.437074661254884,
+    "minBayLength": 9.990887641906739,
+    "maxBayLength": 11.981222152709961,
+    "error": ""
+}
