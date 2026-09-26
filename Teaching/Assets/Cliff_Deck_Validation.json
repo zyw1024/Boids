@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "slides": 15,
+  "changedVisualSlides": [
+    1,
+    2,
+    12,
+    14,
+    15
+  ],
+  "otherSlideXmlIdentical": true,
+  "otherSlidesRenderingRoundingOnly": {
+    "8": {
+      "pixels": 5,
+      "maxChannelDifference": 1
+    },
+    "10": {
+      "pixels": 8,
+      "maxChannelDifference": 1
+    },
+    "11": {
+      "pixels": 1,
+      "maxChannelDifference": 1
+    }
+  },
+  "nativeAlgorithmTablePreserved": true,
+  "hyperlinksPreserved": 21,
+  "logoPreserved": true,
+  "embeddedVideoSha256": "095641a43b900fa4aed5ccf98f6a2bd11ad7c2a022c6a3bee7211030f765f5b6",
+  "sourceSha256": "9b77ad599309a2ad62f7c53344621b9f49b14c5f661d3feaeb5de7832925af64",
+  "finalSha256": "0ca9ebdae15cf8713778df515e3a503bae44f707c5e42a699262c7138dd48b22",
+  "bytes": 84080570
+}

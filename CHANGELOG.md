@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-26 · Cliff redesign classroom update
+
+- Refresh the 15-slide classroom presentation while retaining the instructor's slide order, layout conventions, HKUST (Guangzhou) logo, native algorithm table and existing hyperlinks.
+- Replace the current-scene pictures and embedded demonstration with the latest limestone-cliff assets. Keep the 72-second tour at 1080p and 30 fps with the original audio; compress the classroom copy for practical downloading.
+- Update slide 12 with same-view rock before/after images, the latest translated feedback and Chinese notes explaining large forms, fracture planes, texture scale, lighting and vegetation transitions. Update source references to `04570b0`.
+
 ## 2026-09-26 · Authored cliff forms and limestone lighting
 
 - Replace the repeated scanned-face island assembly with nine authored cliff compositions. Design large masses, unequal pendant buttresses, lean and fracture planes before adding surface erosion. Retain editable Blender sources and deterministic seed selection for the landmark and streamed districts.
