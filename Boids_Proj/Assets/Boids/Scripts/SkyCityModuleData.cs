@@ -83,7 +83,7 @@ namespace Boids.Art.Infinite
             return g;
         }
 
-        public Payload Build(SkyCityWfc.Result layout, int lod, CancellationToken cancellation)
+        public Payload Build(SkyCityWfc.Result layout, int lod, CancellationToken cancellation,bool reserveArrival=false)
         {
             var payload = new Payload { layout = layout, lod = lod };
             var bridges=new Geometry[SkyCityWfc.CellCount];
@@ -91,7 +91,13 @@ namespace Boids.Art.Infinite
             {
                 int x=cell%8,z=cell/8,state=layout.states[cell];
                 if(state!=SkyCityWfc.Empty&&(x==0||x==7||z==0||z==7))
-                { cancellation.ThrowIfCancellationRequested(); bridges[cell]=SkyCityBridgeGeometry.Build(layout,cell,lod,modules[state/4,lod,0]); }
+                {
+                    cancellation.ThrowIfCancellationRequested();
+                    long nx=layout.coord.x+(x==0?-1:x==7?1:0),nz=layout.coord.z+(z==0?-1:z==7?1:0);
+                    // The authored island has its own outline. Do not create an
+                    // invisible bridge collider leading to a missing WFC island.
+                    bridges[cell]=reserveArrival&&nx==0&&nz==0?Allocate(0,0):SkyCityBridgeGeometry.Build(layout,cell,lod,modules[state/4,lod,0]);
+                }
             }
             for (int patch = 0; patch < 4; patch++) payload.opaque[patch] = Combine(layout, lod, 0, patch, cancellation,bridges);
             payload.water = Combine(layout, lod, 1, -1, cancellation,bridges);
@@ -156,12 +162,12 @@ namespace Boids.Art.Infinite
             // Unity positive yaw rotates +Z toward +X; sockets rotate identically.
             switch (r) { case 1:return new Vector3(p.z,p.y,-p.x); case 2:return new Vector3(-p.x,p.y,-p.z); case 3:return new Vector3(-p.z,p.y,p.x); default:return p; }
         }
-        public static Mesh Upload(Geometry g, string name)
+        public static Mesh Upload(Geometry g, string name,bool keepReadable=false)
         {
             var mesh = new Mesh { name = name, indexFormat = g.vertices.Length > 65535 ? UnityEngine.Rendering.IndexFormat.UInt32 : UnityEngine.Rendering.IndexFormat.UInt16 };
             mesh.vertices = g.vertices; mesh.normals = g.normals; mesh.colors32 = g.colors; mesh.uv = g.uv;
             mesh.SetIndices(g.indices, MeshTopology.Triangles, 0, true);
-            mesh.UploadMeshData(true); return mesh;
+            mesh.UploadMeshData(!keepReadable); return mesh;
         }
     }
 }

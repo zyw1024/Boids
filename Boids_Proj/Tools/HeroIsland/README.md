@@ -1,5 +1,7 @@
 # Hanging Gardens / 空中花园主岛样板
 
+第一人称探索及 Esc 鸟群菜单现已集成到独立的 `SkyCityWorld.unity` 场景，见 [世界操作与实现说明](../SkyCityWorld/README.md)。本页保留固定构图样板的操作方式与历史验证记录。
+
 打开 `Assets/Boids/Scenes/SkyCityHangingGardens.unity`，进入 Play。
 右键环绕，中键平移，滚轮接近，F 返回开场；左键可在鸟群活动区域引导飞行。
 场景继续使用 Unity 2022.3.62f2c1 / URP 14.0.12。

@@ -1,0 +1,13 @@
+{
+  "recorder": "Unity Recorder 4.0.3",
+  "scene": "SkyCityWorld",
+  "fps": 30,
+  "audio": true,
+  "birdCallAtSecond": 1,
+  "camera": "First person tour",
+  "performanceBenchmark": false,
+  "timelineFrames": 900,
+  "encodedFrames": 899,
+  "encodedSeconds": 29.966633,
+  "source": "Unity Recorder Game View (includes overlay menu)"
+}

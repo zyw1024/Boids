@@ -12,6 +12,7 @@ Shader "Boids/SkyCity/Hanging Gardens Clouds"
         _ShadeColor("Sky scattering",Color)=(.49,.54,.67,1)
         _Steps("Ray samples",Range(64,1536))=1536
         _CloudTime("Preview time, negative for live animation",Float)=-1
+        _Endless("Continuous world cloud sea",Float)=0
     }
     SubShader
     {
@@ -27,9 +28,10 @@ Shader "Boids/SkyCity/Hanging Gardens Clouds"
         TEXTURE3D(_CloudField);SAMPLER(sampler_CloudField);
         TEXTURE2D(_SkyCloudVolume);SAMPLER(sampler_SkyCloudVolume);
         float4 _CloudTargetSize;
+        float4 _SkyWorldOffset;
         CBUFFER_START(UnityPerMaterial)
         float4 _FieldMin,_FieldSize,_SunColor,_ShadeColor;
-        float _Density,_Detail,_Steps,_CloudTime;
+        float _Density,_Detail,_Steps,_CloudTime,_Endless;
         CBUFFER_END
         struct V{float4 positionCS:SV_POSITION;float2 uv:TEXCOORD0;};
         V vert(uint id:SV_VertexID){V o;o.positionCS=GetFullScreenTriangleVertexPosition(id);o.uv=GetFullScreenTriangleTexCoord(id);return o;}
@@ -42,8 +44,26 @@ Shader "Boids/SkyCity/Hanging Gardens Clouds"
         float4 field(float3 p)
         {
             float3 uv=(p-_FieldMin.xyz)/_FieldSize.xyz;
-            if(any(uv<0)||any(uv>1))return float4(0,0,1,1);
-            return SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,uv,0);
+            float4 result=float4(0,0,1,1);
+            if(_Endless>.5)
+            {
+                // 70 m overlaps blend neighbouring 280 m cells. 84000 m, the
+                // floating-origin noise period, is an exact multiple of 280.
+                float2 local=p.xz+_SkyWorldOffset.xz-_FieldMin.xz;
+                local-=floor(local/280)*280;
+                float2 blend=smoothstep(0,70,local);
+                float3 a=float3(local.x/_FieldSize.x,uv.y,local.y/_FieldSize.z);
+                float3 dx=float3(280/_FieldSize.x,0,0),dz=float3(0,0,280/_FieldSize.z);
+                float4 f00=SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,a,0);
+                float4 f10=SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,a+dx,0);
+                float4 f01=SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,a+dz,0);
+                float4 f11=SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,a+dx+dz,0);
+                result=lerp(lerp(f11,f01,blend.x),lerp(f10,f00,blend.x),blend.y);
+                // Never average the empty-space hint across an occupied cell.
+                result.a=min(min(f00.a,f10.a),min(f01.a,f11.a));
+            }
+            else if(all(uv>=0)&&all(uv<=1))result=SAMPLE_TEXTURE3D_LOD(_CloudField,sampler_CloudField,uv,0);
+            return result;
         }
         float phaseHG(float mu,float g)
         {
@@ -67,6 +87,7 @@ Shader "Boids/SkyCity/Hanging Gardens Clouds"
                 float maxDistance=min(length(farPoint-origin),460);
                 float3 motion=drift();
                 float3 bmin=_FieldMin.xyz+motion,bmax=bmin+_FieldSize.xyz;
+                if(_Endless>.5){bmin.xz=origin.xz-461;bmax.xz=origin.xz+461;}
                 float3 inv=rcp(ray),a=(bmin-origin)*inv,b=(bmax-origin)*inv;
                 float3 near3=min(a,b),far3=max(a,b);
                 float entry=max(0,max(near3.x,max(near3.y,near3.z)));

@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Unity.Jobs;
 using Debug = UnityEngine.Debug;
 
 namespace Boids.Art.Infinite
@@ -22,6 +23,11 @@ namespace Boids.Art.Infinite
         [Range(.5f,5)] public float mainThreadBudgetMilliseconds = 2;
         public float rebaseThreshold = 384;
         public bool showDiagnostics;
+        public bool reserveArrival,enableCollisions,showWelcome=true;
+        public Vector3 layoutOffset;
+        public Transform authoredArrival,travellerRoot;
+        public event Action<Vector3> OriginShifted;
+        public int CollisionChunks {get;private set;}
 
         public bool Ready { get; private set; }
         public string Status { get; private set; } = "Opening the atlas";
@@ -54,6 +60,7 @@ namespace Boids.Art.Infinite
             public GameObject root;
             public MeshFilter[] filters = new MeshFilter[6];
             public MeshRenderer[] renderers = new MeshRenderer[6];
+            public MeshCollider[] colliders = new MeshCollider[4];
             public SkyCityWfc.Result layout;
             public int lod;
             public long bytes;
@@ -75,6 +82,12 @@ namespace Boids.Art.Infinite
             public Mesh[] fresh = new Mesh[6];
             public int cursor;
             public bool replacement;
+            public JobHandle collisionBake;
+        }
+        struct BakeCollision : IJob
+        {
+            public int meshId;
+            public void Execute(){Physics.BakeMesh(meshId,false);}
         }
         readonly Dictionary<SkyCityWfc.Coord,Chunk> chunks = new Dictionary<SkyCityWfc.Coord,Chunk>();
         readonly List<SkyCityWfc.Coord> wanted = new List<SkyCityWfc.Coord>(49);
@@ -87,6 +100,7 @@ namespace Boids.Art.Infinite
         Staging staging;
         float nextPlan;
         Vector3 priorityPosition, priorityForward;
+        Vector3 arrivalHomePosition;
         double startedAt;
         int previousTargetFrameRate,previousVsync;
         SkyCityWaterReflection reflection;
@@ -99,6 +113,7 @@ namespace Boids.Art.Infinite
             lifetime = new CancellationTokenSource(); previousTargetFrameRate = Application.targetFrameRate;
             previousVsync=QualitySettings.vSyncCount;QualitySettings.vSyncCount=0;
             reflection=FindObjectOfType<SkyCityWaterReflection>();
+            if(authoredArrival!=null)arrivalHomePosition=authoredArrival.position;
             Application.targetFrameRate = 60; startedAt = Time.realtimeSinceStartupAsDouble;
             if (view == null) view = Camera.main;
             if (view == null || architectureMaterial == null || waterMaterial == null || cascadeMaterial == null)
@@ -136,6 +151,11 @@ namespace Boids.Art.Infinite
             }
             Schedule();
             UpdateAppearance();
+            if(authoredArrival!=null)
+            {
+                bool visible=(authoredArrival.position-view.transform.position).sqrMagnitude<480*480;
+                if(authoredArrival.gameObject.activeSelf!=visible)authoredArrival.gameObject.SetActive(visible);
+            }
             PeakResident = Math.Max(PeakResident, ResidentCount);
             PeakPending = Math.Max(PeakPending, PendingCount);
             Status = CompletedChunks == 0 ? "Assembling the first islands" : "The Garden of Endless Winds";
@@ -144,22 +164,27 @@ namespace Boids.Art.Infinite
         static double Elapsed(long start) { return (Stopwatch.GetTimestamp() - start) * 1000.0 / Stopwatch.Frequency; }
         public SkyCityWfc.Coord CurrentCoord()
         {
-            return new SkyCityWfc.Coord(OriginX + (long)Math.Floor(view.transform.position.x / SkyCityWfc.ChunkSize),
-                OriginZ + (long)Math.Floor(view.transform.position.z / SkyCityWfc.ChunkSize));
+            return new SkyCityWfc.Coord(OriginX + (long)Math.Floor((view.transform.position.x-layoutOffset.x) / SkyCityWfc.ChunkSize),
+                OriginZ + (long)Math.Floor((view.transform.position.z-layoutOffset.z) / SkyCityWfc.ChunkSize));
         }
         Vector3 Position(SkyCityWfc.Coord c)
-        { return new Vector3((float)(c.x - OriginX) * SkyCityWfc.ChunkSize, 0, (float)(c.z - OriginZ) * SkyCityWfc.ChunkSize); }
+        { return layoutOffset+new Vector3((float)(c.x - OriginX) * SkyCityWfc.ChunkSize, 0, (float)(c.z - OriginZ) * SkyCityWfc.ChunkSize); }
         void Plan()
         {
             Vector3 ahead=view.transform.position+Vector3.ProjectOnPlane(view.transform.forward,Vector3.up).normalized*52;
-            var center = new SkyCityWfc.Coord(OriginX+(long)Math.Floor(ahead.x/SkyCityWfc.ChunkSize),OriginZ+(long)Math.Floor(ahead.z/SkyCityWfc.ChunkSize));
+            var center = new SkyCityWfc.Coord(OriginX+(long)Math.Floor((ahead.x-layoutOffset.x)/SkyCityWfc.ChunkSize),OriginZ+(long)Math.Floor((ahead.z-layoutOffset.z)/SkyCityWfc.ChunkSize));
             wanted.Clear(); wantedSet.Clear();
             int radius = Mathf.Clamp(loadRadius,1,3);
             for (int z = -radius; z <= radius; z++) for (int x = -radius; x <= radius; x++)
-                wanted.Add(new SkyCityWfc.Coord(center.x + x, center.z + z));
+            {
+                var coord=new SkyCityWfc.Coord(center.x+x,center.z+z);
+                if(!reserveArrival||coord.x!=0||coord.z!=0)wanted.Add(coord);
+            }
             priorityPosition = view.transform.position; priorityForward = view.transform.forward;
             wanted.Sort(ComparePriority);
-            if(reflection!=null&&wanted.Count>0)reflection.waterHeight=SkyCityWfc.Elevation(SkyCityWfc.Composition(wanted[0],seed))+.38f;
+            if(reflection!=null&&wanted.Count>0)
+                reflection.waterHeight=authoredArrival!=null&&(view.transform.position-authoredArrival.position).sqrMagnitude<85*85?
+                    3.91f:SkyCityWfc.Elevation(SkyCityWfc.Composition(wanted[0],seed))+.38f;
             if (wanted.Count > maximumResidentChunks) wanted.RemoveRange(maximumResidentChunks,wanted.Count-maximumResidentChunks);
             foreach (var key in wanted) wantedSet.Add(key);
             foreach (var job in jobs) if (!wantedSet.Contains(job.coord) && !job.cancellation.IsCancellationRequested)
@@ -198,7 +223,7 @@ namespace Boids.Art.Infinite
                 {
                     var clock = Stopwatch.StartNew();
                     var solved = layout ?? SkyCityWfc.Solve(coord,worldSeed,token);
-                    var payload = vocabulary.Build(solved,lod,token); payload.workerMilliseconds = clock.Elapsed.TotalMilliseconds; return payload;
+                    var payload = vocabulary.Build(solved,lod,token,reserveArrival); payload.workerMilliseconds = clock.Elapsed.TotalMilliseconds; return payload;
                 },token);
                 jobs.Add(jobItem);
                 if (jobs.Count >= maximumWorkers) break;
@@ -238,6 +263,7 @@ namespace Boids.Art.Infinite
                 var child = new GameObject(i == 5 ? "Transparent cascades" : i == 4 ? "Reflecting pools" : "Architecture patch " + i);
                 child.transform.SetParent(c.root.transform,false); if (i >= 4) child.layer = 4;
                 c.filters[i] = child.AddComponent<MeshFilter>(); var renderer = child.AddComponent<MeshRenderer>(); c.renderers[i] = renderer;
+                if(enableCollisions&&i<4)c.colliders[i]=child.AddComponent<MeshCollider>();
                 renderer.sharedMaterial = i == 5 ? cascadeMaterial : i == 4 ? waterMaterial : architectureMaterial;
                 renderer.lightProbeUsage = LightProbeUsage.BlendProbes; renderer.reflectionProbeUsage = ReflectionProbeUsage.Simple;
             }
@@ -247,18 +273,28 @@ namespace Boids.Art.Infinite
         {
             if (staging == null) return;
             var s = staging; int i = s.cursor; long begin = Stopwatch.GetTimestamp();
+            if(i<6)
+            {
             var data = i == 5 ? s.payload.cascades : i == 4 ? s.payload.water : s.payload.opaque[i];
-            s.fresh[i] = SkyCityModuleData.Upload(data,"District " + s.payload.layout.coord + " / LOD " + s.payload.lod + " / " + i);
+            bool collision=enableCollisions&&i<4&&s.payload.lod==0&&data.indices.Length>0;
+            s.fresh[i] = SkyCityModuleData.Upload(data,"District " + s.payload.layout.coord + " / LOD " + s.payload.lod + " / " + i,collision);
+            if(collision)s.collisionBake=JobHandle.CombineDependencies(s.collisionBake,new BakeCollision{meshId=s.fresh[i].GetInstanceID()}.Schedule());
             Uploads++; PeakUploadMs = Math.Max(PeakUploadMs,Elapsed(begin)); s.cursor++;
             if (s.cursor < 6) return;
+            }
+            if(!s.collisionBake.IsCompleted)return;
+            s.collisionBake.Complete();
             var c = s.chunk; MeshBytes -= c.bytes; c.bytes = s.payload.Bytes; MeshBytes += c.bytes;
+            if(enableCollisions&&c.layout!=null&&c.lod==0)CollisionChunks--;
             for (int part = 0; part < 6; part++)
             {
+                if(part<4&&c.colliders[part]!=null)c.colliders[part].sharedMesh=s.payload.lod==0?s.fresh[part]:null;
                 if (c.filters[part].sharedMesh != null) Destroy(c.filters[part].sharedMesh);
                 c.filters[part].sharedMesh = s.fresh[part];
                 c.renderers[part].shadowCastingMode = part >= 4 || s.payload.lod == 2 ? ShadowCastingMode.Off : ShadowCastingMode.On;
             }
             c.layout = s.payload.layout; c.lod = s.payload.lod; c.root.transform.position = Position(c.layout.coord);
+            if(enableCollisions&&c.lod==0)CollisionChunks++;
             if (!s.replacement)
             {
                 chunks.Add(c.layout.coord,c); CompletedChunks++; if (c.layout.usedSafeFallback) Fallbacks++;
@@ -286,12 +322,15 @@ namespace Boids.Art.Infinite
         void ReturnChunk(Chunk c)
         {
             c.root.SetActive(false);
+            if(enableCollisions&&c.layout!=null&&c.lod==0)CollisionChunks--;
+            foreach(var collider in c.colliders)if(collider!=null)collider.sharedMesh=null;
             foreach (var filter in c.filters) if (filter.sharedMesh != null) { Destroy(filter.sharedMesh); filter.sharedMesh = null; }
             c.bytes = 0; c.layout = null;
             if (pool.Count < PoolLimit) pool.Push(c); else Destroy(c.root);
         }
         void AbortStaging()
         {
+            staging.collisionBake.Complete();
             foreach (var mesh in staging.fresh) if (mesh != null) Destroy(mesh);
             if (!staging.replacement) ReturnChunk(staging.chunk);
             staging = null;
@@ -325,8 +364,11 @@ namespace Boids.Art.Infinite
             long x = (long)Math.Floor(p.x/SkyCityWfc.ChunkSize), z = (long)Math.Floor(p.z/SkyCityWfc.ChunkSize);
             OriginX += x; OriginZ += z;
             Vector3 shift = new Vector3(x*SkyCityWfc.ChunkSize,0,z*SkyCityWfc.ChunkSize);
-            view.transform.position -= shift;
+            MoveViewer(-shift);
+            PlaceArrival();
+            OriginShifted?.Invoke(shift);
             foreach (var c in chunks.Values) c.root.transform.position = Position(c.layout.coord);
+            if(enableCollisions)Physics.SyncTransforms();
             OriginShifts++; nextPlan = 0; UpdateCloudOrigin();
         }
         void UpdateCloudOrigin()
@@ -336,9 +378,28 @@ namespace Boids.Art.Infinite
         }
         public void Teleport(SkyCityWfc.Coord district, Vector3 localPosition)
         {
-            OriginX = district.x; OriginZ = district.z; view.transform.position = localPosition;
+            Vector3 shift=new Vector3((district.x-OriginX)*SkyCityWfc.ChunkSize,0,(district.z-OriginZ)*SkyCityWfc.ChunkSize);
+            OriginX = district.x; OriginZ = district.z;
+            MoveViewer(localPosition-view.transform.position);
+            PlaceArrival();
+            OriginShifted?.Invoke(shift);
             foreach (var c in chunks.Values) c.root.transform.position = Position(c.layout.coord);
+            if(enableCollisions)Physics.SyncTransforms();
             UpdateCloudOrigin(); nextPlan = 0;
+        }
+        void MoveViewer(Vector3 delta)
+        {
+            var root=travellerRoot!=null?travellerRoot:view.transform;
+            var controller=root.GetComponent<CharacterController>();bool active=controller!=null&&controller.enabled;
+            // CharacterController owns a native physics position. Explicitly
+            // relocate it together with the transform at a floating-origin shift.
+            if(active)controller.enabled=false;root.position+=delta;if(active)controller.enabled=true;
+        }
+        void PlaceArrival()
+        {
+            // Recompute from integer coordinates: incremental float subtraction
+            // loses the original island position after million-district travel.
+            if(authoredArrival!=null)authoredArrival.position=arrivalHomePosition-new Vector3((float)(OriginX*168d),0,(float)(OriginZ*168d));
         }
         public bool TryGetFingerprint(SkyCityWfc.Coord coord, out ulong hash)
         { Chunk chunk; if (chunks.TryGetValue(coord,out chunk)) { hash=chunk.layout.fingerprint;return true; } hash=0;return false; }
@@ -357,9 +418,9 @@ namespace Boids.Art.Infinite
         }
         void OnGUI()
         {
-            if (!Ready || CompletedChunks == 0)
+            if (showWelcome&&(!Ready || CompletedChunks == 0))
                 GUI.Label(new Rect(28,Screen.height-62,520,28),Status + "...");
-            else if (Time.realtimeSinceStartupAsDouble-startedAt < 14)
+            else if (showWelcome&&Time.realtimeSinceStartupAsDouble-startedAt < 14)
                 GUI.Label(new Rect(28,Screen.height-52,1000,32),"W A S D  travel    Right drag  look    Q / E  descend / rise    Shift  faster    Space  cruise    F  return    M  music");
             if (!showDiagnostics) return;
             GUI.Box(new Rect(20,20,390,154),"Streaming diagnostics  |  H to hide");
