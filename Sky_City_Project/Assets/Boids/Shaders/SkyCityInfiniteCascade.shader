@@ -87,8 +87,8 @@ Shader "Boids/SkyCity/Infinite Cascades"
                 float fresnel=pow(1-saturate(dot(n,view)),4);
                 float glint=pow(saturate(dot(n,normalize(sun.direction+view))),105)*sun.shadowAttenuation;
                 float aeration=smoothstep(.44,.77,threads)*lerp(.22,.74,turbulence);
-                float3 water=behind*float3(.76,.95,.97);
-                water=lerp(water,float3(.88,1.0,1.02),aeration+fresnel*.15);
+                float3 water=behind*float3(.66,.90,.96);
+                water=lerp(water,float3(1.10,1.12,1.06),aeration+fresnel*.15);
                 water+=sun.color*glint*.48;
                 float density=lerp(.56,.26,turbulence)+breakup*.38;
                 float alpha=density*edge*tail*lerp(1,breakup,turbulence*.68)*saturate(gap*4)*_Reveal;

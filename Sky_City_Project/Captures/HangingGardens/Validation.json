@@ -4,12 +4,12 @@
   "missingScripts": 0,
   "shaderErrors": [],
   "lodTriangles": [
-    1975761,
-    754164,
-    261287
+    2321143,
+    884580,
+    299365
   ],
   "volumetricClouds": true,
-  "lightmaps": 2,
+  "lightmaps": 1,
   "lightProbes": 325,
   "planarReflection": true,
   "birds": 64,

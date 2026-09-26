@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-26 · Authored cliff forms and limestone lighting
+
+- Replace the repeated scanned-face island assembly with nine authored cliff compositions. Design large masses, unequal pendant buttresses, lean and fracture planes before adding surface erosion. Retain editable Blender sources and deterministic seed selection for the landmark and streamed districts.
+- Use continuous limestone triplanar texture at world scale, preserve coordinates across origin shifts, and keep geometric fracture normals. Correct the landmark cliff renderer's overly dark interpolated probe lighting.
+- Add surface-derived ivy anchors and carve clear channels behind all three landmark spillways and streamed district waterfalls. Rebuild the hero LODs, all district assets, collision meshes and scene lightmaps.
+- Preserve the related foliage cutout, module material and persistent mesh-refresh fixes in the rebuilt assets.
+- Validate 36 source meshes, nine distinct designs at four detail levels, 12 unobstructed landmark spillway samples, and 128 module prefabs. A fresh editor Play session loaded 24 districts with no pending or failed jobs, no fallbacks and 64 birds; the console contained no errors. This is not a standalone performance benchmark.
+
+Before/after captures and reports: `Sky_City_Project/Captures/RockDiscussion/`.
+
 ## 2026-09-26 · Instructor edits and HKUST Guangzhou cover
 
 - Merge the instructor's edits from the saved v2 presentation, including the reordered module/water slides, removed text, revised prompts and picture placement. Align page and section numbers with that order.

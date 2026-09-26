@@ -1,0 +1,23 @@
+{
+  "ready": true,
+  "resident": 24,
+  "pending": 0,
+  "failed": 0,
+  "fallbacks": 0,
+  "birds": 64,
+  "cameraPose": "(5.00, 16.00, -38.00)",
+  "cliffs": [
+    {
+      "name": "06 - Suspended stratified cliffs - distance 1",
+      "probe": "Off"
+    },
+    {
+      "name": "06 - Suspended stratified cliffs - distance 2",
+      "probe": "Off"
+    },
+    {
+      "name": "06 - Suspended stratified cliffs",
+      "probe": "Off"
+    }
+  ]
+}

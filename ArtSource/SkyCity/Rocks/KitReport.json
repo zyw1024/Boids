@@ -1,0 +1,56 @@
+{
+  "authoring": "Live Blender 5.2.2 through Blender MCP",
+  "reference": "ArtSource/SkyCity/SkyCity_Concept.png",
+  "source": "https://polyhaven.com/a/rock_face_01",
+  "license": "CC0",
+  "objects": [
+    {
+      "asset": "Cliff",
+      "lod": 0,
+      "vertices": 41036,
+      "triangles": 66143
+    },
+    {
+      "asset": "Cliff",
+      "lod": 1,
+      "vertices": 12178,
+      "triangles": 16523
+    },
+    {
+      "asset": "Cliff",
+      "lod": 2,
+      "vertices": 5269,
+      "triangles": 5928
+    },
+    {
+      "asset": "Cliff",
+      "lod": 3,
+      "vertices": 1965,
+      "triangles": 1634
+    },
+    {
+      "asset": "Boulder",
+      "lod": 0,
+      "vertices": 2494,
+      "triangles": 4033
+    },
+    {
+      "asset": "Boulder",
+      "lod": 1,
+      "vertices": 1353,
+      "triangles": 2016
+    },
+    {
+      "asset": "Boulder",
+      "lod": 2,
+      "vertices": 612,
+      "triangles": 805
+    },
+    {
+      "asset": "Boulder",
+      "lod": 3,
+      "vertices": 238,
+      "triangles": 241
+    }
+  ]
+}

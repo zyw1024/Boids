@@ -310,8 +310,8 @@ LODGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7171859669931545003}
   serializedVersion: 2
-  m_LocalReferencePoint: {x: 0.3000002, y: 2.1158175, z: 0.5876336}
-  m_Size: 10.824733
+  m_LocalReferencePoint: {x: 0.17745018, y: 2.6189501, z: 0.6500001}
+  m_Size: 10.7
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0

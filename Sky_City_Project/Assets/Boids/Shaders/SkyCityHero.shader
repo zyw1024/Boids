@@ -11,6 +11,9 @@ Shader "Boids/SkyCity/Hanging Gardens"
         _Foliage("Leaf transmission",Range(0,1))=0
         _Wind("Wind",Float)=0
         _SurfaceTex("Mineral pigment",2D)="white"{}
+        _UseRockScan("Scanned limestone",Float)=0
+        _RockScanAlbedo("Limestone scan colour",2D)="white"{}
+        [Normal] _RockScanNormal("Limestone scan normal",2D)="bump"{}
         _TextureAmount("Mineral detail",Range(0,1))=0
         _Relief("Mineral relief",Range(0,.2))=.04
 _TextureScale("World texture scale",Float)=.55
@@ -28,12 +31,16 @@ _LeafMotion("Leaf motion",Float)=0
         HLSLINCLUDE
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+        #include "SkyCityFoliage.hlsl"
+        #include "SkyCityRock.hlsl"
         CBUFFER_START(UnityPerMaterial)
         float4 _BaseColor,_PigmentMean;
         float _PigmentSmoothing;
+        float _UseRockScan;
         float _Metallic,_Smoothness,_Cloud,_Foliage,_Wind,_TextureAmount,_Relief;
         float _BirdWing,_WingPhase,_WingEffort,_WingFold;float _TextureScale,_TextureNeutral,_LeafMotion;
         CBUFFER_END
+        float4 _SkyWorldOffset;
         TEXTURE2D(_SurfaceTex);SAMPLER(sampler_SurfaceTex);
         struct A {float4 positionOS:POSITION;float3 normalOS:NORMAL;float4 color:COLOR;float2 uv:TEXCOORD0;float2 uv2:TEXCOORD1;};
         struct V {float4 positionCS:SV_POSITION;float3 world:TEXCOORD0;float3 normal:TEXCOORD1;float4 color:TEXCOORD2;float2 uv:TEXCOORD3;float fog:TEXCOORD4;float2 lightmapUV:TEXCOORD5;};
@@ -95,11 +102,7 @@ _LeafMotion("Leaf motion",Float)=0
                 float3 albedo=lerp(i.color.rgb,_PigmentMean.rgb,_PigmentSmoothing)*_BaseColor.rgb*(.94+.09*broad+.04*fine);
                 if(_LeafMotion>.5)
                 {
-                    float width=max(.005,fwidth(i.uv.y));
-                    float rib=1-smoothstep(width,width*2,abs(i.uv.y-.5));
-                    float veins=1-smoothstep(.035,.08,abs(frac(i.uv.x*6-abs(i.uv.y-.5)*3)-.5));
-                    float fade=1-saturate(max(fwidth(i.uv.x),fwidth(i.uv.y))*18);
-                    albedo*=1+(rib*.10+veins*.045)*fade;
+                    albedo=SkyCityLeafPigment(albedo,i.uv);
                 }
                 if(_TextureAmount>.01)
                 {
@@ -113,6 +116,7 @@ _LeafMotion("Leaf motion",Float)=0
                     float det=dot(dx,r1);
                     n=normalize(n-(r1*ddx(height)+r2*ddy(height))/max(abs(det),.00001)*sign(det)*_Relief);
                 }
+                if(_UseRockScan>.5){float3 rockWorld=i.world+_SkyWorldOffset.xyz;albedo=SkyCityRockColor(rockWorld,n);n=SkyCityRockNormal(rockWorld,n,i.uv);}
                 InputData input=(InputData)0;
                 input.positionWS=i.world;input.normalWS=n;input.viewDirectionWS=SafeNormalize(GetWorldSpaceViewDir(i.world));
                 input.shadowCoord=TransformWorldToShadowCoord(i.world);
@@ -125,6 +129,7 @@ input.bakedGI=SampleSH(n);
                 SurfaceData surface=(SurfaceData)0;
                 surface.albedo=albedo;surface.metallic=_Metallic;surface.smoothness=_Smoothness;
                 surface.normalTS=float3(0,0,1);surface.occlusion=lerp(.3,1,pow(saturate(i.color.a),1.5));surface.alpha=1;
+                if(_UseRockScan>.5)surface.occlusion=lerp(.75,1,saturate(i.color.a));
                 Light sun=GetMainLight(input.shadowCoord);
                 surface.emission=albedo*_Foliage*saturate(dot(-n,sun.direction))*.20;
                 float3 color=UniversalFragmentPBR(input,surface).rgb;
@@ -172,11 +177,12 @@ input.bakedGI=SampleSH(n);
             {
                 V o=(V)0;
                 o.positionCS=MetaVertexPosition(a.positionOS,a.uv2,a.uv2,unity_LightmapST,unity_DynamicLightmapST);
-                o.color=a.color;return o;
+                o.color=a.color;o.uv=a.uv;o.world=TransformObjectToWorld(a.positionOS);o.normal=TransformObjectToWorldNormal(a.normalOS);return o;
             }
             half4 metaFrag(V i):SV_Target
             {
                 MetaInput m=(MetaInput)0;m.Albedo=lerp(i.color.rgb,_PigmentMean.rgb,_PigmentSmoothing)*_BaseColor.rgb;
+                if(_UseRockScan>.5)m.Albedo=SkyCityRockColor(i.world+_SkyWorldOffset.xyz,normalize(i.normal));
                 return MetaFragment(m);
             }
             ENDHLSL

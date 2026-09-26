@@ -27,6 +27,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: b09194fcc5ba6aa4d8d4d430d02407a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _RockScanAlbedo:
+        m_Texture: {fileID: 2800000, guid: a3e6dc1d7b3899d418f558bfcce4a8ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockScanNormal:
+        m_Texture: {fileID: 2800000, guid: a14da784e390cd7428fb01afb6855dda, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _StoneTex:
         m_Texture: {fileID: 2800000, guid: a3e6dc1d7b3899d418f558bfcce4a8ac, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -34,8 +42,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _Reveal: 1
-    - _StoneRelief: 0.012
-    - _StoneVariation: 0.3
+    - _StoneRelief: 0.002
+    - _StoneVariation: 0.16
     m_Colors:
     - _BridgeReveal: {r: 1, g: 1, b: 1, a: 1}
+    - _CopperMean: {r: 0.41999996, g: 0.61, b: 0.54999995, a: 1}
   m_BuildTextureStacks: []

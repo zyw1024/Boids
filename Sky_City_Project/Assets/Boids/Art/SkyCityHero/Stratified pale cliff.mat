@@ -23,6 +23,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _RockScanAlbedo:
+        m_Texture: {fileID: 2800000, guid: a3e6dc1d7b3899d418f558bfcce4a8ac, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RockScanNormal:
+        m_Texture: {fileID: 2800000, guid: a14da784e390cd7428fb01afb6855dda, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SurfaceTex:
         m_Texture: {fileID: 2800000, guid: a3e6dc1d7b3899d418f558bfcce4a8ac, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -36,10 +44,11 @@ Material:
     - _Metallic: 0
     - _PigmentSmoothing: 0
     - _Relief: 0.007
-    - _Smoothness: 0.1
-    - _TextureAmount: 0.32
+    - _Smoothness: 0.12
+    - _TextureAmount: 0
     - _TextureNeutral: 0.33
     - _TextureScale: 0.28
+    - _UseRockScan: 1
     - _Wind: 0
     - _WingEffort: 0
     - _WingFold: 0

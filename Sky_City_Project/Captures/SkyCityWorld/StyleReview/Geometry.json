@@ -1,0 +1,5196 @@
+{
+  "passed": true,
+  "modules": 128,
+  "districts": 8,
+  "geometryLods": 408,
+  "compressedBytes": 101865082,
+  "foliageLods": 360,
+  "largestLeafEdge": 0.3569818139076233,
+  "limitation": "Attribute and geometry checks; appearance is reviewed separately in runtime captures.",
+  "records": [
+    {
+      "item": 0,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5310,
+      "triangles": 3700,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18936850130558014
+    },
+    {
+      "item": 0,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3838,
+      "triangles": 2520,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20667019486427307
+    },
+    {
+      "item": 0,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1802,
+      "triangles": 998,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20479871332645416
+    },
+    {
+      "item": 1,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8606,
+      "triangles": 5346,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1800786405801773
+    },
+    {
+      "item": 1,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5748,
+      "triangles": 3472,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20164275169372559
+    },
+    {
+      "item": 1,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2728,
+      "triangles": 1458,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23405633866786957
+    },
+    {
+      "item": 2,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7286,
+      "triangles": 5800,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18928246200084686
+    },
+    {
+      "item": 2,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4798,
+      "triangles": 3600,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20902030169963837
+    },
+    {
+      "item": 2,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2176,
+      "triangles": 1448,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.2099439799785614
+    },
+    {
+      "item": 3,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5934,
+      "triangles": 4056,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18986885249614716
+    },
+    {
+      "item": 3,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4250,
+      "triangles": 2752,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.2121616154909134
+    },
+    {
+      "item": 3,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1986,
+      "triangles": 1098,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24625222384929657
+    },
+    {
+      "item": 4,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8366,
+      "triangles": 5226,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1921028345823288
+    },
+    {
+      "item": 4,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5580,
+      "triangles": 3388,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20338280498981476
+    },
+    {
+      "item": 4,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2632,
+      "triangles": 1410,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23596927523612976
+    },
+    {
+      "item": 5,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9374,
+      "triangles": 7888,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.18019551038742065
+    },
+    {
+      "item": 5,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6190,
+      "triangles": 4896,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.20579315721988678
+    },
+    {
+      "item": 5,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2644,
+      "triangles": 1826,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 6,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7214,
+      "triangles": 4650,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1834852695465088
+    },
+    {
+      "item": 6,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4716,
+      "triangles": 2956,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20545777678489685
+    },
+    {
+      "item": 6,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2152,
+      "triangles": 1170,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23848974704742432
+    },
+    {
+      "item": 7,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8942,
+      "triangles": 6628,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1827864944934845
+    },
+    {
+      "item": 7,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6022,
+      "triangles": 4212,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.2126787304878235
+    },
+    {
+      "item": 7,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2824,
+      "triangles": 1772,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 8,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7574,
+      "triangles": 4862,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.19034649431705475
+    },
+    {
+      "item": 8,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4932,
+      "triangles": 3084,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20041583478450775
+    },
+    {
+      "item": 8,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2188,
+      "triangles": 1194,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22400657832622528
+    },
+    {
+      "item": 9,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10774,
+      "triangles": 6444,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18244951963424683
+    },
+    {
+      "item": 9,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6782,
+      "triangles": 3996,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.1976979523897171
+    },
+    {
+      "item": 9,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3078,
+      "triangles": 1630,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22948041558265686
+    },
+    {
+      "item": 10,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9790,
+      "triangles": 7114,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1888091266155243
+    },
+    {
+      "item": 10,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6060,
+      "triangles": 4268,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.19572845101356506
+    },
+    {
+      "item": 10,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2682,
+      "triangles": 1716,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.22717688977718353
+    },
+    {
+      "item": 11,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8198,
+      "triangles": 5218,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18314266204833984
+    },
+    {
+      "item": 11,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5344,
+      "triangles": 3316,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21477676928043365
+    },
+    {
+      "item": 11,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2372,
+      "triangles": 1294,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2137087881565094
+    },
+    {
+      "item": 12,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10630,
+      "triangles": 6388,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17290399968624115
+    },
+    {
+      "item": 12,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6674,
+      "triangles": 3952,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.18789593875408173
+    },
+    {
+      "item": 12,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3018,
+      "triangles": 1606,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20893524587154388
+    },
+    {
+      "item": 13,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11542,
+      "triangles": 8986,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.17834816873073578
+    },
+    {
+      "item": 13,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7224,
+      "triangles": 5420,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.19615334272384644
+    },
+    {
+      "item": 13,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2994,
+      "triangles": 1998,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 14,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9718,
+      "triangles": 5964,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18351635336875916
+    },
+    {
+      "item": 14,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5978,
+      "triangles": 3624,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20550210773944855
+    },
+    {
+      "item": 14,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2658,
+      "triangles": 1438,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22262932360172272
+    },
+    {
+      "item": 15,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11206,
+      "triangles": 7790,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18766599893569946
+    },
+    {
+      "item": 15,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7116,
+      "triangles": 4776,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.2102005034685135
+    },
+    {
+      "item": 15,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3210,
+      "triangles": 1968,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 16,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5990,
+      "triangles": 4070,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17821210622787476
+    },
+    {
+      "item": 16,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3780,
+      "triangles": 2508,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.19755706191062927
+    },
+    {
+      "item": 16,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1588,
+      "triangles": 894,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20993785560131073
+    },
+    {
+      "item": 17,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8038,
+      "triangles": 5076,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18278321623802185
+    },
+    {
+      "item": 17,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4766,
+      "triangles": 2988,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20471395552158356
+    },
+    {
+      "item": 17,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1998,
+      "triangles": 1090,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2376260757446289
+    },
+    {
+      "item": 18,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9358,
+      "triangles": 6898,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.17610184848308563
+    },
+    {
+      "item": 18,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5772,
+      "triangles": 4124,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21116623282432556
+    },
+    {
+      "item": 18,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2562,
+      "triangles": 1656,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.20002026855945587
+    },
+    {
+      "item": 19,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6614,
+      "triangles": 4426,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.16826923191547394
+    },
+    {
+      "item": 19,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4192,
+      "triangles": 2740,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.18993714451789856
+    },
+    {
+      "item": 19,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1772,
+      "triangles": 994,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2186332494020462
+    },
+    {
+      "item": 20,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7894,
+      "triangles": 5020,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.19138972461223602
+    },
+    {
+      "item": 20,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4658,
+      "triangles": 2944,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21011613309383392
+    },
+    {
+      "item": 20,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1938,
+      "triangles": 1066,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.19300611317157745
+    },
+    {
+      "item": 21,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11110,
+      "triangles": 8770,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.18987636268138885
+    },
+    {
+      "item": 21,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6936,
+      "triangles": 5276,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.2118750959634781
+    },
+    {
+      "item": 21,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2874,
+      "triangles": 1938,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.24587662518024445
+    },
+    {
+      "item": 22,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8134,
+      "triangles": 5172,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1912418007850647
+    },
+    {
+      "item": 22,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4826,
+      "triangles": 3048,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20327550172805786
+    },
+    {
+      "item": 22,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2058,
+      "triangles": 1138,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20751631259918213
+    },
+    {
+      "item": 23,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8470,
+      "triangles": 6422,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18070301413536072
+    },
+    {
+      "item": 23,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5100,
+      "triangles": 3768,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.19981542229652405
+    },
+    {
+      "item": 23,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2130,
+      "triangles": 1428,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 24,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11246,
+      "triangles": 10002,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.17680366337299347
+    },
+    {
+      "item": 24,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 24,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6132,
+      "triangles": 5464,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.20075508952140808
+    },
+    {
+      "item": 24,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 24,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2434,
+      "triangles": 2100,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.22211720049381256
+    },
+    {
+      "item": 24,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 25,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13390,
+      "triangles": 11072,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.1896955966949463
+    },
+    {
+      "item": 25,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 25,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7178,
+      "triangles": 5984,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.21288374066352844
+    },
+    {
+      "item": 25,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 25,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2880,
+      "triangles": 2320,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.24661985039710999
+    },
+    {
+      "item": 25,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 26,
+      "lod": 0,
+      "part": 0,
+      "vertices": 14374,
+      "triangles": 12678,
+      "leafTriangles": 8640,
+      "largestLeafEdge": 0.18438753485679626
+    },
+    {
+      "item": 26,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 26,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7956,
+      "triangles": 6976,
+      "leafTriangles": 4704,
+      "largestLeafEdge": 0.19857946038246155
+    },
+    {
+      "item": 26,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 26,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3288,
+      "triangles": 2790,
+      "leafTriangles": 1664,
+      "largestLeafEdge": 0.21507257223129272
+    },
+    {
+      "item": 26,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 27,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11870,
+      "triangles": 10358,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.1732455939054489
+    },
+    {
+      "item": 27,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 27,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6544,
+      "triangles": 5696,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.1918794810771942
+    },
+    {
+      "item": 27,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 27,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2618,
+      "triangles": 2200,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.22268818318843842
+    },
+    {
+      "item": 27,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 28,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13150,
+      "triangles": 10952,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.1798442304134369
+    },
+    {
+      "item": 28,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 28,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7010,
+      "triangles": 5900,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.18950459361076355
+    },
+    {
+      "item": 28,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 28,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2784,
+      "triangles": 2272,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.21998217701911926
+    },
+    {
+      "item": 28,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 29,
+      "lod": 0,
+      "part": 0,
+      "vertices": 16462,
+      "triangles": 14766,
+      "leafTriangles": 9600,
+      "largestLeafEdge": 0.1800258904695511
+    },
+    {
+      "item": 29,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 29,
+      "lod": 1,
+      "part": 0,
+      "vertices": 9348,
+      "triangles": 8272,
+      "leafTriangles": 5376,
+      "largestLeafEdge": 0.19624079763889313
+    },
+    {
+      "item": 29,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 29,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3756,
+      "triangles": 3168,
+      "leafTriangles": 1856,
+      "largestLeafEdge": 0.23509332537651062
+    },
+    {
+      "item": 29,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 30,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13150,
+      "triangles": 10952,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.18060113489627838
+    },
+    {
+      "item": 30,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 30,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7010,
+      "triangles": 5900,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.21473416686058044
+    },
+    {
+      "item": 30,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 30,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2784,
+      "triangles": 2272,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.2530774772167206
+    },
+    {
+      "item": 30,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 31,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13726,
+      "triangles": 12354,
+      "leafTriangles": 8640,
+      "largestLeafEdge": 0.1879318207502365
+    },
+    {
+      "item": 31,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 31,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7452,
+      "triangles": 6724,
+      "leafTriangles": 4704,
+      "largestLeafEdge": 0.21247117221355438
+    },
+    {
+      "item": 31,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 31,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2976,
+      "triangles": 2634,
+      "leafTriangles": 1664,
+      "largestLeafEdge": 0.2668793201446533
+    },
+    {
+      "item": 31,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 32,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10782,
+      "triangles": 8642,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.190190389752388
+    },
+    {
+      "item": 32,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6288,
+      "triangles": 4932,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21299925446510315
+    },
+    {
+      "item": 32,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2624,
+      "triangles": 1926,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.2464856058359146
+    },
+    {
+      "item": 33,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12926,
+      "triangles": 9712,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.1796254813671112
+    },
+    {
+      "item": 33,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7334,
+      "triangles": 5452,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.2011575847864151
+    },
+    {
+      "item": 33,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3070,
+      "triangles": 2146,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.23349153995513916
+    },
+    {
+      "item": 34,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13910,
+      "triangles": 11318,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.18230584263801575
+    },
+    {
+      "item": 34,
+      "lod": 1,
+      "part": 0,
+      "vertices": 8112,
+      "triangles": 6444,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.20330967009067535
+    },
+    {
+      "item": 34,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3478,
+      "triangles": 2616,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.22115328907966614
+    },
+    {
+      "item": 35,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11406,
+      "triangles": 8998,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.18353120982646942
+    },
+    {
+      "item": 35,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6700,
+      "triangles": 5164,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.19745871424674988
+    },
+    {
+      "item": 35,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2808,
+      "triangles": 2026,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.2155555635690689
+    },
+    {
+      "item": 36,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12686,
+      "triangles": 9592,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.18941573798656464
+    },
+    {
+      "item": 36,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7166,
+      "triangles": 5368,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.20401272177696228
+    },
+    {
+      "item": 36,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2974,
+      "triangles": 2098,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.20999345183372498
+    },
+    {
+      "item": 37,
+      "lod": 0,
+      "part": 0,
+      "vertices": 15998,
+      "triangles": 13406,
+      "leafTriangles": 7680,
+      "largestLeafEdge": 0.183767169713974
+    },
+    {
+      "item": 37,
+      "lod": 1,
+      "part": 0,
+      "vertices": 9504,
+      "triangles": 7740,
+      "leafTriangles": 4368,
+      "largestLeafEdge": 0.20680975914001465
+    },
+    {
+      "item": 37,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3946,
+      "triangles": 2994,
+      "leafTriangles": 1472,
+      "largestLeafEdge": 0.23891346156597137
+    },
+    {
+      "item": 38,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12686,
+      "triangles": 9592,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.1864573210477829
+    },
+    {
+      "item": 38,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7166,
+      "triangles": 5368,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.2134263962507248
+    },
+    {
+      "item": 38,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2974,
+      "triangles": 2098,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.2321373075246811
+    },
+    {
+      "item": 39,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13262,
+      "triangles": 10994,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.1809484362602234
+    },
+    {
+      "item": 39,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7608,
+      "triangles": 6192,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.19705086946487427
+    },
+    {
+      "item": 39,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3166,
+      "triangles": 2460,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 40,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6430,
+      "triangles": 4320,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18821467459201813
+    },
+    {
+      "item": 40,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 40,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3482,
+      "triangles": 2376,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21080178022384644
+    },
+    {
+      "item": 40,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 40,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1230,
+      "triangles": 718,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2446279078722
+    },
+    {
+      "item": 40,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 41,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8382,
+      "triangles": 5262,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18245643377304077
+    },
+    {
+      "item": 41,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 41,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4408,
+      "triangles": 2816,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20431751012802124
+    },
+    {
+      "item": 41,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 41,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1604,
+      "triangles": 890,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23716549575328827
+    },
+    {
+      "item": 41,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 42,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10038,
+      "triangles": 7300,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.17625325918197632
+    },
+    {
+      "item": 42,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 42,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5642,
+      "triangles": 4096,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.1995614767074585
+    },
+    {
+      "item": 42,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 42,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2324,
+      "triangles": 1552,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.2055048942565918
+    },
+    {
+      "item": 42,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 43,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5390,
+      "triangles": 3858,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18012022972106934
+    },
+    {
+      "item": 43,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 43,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3188,
+      "triangles": 2264,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.19632866978645325
+    },
+    {
+      "item": 43,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 43,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1188,
+      "triangles": 710,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.21221955120563507
+    },
+    {
+      "item": 43,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 44,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8334,
+      "triangles": 5270,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18884342908859253
+    },
+    {
+      "item": 44,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 44,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4360,
+      "triangles": 2812,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21022078394889832
+    },
+    {
+      "item": 44,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 44,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1580,
+      "triangles": 890,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22271420061588287
+    },
+    {
+      "item": 44,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 45,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11454,
+      "triangles": 8956,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.18764835596084595
+    },
+    {
+      "item": 45,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 45,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6578,
+      "triangles": 5104,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.20712213218212128
+    },
+    {
+      "item": 45,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 45,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2480,
+      "triangles": 1738,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 45,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 46,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8814,
+      "triangles": 5574,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1923612654209137
+    },
+    {
+      "item": 46,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 46,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4696,
+      "triangles": 3020,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21537533402442932
+    },
+    {
+      "item": 46,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 46,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1820,
+      "triangles": 1034,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.25001758337020874
+    },
+    {
+      "item": 46,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 47,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7246,
+      "triangles": 5854,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18860861659049988
+    },
+    {
+      "item": 47,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 47,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4096,
+      "triangles": 3292,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20862889289855957
+    },
+    {
+      "item": 47,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 47,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1546,
+      "triangles": 1144,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 47,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 48,
+      "lod": 0,
+      "part": 0,
+      "vertices": 4766,
+      "triangles": 3410,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18697473406791687
+    },
+    {
+      "item": 48,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2880,
+      "triangles": 2028,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20115171372890472
+    },
+    {
+      "item": 48,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1156,
+      "triangles": 666,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.21360859274864197
+    },
+    {
+      "item": 49,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8134,
+      "triangles": 5092,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.182334765791893
+    },
+    {
+      "item": 49,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4862,
+      "triangles": 3016,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.1925247311592102
+    },
+    {
+      "item": 49,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2130,
+      "triangles": 1150,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20979611575603485
+    },
+    {
+      "item": 50,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7990,
+      "triangles": 6150,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1817941963672638
+    },
+    {
+      "item": 50,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4764,
+      "triangles": 3580,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20197652280330658
+    },
+    {
+      "item": 50,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2046,
+      "triangles": 1380,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.21263974905014038
+    },
+    {
+      "item": 51,
+      "lod": 0,
+      "part": 0,
+      "vertices": 4926,
+      "triangles": 3548,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17441995441913605
+    },
+    {
+      "item": 51,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3498,
+      "triangles": 2372,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.212808758020401
+    },
+    {
+      "item": 51,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1618,
+      "triangles": 910,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20140981674194336
+    },
+    {
+      "item": 52,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6694,
+      "triangles": 4372,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1881977766752243
+    },
+    {
+      "item": 52,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3782,
+      "triangles": 2476,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.1989578753709793
+    },
+    {
+      "item": 52,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1530,
+      "triangles": 850,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20774300396442413
+    },
+    {
+      "item": 53,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11278,
+      "triangles": 8838,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.18568992614746094
+    },
+    {
+      "item": 53,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7068,
+      "triangles": 5332,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.20719218254089355
+    },
+    {
+      "item": 53,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3018,
+      "triangles": 2010,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 54,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6670,
+      "triangles": 4360,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17799705266952515
+    },
+    {
+      "item": 54,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3758,
+      "triangles": 2464,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.19932888448238373
+    },
+    {
+      "item": 54,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1506,
+      "triangles": 838,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23140986263751984
+    },
+    {
+      "item": 55,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6806,
+      "triangles": 5556,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18303810060024261
+    },
+    {
+      "item": 55,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4430,
+      "triangles": 3412,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20896518230438232
+    },
+    {
+      "item": 55,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2000,
+      "triangles": 1356,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 56,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7910,
+      "triangles": 6112,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1862969696521759
+    },
+    {
+      "item": 56,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 56,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5278,
+      "triangles": 3840,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20866326987743378
+    },
+    {
+      "item": 56,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 56,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2464,
+      "triangles": 1592,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.2422173023223877
+    },
+    {
+      "item": 56,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 57,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11206,
+      "triangles": 7758,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.16762050986289978
+    },
+    {
+      "item": 57,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 57,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7188,
+      "triangles": 4792,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21300043165683746
+    },
+    {
+      "item": 57,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 57,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3390,
+      "triangles": 2052,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.23468194901943207
+    },
+    {
+      "item": 57,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 58,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9886,
+      "triangles": 8212,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.18327604234218597
+    },
+    {
+      "item": 58,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 58,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6238,
+      "triangles": 4920,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.2053288370370865
+    },
+    {
+      "item": 58,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 58,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2838,
+      "triangles": 2042,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.23827549815177917
+    },
+    {
+      "item": 58,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 59,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8534,
+      "triangles": 6468,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1823895126581192
+    },
+    {
+      "item": 59,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 59,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5690,
+      "triangles": 4072,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20426364243030548
+    },
+    {
+      "item": 59,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 59,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2648,
+      "triangles": 1692,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.23713965713977814
+    },
+    {
+      "item": 59,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 60,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10966,
+      "triangles": 7638,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18039044737815857
+    },
+    {
+      "item": 60,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 60,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7020,
+      "triangles": 4708,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.2020927369594574
+    },
+    {
+      "item": 60,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 60,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3294,
+      "triangles": 2004,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.23468194901943207
+    },
+    {
+      "item": 60,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 61,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11974,
+      "triangles": 10300,
+      "leafTriangles": 5760,
+      "largestLeafEdge": 0.18832607567310333
+    },
+    {
+      "item": 61,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 61,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7630,
+      "triangles": 6216,
+      "leafTriangles": 3360,
+      "largestLeafEdge": 0.21086198091506958
+    },
+    {
+      "item": 61,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 61,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3306,
+      "triangles": 2420,
+      "leafTriangles": 1088,
+      "largestLeafEdge": 0.23468194901943207
+    },
+    {
+      "item": 61,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 62,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9814,
+      "triangles": 7062,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1869971603155136
+    },
+    {
+      "item": 62,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 62,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6156,
+      "triangles": 4276,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20942413806915283
+    },
+    {
+      "item": 62,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 62,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2814,
+      "triangles": 1764,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.24305294454097748
+    },
+    {
+      "item": 62,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 63,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11542,
+      "triangles": 9040,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.1910342127084732
+    },
+    {
+      "item": 63,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 63,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7462,
+      "triangles": 5532,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21403969824314117
+    },
+    {
+      "item": 63,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 63,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3486,
+      "triangles": 2366,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 63,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 64,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9366,
+      "triangles": 9064,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.17081370949745178
+    },
+    {
+      "item": 64,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 64,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5278,
+      "triangles": 5040,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.1959289014339447
+    },
+    {
+      "item": 64,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 64,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2108,
+      "triangles": 1940,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.1985362321138382
+    },
+    {
+      "item": 64,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 65,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11510,
+      "triangles": 10134,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.18851067125797272
+    },
+    {
+      "item": 65,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 65,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6324,
+      "triangles": 5560,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.20801424980163574
+    },
+    {
+      "item": 65,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 65,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2554,
+      "triangles": 2160,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.18200744688510895
+    },
+    {
+      "item": 65,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 66,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12494,
+      "triangles": 11740,
+      "leafTriangles": 8640,
+      "largestLeafEdge": 0.17656388878822327
+    },
+    {
+      "item": 66,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 66,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7102,
+      "triangles": 6552,
+      "leafTriangles": 4704,
+      "largestLeafEdge": 0.20996683835983276
+    },
+    {
+      "item": 66,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 66,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2962,
+      "triangles": 2630,
+      "leafTriangles": 1664,
+      "largestLeafEdge": 0.2295890897512436
+    },
+    {
+      "item": 66,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 67,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9990,
+      "triangles": 9420,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.18814758956432343
+    },
+    {
+      "item": 67,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 67,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5690,
+      "triangles": 5272,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.19883422553539276
+    },
+    {
+      "item": 67,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 67,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2292,
+      "triangles": 2040,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.23084133863449097
+    },
+    {
+      "item": 67,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 68,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11270,
+      "triangles": 10014,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.17387539148330688
+    },
+    {
+      "item": 68,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 68,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6156,
+      "triangles": 5476,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.20176616311073303
+    },
+    {
+      "item": 68,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 68,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2458,
+      "triangles": 2112,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.2247752994298935
+    },
+    {
+      "item": 68,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 69,
+      "lod": 0,
+      "part": 0,
+      "vertices": 14582,
+      "triangles": 13828,
+      "leafTriangles": 9600,
+      "largestLeafEdge": 0.17839355766773224
+    },
+    {
+      "item": 69,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 69,
+      "lod": 1,
+      "part": 0,
+      "vertices": 8494,
+      "triangles": 7848,
+      "leafTriangles": 5376,
+      "largestLeafEdge": 0.19615334272384644
+    },
+    {
+      "item": 69,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 69,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3430,
+      "triangles": 3008,
+      "leafTriangles": 1856,
+      "largestLeafEdge": 0.2387458235025406
+    },
+    {
+      "item": 69,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 70,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11270,
+      "triangles": 10014,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.18447357416152954
+    },
+    {
+      "item": 70,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 70,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6156,
+      "triangles": 5476,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.19896955788135529
+    },
+    {
+      "item": 70,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 70,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2458,
+      "triangles": 2112,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.2523718774318695
+    },
+    {
+      "item": 70,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 71,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11846,
+      "triangles": 11416,
+      "leafTriangles": 8640,
+      "largestLeafEdge": 0.18609030544757843
+    },
+    {
+      "item": 71,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 71,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6598,
+      "triangles": 6300,
+      "leafTriangles": 4704,
+      "largestLeafEdge": 0.21017485857009888
+    },
+    {
+      "item": 71,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 71,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2650,
+      "triangles": 2474,
+      "leafTriangles": 1664,
+      "largestLeafEdge": 0.2666613757610321
+    },
+    {
+      "item": 71,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 72,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8206,
+      "triangles": 5208,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.179890438914299
+    },
+    {
+      "item": 72,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4826,
+      "triangles": 3048,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20067241787910461
+    },
+    {
+      "item": 72,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1902,
+      "triangles": 1054,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2329658716917038
+    },
+    {
+      "item": 73,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10734,
+      "triangles": 6438,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1912238746881485
+    },
+    {
+      "item": 73,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6184,
+      "triangles": 3704,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21419154107570648
+    },
+    {
+      "item": 73,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2516,
+      "triangles": 1346,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24862979352474213
+    },
+    {
+      "item": 74,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11238,
+      "triangles": 7900,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18296299874782562
+    },
+    {
+      "item": 74,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6554,
+      "triangles": 4552,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20494675636291504
+    },
+    {
+      "item": 74,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2756,
+      "triangles": 1768,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.20506130158901215
+    },
+    {
+      "item": 75,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5502,
+      "triangles": 3928,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18752187490463257
+    },
+    {
+      "item": 75,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3826,
+      "triangles": 2592,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20997737348079681
+    },
+    {
+      "item": 75,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1634,
+      "triangles": 938,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24371829628944397
+    },
+    {
+      "item": 76,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10686,
+      "triangles": 6446,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18913885951042175
+    },
+    {
+      "item": 76,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6136,
+      "triangles": 3700,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.2129151076078415
+    },
+    {
+      "item": 76,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2492,
+      "triangles": 1346,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24595069885253906
+    },
+    {
+      "item": 77,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12654,
+      "triangles": 9556,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.17834816873073578
+    },
+    {
+      "item": 77,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7490,
+      "triangles": 5560,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.21156437695026398
+    },
+    {
+      "item": 77,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2912,
+      "triangles": 1954,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 78,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10590,
+      "triangles": 6462,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18521013855934143
+    },
+    {
+      "item": 78,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6040,
+      "triangles": 3692,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.2126677930355072
+    },
+    {
+      "item": 78,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2492,
+      "triangles": 1370,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24071452021598816
+    },
+    {
+      "item": 79,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7934,
+      "triangles": 6212,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18071837723255157
+    },
+    {
+      "item": 79,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5166,
+      "triangles": 3836,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21249541640281677
+    },
+    {
+      "item": 79,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2232,
+      "triangles": 1492,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 80,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3780,
+      "triangles": 1892,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 80,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2916,
+      "triangles": 1460,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 80,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1764,
+      "triangles": 884,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 81,
+      "lod": 0,
+      "part": 0,
+      "vertices": 4968,
+      "triangles": 2488,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 81,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3816,
+      "triangles": 1912,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 81,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2280,
+      "triangles": 1144,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 82,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3852,
+      "triangles": 1932,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 82,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2988,
+      "triangles": 1500,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 82,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1836,
+      "triangles": 924,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 83,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5040,
+      "triangles": 2528,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 83,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3888,
+      "triangles": 1952,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 83,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2352,
+      "triangles": 1184,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 84,
+      "lod": 0,
+      "part": 0,
+      "vertices": 2772,
+      "triangles": 1396,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 84,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2196,
+      "triangles": 1108,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 84,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1428,
+      "triangles": 724,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 85,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3960,
+      "triangles": 1992,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 85,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3096,
+      "triangles": 1560,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 85,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1944,
+      "triangles": 984,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 86,
+      "lod": 0,
+      "part": 0,
+      "vertices": 2844,
+      "triangles": 1436,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 86,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2268,
+      "triangles": 1148,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 86,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1500,
+      "triangles": 764,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 87,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5184,
+      "triangles": 2608,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 87,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4032,
+      "triangles": 2032,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 87,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2496,
+      "triangles": 1264,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 88,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 88,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 88,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 89,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 89,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 89,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 90,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 90,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 90,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 91,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 91,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 91,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 92,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 92,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 92,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 93,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 93,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 93,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 94,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 94,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 94,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 95,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3696,
+      "triangles": 1848,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 95,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2832,
+      "triangles": 1416,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 95,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1680,
+      "triangles": 840,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 96,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6910,
+      "triangles": 4560,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.19071990251541138
+    },
+    {
+      "item": 96,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3818,
+      "triangles": 2544,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21361276507377625
+    },
+    {
+      "item": 96,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1374,
+      "triangles": 790,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2435448169708252
+    },
+    {
+      "item": 97,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8862,
+      "triangles": 5502,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18817172944545746
+    },
+    {
+      "item": 97,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4744,
+      "triangles": 2984,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20861853659152985
+    },
+    {
+      "item": 97,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1748,
+      "triangles": 962,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.24213452637195587
+    },
+    {
+      "item": 98,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10518,
+      "triangles": 7540,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.18121591210365295
+    },
+    {
+      "item": 98,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5978,
+      "triangles": 4264,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.20030634105205536
+    },
+    {
+      "item": 98,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2468,
+      "triangles": 1624,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.21296535432338715
+    },
+    {
+      "item": 99,
+      "lod": 0,
+      "part": 0,
+      "vertices": 4206,
+      "triangles": 3280,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18357880413532257
+    },
+    {
+      "item": 99,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2818,
+      "triangles": 2088,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.2055393010377884
+    },
+    {
+      "item": 99,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1106,
+      "triangles": 674,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2386312633752823
+    },
+    {
+      "item": 100,
+      "lod": 0,
+      "part": 0,
+      "vertices": 8814,
+      "triangles": 5510,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17747709155082703
+    },
+    {
+      "item": 100,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4696,
+      "triangles": 2980,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21065884828567505
+    },
+    {
+      "item": 100,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1724,
+      "triangles": 962,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22632469236850739
+    },
+    {
+      "item": 101,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11934,
+      "triangles": 9196,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.189345583319664
+    },
+    {
+      "item": 101,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6914,
+      "triangles": 5272,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.21207131445407867
+    },
+    {
+      "item": 101,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2624,
+      "triangles": 1810,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.23316992819309235
+    },
+    {
+      "item": 102,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9294,
+      "triangles": 5814,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18592360615730286
+    },
+    {
+      "item": 102,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5032,
+      "triangles": 3188,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.215345561504364
+    },
+    {
+      "item": 102,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1964,
+      "triangles": 1106,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20917464792728424
+    },
+    {
+      "item": 103,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6062,
+      "triangles": 5276,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1881859302520752
+    },
+    {
+      "item": 103,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3726,
+      "triangles": 3116,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21069659292697906
+    },
+    {
+      "item": 103,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1464,
+      "triangles": 1108,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 104,
+      "lod": 0,
+      "part": 0,
+      "vertices": 3926,
+      "triangles": 3022,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1850418597459793
+    },
+    {
+      "item": 104,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2256,
+      "triangles": 1736,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20642957091331482
+    },
+    {
+      "item": 104,
+      "lod": 2,
+      "part": 0,
+      "vertices": 676,
+      "triangles": 438,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23967456817626953
+    },
+    {
+      "item": 105,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6070,
+      "triangles": 4092,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17668284475803375
+    },
+    {
+      "item": 105,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3302,
+      "triangles": 2256,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.1933920532464981
+    },
+    {
+      "item": 105,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1122,
+      "triangles": 658,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.22444219887256622
+    },
+    {
+      "item": 106,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7054,
+      "triangles": 5698,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.19014739990234375
+    },
+    {
+      "item": 106,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4080,
+      "triangles": 3248,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.19293971359729767
+    },
+    {
+      "item": 106,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1530,
+      "triangles": 1128,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.22391077876091003
+    },
+    {
+      "item": 107,
+      "lod": 0,
+      "part": 0,
+      "vertices": 4550,
+      "triangles": 3378,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.19153212010860443
+    },
+    {
+      "item": 107,
+      "lod": 1,
+      "part": 0,
+      "vertices": 2668,
+      "triangles": 1968,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20760799944400787
+    },
+    {
+      "item": 107,
+      "lod": 2,
+      "part": 0,
+      "vertices": 860,
+      "triangles": 538,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.240976482629776
+    },
+    {
+      "item": 108,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5830,
+      "triangles": 3972,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.177688330411911
+    },
+    {
+      "item": 108,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3134,
+      "triangles": 2172,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21209734678268433
+    },
+    {
+      "item": 108,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1026,
+      "triangles": 610,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.23095157742500305
+    },
+    {
+      "item": 109,
+      "lod": 0,
+      "part": 0,
+      "vertices": 9142,
+      "triangles": 7786,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.1796894520521164
+    },
+    {
+      "item": 109,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5472,
+      "triangles": 4544,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.19615334272384644
+    },
+    {
+      "item": 109,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1998,
+      "triangles": 1506,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.22914648056030273
+    },
+    {
+      "item": 110,
+      "lod": 0,
+      "part": 0,
+      "vertices": 5830,
+      "triangles": 3972,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1909938007593155
+    },
+    {
+      "item": 110,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3134,
+      "triangles": 2172,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.21123014390468597
+    },
+    {
+      "item": 110,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1026,
+      "triangles": 610,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2404184490442276
+    },
+    {
+      "item": 111,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6406,
+      "triangles": 5374,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.191343292593956
+    },
+    {
+      "item": 111,
+      "lod": 1,
+      "part": 0,
+      "vertices": 3576,
+      "triangles": 2996,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21428416669368744
+    },
+    {
+      "item": 111,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1218,
+      "triangles": 972,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 112,
+      "lod": 0,
+      "part": 0,
+      "vertices": 10950,
+      "triangles": 8726,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.174700528383255
+    },
+    {
+      "item": 112,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 112,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6456,
+      "triangles": 5016,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.2109200358390808
+    },
+    {
+      "item": 112,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 112,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2792,
+      "triangles": 2010,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.19611164927482605
+    },
+    {
+      "item": 112,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 113,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13094,
+      "triangles": 9796,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.18742738664150238
+    },
+    {
+      "item": 113,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 113,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7502,
+      "triangles": 5536,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21540255844593048
+    },
+    {
+      "item": 113,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 113,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3238,
+      "triangles": 2230,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.2409028261899948
+    },
+    {
+      "item": 113,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 114,
+      "lod": 0,
+      "part": 0,
+      "vertices": 14078,
+      "triangles": 11402,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.1792924851179123
+    },
+    {
+      "item": 114,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 114,
+      "lod": 1,
+      "part": 0,
+      "vertices": 8280,
+      "triangles": 6528,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.19703541696071625
+    },
+    {
+      "item": 114,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 114,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3646,
+      "triangles": 2700,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.22871005535125732
+    },
+    {
+      "item": 114,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 115,
+      "lod": 0,
+      "part": 0,
+      "vertices": 11574,
+      "triangles": 9082,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.1851479858160019
+    },
+    {
+      "item": 115,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 115,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6868,
+      "triangles": 5248,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21126382052898407
+    },
+    {
+      "item": 115,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 115,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2976,
+      "triangles": 2110,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.23542727530002594
+    },
+    {
+      "item": 115,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 116,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12854,
+      "triangles": 9676,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.19172435998916626
+    },
+    {
+      "item": 116,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 116,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7334,
+      "triangles": 5452,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21474076807498932
+    },
+    {
+      "item": 116,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 116,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3142,
+      "triangles": 2182,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.25070318579673767
+    },
+    {
+      "item": 116,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 117,
+      "lod": 0,
+      "part": 0,
+      "vertices": 16166,
+      "triangles": 13490,
+      "leafTriangles": 7680,
+      "largestLeafEdge": 0.18330678343772888
+    },
+    {
+      "item": 117,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 117,
+      "lod": 1,
+      "part": 0,
+      "vertices": 9672,
+      "triangles": 7824,
+      "leafTriangles": 4368,
+      "largestLeafEdge": 0.21286435425281525
+    },
+    {
+      "item": 117,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 117,
+      "lod": 2,
+      "part": 0,
+      "vertices": 4114,
+      "triangles": 3078,
+      "leafTriangles": 1472,
+      "largestLeafEdge": 0.26326635479927063
+    },
+    {
+      "item": 117,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 118,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12854,
+      "triangles": 9676,
+      "leafTriangles": 4800,
+      "largestLeafEdge": 0.19359920918941498
+    },
+    {
+      "item": 118,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 118,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7334,
+      "triangles": 5452,
+      "leafTriangles": 2688,
+      "largestLeafEdge": 0.21858328580856323
+    },
+    {
+      "item": 118,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 118,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3142,
+      "triangles": 2182,
+      "leafTriangles": 896,
+      "largestLeafEdge": 0.2753165066242218
+    },
+    {
+      "item": 118,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 119,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13430,
+      "triangles": 11078,
+      "leafTriangles": 6720,
+      "largestLeafEdge": 0.20273756980895996
+    },
+    {
+      "item": 119,
+      "lod": 0,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 119,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7776,
+      "triangles": 6276,
+      "leafTriangles": 3696,
+      "largestLeafEdge": 0.22932490706443787
+    },
+    {
+      "item": 119,
+      "lod": 1,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 119,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3334,
+      "triangles": 2544,
+      "leafTriangles": 1280,
+      "largestLeafEdge": 0.28959110379219055
+    },
+    {
+      "item": 119,
+      "lod": 2,
+      "part": 1,
+      "vertices": 4,
+      "triangles": 2,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 120,
+      "lod": 0,
+      "part": 0,
+      "vertices": 12086,
+      "triangles": 7208,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17611943185329437
+    },
+    {
+      "item": 120,
+      "lod": 1,
+      "part": 0,
+      "vertices": 6510,
+      "triangles": 3924,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.2046564668416977
+    },
+    {
+      "item": 120,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2458,
+      "triangles": 1338,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20689423382282257
+    },
+    {
+      "item": 121,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13846,
+      "triangles": 8022,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.17570242285728455
+    },
+    {
+      "item": 121,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7316,
+      "triangles": 4284,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.1915115863084793
+    },
+    {
+      "item": 121,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2760,
+      "triangles": 1462,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20702865719795227
+    },
+    {
+      "item": 122,
+      "lod": 0,
+      "part": 0,
+      "vertices": 16174,
+      "triangles": 10492,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.19151152670383453
+    },
+    {
+      "item": 122,
+      "lod": 1,
+      "part": 0,
+      "vertices": 9006,
+      "triangles": 5852,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21447709202766418
+    },
+    {
+      "item": 122,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3792,
+      "triangles": 2316,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.24863363802433014
+    },
+    {
+      "item": 123,
+      "lod": 0,
+      "part": 0,
+      "vertices": 6054,
+      "triangles": 4292,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.18670792877674103
+    },
+    {
+      "item": 123,
+      "lod": 1,
+      "part": 0,
+      "vertices": 4098,
+      "triangles": 2780,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20912204682826996
+    },
+    {
+      "item": 123,
+      "lod": 2,
+      "part": 0,
+      "vertices": 1738,
+      "triangles": 1006,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.20392479002475739
+    },
+    {
+      "item": 124,
+      "lod": 0,
+      "part": 0,
+      "vertices": 13990,
+      "triangles": 8158,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.1870070844888687
+    },
+    {
+      "item": 124,
+      "lod": 1,
+      "part": 0,
+      "vertices": 7388,
+      "triangles": 4360,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20954062044620514
+    },
+    {
+      "item": 124,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2808,
+      "triangles": 1510,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.2293667495250702
+    },
+    {
+      "item": 125,
+      "lod": 0,
+      "part": 0,
+      "vertices": 16918,
+      "triangles": 11716,
+      "leafTriangles": 3840,
+      "largestLeafEdge": 0.18590036034584045
+    },
+    {
+      "item": 125,
+      "lod": 1,
+      "part": 0,
+      "vertices": 9486,
+      "triangles": 6572,
+      "leafTriangles": 2352,
+      "largestLeafEdge": 0.20755724608898163
+    },
+    {
+      "item": 125,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3636,
+      "triangles": 2310,
+      "leafTriangles": 704,
+      "largestLeafEdge": 0.2409270852804184
+    },
+    {
+      "item": 126,
+      "lod": 0,
+      "part": 0,
+      "vertices": 14950,
+      "triangles": 8766,
+      "leafTriangles": 960,
+      "largestLeafEdge": 0.19082672894001007
+    },
+    {
+      "item": 126,
+      "lod": 1,
+      "part": 0,
+      "vertices": 8060,
+      "triangles": 4776,
+      "leafTriangles": 672,
+      "largestLeafEdge": 0.20382611453533173
+    },
+    {
+      "item": 126,
+      "lod": 2,
+      "part": 0,
+      "vertices": 3288,
+      "triangles": 1798,
+      "leafTriangles": 128,
+      "largestLeafEdge": 0.21804234385490417
+    },
+    {
+      "item": 127,
+      "lod": 0,
+      "part": 0,
+      "vertices": 7910,
+      "triangles": 6288,
+      "leafTriangles": 2880,
+      "largestLeafEdge": 0.1899394690990448
+    },
+    {
+      "item": 127,
+      "lod": 1,
+      "part": 0,
+      "vertices": 5006,
+      "triangles": 3808,
+      "leafTriangles": 1680,
+      "largestLeafEdge": 0.21271741390228271
+    },
+    {
+      "item": 127,
+      "lod": 2,
+      "part": 0,
+      "vertices": 2096,
+      "triangles": 1440,
+      "leafTriangles": 512,
+      "largestLeafEdge": 0.250424325466156
+    },
+    {
+      "item": 128,
+      "lod": 0,
+      "part": 0,
+      "vertices": 316103,
+      "triangles": 289674,
+      "leafTriangles": 129504,
+      "largestLeafEdge": 0.250568151473999
+    },
+    {
+      "item": 128,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 128,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 128,
+      "lod": 1,
+      "part": 0,
+      "vertices": 167182,
+      "triangles": 150528,
+      "leafTriangles": 53968,
+      "largestLeafEdge": 0.2824900150299072
+    },
+    {
+      "item": 128,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 128,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 128,
+      "lod": 2,
+      "part": 0,
+      "vertices": 85642,
+      "triangles": 76464,
+      "leafTriangles": 10496,
+      "largestLeafEdge": 0.3569391965866089
+    },
+    {
+      "item": 128,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 128,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 0,
+      "part": 0,
+      "vertices": 359473,
+      "triangles": 280076,
+      "leafTriangles": 125344,
+      "largestLeafEdge": 0.25054165720939636
+    },
+    {
+      "item": 129,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 1,
+      "part": 0,
+      "vertices": 202764,
+      "triangles": 141732,
+      "leafTriangles": 51728,
+      "largestLeafEdge": 0.2824918329715729
+    },
+    {
+      "item": 129,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 2,
+      "part": 0,
+      "vertices": 127729,
+      "triangles": 74592,
+      "leafTriangles": 10752,
+      "largestLeafEdge": 0.3569818139076233
+    },
+    {
+      "item": 129,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 129,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 0,
+      "part": 0,
+      "vertices": 279073,
+      "triangles": 280144,
+      "leafTriangles": 182304,
+      "largestLeafEdge": 0.250608891248703
+    },
+    {
+      "item": 130,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 1,
+      "part": 0,
+      "vertices": 126367,
+      "triangles": 125458,
+      "leafTriangles": 80848,
+      "largestLeafEdge": 0.28249573707580566
+    },
+    {
+      "item": 130,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 2,
+      "part": 0,
+      "vertices": 40776,
+      "triangles": 39827,
+      "leafTriangles": 20544,
+      "largestLeafEdge": 0.3569818139076233
+    },
+    {
+      "item": 130,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 130,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 0,
+      "part": 0,
+      "vertices": 411454,
+      "triangles": 305001,
+      "leafTriangles": 117664,
+      "largestLeafEdge": 0.2506627142429352
+    },
+    {
+      "item": 131,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 1,
+      "part": 0,
+      "vertices": 245649,
+      "triangles": 163950,
+      "leafTriangles": 50272,
+      "largestLeafEdge": 0.28249266743659973
+    },
+    {
+      "item": 131,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 2,
+      "part": 0,
+      "vertices": 165195,
+      "triangles": 94131,
+      "leafTriangles": 9600,
+      "largestLeafEdge": 0.3569818139076233
+    },
+    {
+      "item": 131,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 131,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 0,
+      "part": 0,
+      "vertices": 244072,
+      "triangles": 224329,
+      "leafTriangles": 133664,
+      "largestLeafEdge": 0.250571072101593
+    },
+    {
+      "item": 132,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 1,
+      "part": 0,
+      "vertices": 115158,
+      "triangles": 102303,
+      "leafTriangles": 56096,
+      "largestLeafEdge": 0.2824631929397583
+    },
+    {
+      "item": 132,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 2,
+      "part": 0,
+      "vertices": 44408,
+      "triangles": 35662,
+      "leafTriangles": 10944,
+      "largestLeafEdge": 0.3569818139076233
+    },
+    {
+      "item": 132,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 132,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 0,
+      "part": 0,
+      "vertices": 207738,
+      "triangles": 209414,
+      "leafTriangles": 131104,
+      "largestLeafEdge": 0.2506251037120819
+    },
+    {
+      "item": 133,
+      "lod": 0,
+      "part": 1,
+      "vertices": 340,
+      "triangles": 114,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 1,
+      "part": 0,
+      "vertices": 91776,
+      "triangles": 94304,
+      "leafTriangles": 54752,
+      "largestLeafEdge": 0.28246381878852844
+    },
+    {
+      "item": 133,
+      "lod": 1,
+      "part": 1,
+      "vertices": 340,
+      "triangles": 114,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 2,
+      "part": 0,
+      "vertices": 30616,
+      "triangles": 33571,
+      "leafTriangles": 10816,
+      "largestLeafEdge": 0.3569517135620117
+    },
+    {
+      "item": 133,
+      "lod": 2,
+      "part": 1,
+      "vertices": 340,
+      "triangles": 114,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 133,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 0,
+      "part": 0,
+      "vertices": 323184,
+      "triangles": 264677,
+      "leafTriangles": 126624,
+      "largestLeafEdge": 0.25062295794487
+    },
+    {
+      "item": 134,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 1,
+      "part": 0,
+      "vertices": 174940,
+      "triangles": 129359,
+      "leafTriangles": 52512,
+      "largestLeafEdge": 0.28246358036994934
+    },
+    {
+      "item": 134,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 2,
+      "part": 0,
+      "vertices": 103627,
+      "triangles": 63148,
+      "leafTriangles": 10048,
+      "largestLeafEdge": 0.3569510877132416
+    },
+    {
+      "item": 134,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 134,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 0,
+      "part": 0,
+      "vertices": 215763,
+      "triangles": 215222,
+      "leafTriangles": 134944,
+      "largestLeafEdge": 0.25057047605514526
+    },
+    {
+      "item": 135,
+      "lod": 0,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 0,
+      "part": 2,
+      "vertices": 3200,
+      "triangles": 1600,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 1,
+      "part": 0,
+      "vertices": 94276,
+      "triangles": 91928,
+      "leafTriangles": 56768,
+      "largestLeafEdge": 0.2824900150299072
+    },
+    {
+      "item": 135,
+      "lod": 1,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 1,
+      "part": 2,
+      "vertices": 1424,
+      "triangles": 712,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 2,
+      "part": 0,
+      "vertices": 29386,
+      "triangles": 26552,
+      "leafTriangles": 11776,
+      "largestLeafEdge": 0.3569510877132416
+    },
+    {
+      "item": 135,
+      "lod": 2,
+      "part": 1,
+      "vertices": 148,
+      "triangles": 50,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    },
+    {
+      "item": 135,
+      "lod": 2,
+      "part": 2,
+      "vertices": 480,
+      "triangles": 240,
+      "leafTriangles": 0,
+      "largestLeafEdge": 0.0
+    }
+  ]
+}

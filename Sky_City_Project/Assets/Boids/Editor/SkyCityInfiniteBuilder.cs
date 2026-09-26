@@ -158,7 +158,7 @@ public static class SkyCityInfiniteBuilder
                     // Legacy main meshes use the parcel name without " LOD0".
                     // Reuse that object so rebaking cannot replace its subasset IDs.
                     if(saved==null&&lod==0)saved=AssetDatabase.LoadAssetAtPath<Mesh>(asset);
-                    if(saved!=null){mesh.name=saved.name;EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}
+                    if(saved!=null){mesh.name=saved.name;saved.Clear();EditorUtility.CopySerialized(mesh,saved);saved.UploadMeshData(false);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}
                     else if(lod==0)AssetDatabase.CreateAsset(mesh,asset);else AssetDatabase.AddObjectToAsset(mesh,asset);
                     var child=new GameObject("LOD"+lod);child.transform.SetParent(root.transform,false);child.AddComponent<MeshFilter>().sharedMesh=mesh;
                     var renderer=child.AddComponent<MeshRenderer>();renderer.sharedMaterial=mat;lods[lod]=new LOD(new[]{.18f,.065f,.005f}[lod],new Renderer[]{renderer});
@@ -167,7 +167,7 @@ public static class SkyCityInfiniteBuilder
                 {
                     var mesh=SkyCityModuleData.Upload(data.modules[id,0,1],name+" water");
                     var saved=AssetDatabase.LoadAllAssetsAtPath(asset).OfType<Mesh>().FirstOrDefault(m=>m.name==mesh.name);
-                    if(saved!=null){EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}else AssetDatabase.AddObjectToAsset(mesh,asset);
+                    if(saved!=null){saved.Clear();EditorUtility.CopySerialized(mesh,saved);saved.UploadMeshData(false);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}else AssetDatabase.AddObjectToAsset(mesh,asset);
                     var child=new GameObject("Pool");child.layer=4;child.transform.SetParent(root.transform,false);child.AddComponent<MeshFilter>().sharedMesh=mesh;
                     child.AddComponent<MeshRenderer>().sharedMaterial=water;
                 }

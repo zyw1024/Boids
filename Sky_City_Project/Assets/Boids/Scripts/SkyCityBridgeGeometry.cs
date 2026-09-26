@@ -62,7 +62,7 @@ namespace Boids.Art.Infinite
             }
             // Solid spandrels transfer the deck load into two continuous arch ribs.
             // Both independently generated halves meet at the exact same crown.
-            Color32 stone=new Color(.66f,.60f,.46f,0),trim=new Color(.86f,.78f,.62f,0);
+            Color32 stone=new Color(220/255f,208/255f,183/255f,0).linear,trim=new Color(240/255f,226/255f,198/255f,0).linear;
             // Steeper connections are stairs, not implausibly steep smooth ramps.
             // Treads sit on the continuous bearing deck and keep the same endpoints.
             if(Mathf.Abs(slope)>.10f)

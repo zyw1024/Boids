@@ -138,3 +138,18 @@ __pycache__/
 !/Sky_City_Project/Captures/SkyCityWorld/WaterReview/BasinGeometry.json
 !/Sky_City_Project/Captures/SkyCityWorld/WaterReview/AssetReferences.json
 !/Sky_City_Project/Captures/SkyCityWorld/WaterReview/Runtime.json
+
+# Reviewed cliff redesign evidence.
+!/Sky_City_Project/Captures/RockDiscussion/
+/Sky_City_Project/Captures/RockDiscussion/*
+!/Sky_City_Project/Captures/RockDiscussion/CurrentEditor.png
+!/Sky_City_Project/Captures/RockDiscussion/MainIsland_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/World_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/Cliff_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/CliffValidation.json
+!/Sky_City_Project/Captures/RockDiscussion/SpillwayValidation.json
+!/Sky_City_Project/Captures/RockDiscussion/RuntimeValidation.json
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/
+/Sky_City_Project/Captures/SkyCityWorld/StyleReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Geometry.json
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Materials.json

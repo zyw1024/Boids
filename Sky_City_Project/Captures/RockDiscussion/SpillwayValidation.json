@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "blockedSamples": 0,
+  "samples": [
+    {
+      "x": -23.0,
+      "y": 5.5,
+      "waterZ": 2.418218,
+      "rockZ": 3.330762,
+      "occluded": false
+    },
+    {
+      "x": -23.0,
+      "y": 4.1,
+      "waterZ": 2.34494972,
+      "rockZ": 2.7300005,
+      "occluded": false
+    },
+    {
+      "x": -23.0,
+      "y": 1.0999999,
+      "waterZ": 2.19999337,
+      "rockZ": 2.7300005,
+      "occluded": false
+    },
+    {
+      "x": -23.0,
+      "y": -1.9000001,
+      "waterZ": 2.08594227,
+      "rockZ": 2.730001,
+      "occluded": false
+    },
+    {
+      "x": -10.8,
+      "y": 3.31,
+      "waterZ": -3.709062,
+      "rockZ": -3.39999866,
+      "occluded": false
+    },
+    {
+      "x": -10.8,
+      "y": 1.91000009,
+      "waterZ": -3.77619267,
+      "rockZ": -3.3878336,
+      "occluded": false
+    },
+    {
+      "x": -10.8,
+      "y": -1.08999991,
+      "waterZ": -3.91080475,
+      "rockZ": -2.46032524,
+      "occluded": false
+    },
+    {
+      "x": -10.8,
+      "y": -4.09,
+      "waterZ": -4.021526,
+      "rockZ": -1.43621826,
+      "occluded": false
+    },
+    {
+      "x": 23.3,
+      "y": 5.5,
+      "waterZ": 11.9403019,
+      "rockZ": 12.28,
+      "occluded": false
+    },
+    {
+      "x": 23.3,
+      "y": 4.1,
+      "waterZ": 11.8068953,
+      "rockZ": 13.5252037,
+      "occluded": false
+    },
+    {
+      "x": 23.3,
+      "y": 1.0999999,
+      "waterZ": 11.5971766,
+      "rockZ": 14.5051079,
+      "occluded": false
+    },
+    {
+      "x": 23.3,
+      "y": -1.9000001,
+      "waterZ": 11.5592661,
+      "rockZ": null,
+      "occluded": false
+    }
+  ]
+}

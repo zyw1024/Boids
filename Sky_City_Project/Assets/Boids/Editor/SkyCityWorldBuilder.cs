@@ -59,7 +59,7 @@ public static class SkyCityWorldBuilder
         if(rendererIndex<0){rendererIndex=list.arraySize;list.arraySize++;list.GetArrayElementAtIndex(rendererIndex).objectReferenceValue=renderer;pipeline.ApplyModifiedPropertiesWithoutUndo();}
         camera.GetUniversalAdditionalCameraData().SetRenderer(rendererIndex);
         var architecture=CopyMaterial(SkyCityInfiniteBuilder.Root+"/Ivory copper and silk.mat","Weathered ivory city");
-        architecture.SetFloat("_StoneRelief",.025f);architecture.SetFloat("_StoneVariation",.22f);EditorUtility.SetDirty(architecture);
+        architecture.SetFloat("_StoneRelief",.002f);architecture.SetFloat("_StoneVariation",.16f);EditorUtility.SetDirty(architecture);
         var water=CopyMaterial(SkyCityInfiniteBuilder.Root+"/Infinite reflecting water.mat","Archipelago reflecting pools");
         var cascades=AssetDatabase.LoadAssetAtPath<Material>(SkyCityInfiniteBuilder.Root+"/Living transparent cascades.mat");
         var world=new GameObject("Streaming archipelago").AddComponent<SkyCityInfiniteWorld>();world.view=camera;

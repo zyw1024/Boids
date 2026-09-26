@@ -65,7 +65,7 @@ public static class SkyCityHeroBuilder
             string prefix=r.name.Substring(0,2);
             r.sharedMaterial=materials.ContainsKey(prefix)?materials[prefix]:materials["01"];
             r.shadowCastingMode=prefix=="09"||prefix=="13"?ShadowCastingMode.Off:ShadowCastingMode.TwoSided;
-            r.lightProbeUsage=LightProbeUsage.BlendProbes;r.reflectionProbeUsage=ReflectionProbeUsage.Simple;
+            r.lightProbeUsage=prefix=="06"?LightProbeUsage.Off:LightProbeUsage.BlendProbes;r.reflectionProbeUsage=ReflectionProbeUsage.Simple;
             if(prefix=="09"||prefix=="13")r.gameObject.layer=4;
         }
         return instance;

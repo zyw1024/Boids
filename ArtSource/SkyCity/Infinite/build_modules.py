@@ -3,11 +3,15 @@ Run in a separate Blender --background --factory-startup process.
 The binary is a small shared mesh vocabulary, never pre-generated world chunks.
 """
 import bpy, math, json, struct, hashlib, random, gzip
+import numpy as np
+import sys
 from pathlib import Path
 from math import sin, cos, pi
 from mathutils import Vector
 
 SOURCE = Path(__file__).resolve().parent
+sys.path.insert(0,str(SOURCE))
+from hero_style import Botany,PALETTE
 ROOT = SOURCE.parents[2]
 OUT = ROOT / 'Sky_City_Project/Assets/Boids/Resources/SkyCityInfinite'
 OUT.mkdir(parents=True, exist_ok=True)
@@ -16,8 +20,8 @@ for ob in list(bpy.data.objects): bpy.data.objects.remove(ob, do_unlink=True)
 def rgb(h):
     a = [int(h[i:i+2],16)/255 for i in (0,2,4)]
     return tuple(((x+.055)/1.055)**2.4 if x>.04045 else x/12.92 for x in a)
-IVORY=rgb('E8DBBD'); TRIM=rgb('F1E6CB'); COPPER=rgb('568F8C'); GOLD=rgb('C6A063')
-DARK=rgb('354C62'); ROCK=rgb('7C8986'); LEAF=rgb('527767'); SILK=rgb('DFA17E')
+IVORY=PALETTE['IVORY']; TRIM=PALETTE['TRIM']; COPPER=PALETTE['COPPER']; GOLD=PALETTE['GOLD']
+DARK=PALETTE['DARK']; ROCK=PALETTE['STONE']; LEAF=rgb('527767'); SILK=rgb('DFA17E')
 FAMILIES=['Arcaded promenade','Turning loggia','Market colonnade','Fountain piazza',
           'Hanging belvedere','Domed sanctuary','Bell campanile','Garden cloister',
           'Terraced orchard','Palace library','Sky aqueduct','Curved skybridge',
@@ -45,25 +49,31 @@ class Mesh:
             self.uv.append(uv[j] if uv else (0,0))
         for j in range(1,len(pts)-1):self.t.extend([start,start+j,start+j+1])
     def box(self,p,s,c=IVORY,kind=0,rot=0):
+        if c==DARK and kind==0:kind=.05
         sx,sy,sz=[x*.5 for x in s]; q=[]
         for x,y,z in [(-sx,-sy,-sz),(sx,-sy,-sz),(sx,sy,-sz),(-sx,sy,-sz),(-sx,-sy,sz),(sx,-sy,sz),(sx,sy,sz),(-sx,sy,sz)]:
             q.append((p[0]+x*cos(rot)-z*sin(rot),p[1]+y,p[2]+x*sin(rot)+z*cos(rot)))
         for f in [(0,3,2,1),(4,5,6,7),(0,4,7,3),(1,2,6,5),(3,7,6,2),(0,1,5,4)]: self.face([q[i] for i in f],c,kind)
     def ring(self,p,r,h,c=IVORY,top=None,n=None,kind=0):
         if top is None:top=r
-        if n is None:n=[12,8,6][self.lod]
+        if n is None:n=[20,14,10][self.lod]
+        if r>.2:n=max(n,[20,14,10][self.lod])
         low=[]; high=[]
         for j in range(n):
             a=j*2*pi/n;low.append((p[0]+r*cos(a),p[1],p[2]+r*sin(a)))
             high.append((p[0]+top*cos(a),p[1]+h,p[2]+top*sin(a)))
-        for j in range(n):self.face([low[j],high[j],high[(j+1)%n],low[(j+1)%n]],c,kind)
+        for j in range(n):
+            before=len(self.v);self.face([low[j],high[j],high[(j+1)%n],low[(j+1)%n]],c,kind)
+            for k in range(before,len(self.v)):
+                q=self.v[k];self.n[k]=tuple(Vector((q[0]-p[0],(r-top)*max(r,top)/max(h,.001),q[2]-p[2])).normalized())
         self.face(high[::-1],c,kind);self.face(low,c,kind)
     def dome(self,p,r,h,c=COPPER,style=0):
+        kind=.2 if c==COPPER else 0
         if style==3:
-            self.ring(p,r,h*1.7,c,0,n=[16,10,6][self.lod],kind=.2)
+            self.ring(p,r,h*1.7,c,0,n=[24,16,10][self.lod],kind=kind)
             self.ring((p[0],p[1]+h*1.7,p[2]),.10,.6,GOLD,0,6,.6)
             return
-        rows=[7,4,2][self.lod]; cols=[20,12,8][self.lod]
+        rows=[14,9,5][self.lod]; cols=[32,22,14][self.lod]
         for j in range(rows):
             def pt(y,x):
                 a=x*2*pi/cols;theta=y/rows*pi/2
@@ -71,7 +81,7 @@ class Mesh:
                 return(p[0]+rad*cos(a),p[1]+h*sin(theta),p[2]+rad*sin(a))
             for i in range(cols):
                 points=[pt(j,i),pt(j+1,i),pt(j+1,i+1),pt(j,i+1)]
-                before=len(self.v);self.face(points,c,.2)
+                before=len(self.v);self.face(points,c,kind)
                 for k in range(len(self.v)-before):
                     q=self.v[before+k];self.n[before+k]=tuple(Vector(((q[0]-p[0])/(r*r),(q[1]-p[1])/(h*h),(q[2]-p[2])/(r*r))).normalized())
         self.ring((p[0],p[1]+h,p[2]),.12,.65,GOLD,0,6,.6)
@@ -83,24 +93,17 @@ class Mesh:
             for x in [-r-thick*.5,r+thick*.5]:
                 self.box(pt(x,.12,0),(thick+.12,.18,depth+.14),TRIM,rot=rot)
                 self.box(pt(x,spring-.08,0),(thick+.14,.16,depth+.16),TRIM,rot=rot)
-        count=[10,6,3][self.lod]
+        count=[18,12,8][self.lod]
         for j in range(count):
             a=j*pi/count;b=(j+1)*pi/count
             ends=[[pt(rad*cos(t),spring+rad*sin(t),z) for rad,t in [(r,a),(r,b),(r+thick,b),(r+thick,a)]] for z in [-depth*.5,depth*.5]]
             self.face(ends[0],TRIM);self.face(ends[1][::-1],TRIM)
             for k in range(4): self.face([ends[0][k],ends[1][k],ends[1][(k+1)%4],ends[0][(k+1)%4]],TRIM)
     def tree(self,x,z,h=3,base=.2):
-        self.ring((x,base,z),.11,h*.65,rgb('655D4C'),.055,n=5)
-        # Layered rounded crowns, with irregular edges and individual leaf clusters.
-        for k in range(4 if self.lod<2 else 2):
-            a=k*2.399; r=h*(.16 if k else .22)
-            cx=x+cos(a)*h*.14;cz=z+sin(a)*h*.14;cy=base+h*(.58+k*.09)
-            rows=[5,4,3][self.lod];cols=[9,7,5][self.lod]
-            for j in range(rows):
-                def p(t,u):
-                    th=t/rows*pi;ph=u/cols*2*pi;rr=r*(1+.14*sin(ph*5+k))
-                    return(cx+sin(th)*cos(ph)*rr,cy+cos(th)*r*.9,cz+sin(th)*sin(ph)*rr)
-                for i in range(cols):self.face([p(j,i),p(j+1,i),p(j+1,i+1),p(j,i+1)],tuple(c*(.85+k*.09) for c in LEAF),.4)
+        plant=Botany();plant.tree((x,base,z),h,int((x+13)*791+(z+17)*293+h*113),self.lod)
+        plant.append(self)
+    def ivy(self,p,length,seed,spread=.25):
+        plant=Botany();plant.ivy(p,length,seed,self.lod,spread);plant.append(self)
     def flag(self,x,z,h,color=SILK):
         self.ring((x,.25,z),.055,h,GOLD,n=5,kind=.6)
         cols=[9,4,1][self.lod]; rows=2 if self.lod==0 else 1
@@ -152,14 +155,16 @@ def parcel(f,v,lod):
             off=(j-(count-1)*.5)*spacing
             m.arch((x+off if alongX else x,y,z if alongX else z+off),span,h,rot=0 if alongX else pi/2)
         m.box((x,y+h+.14,z),((count*spacing+.2) if alongX else .55,.25,.55 if alongX else count*spacing+.2),TRIM)
+        if lod<2:
+            m.box((x,y+h+.29,z),((count*spacing+.30) if alongX else .65,.09,.65 if alongX else count*spacing+.30),TRIM)
     def pool(x,z,w=2.1,d=2.1):
         # Keep the shared reflection plane at .38. A real basin floor at .275
         # leaves .105 m of water above it, clear of the .024 m wave excursion.
         # The old solid slab ended at .36 and intermittently pierced the water.
-        m.box((x,.235,z),(w,.08,d),DARK)
+        m.box((x,.235,z),(w,.08,d),rgb('729A87'))
         for side in [-1,1]:
-            m.box((x+side*(w+.15)*.5,.35,z),(.15,.20,d+.30),DARK)
-            m.box((x,.35,z+side*(d+.15)*.5),(w,.20,.15),DARK)
+            m.box((x+side*(w+.15)*.5,.35,z),(.15,.20,d+.30),TRIM)
+            m.box((x,.35,z+side*(d+.15)*.5),(w,.20,.15),TRIM)
         water.face([(x-w*.5,.38,z-d*.5),(x-w*.5,.38,z+d*.5),(x+w*.5,.38,z+d*.5),(x+w*.5,.38,z-d*.5)],(1,1,1),0,[(0,0),(0,1),(1,1),(1,0)])
     def round_pavilion(x,z,r,h):
         # Four complete sides carry the roof; a single arcade row cannot support a dome.
@@ -178,7 +183,7 @@ def parcel(f,v,lod):
     elif f==2:
         for x in [-2.6,0,2.6]:
             arcade(x,-2.9,True,1,h=2.6)
-            m.box((x,3.0,-2.9),(2.2,.25,1.8),SILK if v%2 else COPPER,.2)
+            m.box((x,3.0,-2.9),(2.2,.25,1.8),rgb('A16F50') if v%2 else COPPER,.5 if v%2 else .2)
         pavilion(-3,2.6,height,1.0,v%3)
     elif f==3:
         pool(-2.6,-2.6,2.3,2.3);m.ring((-2.6,.4,-2.6),.22,1.8,TRIM,n=8)
@@ -270,15 +275,15 @@ def parcel(f,v,lod):
         if v==3:pavilion(3.6,-3.6,2.8,.72,3)
         if v==5:
             for z in [-3.9,-2.3]:m.arch((3.7,.25,z),1.0,2.7)
-            m.box((3.7,3.0,-3.1),(1.45,.18,2.2),LEAF,.4)
+            m.box((3.7,3.0,-3.1),(1.45,.18,2.2),TRIM)
+            for j in range(3):m.ivy((3.7,3.12,-3.85+j*.72),.65,700+v+j,.42)
         if v in (2,5,7):m.tree(3.9,-2.0,3.2+v*.18)
         if v in (1,4,6):
             m.ring((-3.8,.22,1.8),.55,1.7,TRIM,n=8);m.dome((-3.8,1.92,1.8),.7,.8,COPPER)
         m.flag(3.6,1.8,4.2+v*.18)
-        if lod==0:
-            for j in range(5):
-                a=j*1.256+v*.41
-                m.ring((cos(a)*4.5,-1.0-rng.random()*1.5,sin(a)*4.5),.35,2.1,LEAF,.5,n=5,kind=.4)
+        for j in range(3 if lod<2 else 2):
+            a=j*2.399+v*.41
+            m.ivy((cos(a)*4.15,.24,sin(a)*4.15),1.2+(j%2)*.5,1100+f*73+v*13+j)
     water.uv=[(0,-1) for _ in water.v]
     return m,water,Mesh(lod)
 
@@ -307,13 +312,22 @@ for f in range(16):
                         'water':bool(levels[0][1].t)})
         print('MODULE',id,label, catalog[-1]['lodTriangles'],flush=True)
 
-with gzip.open(OUT/'Modules.bytes','wb',compresslevel=6) as stream:
+with gzip.open(OUT/'Modules.bytes','wb',compresslevel=9) as stream:
     stream.write(struct.pack('<iiii',0x534B594D,3,128,len(districts)))
     for levels in records+districts:
         for mesh,water,cascades in levels:
             for part in [mesh,water,cascades]:
                 stream.write(struct.pack('<ii',len(part.v),len(part.t)))
-                for p,n,c,uv in zip(part.v,part.n,part.c,part.uv):stream.write(struct.pack('<12f',*p,*n,*c,*uv))
+                if part.v:
+                    values=np.asarray([(*p,*n,*c,*uv) for p,n,c,uv in zip(part.v,part.n,part.c,part.uv)],dtype='<f4')
+                    # Sub-millimetre geometry and unit-normal precision. Colour
+                    # already becomes Color32 on upload; this avoids storing
+                    # irrelevant float entropy in a repeated mesh vocabulary.
+                    values[:,:6]=np.round(values[:,:6],4)
+                    values[:,3:6]=np.round(values[:,3:6],3)
+                    values[:,6:10]=np.round(np.clip(values[:,6:10],0,1)*255)/255
+                    values[:,10:]=np.round(values[:,10:],4)
+                    stream.write(values.tobytes())
                 if part.t:stream.write(struct.pack('<%di'%len(part.t),*part.t))
 report={'moduleCount':128,'districtCompositions':len(districts),'distinctGeometryHashes':len(hashes),'families':FAMILIES,'rotationsCountedAsModules':False,
         'tileSize':12,'levelsOfDetail':3,'binaryBytes':(OUT/'Modules.bytes').stat().st_size,

@@ -4,6 +4,10 @@
 
 Open **`Sky_City_Project`** in Unity Hub with **Unity 2022.3.62f2c1**, then open **`Assets/Boids/Scenes/SkyCityWorld.unity`**. Use branch `feat/redon-style-scene`.
 
+![Current Sky City with authored limestone cliffs](Sky_City_Project/Captures/RockDiscussion/World_Final.png)
+
+The latest rock pass replaces repeated cliff faces with nine distinct mass compositions, pale limestone shading, surface-following vines and recessed waterfall channels. The main landmark and eight streamed district compositions share this asset family. [Close view](Sky_City_Project/Captures/RockDiscussion/Cliff_Final.png) · [Editable Blender sources and rebuild notes](ArtSource/SkyCity/Rocks/README.md).
+
 The current scene combines the authored Hanging Gardens island with streamed WFC districts, flocking birds, recursive trees and cellular flower beds. Planting follows compatible architectural modules, their rotation, district shape and elevation. At most four beds and two recursive trees occupy each loaded district. Plants share cached meshes. Nearby gardens evolve, remote gardens pause, and unloaded gardens store their cell states in temporary session files for exact restoration on return. Exiting the world removes those session files.
 
 | Control | Action |

@@ -19,6 +19,7 @@ Shader "Boids/SkyCity/Living Botany"
         HLSLINCLUDE
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+        #include "SkyCityFoliage.hlsl"
         CBUFFER_START(UnityPerMaterial)
         float _Tree,_Growth,_Generations,_Breeze,_StateTime,_Transition,_Rules;
         CBUFFER_END
@@ -64,8 +65,7 @@ Shader "Boids/SkyCity/Living Botany"
             float3 albedo=i.color.rgb;
             if(i.color.a>.2)
             {
-                float rib=1-smoothstep(.025,.065,abs(i.uv.y-.5));
-                albedo*=.9+.10*sin(i.uv.x*3.14159)+rib*.13;
+                albedo=SkyCityLeafPigment(albedo,i.uv);
             }
             else
             {
@@ -75,7 +75,7 @@ Shader "Boids/SkyCity/Living Botany"
             InputData input=(InputData)0;input.positionWS=i.world;input.normalWS=n;
             input.viewDirectionWS=SafeNormalize(GetWorldSpaceViewDir(i.world));input.shadowCoord=TransformWorldToShadowCoord(i.world);
             input.bakedGI=SampleSH(n);input.normalizedScreenSpaceUV=GetNormalizedScreenSpaceUV(i.positionCS);input.shadowMask=1;
-            SurfaceData surface=(SurfaceData)0;surface.albedo=albedo;surface.smoothness=.27;surface.normalTS=float3(0,0,1);surface.occlusion=1;surface.alpha=1;
+            SurfaceData surface=(SurfaceData)0;surface.albedo=albedo;surface.smoothness=i.color.a>.2?.20:.10;surface.normalTS=float3(0,0,1);surface.occlusion=1;surface.alpha=1;
             Light sun=GetMainLight(input.shadowCoord);
             surface.emission=albedo*smoothstep(.15,.6,i.color.a)*saturate(dot(-n,sun.direction))*.22*sun.color*sun.shadowAttenuation;
             return half4(MixFog(UniversalFragmentPBR(input,surface).rgb,i.fog),1);

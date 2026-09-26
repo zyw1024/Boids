@@ -27,11 +27,11 @@ Material:
     m_Floats:
     - _FlowSpeed: 0.8
     - _MultipleElevations: 1
-    - _OpticalDepth: 0.65
+    - _OpticalDepth: 0.32
     - _ReflectionStrength: 0.92
     - _Reveal: 1
-    - _RippleStrength: 0.025
+    - _RippleStrength: 0.018
     m_Colors:
-    - _DeepColor: {r: 0.035, g: 0.19, b: 0.22, a: 1}
-    - _ShallowColor: {r: 0.13, g: 0.42, b: 0.39, a: 1}
+    - _DeepColor: {r: 0.049999982, g: 0.21999997, b: 0.19999996, a: 1}
+    - _ShallowColor: {r: 0.16999996, g: 0.42999998, b: 0.36999997, a: 1}
   m_BuildTextureStacks: []

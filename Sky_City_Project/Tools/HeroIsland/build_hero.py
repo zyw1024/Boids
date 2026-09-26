@@ -11,6 +11,7 @@ import geometry as g
 from geometry import *
 from mathutils.bvhtree import BVHTree
 START=time.time()
+ROCK_DIR=ROOT.parent/'ArtSource/SkyCity/Rocks'
 random.seed(71309)
 g.scene.name='Hanging Gardens - authored hero island'
 g.IVORY=IVORY=rgb('DCD0B7');g.TRIM=TRIM=rgb('F0E2C6')
@@ -151,26 +152,37 @@ def stair(a,b,w=2.1):
     for side in (-1,1):handrail(a+normal*side,b+normal*side)
 
 def rock_island(p,rx,rz,depth,seed):
-    rng=random.Random(seed);pts=[];rows=32;cols=112
-    for j in range(rows+1):
-        t=j/rows
-        for k in range(cols+1):
-            a=k/cols*2*pi;u=Vector((cos(a),t*3.2,sin(a)))
-            profile=(1-t)**.54*(.93+.10*sin(t*13+sin(a*5)))
-            outline=1+.13*sin(a*3+seed)+.075*cos(a*7)+.045*sin(a*13)
-            ridge=1+.13*nz((cos(a)*5,t*2,sin(a)*5),1)+.04*nz((cos(a)*12,t*5,sin(a)*12),1)
-            x=rx*profile*outline*ridge*cos(a)+t*rx*.23;z=rz*profile*outline*ridge*sin(a)
-            y=-depth*t+(.3+.25*sin(a*4))*sin(pi*t)+.42*(1-t)*sin(a*5)
-            weather=clip(.48+.55*nz((x*.6,y*.9,z*.6)))
-            c=mix(rgb('646E6D'),rgb('C4C0A7'),weather)
-            if t<.09:c=mix(c,rgb('6E8055'),.36)
-            pts.append((add(p,(x,y,z)),c,(k/cols,t)))
-    cliffs.grid(pts,cols,rows)
-    # Deep projecting buttresses break the smooth conical silhouette.
-    for j in range(23):
-        a=j*2.399;rr=rng.uniform(.64,.88);h=rng.uniform(depth*.24,depth*.61)
-        q=add(p,(cos(a)*rx*rr,-h*.78-1.1,sin(a)*rz*rr))
-        cliffs.orb(q,(rng.uniform(.95,1.8),h*.63,rng.uniform(.75,1.5)),mix(STONE,rgb('B9B6A4'),rng.random()*.5),seed+j,16,15,.42)
+    # Explicitly authored geological compositions, reviewed as clay in Blender.
+    # A seed selects a distinct silhouette rather than scaling one scan ring.
+    import numpy as np
+    lod=globals().get('_rock_lod',0)
+    designs=('Main','Terrace','Pavilion','Plateau','Split','Blade','Needle','Saddle','Broken')
+    selected={44:'Main',701:'Terrace',527:'Pavilion',31:'Plateau',40:'Blade',53:'Split',89:'Needle',58:'Saddle',67:'Needle',76:'Terrace',85:'Broken',94:'Pavilion'}
+    name=selected.get(seed,designs[(seed*7+3)%len(designs)])
+    with np.load(ROCK_DIR/('Cliff_%s_LOD%d.npz'%(name,lod))) as data:
+        start=len(cliffs.v)
+        for vertex,color,uv in zip(data['p'],data['c'],data['uv']):
+            q=list(add(p,(float(vertex[0])*rx,float(vertex[1])*depth,float(vertex[2])*rz)))
+            # Incised spillways keep the existing waterfall ribbons in front
+            # of the cliff instead of emerging halfway through a wider shoulder.
+            channels={44:(-23,2.45,1.6),701:(-10.8,-3.68,1.25),527:(23.3,12.0,.55)}
+            if seed in channels:
+                x,z,width=channels[seed];weight=max(0,min(1,(width*.5+.65-abs(q[0]-x))/.65))
+                q[2]+=max(0,z+.28-q[2])*weight
+            cliffs.vert(q,tuple(color[:3]),tuple(uv))
+        cliffs.f.extend(tuple(start+int(i) for i in face) for face in data['t'])
+        ivy_fn=globals().get('draped_ivy',globals().get('ivy'))
+        if ivy_fn is not None:
+            state=random.getstate()
+            for j,anchor in enumerate(data['anchors']):
+                if lod>=3 and j%2:continue
+                q=add(p,(float(anchor[0])*rx,float(anchor[1])*depth,float(anchor[2])*rz))
+                # Leave the spillways visible; plants descend beside the water.
+                if seed==701 and abs(q[0]+10.8)<.8:continue
+                if seed==44 and abs(q[0]+23)<1.1:continue
+                if seed not in (44,701,527) and abs(q[0]-36)<3.4:continue
+                ivy_fn(q,min(4.2,depth*(.13+.045*(j%3))),seed*31+j,min(1.1,rx*.055))
+            random.setstate(state)
 
 def leafy_tree(p,h,seed,cypress=False):
     """Branching leaf sprays without solid spheres: visible air between crowns."""

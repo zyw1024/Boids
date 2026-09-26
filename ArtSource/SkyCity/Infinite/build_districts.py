@@ -8,6 +8,7 @@ from math import sin,cos,pi,sqrt,exp
 from mathutils import Vector
 import random,ast,bpy
 from structural_vocabulary import install,curved_stair,straight_stair,retaining_arcades
+from hero_style import install_reference
 
 NAMES=['Palace of the Wind','Cypress Abbey','Hanging Gardens','The Great Library',
        'Astronomers Court','The Spring Garden','Garden Village','The Open Cloister']
@@ -41,6 +42,7 @@ def vocabulary(lod):
         def sampled_cylinder(self,p,r,h,c,top=None,n=32):return cylinder(self,p,r,h,c,top,min(n,[80,24,14][lod]))
         def sampled_arch(mesh,p,width,spring,thick,depth,rot=0,c=env['IVORY'],stones=16):return arch(mesh,p,width,spring,thick,depth,rot,c,min(stones,[16,9,5][lod]))
         cls.orb=sampled_orb;cls.cylinder=sampled_cylinder;env['arch']=sampled_arch
+    install_reference(env,lod)
     install(env,lod)
     return env
 
@@ -122,7 +124,7 @@ def build_districts(Mesh):
                         angle=j*2*pi/12
                         g['column']((cx+11*cos(angle),.3,cz+11*sin(angle)),6,.48)
                         if j%4!=0:arch(a,(cx+10.6*cos(angle+pi/12),.3,cz+10.6*sin(angle+pi/12)),4.9,6,.6,.8,angle+pi/12+pi/2,ivory)
-                    for j in range(9):a.box((cx-7+j*1.6,.6,cz+4*sin(j)),(2.0,1.1,2.2),g['STONE'],rot=j*.63)
+                    for j in range(9):g['boulder']((cx-7+j*1.6,.10,cz+4*sin(j)),(1.0+.15*sin(j),.8+.25*cos(j),1.0),710+j)
             upper=5.8 if variant in (0,1,3,4) else 2.1 if variant==6 else .3
             # Deep window reveals and inhabited cores behind the open loggias.
             if variant==0:
@@ -216,11 +218,18 @@ def build_districts(Mesh):
             # Flatten the source meshes into the shared atlas, retaining smooth
             # normals on dome grids and per-vertex mineral/copper pigmentation.
             output=Mesh(lod)
-            kinds={'Copper':.2,'Brass':.6,'Foliage':.4,'Rock':.1,'Wood':.3,'Dark':0,'Stone':0,'Cloth':.8,'Water':.7}
+            kinds={'Copper':.2,'Brass':.6,'Foliage':.4,'Rock':.1,'Wood':.3,'Dark':.05,'Stone':0,'Terracotta':.5,'Cloth':.8,'Water':.7}
             for src in g['groups'].values():
                 if not src.f:continue
                 if src.kind=='Water':raise RuntimeError('Cascades must use the transparent mesh stream')
-                if src.kind=='Rock':src.v=[(p[0],min(p[1],-.75),p[2]) for p in src.v]
+                if src.kind=='Rock' and src.name!='06 - Garden boulders':
+                    # Cut a continuous chute behind the authored spillway.
+                    # The wider cliff shoulders must not occlude falling water.
+                    carved=[]
+                    for p in src.v:
+                        weight=max(0,min(1,(width*.5+.9-abs(p[0]-36))/.9))
+                        carved.append((p[0],min(p[1],-.75),p[2]+max(0,4.3-p[2])*weight))
+                    src.v=carved
                 normals=[Vector((0,0,0)) for _ in src.v]
                 for face in src.f:
                     if len(face)<3:continue
@@ -231,6 +240,7 @@ def build_districts(Mesh):
                 output.c.extend((*c[:3],kinds.get(src.kind,0)) for c in src.c);output.uv.extend(src.uv)
                 for face in src.f:
                     for j in range(1,len(face)-1):output.t.extend((start+face[0],start+face[j],start+face[j+1]))
+            for plant in g['_hero_botany']:plant.append(output)
             # LOD uses fewer radial samples and fewer leaf clusters in vocabulary().
             # Structural columns are retained so distant roofs never float in space.
             # Store an island-local current vector in UVs for pools/channels.

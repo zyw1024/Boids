@@ -1,0 +1,267 @@
+{
+  "designs": [
+    "Main",
+    "Terrace",
+    "Pavilion",
+    "Plateau",
+    "Split",
+    "Blade",
+    "Needle",
+    "Saddle",
+    "Broken"
+  ],
+  "assets": [
+    {
+      "design": "Main",
+      "lod": 0,
+      "vertices": 36126,
+      "triangles": 65856,
+      "hash": "e3e7e9758e63ecf212064e32663374e985b16a9964deeb04e5802da1b41c8495"
+    },
+    {
+      "design": "Main",
+      "lod": 1,
+      "vertices": 14324,
+      "triangles": 23703,
+      "hash": "af3cad746df82d6eefba3a600af4cc8d04fc40d7984da4258cf3d938cfd88e96"
+    },
+    {
+      "design": "Main",
+      "lod": 2,
+      "vertices": 5616,
+      "triangles": 8554,
+      "hash": "5f5b043280accb7d1ac5dd94aed6e1d3918678d8c8512693e4b3d63e000a6d6e"
+    },
+    {
+      "design": "Main",
+      "lod": 3,
+      "vertices": 2143,
+      "triangles": 2956,
+      "hash": "5a777e5505a70b7757028685055721a33e91955300ad0c9271cb589be2ad8cf8"
+    },
+    {
+      "design": "Terrace",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "07d9f7708175dc5360969fde6acf4c3a78f8f6c5fc6e8ece9689247734536ee2"
+    },
+    {
+      "design": "Terrace",
+      "lod": 1,
+      "vertices": 9474,
+      "triangles": 15802,
+      "hash": "2f20791647ecd77e31d3693deb3e75ad69ee49ede615d1af503dedbb604d35ff"
+    },
+    {
+      "design": "Terrace",
+      "lod": 2,
+      "vertices": 3660,
+      "triangles": 5704,
+      "hash": "71073840b793077b14a7805dc99ebb6c897268c384eff17445517b49ccf011a3"
+    },
+    {
+      "design": "Terrace",
+      "lod": 3,
+      "vertices": 1394,
+      "triangles": 1969,
+      "hash": "0c46e03ebfbc3777294db8570d12cacf9c8ef89d6449b582c1eb8a40a6e74d08"
+    },
+    {
+      "design": "Pavilion",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "d76491e818a0d26c168c858a0aaa6ea42a90590dccd1aa6fe7012ae9333e9cc0"
+    },
+    {
+      "design": "Pavilion",
+      "lod": 1,
+      "vertices": 9482,
+      "triangles": 15802,
+      "hash": "0ca7c969bd91f50a2d8091584a3fae0db4823ea9608136558481bf982396bf47"
+    },
+    {
+      "design": "Pavilion",
+      "lod": 2,
+      "vertices": 3672,
+      "triangles": 5703,
+      "hash": "ef9de5597ec51cc3d5c13d5130b30f1af5cf6e0a18d81dd5c4e8a66fe5e8a690"
+    },
+    {
+      "design": "Pavilion",
+      "lod": 3,
+      "vertices": 1392,
+      "triangles": 1971,
+      "hash": "cdf51f974cdf0264066812944ee8c7ea2c8d6c28142006bc2c5d94f71b2ea4ac"
+    },
+    {
+      "design": "Plateau",
+      "lod": 0,
+      "vertices": 30105,
+      "triangles": 54880,
+      "hash": "30543cf35f06f42a3b24a70b631f596fb97c036df800c1d82883b0d500d39c24"
+    },
+    {
+      "design": "Plateau",
+      "lod": 1,
+      "vertices": 11771,
+      "triangles": 19754,
+      "hash": "8b89dbba49750858bd70c1ad4b39891ea39095f112afdb01e523704be80fb6f3"
+    },
+    {
+      "design": "Plateau",
+      "lod": 2,
+      "vertices": 4498,
+      "triangles": 7128,
+      "hash": "73a68c5adb23e80115383818f924ec37fb33c17ac87562c4056d8740cef5dea6"
+    },
+    {
+      "design": "Plateau",
+      "lod": 3,
+      "vertices": 1698,
+      "triangles": 2462,
+      "hash": "98bfb7fd5fbe1ec188831961d2550a4cc658a786aa73be421e94dbb7e086ab73"
+    },
+    {
+      "design": "Split",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "be7c2980f1bfdf86b678ab1f7aff0e7d671e4598bf05c250cede28c97b8cec98"
+    },
+    {
+      "design": "Split",
+      "lod": 1,
+      "vertices": 9441,
+      "triangles": 15803,
+      "hash": "c1159c133faab037a409c66204c6477973caa17a167bf3dda543a43a4db7ae24"
+    },
+    {
+      "design": "Split",
+      "lod": 2,
+      "vertices": 3649,
+      "triangles": 5703,
+      "hash": "cf0b1da83f5928e641a7630519767f3b09f7c20c1b10a1b270ac69f4964eadbe"
+    },
+    {
+      "design": "Split",
+      "lod": 3,
+      "vertices": 1384,
+      "triangles": 1971,
+      "hash": "acc064e071588f23466ddaa16bc2ac7acc21bc3e2e4a6416ab3da9a27fe341c4"
+    },
+    {
+      "design": "Blade",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "9794c255c06348b04dd1fb3325dc423de792e3848ee55c142d62336cb311d950"
+    },
+    {
+      "design": "Blade",
+      "lod": 1,
+      "vertices": 9449,
+      "triangles": 15804,
+      "hash": "41729eb2395effbb0ef980809d466b05d98c1c4d8e97edd3dac8d8da95dc838d"
+    },
+    {
+      "design": "Blade",
+      "lod": 2,
+      "vertices": 3660,
+      "triangles": 5704,
+      "hash": "a42d831c1838319972276cb636a2f91d13f8e3c8bf66ac684dd0f7b8ce3bd957"
+    },
+    {
+      "design": "Blade",
+      "lod": 3,
+      "vertices": 1385,
+      "triangles": 1972,
+      "hash": "aa189670fde751b13c7ca47d0a3747f6ed903421f5692e422cd49849828d61e3"
+    },
+    {
+      "design": "Needle",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "8156276b88a3ff2a3716ea689a4845fd2b7b6bdf4030deae583d49d95b9b805b"
+    },
+    {
+      "design": "Needle",
+      "lod": 1,
+      "vertices": 9454,
+      "triangles": 15801,
+      "hash": "3a232d78aa6fbb02f154014b104f83ca94867d3282bfb8e79f62a071c0b31022"
+    },
+    {
+      "design": "Needle",
+      "lod": 2,
+      "vertices": 3660,
+      "triangles": 5703,
+      "hash": "299add847e687aec0eca67840a41ad4493fb8aae27a69435c3066766a7b71d2a"
+    },
+    {
+      "design": "Needle",
+      "lod": 3,
+      "vertices": 1402,
+      "triangles": 1972,
+      "hash": "76132a6c8e247ae0fedd58a1f9aaa191a14199aa590ea0ae9bd16fa857f606d1"
+    },
+    {
+      "design": "Saddle",
+      "lod": 0,
+      "vertices": 24084,
+      "triangles": 43904,
+      "hash": "2709f5cada1857d4cbdc25a517dd4d7e0590bf491971797a3abdb9d0cd3a7fe0"
+    },
+    {
+      "design": "Saddle",
+      "lod": 1,
+      "vertices": 9414,
+      "triangles": 15801,
+      "hash": "94aaa2c025ca6fddafdab76044f11bf14874397a8991a8818a7cfc917383a58b"
+    },
+    {
+      "design": "Saddle",
+      "lod": 2,
+      "vertices": 3621,
+      "triangles": 5702,
+      "hash": "486a7fbb1f4c9622e6a6e8ed8b4588cd3ca9d05773a948ce6472dfca2d07b89d"
+    },
+    {
+      "design": "Saddle",
+      "lod": 3,
+      "vertices": 1381,
+      "triangles": 1969,
+      "hash": "5f34211206e92a0a33d0ef019ab02e4011341008424906deb9f1b5603dc00752"
+    },
+    {
+      "design": "Broken",
+      "lod": 0,
+      "vertices": 30105,
+      "triangles": 54880,
+      "hash": "7ee761fa834bd9401342ba654d3fbd8b6153981b5a9fd9fdf311f5a03a6bc2e3"
+    },
+    {
+      "design": "Broken",
+      "lod": 1,
+      "vertices": 11836,
+      "triangles": 19753,
+      "hash": "4ef5c2191e7eff0dee25c4509d34ebde4ff8a34b84cbfb77b685fdeed52c38d9"
+    },
+    {
+      "design": "Broken",
+      "lod": 2,
+      "vertices": 4576,
+      "triangles": 7127,
+      "hash": "d56a2cb45f6c79aaac04d8103dc5378e1197de9e0087bae78d968696517828da"
+    },
+    {
+      "design": "Broken",
+      "lod": 3,
+      "vertices": 1739,
+      "triangles": 2462,
+      "hash": "9e340486caf24d02403d9bcd10b8f581089e5e8d6f9303688a8d8d1766119a29"
+    }
+  ]
+}
