@@ -48,7 +48,7 @@ public sealed class SkyCityWorldReview
         float t=frames/30f;Vector3 p,target;
         if(player.flockMenu!=null)
         {
-            if(frames==240)player.flockMenu.SetOpen(true);
+            if(frames==240){player.flockMenu.ShowWorldSettings(false);player.flockMenu.SetOpen(true);}
             if(frames==270)foreach(var slider in player.flockMenu.GetComponentsInChildren<UnityEngine.UI.Slider>())if(slider.name=="BirdCount")slider.value=96;
             if(frames==345){player.flockMenu.ResetDefaults();player.flockMenu.SetOpen(false);}
         }

@@ -9358,6 +9358,13 @@ MonoBehaviour:
   waterMaterial: {fileID: 2100000, guid: 5c6fdba516a85ba4582cac44fbeb30a6, type: 2}
   cascadeMaterial: {fileID: 2100000, guid: 5699482250c0d654ab1e84a9b5e28f48, type: 2}
   seed: 93641
+  generationSettings:
+    bridgeProbability: 0.4
+    shoreCompleteness: 0.8
+    gardenWeight: 1
+    towerWeight: 1
+    variantCoherence: 1.6
+    attempts: 8
   loadRadius: 2
   maximumResidentChunks: 25
   maximumWorkers: 2

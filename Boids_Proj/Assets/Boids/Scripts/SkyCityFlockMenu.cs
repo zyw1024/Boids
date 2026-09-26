@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Boids.Art
 {
     /// <summary>Live flock controls. The world continues while player input is captured by the menu.</summary>
-    public sealed class SkyCityFlockMenu : MonoBehaviour
+    public sealed partial class SkyCityFlockMenu : MonoBehaviour
     {
         public Font font;
         public bool IsOpen {get;private set;}
@@ -56,25 +56,28 @@ namespace Boids.Art
             var panel=Image("Flock panel",canvasRoot.transform,Ink);Place(panel.rectTransform,48,48,480,962);
             var accent=Image("Gold rule",panel.transform,Gold);Place(accent.rectTransform,0,0,480,2);
             Label(panel.transform,"SKY CITY   /   FIELD NOTES",26,21,428,20,12,Gold);
-            Label(panel.transform,"鸟群",26,49,350,46,34,Paper);
-            Label(panel.transform,"调整风中的秩序",28,98,360,24,17,Muted);
-            status=Label(panel.transform,"实时预览 · 64 只飞鸟",28,129,420,22,14,Teal);
-            Section(panel.transform,"01   飞行",166);
-            Row(panel.transform,"BirdCount","鸟群数量",192,16,128,()=>flock.BirdCount,v=>flock.SetBirdCount(Mathf.RoundToInt(v)),"0"," 只",true);
-            Row(panel.transform,"CruiseSpeed","飞行速度",250,3,14,()=>flock.cruiseSpeed,v=>flock.cruiseSpeed=v,"0.0"," m/s");
-            Row(panel.transform,"Steering","转向灵活度",308,6,32,()=>flock.steeringLimit,v=>flock.steeringLimit=v,"0.0","");
-            Section(panel.transform,"02   群体行为",378);
-            Row(panel.transform,"NeighbourRadius","感知半径",404,2,12,()=>flock.neighbourRadius,v=>flock.neighbourRadius=v,"0.0"," m");
-            Row(panel.transform,"SeparationRadius","个体间距",462,.5f,3.5f,()=>flock.separationRadius,v=>flock.separationRadius=v,"0.00"," m");
-            Row(panel.transform,"SeparationWeight","分离 · 避免拥挤",520,0,8,()=>flock.separationWeight,v=>flock.separationWeight=v,"0.00","");
-            Row(panel.transform,"AlignmentWeight","对齐 · 同向飞行",578,0,2,()=>flock.alignmentWeight,v=>flock.alignmentWeight=v,"0.00","");
-            Row(panel.transform,"CohesionWeight","聚合 · 靠近同伴",636,0,.6f,()=>flock.cohesionWeight,v=>flock.cohesionWeight=v,"0.00","");
-            Section(panel.transform,"03   右键召集",706);
-            Row(panel.transform,"CallRadius","盘旋半径",732,2,12,()=>flock.callRadius,v=>flock.callRadius=v,"0.0"," m");
-            Row(panel.transform,"CallDuration","停留时间",790,5,40,()=>flock.callDuration,v=>flock.SetCallDuration(v),"0"," s",true);
-            Button(panel.transform,"Reset defaults","恢复默认",26,862,190,false,ResetDefaults);
-            Button(panel.transform,"Resume flight","继续飞行  Esc",228,862,226,true,()=>SetOpen(false));
-            Label(panel.transform,"参数即时生效 · 场景继续运行",26,921,428,22,13,Muted);
+            Label(panel.transform,"场景设置",26,49,350,46,34,Paper);
+            flockTab=Button(panel.transform,"Flock tab","鸟群",26,103,207,true,()=>ShowWorldSettings(false),34);
+            worldTab=Button(panel.transform,"World tab","世界生成 · WFC",247,103,207,false,()=>ShowWorldSettings(true),34);
+            status=Label(panel.transform,"实时预览 · 64 只飞鸟",28,144,420,20,13,Teal);
+            flockPage=Page(panel.transform,"Flock controls");
+            Section(flockPage,"01   飞行",166);
+            Row(flockPage,"BirdCount","鸟群数量",192,16,128,()=>flock.BirdCount,v=>flock.SetBirdCount(Mathf.RoundToInt(v)),"0"," 只",true);
+            Row(flockPage,"CruiseSpeed","飞行速度",250,3,14,()=>flock.cruiseSpeed,v=>flock.cruiseSpeed=v,"0.0"," m/s");
+            Row(flockPage,"Steering","转向灵活度",308,6,32,()=>flock.steeringLimit,v=>flock.steeringLimit=v,"0.0","");
+            Section(flockPage,"02   群体行为",378);
+            Row(flockPage,"NeighbourRadius","感知半径",404,2,12,()=>flock.neighbourRadius,v=>flock.neighbourRadius=v,"0.0"," m");
+            Row(flockPage,"SeparationRadius","个体间距",462,.5f,3.5f,()=>flock.separationRadius,v=>flock.separationRadius=v,"0.00"," m");
+            Row(flockPage,"SeparationWeight","分离 · 避免拥挤",520,0,8,()=>flock.separationWeight,v=>flock.separationWeight=v,"0.00","");
+            Row(flockPage,"AlignmentWeight","对齐 · 同向飞行",578,0,2,()=>flock.alignmentWeight,v=>flock.alignmentWeight=v,"0.00","");
+            Row(flockPage,"CohesionWeight","聚合 · 靠近同伴",636,0,.6f,()=>flock.cohesionWeight,v=>flock.cohesionWeight=v,"0.00","");
+            Section(flockPage,"03   右键召集",706);
+            Row(flockPage,"CallRadius","盘旋半径",732,2,12,()=>flock.callRadius,v=>flock.callRadius=v,"0.0"," m");
+            Row(flockPage,"CallDuration","停留时间",790,5,40,()=>flock.callDuration,v=>flock.SetCallDuration(v),"0"," s",true);
+            Button(flockPage,"Reset defaults","恢复默认",26,862,190,false,ResetDefaults);
+            Button(flockPage,"Resume flight","继续飞行  Esc",228,862,226,true,()=>SetOpen(false));
+            Label(flockPage,"参数即时生效 · 场景继续运行",26,921,428,22,13,Muted);
+            BuildWorldPage(panel.transform);ShowWorldSettings(false);
             canvasRoot.SetActive(false);
         }
 
@@ -82,7 +85,8 @@ namespace Boids.Art
         {
             if(!IsOpen||Time.unscaledTime<nextStatus)return;
             nextStatus=Time.unscaledTime+.25f;
-            status.text="实时预览 · "+flock.BirdCount+" 只飞鸟"+(flock.InvitationActive?" · 召集中":" · 自由飞行");
+            if(WorldPageActive)UpdateWorldStatus();
+            else status.text="实时预览 · "+flock.BirdCount+" 只飞鸟"+(flock.InvitationActive?" · 召集中":" · 自由飞行");
         }
         public void SetOpen(bool open)
         {
@@ -107,7 +111,7 @@ namespace Boids.Art
             Label(parent,title,26,y,428,20,13,Gold);
             var line=Image(title+" rule",parent,new Color(Muted.r,Muted.g,Muted.b,.18f));Place(line.rectTransform,145,y+11,309,1);
         }
-        void Row(Transform parent,string id,string title,float y,float min,float max,Func<float> read,Action<float> write,string format,string suffix,bool integer=false)
+        void Row(Transform parent,string id,string title,float y,float min,float max,Func<float> read,Action<float> write,string format,string suffix,bool integer=false,List<Binding> target=null)
         {
             Label(parent,title,26,y,294,24,17,Paper);
             var value=Label(parent,"",321,y,133,24,17,Teal);value.alignment=TextAnchor.MiddleRight;
@@ -126,15 +130,16 @@ namespace Boids.Art
             slider.direction=Slider.Direction.LeftToRight;
             var colours=slider.colors;colours.normalColor=Color.white;colours.highlightedColor=Gold;colours.pressedColor=Teal;colours.fadeDuration=.12f;slider.colors=colours;
             var binding=new Binding{slider=slider,value=value,read=read,write=write,initial=read(),format=format,suffix=suffix};
-            binding.Refresh();bindings.Add(binding);
+            binding.Refresh();(target??bindings).Add(binding);
             slider.onValueChanged.AddListener(v=>{binding.write(v);binding.Refresh();});
         }
-        void Button(Transform parent,string id,string caption,float x,float y,float width,bool primary,Action clicked)
+        Button Button(Transform parent,string id,string caption,float x,float y,float width,bool primary,Action clicked,float height=46)
         {
-            var background=Image(id,parent,primary?Teal:new Color(.17f,.26f,.28f));Place(background.rectTransform,x,y,width,46);
+            var background=Image(id,parent,primary?Teal:new Color(.17f,.26f,.28f));Place(background.rectTransform,x,y,width,height);
             var button=background.gameObject.AddComponent<Button>();button.targetGraphic=background;button.navigation=new Navigation{mode=Navigation.Mode.None};
-            var text=Label(background.transform,caption,0,0,width,46,16,primary?Ink:Paper);text.alignment=TextAnchor.MiddleCenter;
+            var text=Label(background.transform,caption,0,0,width,height,16,primary?Ink:Paper);text.alignment=TextAnchor.MiddleCenter;
             button.onClick.AddListener(()=>clicked());
+            return button;
         }
         Text Label(Transform parent,string caption,float x,float y,float width,float height,int size,Color color)
         {

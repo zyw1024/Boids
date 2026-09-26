@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "legacy": {
+    "passed": true,
+    "deterministic": true,
+    "orderIndependent": true,
+    "cancellationObserved": true,
+    "chunks": 108,
+    "neighborChecks": 12096,
+    "seamChecks": 1152,
+    "observations": 3461,
+    "propagations": 843368,
+    "restarts": 0,
+    "fallbacks": 0,
+    "moduleCount": 128,
+    "distinctModulesObserved": 104,
+    "silhouetteChecks": 864,
+    "elapsedMilliseconds": 188.72400000000002,
+    "error": null
+  },
+  "layouts": 118,
+  "adjacency": 6048,
+  "seams": 576,
+  "fallbacks": 0,
+  "changed": 32,
+  "gardens": [
+    93,
+    359
+  ],
+  "towers": [
+    3,
+    5
+  ],
+  "coherent": [
+    126,
+    361
+  ]
+}

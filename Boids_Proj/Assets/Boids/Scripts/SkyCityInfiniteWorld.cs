@@ -17,6 +17,7 @@ namespace Boids.Art.Infinite
         public Camera view;
         public Material architectureMaterial, waterMaterial, cascadeMaterial;
         public int seed = 93641;
+        public SkyCityWfc.Settings generationSettings=SkyCityWfc.Settings.Default;
         [Range(1,3)] public int loadRadius = 2;
         [Range(9,49)] public int maximumResidentChunks = 25;
         [Range(1,3)] public int maximumWorkers = 2;
@@ -28,6 +29,14 @@ namespace Boids.Art.Infinite
         public Transform authoredArrival,travellerRoot;
         public event Action<Vector3> OriginShifted;
         public int CollisionChunks {get;private set;}
+        public int GenerationRevision {get;private set;}
+        public int RegeneratedChunks {get;private set;}
+        public int TargetChunks => wanted.Count;
+        public int CurrentGenerationChunks
+        {get{int n=0;foreach(var c in wanted){Chunk chunk;if(chunks.TryGetValue(c,out chunk)&&chunk.revision==GenerationRevision)n++;}return n;}}
+        public bool GenerationComplete => Ready&&wanted.Count>0&&CurrentGenerationChunks==wanted.Count;
+        public SkyCityWfc.Settings ActiveSettings => activeSettings;
+        SkyCityWfc.Settings activeSettings;
 
         public bool Ready { get; private set; }
         public string Status { get; private set; } = "Opening the atlas";
@@ -63,6 +72,7 @@ namespace Boids.Art.Infinite
             public MeshCollider[] colliders = new MeshCollider[4];
             public SkyCityWfc.Result layout;
             public int lod;
+            public int revision;
             public long bytes;
             public float appeared;
             public float appliedReveal=-1;
@@ -72,6 +82,7 @@ namespace Boids.Art.Infinite
         {
             public SkyCityWfc.Coord coord;
             public int lod;
+            public int revision;
             public CancellationTokenSource cancellation;
             public Task<SkyCityModuleData.Payload> task;
         }
@@ -82,6 +93,7 @@ namespace Boids.Art.Infinite
             public Mesh[] fresh = new Mesh[6];
             public int cursor;
             public bool replacement;
+            public int revision;
             public JobHandle collisionBake;
         }
         struct BakeCollision : IJob
@@ -105,7 +117,24 @@ namespace Boids.Art.Infinite
         int previousTargetFrameRate,previousVsync;
         SkyCityWaterReflection reflection;
         const int PoolLimit = 2;
-        void Awake() { InitialDistrictObjects = transform.childCount; }
+        void Awake() { InitialDistrictObjects = transform.childCount;activeSettings=generationSettings.Normalized(); }
+
+        public bool ApplyGeneration(int nextSeed,SkyCityWfc.Settings settings)
+        {
+            settings=settings.Normalized();
+            if(seed==nextSeed&&activeSettings.Equals(settings))return false;
+            seed=nextSeed;generationSettings=activeSettings=settings;GenerationRevision++;nextPlan=0;
+            foreach(var job in jobs)if(!job.cancellation.IsCancellationRequested){job.cancellation.Cancel();CancelledJobs++;}
+            // Keep visible chunks until their replacements are ready. An obsolete
+            // collider bake is drained asynchronously by UploadOne, not here.
+            return true;
+        }
+        public void SetStreaming(int radius,float budget)
+        {
+            loadRadius=Mathf.Clamp(radius,1,3);maximumResidentChunks=(2*loadRadius+1)*(2*loadRadius+1);
+            mainThreadBudgetMilliseconds=float.IsNaN(budget)||float.IsInfinity(budget)?2:Mathf.Clamp(budget,.5f,4);
+            nextPlan=0;
+        }
 
         IEnumerator Start()
         {
@@ -144,9 +173,13 @@ namespace Boids.Art.Infinite
             if (staging != null) UploadOne();
             while (Elapsed(begin) < mainThreadBudgetMilliseconds)
             {
-                if (staging != null) { UploadOne(); continue; }
+                if (staging != null)
+                {
+                    if((staging.cursor>=6||staging.revision!=GenerationRevision||!wantedSet.Contains(staging.payload.layout.coord))&&!staging.collisionBake.IsCompleted)break;
+                    UploadOne();continue;
+                }
                 if (BeginReady()) continue;
-                if (EvictOne(false)) continue;
+                if (EvictOne(chunks.Count>maximumResidentChunks)) continue;
                 break;
             }
             Schedule();
@@ -183,13 +216,17 @@ namespace Boids.Art.Infinite
             priorityPosition = view.transform.position; priorityForward = view.transform.forward;
             wanted.Sort(ComparePriority);
             if(reflection!=null&&wanted.Count>0)
+            {
+                Chunk reflected;int composition=chunks.TryGetValue(wanted[0],out reflected)?reflected.layout.composition:SkyCityWfc.Composition(wanted[0],seed);
                 reflection.waterHeight=authoredArrival!=null&&(view.transform.position-authoredArrival.position).sqrMagnitude<85*85?
-                    3.91f:SkyCityWfc.Elevation(SkyCityWfc.Composition(wanted[0],seed))+.38f;
+                    3.91f:SkyCityWfc.Elevation(composition)+.38f;
+            }
             if (wanted.Count > maximumResidentChunks) wanted.RemoveRange(maximumResidentChunks,wanted.Count-maximumResidentChunks);
             foreach (var key in wanted) wantedSet.Add(key);
             foreach (var job in jobs) if (!wantedSet.Contains(job.coord) && !job.cancellation.IsCancellationRequested)
             { job.cancellation.Cancel(); CancelledJobs++; }
-            if (staging != null && !wantedSet.Contains(staging.payload.layout.coord)) AbortStaging();
+            // UploadOne also drains removed or superseded staging without waiting
+            // synchronously for a worker's collision bake on the main thread.
         }
         int ComparePriority(SkyCityWfc.Coord a, SkyCityWfc.Coord b) { return Priority(a).CompareTo(Priority(b)); }
         float Priority(SkyCityWfc.Coord c)
@@ -211,19 +248,20 @@ namespace Boids.Art.Infinite
             {
                 Chunk current; chunks.TryGetValue(coord,out current);
                 int lod = DesiredLod(coord,current == null ? -1 : current.lod);
-                if (current != null && current.lod == lod) continue;
+                if (current != null && current.lod == lod&&current.revision==GenerationRevision) continue;
                 bool exists = staging != null && staging.payload.layout.coord.Equals(coord);
                 foreach (var job in jobs) if (job.coord.Equals(coord)) exists = true;
                 if (exists) continue;
                 var taskCancellation = CancellationTokenSource.CreateLinkedTokenSource(lifetime.Token);
                 CancellationToken token = taskCancellation.Token;
-                var vocabulary = library; var layout = current == null ? null : current.layout; int worldSeed = seed;
-                var jobItem = new Job { coord = coord, lod = lod, cancellation = taskCancellation };
+                var vocabulary = library; var layout = current == null||current.revision!=GenerationRevision ? null : current.layout; int worldSeed = seed;
+                var settings=activeSettings;bool reserved=reserveArrival;
+                var jobItem = new Job { coord = coord, lod = lod, cancellation = taskCancellation,revision=GenerationRevision };
                 jobItem.task = Task.Run(() =>
                 {
                     var clock = Stopwatch.StartNew();
-                    var solved = layout ?? SkyCityWfc.Solve(coord,worldSeed,token);
-                    var payload = vocabulary.Build(solved,lod,token,reserveArrival); payload.workerMilliseconds = clock.Elapsed.TotalMilliseconds; return payload;
+                    var solved = layout ?? SkyCityWfc.Solve(coord,worldSeed,token,settings);
+                    var payload = vocabulary.Build(solved,lod,token,reserved); payload.workerMilliseconds = clock.Elapsed.TotalMilliseconds; return payload;
                 },token);
                 jobs.Add(jobItem);
                 if (jobs.Count >= maximumWorkers) break;
@@ -235,7 +273,7 @@ namespace Boids.Art.Infinite
             {
                 var j = jobs[i]; if (!j.task.IsCompleted) continue;
                 if (j.task.IsFaulted) { FailedJobs++; Debug.LogException(j.task.Exception); }
-                if (j.task.IsCanceled || j.task.IsFaulted || !wantedSet.Contains(j.coord))
+                if (j.task.IsCanceled || j.task.IsFaulted || !wantedSet.Contains(j.coord)||j.revision!=GenerationRevision)
                 { j.cancellation.Dispose(); jobs.RemoveAt(i); }
             }
         }
@@ -249,7 +287,7 @@ namespace Boids.Art.Infinite
                 var payload = j.task.Result; LastWorkerMs = payload.workerMilliseconds;
                 j.cancellation.Dispose(); jobs.RemoveAt(i);
                 if (chunk == null) chunk = BorrowChunk();
-                staging = new Staging { chunk = chunk, payload = payload, replacement = replacement }; return true;
+                staging = new Staging { chunk = chunk, payload = payload, replacement = replacement,revision=j.revision }; return true;
             }
             return false;
         }
@@ -273,6 +311,8 @@ namespace Boids.Art.Infinite
         {
             if (staging == null) return;
             var s = staging; int i = s.cursor; long begin = Stopwatch.GetTimestamp();
+            if(s.revision!=GenerationRevision||!wantedSet.Contains(s.payload.layout.coord))
+            {if(s.collisionBake.IsCompleted)AbortStaging();return;}
             if(i<6)
             {
             var data = i == 5 ? s.payload.cascades : i == 4 ? s.payload.water : s.payload.opaque[i];
@@ -293,7 +333,8 @@ namespace Boids.Art.Infinite
                 c.filters[part].sharedMesh = s.fresh[part];
                 c.renderers[part].shadowCastingMode = part >= 4 || s.payload.lod == 2 ? ShadowCastingMode.Off : ShadowCastingMode.On;
             }
-            c.layout = s.payload.layout; c.lod = s.payload.lod; c.root.transform.position = Position(c.layout.coord);
+            if(s.replacement&&c.revision!=s.revision)RegeneratedChunks++;
+            c.layout = s.payload.layout; c.lod = s.payload.lod;c.revision=s.revision; c.root.transform.position = Position(c.layout.coord);
             if(enableCollisions&&c.lod==0)CollisionChunks++;
             if (!s.replacement)
             {
@@ -352,9 +393,9 @@ namespace Boids.Art.Infinite
         public float BridgeVisibility(SkyCityWfc.Coord coord,int direction)
         {
             Chunk a,b;
-            if(!chunks.TryGetValue(coord,out a)||SkyCityWfc.Gate(coord,direction,seed)<0)return 0;
+            if(!chunks.TryGetValue(coord,out a)||SkyCityWfc.Gate(coord,direction,a.layout.seed,a.layout.settings)<0)return 0;
             var neighbor=new SkyCityWfc.Coord(coord.x+(direction==1?1:direction==3?-1:0),coord.z+(direction==0?1:direction==2?-1:0));
-            if(!chunks.TryGetValue(neighbor,out b))return 0;
+            if(!chunks.TryGetValue(neighbor,out b)||a.revision!=b.revision)return 0;
             return Mathf.Clamp01((Time.unscaledTime-Mathf.Max(a.appeared,b.appeared))/1.1f);
         }
         void Rebase()

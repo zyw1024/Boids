@@ -15,6 +15,24 @@ namespace Boids.Art.Infinite
         static readonly int[] Masks = CreateMasks();
         static readonly bool[] Tall = CreateTall();
 
+        [Serializable]
+        public struct Settings : IEquatable<Settings>
+        {
+            public float bridgeProbability,shoreCompleteness,gardenWeight,towerWeight,variantCoherence;
+            public int attempts;
+            public static Settings Default => new Settings{bridgeProbability=.4f,shoreCompleteness=.8f,gardenWeight=1,towerWeight=1,variantCoherence=1.6f,attempts=8};
+            static float Limit(float value,float fallback,float min,float max)
+            {return float.IsNaN(value)||float.IsInfinity(value)?fallback:Math.Max(min,Math.Min(max,value));}
+            public Settings Normalized()
+            {
+                return new Settings{bridgeProbability=Limit(bridgeProbability,.4f,0,1),shoreCompleteness=Limit(shoreCompleteness,.8f,.35f,1),
+                    gardenWeight=Limit(gardenWeight,1,.2f,4),towerWeight=Limit(towerWeight,1,.2f,4),
+                    variantCoherence=Limit(variantCoherence,1.6f,1,4),attempts=Math.Max(1,Math.Min(8,attempts))};
+            }
+            public bool Equals(Settings other)
+            {return bridgeProbability==other.bridgeProbability&&shoreCompleteness==other.shoreCompleteness&&gardenWeight==other.gardenWeight&&towerWeight==other.towerWeight&&variantCoherence==other.variantCoherence&&attempts==other.attempts;}
+        }
+
         public struct Coord : IEquatable<Coord>
         {
             public long x, z;
@@ -31,6 +49,7 @@ namespace Boids.Art.Infinite
             public int observations, propagations, restarts, composition, seed;
             public bool usedSafeFallback;
             public ulong fingerprint;
+            public Settings settings;
         }
         public static ulong Hash(long x, long z, int seed)
         {
@@ -64,7 +83,7 @@ namespace Boids.Art.Infinite
         { return Socket(a, direction) == Socket(b, (direction + 2) % 4) && !(Tall[a] && Tall[b]); }
 
         // Both sides derive a shared boundary from the SAME canonical edge key.
-        public static int Gate(Coord c, int direction, int seed)
+        public static int Gate(Coord c, int direction, int seed,Settings? options=null)
         {
             long x = c.x, z = c.z;
             if (direction == 0) z++;
@@ -75,23 +94,31 @@ namespace Boids.Art.Infinite
             if(x==1&&z==0&&(direction&1)==1)return 4;
             if(x==0&&z==1&&(direction&1)==0)return 3;
             ulong h = Hash(x, z, seed ^ ((direction & 1) == 0 ? 907 : 1483));
-            return h % 5 < 3 ? -1 : 3 + (int)((h >> 9) & 1);
+            var settings=options??Settings.Default;
+            // Preserve the original default distribution; extra hash bits allow
+            // continuous probability changes inside each of its five bands.
+            double sample=(h%5+((h>>32)&65535)/65536.0)/5;
+            return sample < 1-Math.Round(settings.bridgeProbability,6) ? -1 : 3 + (int)((h >> 9) & 1);
         }
-        public static bool Land(Coord c, int x, int z, int seed)
+        public static bool Land(Coord c, int x, int z, int seed,Settings? options=null)
         {
-            if (z == 0) return x == Gate(c, 2, seed);
-            if (z == Size - 1) return x == Gate(c, 0, seed);
-            if (x == 0) return z == Gate(c, 3, seed);
-            if (x == Size - 1) return z == Gate(c, 1, seed);
+            if (z == 0) return x == Gate(c, 2, seed,options);
+            if (z == Size - 1) return x == Gate(c, 0, seed,options);
+            if (x == 0) return z == Gate(c, 3, seed,options);
+            if (x == Size - 1) return z == Gate(c, 1, seed,options);
             if ((x == 1 || x == Size - 2) && (z == 1 || z == Size - 2)) return false;
             // The authored sanctuary has open ground-level routes on all sides.
             // Its immediate garden ring must exist before WFC can propagate sockets.
             if (x == 1 && z >= 3 && z <= 5 || z == 6 && x >= 2 && x <= 4 || x == 3 && z == 1) return true;
             // Variation in the shoreline never removes the interior end of a gateway.
-            if (x == 1 && z == Gate(c,3,seed) || x == Size-2 && z == Gate(c,1,seed) ||
-                z == 1 && x == Gate(c,2,seed) || z == Size-2 && x == Gate(c,0,seed)) return true;
+            if (x == 1 && z == Gate(c,3,seed,options) || x == Size-2 && z == Gate(c,1,seed,options) ||
+                z == 1 && x == Gate(c,2,seed,options) || z == Size-2 && x == Gate(c,0,seed,options)) return true;
             if (x == 1 || x == Size-2 || z == 1 || z == Size-2)
-                return Hash(c.x*8+x,c.z*8+z,seed^173) % 5 != 0;
+            {
+                ulong h=Hash(c.x*8+x,c.z*8+z,seed^173);
+                double sample=(h%5+((h>>32)&65535)/65536.0)/5;
+                return sample>=1-Math.Round((options??Settings.Default).shoreCompleteness,6);
+            }
             return true;
         }
         public static int Composition(Coord coord,int seed)
@@ -105,11 +132,12 @@ namespace Boids.Art.Infinite
             switch(composition){case 1:return 34;case 2:return 8;case 3:return 44;case 4:return 60;case 5:return 11;case 6:return 25;case 7:return 5;default:return 18;}
         }
 
-        public static Result Solve(Coord coord, int seed, CancellationToken cancellation)
+        public static Result Solve(Coord coord, int seed, CancellationToken cancellation,Settings? options=null)
         {
             // Four disjoint silhouette pairs: no touching (even diagonal) districts
             // repeat the same landmark. The hash picks between the pair's two forms.
-            var result = new Result { coord = coord, composition = Composition(coord,seed), seed=seed };
+            var settings=(options??Settings.Default).Normalized();
+            var result = new Result { coord = coord, composition = Composition(coord,seed), seed=seed,settings=settings };
             var allowed = new bool[CellCount * StateCount];
             var counts = new int[CellCount]; var queue = new int[CellCount]; var queued = new bool[CellCount];
             var weights = new double[StateCount];
@@ -121,11 +149,13 @@ namespace Boids.Art.Infinite
                 if(result.composition==2||result.composition==5)districtWeight=family==3||family==7||family==8?3.5:.20;
                 if(result.composition==6)districtWeight=family==2||family==9||family==14?3:.4;
                 if(result.composition==7)districtWeight=family==0||family==1||family==11||family==12?3:.25;
-                weights[s] = FamilyWeights[family]*districtWeight*((s / 4 % 8) == preferredVariant ? 1.6 : 1);
+                double preference=family==7||family==8||family==14?settings.gardenWeight:Tall[s]?settings.towerWeight:1;
+                // Round the float slider value to retain the old default double weights.
+                weights[s] = FamilyWeights[family]*districtWeight*preference*((s / 4 % 8) == preferredVariant ? Math.Round(settings.variantCoherence,6) : 1);
             }
             weights[Empty] = 1;
             for (int s = 0; s < StateCount; s++) weightLogs[s] = weights[s] * Math.Log(weights[s]);
-            for (int attempt = 0; attempt < 8; attempt++)
+            for (int attempt = 0; attempt < settings.attempts; attempt++)
             {
                 cancellation.ThrowIfCancellationRequested(); result.restarts = attempt;
                 Array.Clear(allowed, 0, allowed.Length); Array.Clear(counts, 0, counts.Length); Array.Clear(queued, 0, queued.Length);
@@ -133,7 +163,7 @@ namespace Boids.Art.Infinite
                 int head = 0, tail = 0, pending = 0;
                 for (int cell = 0; cell < CellCount; cell++)
                 {
-                    int x = cell % Size, z = cell / Size; bool land = Land(coord, x, z, seed);
+                    int x = cell % Size, z = cell / Size; bool land = Land(coord, x, z, seed,settings);
                     bool edge = x == 0 || z == 0 || x == Size - 1 || z == Size - 1;
                     for (int s = 0; s < StateCount; s++)
                     {
@@ -223,10 +253,10 @@ namespace Boids.Art.Infinite
             for (int cell = 0; cell < CellCount; cell++)
             {
                 cancellation.ThrowIfCancellationRequested(); int x = cell % Size, z = cell / Size;
-                if (!Land(coord, x, z, seed)) { result.states[cell] = Empty; continue; }
+                if (!Land(coord, x, z, seed,settings)) { result.states[cell] = Empty; continue; }
                 int mask = 0;
                 for (int d = 0; d < 4; d++)
-                { int nx = x + DX[d], nz = z + DZ[d]; if (nx < 0 || nx >= Size || nz < 0 || nz >= Size || Land(coord, nx, nz, seed)) mask |= 1 << d; }
+                { int nx = x + DX[d], nz = z + DZ[d]; if (nx < 0 || nx >= Size || nz < 0 || nz >= Size || Land(coord, nx, nz, seed,settings)) mask |= 1 << d; }
                 bool found = false;
                 for (int s = 0; s < Empty; s++) if (Masks[s] == mask && !Tall[s]) { result.states[cell] = s; found = true; break; }
                 if (!found) throw new InvalidOperationException("No safe socket template for " + mask);
