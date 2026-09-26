@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-26 · Single-scene project organization
+
+- Keep only `Assets/SkyCity/Scenes/SkyCityWorld.unity` and make it the sole enabled build scene. Remove obsolete scenes, their exclusive assets and tools that recreated them.
+- Organize the Unity project into `Runtime`, `Editor`, `Content`, `Resources`, `Scenes` and `Shaders`. Preserve retained asset GUIDs, split scripts by responsibility, and use `SkyCity.Runtime` namespaces and `SkyCity/` shader names.
+- Use the world's renderer in all quality settings; retain current authored lighting, materials, clouds, model library, birds and garden behavior. Make the shader Meta pass position conversion explicit to remove a vector truncation warning.
+- Replace legacy scene builders with tools for importing the island, baking reusable modules, opening the existing world and building the Windows player. Update Blender/Python output paths and project documentation.
+- Remove classroom PPT and lecture notes from the current repository tree while retaining local copies. Publish the complete cleaned project on the default `main` branch.
+
+Validation: `Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/`. Earlier entries below describe their original release state and may mention retired files or workflows.
+
 ## 2026-09-26 · Cliff redesign classroom update
 
 - Refresh the 15-slide classroom presentation while retaining the instructor's slide order, layout conventions, HKUST (Guangzhou) logo, native algorithm table and existing hyperlinks.

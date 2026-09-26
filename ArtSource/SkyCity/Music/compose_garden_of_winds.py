@@ -13,7 +13,7 @@ from scipy.signal import resample_poly,butter,sosfilt,fftconvolve
 
 ROOT=Path(__file__).resolve().parent
 REPO=ROOT.parents[2]
-OUT=REPO/'Sky_City_Project/Assets/Boids/Art/SkyCity/Audio'
+OUT=REPO/'Sky_City_Project/Assets/SkyCity/Content/Shared/Audio'
 SR=44100; BPM=72; EIGHTH=60/BPM/2; BAR=6*EIGHTH; BARS=32; LENGTH=BAR*BARS
 rng=np.random.default_rng(240915)
 manifest=json.loads((ROOT/'sample-manifest.json').read_text(encoding='utf-8'))

@@ -108,9 +108,9 @@ __pycache__/
 !/Sky_City_Project/Captures/SkyCity_Demo_Travel.png
 
 # Superseded local cloud-density experiments; the scene uses PerlinWorleyVolume.
-/Sky_City_Project/Assets/Boids/Art/SkyCity/CloudDensity.asset*
-/Sky_City_Project/Assets/Boids/Art/SkyCity/CloudDensity_v2.asset*
-/Sky_City_Project/Assets/Boids/Art/SkyCity/CloudDensity_v3.asset*
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity.asset*
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity_v2.asset*
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity_v3.asset*
 
 # Sky City source sample cache and uncompressed audio master
 /ArtSource/SkyCity/Music/Samples/
@@ -153,3 +153,18 @@ __pycache__/
 /Sky_City_Project/Captures/SkyCityWorld/StyleReview/*
 !/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Geometry.json
 !/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Materials.json
+
+# Classroom deliverables are maintained outside the source repository.
+/Teaching/
+*.ppt
+*.pptx
+/ArtSource/SkyCity/Classroom_Demo.md
+
+# Reproducible single-scene cleanup validation.
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/
+/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/*
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/README.md
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Assets.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Migration.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Runtime.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Build.json

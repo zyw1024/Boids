@@ -12,7 +12,7 @@ Generation prompt:
 
 ## WeatheredLimestone.png — cliff albedo
 
-Location: `Sky_City_Project/Assets/Boids/Art/SkyCity/Textures/WeatheredLimestone.png`.
+Location: `Sky_City_Project/Assets/SkyCity/Content/Shared/Textures/WeatheredLimestone.png`.
 
 Generation prompt:
 
@@ -20,7 +20,7 @@ Generation prompt:
 
 ## DawnCloudscape.png — unused earlier atmosphere study
 
-Location: `Sky_City_Project/Assets/Boids/Art/SkyCity/Textures/DawnCloudscape.png`. Not bound by the current sky shader or scene builder. It contains only natural sky and clouds. It is not the reference concept, and contains none of the architecture or birds rendered in the game.
+Location: `Sky_City_Project/Assets/SkyCity/Content/Shared/Textures/DawnCloudscape.png`. Not bound by the current sky shader or scene builder. It contains only natural sky and clouds. It is not the reference concept, and contains none of the architecture or birds rendered in the game.
 
 Generation prompt:
 

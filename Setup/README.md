@@ -15,16 +15,16 @@ Blender 工具读取本机 `~/.codex/config.toml` 的 `mcp_servers.blender` 配�
 在仓库根目录运行，`python` 应指向安装了 `mcp` SDK 的环境：
 
 ```sh
-python Setup/art_mcp.py blender ArtSource/Moonveil/build_moonveil.py
+python Setup/art_mcp.py blender Sky_City_Project/Tools/Island/build_island.py
 python Setup/art_mcp.py unity Setup/Examples/inspect_project.json
 ```
 
-建模命令会重建 `Moonveil_Studio` 中由脚本生成的鱼，并覆盖该鱼的导出文件。脚本通过自身路径定位仓库，也可以通过环境变量 `BOIDS_ROOT` 指定仓库根目录。
+建模命令会重建并导出天空之城主岛资产。推荐使用下面的独立 Blender 后台进程，避免影响正在编辑的 Blender 场景。
 
 也可以直接使用 Blender 的后台 Python 接口重建：
 
 ```sh
-blender --background --python ArtSource/Moonveil/build_moonveil.py
+blender --background --python Sky_City_Project/Tools/Island/build_island.py
 ```
 
 Windows 上，`UnityMCP/Start-UnityMCP.ps1` 会尝试启动已安装在 `~/.local/bin/mcp-for-unity.exe` 的服务端；如果端口 8080 已被使用，则保留现有服务。`inspect_connection.py` 与 `verify_connection.py` 分别用于发现连接与验证项目身份。

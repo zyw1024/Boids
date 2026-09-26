@@ -2,7 +2,7 @@
   "passed": true,
   "shaderErrors": [],
   "stoneParametersMatchReference": true,
-  "referenceScene": "Assets/Boids/Scenes/SkyCityHangingGardens.unity",
+  "referenceScene": "Assets/SkyCity/Scenes/SkyCityWorld.unity",
   "categories": [
     "Static module plants: individual leaves and tapered branches at all LODs",
     "District trees and cypresses: same leaf-spray geometry family",

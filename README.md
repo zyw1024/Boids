@@ -4,11 +4,11 @@
 
 在云海中的悬空花园与城市之间自由飞行，呼唤燕群，观察递归树木生长，播种并改变花园的元胞演化规则。远处的街区由 WFC 选择兼容建筑模块，并随旅行加载、卸载。
 
-**当前完整工程位于 [`feat/redon-style-scene`](https://github.com/zyw1024/Game-Algorithms-Implementation/tree/feat/redon-style-scene) 分支。** GitHub 默认首页所在的 `main` 保留早期代码；请使用下方克隆命令获取当前项目。本页的图片、课件与源码链接均指向当前开发分支。
+默认分支 `main` 包含完整工程。项目只保留一个场景：**`Assets/SkyCity/Scenes/SkyCityWorld.unity`**。
 
-![天空之城当前实机画面：悬空花园、石灰岩体、瀑布与远处街区](https://raw.githubusercontent.com/zyw1024/Game-Algorithms-Implementation/feat/redon-style-scene/Sky_City_Project/Captures/RockDiscussion/World_Final.png)
+![天空之城当前实机画面](Sky_City_Project/Captures/RockDiscussion/World_Final.png)
 
-[观看 / 下载 72 秒实机演示](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4?raw=true) · [下载课堂 PPT](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Game_Algorithms_Implementation.pptx?raw=true) · [中文讲稿](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Teaching_Notes_ZH.md) · [更新记录](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/CHANGELOG.md)
+[观看 / 下载实机演示](Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4?raw=true) · [更新记录](CHANGELOG.md)
 
 ## 当前可以体验什么
 
@@ -19,20 +19,20 @@
 - **完整场景美术**：拱廊宫殿、铜穹顶、悬桥、体积云、反射水面、瀑布、风动植物及原创配乐共同构成游览体验。
 - **新版岩体**：9 种分别设计的岩体构型、错落断面与下垂尖峰，结合浅色石灰岩材质、贴岩藤蔓和瀑布凹槽；主岛和远端街区共用这套资产。
 
-![新版岩体近景](https://raw.githubusercontent.com/zyw1024/Game-Algorithms-Implementation/feat/redon-style-scene/Sky_City_Project/Captures/RockDiscussion/Cliff_Final.png)
+![新版岩体近景](Sky_City_Project/Captures/RockDiscussion/Cliff_Final.png)
 
 ## 快速运行
 
 已验证的开发环境为 **Windows、Unity 2022.3.62f2c1、URP 14.0.12**。通过 Unity Hub 安装对应编辑器；Git 用于克隆工程和恢复 Git 包依赖。
 
-1. 克隆当前开发分支：
+1. 克隆工程：
 
    ```sh
-   git clone --depth 1 --single-branch --branch feat/redon-style-scene https://github.com/zyw1024/Game-Algorithms-Implementation.git
+   git clone --depth 1 https://github.com/zyw1024/Game-Algorithms-Implementation.git
    ```
 
 2. 在 Unity Hub 中添加仓库内的 **`Sky_City_Project`** 文件夹，等待资源导入与包恢复。
-3. 打开 **`Assets/Boids/Scenes/SkyCityWorld.unity`**，按 **Play**。
+3. 打开 **`Assets/SkyCity/Scenes/SkyCityWorld.unity`**，按 **Play**。
 4. 在编辑器中点击 **Game** 画面进入探索；按 **Esc** 打开场景设置。初次进入时等待附近街区加载。
 
 仓库已包含运行所需的模型、材质、场景和预生成数据。**运行场景无需启动 Blender、AI 客户端或 MCP 服务**；这些工具用于制作和修改项目。Blender 源文件与生成脚本也保留在仓库中，方便进一步开发。
@@ -63,92 +63,62 @@
 
 鸟群与花园参数即时生效。WFC 种子和生成权重需要点击「应用并更新街区」；加载范围与调度预算即时生效。打开菜单会暂停相机操作，场景中的鸟群、云、水与音乐继续运行。
 
-远端花园随街区卸载时保存本次运行中的元胞状态，返回时恢复。**这些状态仅在同一次运行中保留**，退出世界后清除。完整行为与实现说明见[第一人称世界文档](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Tools/SkyCityWorld/README.md)。
+远端花园随街区卸载时保存本次运行中的元胞状态，返回时恢复。**这些状态仅在同一次运行中保留**，退出世界后清除。完整行为与实现说明见[第一人称世界文档](Sky_City_Project/Tools/World/README.md)。
 
 ## 算法如何对应画面
 
 | 算法 / 技术 | 在项目中的用途 | 主要实现 |
 | --- | --- | --- |
-| Boids | 分离、对齐、聚合，叠加目标吸引和预测避障 | [SkyCityFlock.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityFlock.cs) |
-| Wave Function Collapse | 按权重选择兼容建筑模块，传播邻接和连接约束 | [SkyCityWfc.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfc.cs) |
-| 参数化递归分枝 | 庭院树木的多层分枝和缓存几何 | [SkyCityBotanyGeometry.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Editor/SkyCityBotanyGeometry.cs) |
-| 四状态元胞自动机 | 基于八邻域、同步更新的萌芽、盛开与恢复 | [SkyCityGardenAutomaton.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityGardenAutomaton.cs) |
-| 多尺度噪声与光线步进 | 动态体积云和云内明暗 | [Shader 目录](https://github.com/zyw1024/Game-Algorithms-Implementation/tree/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Shaders) |
-| 平面反射与 Fresnel 混合 | 水面的建筑倒影与视角相关反射 | [SkyCityWaterReflection.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityWaterReflection.cs) |
-| 流式加载、LOD、浮动原点 | 控制常驻对象数量并支持远距离探索 | [SkyCityInfiniteWorld.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityInfiniteWorld.cs) |
-| 花园状态存取 | 街区加载时创建植物、卸载时保存状态、返回时恢复 | [SkyCityDistrictGardens.cs](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictGardens.cs) |
+| Boids | 分离、对齐、聚合，叠加目标吸引和预测避障 | [SkyCityFlock.cs](Sky_City_Project/Assets/SkyCity/Runtime/Flocking/SkyCityFlock.cs) |
+| Wave Function Collapse | 按权重选择兼容建筑模块，传播邻接和连接约束 | [SkyCityWfc.cs](Sky_City_Project/Assets/SkyCity/Runtime/WorldGeneration/SkyCityWfc.cs) |
+| 参数化递归分枝 | 庭院树木的多层分枝和缓存几何 | [SkyCityBotanyGeometry.cs](Sky_City_Project/Assets/SkyCity/Editor/Assets/SkyCityBotanyGeometry.cs) |
+| 四状态元胞自动机 | 基于八邻域、同步更新的萌芽、盛开与恢复 | [SkyCityGardenAutomaton.cs](Sky_City_Project/Assets/SkyCity/Runtime/Gardens/SkyCityGardenAutomaton.cs) |
+| 多尺度噪声与光线步进 | 动态体积云和云内明暗 | [Shader 目录](Sky_City_Project/Assets/SkyCity/Shaders) |
+| 平面反射与 Fresnel 混合 | 水面的建筑倒影与视角相关反射 | [SkyCityWaterReflection.cs](Sky_City_Project/Assets/SkyCity/Runtime/Rendering/SkyCityWaterReflection.cs) |
+| 流式加载、LOD、浮动原点 | 控制常驻对象数量并支持远距离探索 | [SkyCityInfiniteWorld.cs](Sky_City_Project/Assets/SkyCity/Runtime/WorldGeneration/SkyCityInfiniteWorld.cs) |
+| 花园状态存取 | 街区加载时创建植物、卸载时保存状态、返回时恢复 | [SkyCityDistrictGardens.cs](Sky_City_Project/Assets/SkyCity/Runtime/Gardens/SkyCityDistrictGardens.cs) |
 
-WFC 负责模块选择与约束传播，宏观构图和资产造型另外设计。树木使用有限层级的参数化递归分枝；风播种是元胞系统的可关闭外部输入。课堂讲解从可见效果出发，再对应具体规则与实现。
-
-## 课件与实机演示
-
-| 材料 | 内容 |
-| --- | --- |
-| [英文 PPT](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Game_Algorithms_Implementation.pptx?raw=true) | 15 页，中文演讲备注，包含工具、算法用途、提示词与视觉迭代；第 2 页嵌入实机视频，第 12 页展示岩体修改前后的同机位对照 |
-| [中文讲稿](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Teaching_Notes_ZH.md) | 逐页讲解、课堂落点和源码引用 |
-| [工具与资源链接](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Tools_Official_Links.md) | Unity、Blender、AI / MCP 工具及制作资源的官方入口 |
-| [独立 MP4](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4?raw=true) | 约 72 秒，1920 × 1080、30 fps，含原项目配乐；适合课堂备用播放 |
-
-当前课件与视频包含 **2026-09-26 的岩体重做**，演示源码版本为 [`04570b0`](https://github.com/zyw1024/Game-Algorithms-Implementation/commit/04570b0916b2cb66c981293f2be42347a12d759f)，课件发布于 [`953ce92`](https://github.com/zyw1024/Game-Algorithms-Implementation/commit/953ce92e6766bfac9d25654bee43c16b843e3ce4)。视频由 Unity Recorder 录制实际运行场景，使用编排的游览路线。下载 PPTX 后播放嵌入视频；也可直接使用独立 MP4。
+WFC 负责模块选择与约束传播，宏观构图和资产造型另外设计。树木使用有限层级的参数化递归分枝；风播种是元胞系统的可关闭外部输入。
 
 ## 美术资产与制作
 
 主岛建筑、悬崖和模块资产通过 Blender 脚本建模、导出后接入 Unity；新增递归树与元胞花园使用 C# 工具生成缓存网格。运行时由 Unity 处理渲染、鸟群、花园状态与街区加载。概念图用于确定美术方向，本页效果图均来自 Unity。
 
-- [主岛模型与场景制作](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Tools/HeroIsland/README.md)：Hanging Gardens 可编辑 Blender 文件与生成脚本。
-- [岩体资产说明](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/SkyCity/Rocks/README.md)：9 种构型、源网格、贴岩植物和石灰岩材质。
-- [街区与建筑模块](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/SkyCity/Infinite/README.md)：128 个模块和 8 种街区构图的建模来源。
-- [原创配乐与采样来源](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/SkyCity/Music/README.md)：Garden of Winds、MIDI、渲染脚本与资源说明。
-- [AI 图像制作记录](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/SkyCity/provenance.md)与 [MCP 制作工具](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Setup/README.md)。
+- [主岛模型与场景制作](Sky_City_Project/Tools/Island/README.md)：Hanging Gardens 可编辑 Blender 文件与生成脚本。
+- [岩体资产说明](ArtSource/SkyCity/Rocks/README.md)：9 种构型、源网格、贴岩植物和石灰岩材质。
+- [街区与建筑模块](ArtSource/SkyCity/Districts/README.md)：128 个模块和 8 种街区构图的建模来源。
+- [原创配乐与采样来源](ArtSource/SkyCity/Music/README.md)：Garden of Winds、MIDI、渲染脚本与资源说明。
+- [AI 图像制作记录](ArtSource/SkyCity/provenance.md)与 [MCP 制作工具](Setup/README.md)。
 
 ## 工程目录
 
-以下为当前开发分支的主要目录：
-
 ```text
 Game-Algorithms-Implementation/
-├── Sky_City_Project/             # 在 Unity Hub 中打开这个目录
-│   ├── Assets/Boids/
-│   │   ├── Scenes/               # 当前入口 SkyCityWorld.unity
-│   │   ├── Scripts/              # 鸟群、WFC、花园、控制与流式加载
-│   │   ├── Shaders/              # 岩体、植被、水体与体积云
-│   │   ├── Art/                  # 模型、材质、预制体及灯光资源
-│   │   └── Editor/               # 生成、构建、录制与验证工具
-│   ├── Packages/                # Unity 包版本
-│   ├── ProjectSettings/         # 工程配置
-│   ├── Tools/                   # 主岛建模脚本与实现文档
-│   └── Captures/                # 实机截图、视频和验证报告
-├── ArtSource/SkyCity/           # Blender 源文件、岩体、街区、配乐
-├── Teaching/                    # 当前 PPT、中文讲稿和资源链接
-├── Setup/                       # 可选的 Blender / Unity MCP 工具
-└── CHANGELOG.md                 # 迭代记录
+├── Sky_City_Project/             # 在 Unity Hub 中打开
+│   ├── Assets/
+│   │   ├── SkyCity/
+│   │   │   ├── Scenes/           # 唯一场景与烘焙光照数据
+│   │   │   ├── Runtime/          # Player、UI、Flocking、WorldGeneration、Gardens、Rendering、Diagnostics
+│   │   │   ├── Editor/           # Assets、Build、Validation、Recording
+│   │   │   ├── Content/          # Shared、Island、Districts、World
+│   │   │   ├── Resources/        # 运行时按键加载的压缩模块库
+│   │   │   └── Shaders/
+│   │   └── Settings/            # URP 质量设置
+│   ├── Packages/
+│   ├── ProjectSettings/
+│   ├── Tools/                   # Island 建模、World 字体和几何检查
+│   └── Captures/                # 实机展示与验证记录
+├── ArtSource/SkyCity/            # 概念参考、Districts、Rocks、Music 制作源
+└── Setup/                       # 可选 MCP 工具
 ```
 
-`Sky_City_Project` 是当前 Unity 工程名。`Assets/Boids` 路径与已有命名空间继续保留，以维持资产引用。仓库保存源资产和导出结果，排除 `Library`、`Temp`、编辑器日志和本机配置；当前使用普通 Git，不依赖 Git LFS。
+运行时代码命名空间为 `SkyCity.Runtime`，世界生成使用 `SkyCity.Runtime.WorldGeneration`；自定义 Shader 统一使用 `SkyCity/` 前缀。移动 Unity 资源时应保留对应 `.meta`，保持场景和预制体的 GUID 引用。
 
-## 验证记录
+## 构建与维护
 
-新版岩体的检查结果与实机截图一同保留，便于区分资产完整性、运行行为和美术效果。
+- 菜单 **Sky City → Open world** 打开唯一场景；**Sky City → Build → Windows player** 输出 `Sky_City_Project/Builds/SkyCityWorld/SkyCityWorld.exe`。
+- **Sky City → Assets** 提供主岛重新导入、模块预制体烘焙、云和花园资源工具；修改模型后更新资产，不再从其他场景复制生成世界。
+- **Sky City → Validation** 提供 WFC 与几何验证；运行时检查和录制说明见 [World 文档](Sky_City_Project/Tools/World/README.md)。
+- 资源迁移验证及独立程序检查记录位于 [项目整理验证](Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/README.md)。
 
-| 检查 | 最新记录 |
-| --- | --- |
-| 岩体源网格 | [9 种构型 × 4 档细节，共 36 个网格通过检查](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/RockDiscussion/CliffValidation.json) |
-| 瀑布与岩壁 | [12 个主岛采样点未被岩体遮挡](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/RockDiscussion/SpillwayValidation.json) |
-| 模块资源 | [128 个 Prefab、384 个 LOD 网格、8 种构图；Shader 错误为 0](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/SkyCityInfinite_AssetValidation.json) |
-| 本轮编辑器运行 | [24 个远端街区、64 只鸟，待处理任务、失败任务和兜底次数均为 0](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Sky_City_Project/Captures/RockDiscussion/RuntimeValidation.json) |
-| 当前课件 | [15 页、原生算法表格、21 个链接与嵌入视频核对](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/Teaching/Assets/Cliff_Deck_Validation.json) |
-
-这些检查各自覆盖指定资产和运行样本。实机演示视频不作为帧率基准；历史独立程序测试的条件与版本记录在[更新日志](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/CHANGELOG.md)中。岩体的碎裂层次、建筑与地形过渡等视觉细节仍在持续迭代。
-
-<details>
-<summary>早期场景与项目历史</summary>
-
-项目从 Moonveil 鱼模型、海底 Boids 与绘画风格实验发展而来。这些资源和场景继续保留，供教学比较及追溯制作过程：
-
-- [Moonveil 鱼模型与动画](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/Moonveil/README.md)
-- [Redon 海底 Boids 样片](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/Redon/README.md)
-- [早期天空之城场景](https://github.com/zyw1024/Game-Algorithms-Implementation/blob/feat/redon-style-scene/ArtSource/SkyCity/README.md)
-
-旧场景使用各自文档中的控制方式。首次体验当前项目，请打开 `SkyCityWorld.unity`。
-
-</details>
+默认构建列表只包含 `SkyCityWorld.unity`。`Library`、`Temp`、本地构建、PPT 和讲义不纳入仓库当前版本。课件保留在本地，仓库专注可运行工程、制作源与项目文档。

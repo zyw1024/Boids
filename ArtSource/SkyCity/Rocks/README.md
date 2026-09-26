@@ -11,7 +11,7 @@ Vertical fracture edges retain distinct normals. There is no ring of duplicated
 scanned faces in the new island silhouettes.
 
 Each design exports four distance meshes and surface-derived planting anchors.
-`build_hero.py` selects the design by its stable island seed. The eight streamed
+`build_island.py` selects the design by its stable island seed. The eight streamed
 district compositions use the same selection and export through `Modules.bytes`.
 Vines start on the rock surface, below the architectural planters. The hero and
 district assembly scripts incise the cliff behind the existing spillways, so
