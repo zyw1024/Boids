@@ -23,11 +23,11 @@
   "rotationsCountedAsModules": false,
   "tileSize": 12,
   "levelsOfDetail": 3,
-  "binaryBytes": 70503819,
+  "binaryBytes": 70572378,
   "totalTrianglesByLOD": [
-    224328,
-    138784,
-    63476
+    226248,
+    140704,
+    65396
   ],
   "modules": [
     {
@@ -373,11 +373,11 @@
       "variant": 0,
       "sockets": 15,
       "lodTriangles": [
-        1414,
-        770,
-        320
+        1462,
+        818,
+        368
       ],
-      "meshHash": "affa95ea582dc5e112bc36425df798d56bd95b11c4b3b30ddfae16b44cac284b",
+      "meshHash": "998dfd040b99a06e0c10a06f15ae71d3f78b48bb1dba448c9f80b5880a488161",
       "water": true
     },
     {
@@ -387,11 +387,11 @@
       "variant": 1,
       "sockets": 15,
       "lodTriangles": [
-        1832,
-        976,
-        430
+        1880,
+        1024,
+        478
       ],
-      "meshHash": "2edda92ff99710d4e4714b53f0d0d0cfecfc44246fe531b17b663a998f811f89",
+      "meshHash": "87cb8e99f614d648331ebd62ef1d2137962c36dd9c06ae509243e42d3c13a4f0",
       "water": true
     },
     {
@@ -401,11 +401,11 @@
       "variant": 2,
       "sockets": 15,
       "lodTriangles": [
-        1946,
-        1134,
-        472
+        1994,
+        1182,
+        520
       ],
-      "meshHash": "36d51b6af78be334f0a14236c68cb84981bb53d02c0ecb425b4bac6dd7850934",
+      "meshHash": "e443cab16f3f0ab79f1e383dc6e6a205314c2635a13106248a3a2067bec6e86c",
       "water": true
     },
     {
@@ -415,11 +415,11 @@
       "variant": 3,
       "sockets": 15,
       "lodTriangles": [
-        1658,
-        934,
-        396
+        1706,
+        982,
+        444
       ],
-      "meshHash": "2d7c2b92b6e8629b484019beecf90d1e0f78ae59c5979da2df8576a0ce29fff8",
+      "meshHash": "1e9bb1eedf0ad3d0aaae4640211183ca0a40a8ecea336c4306ce97d591e0881f",
       "water": true
     },
     {
@@ -429,11 +429,11 @@
       "variant": 4,
       "sockets": 15,
       "lodTriangles": [
-        1712,
-        892,
-        382
+        1760,
+        940,
+        430
       ],
-      "meshHash": "ff85f742296368ec5323b9d9498f94415f59b10d2ace7f26b319f9e56e4d33cc",
+      "meshHash": "0f55c97e785df4b19cf15ecb4a411828f6cd433c3a78de4323cd47c3ea7b515d",
       "water": true
     },
     {
@@ -443,11 +443,11 @@
       "variant": 5,
       "sockets": 15,
       "lodTriangles": [
-        2114,
-        1254,
-        508
+        2162,
+        1302,
+        556
       ],
-      "meshHash": "58cf6e8cee71b7c86f07da3e3f6d001169aa96c1d8582e88f2626be32e872503",
+      "meshHash": "8ac244e1e61051cd5881caf0f3bc568444592e214f859305c4e8ebf64043ab45",
       "water": true
     },
     {
@@ -457,11 +457,11 @@
       "variant": 6,
       "sockets": 15,
       "lodTriangles": [
-        1712,
-        892,
-        382
+        1760,
+        940,
+        430
       ],
-      "meshHash": "5e8b9c510b72212516758efeba288288294590b932a6050df88c06e5d465b930",
+      "meshHash": "f959a509d4317770ecf82118604e46c31058dbf54ca8311552076a68572014d1",
       "water": true
     },
     {
@@ -471,11 +471,11 @@
       "variant": 7,
       "sockets": 15,
       "lodTriangles": [
-        1718,
-        954,
-        376
+        1766,
+        1002,
+        424
       ],
-      "meshHash": "f01cf3790a26868689a4514e8e9dc3c4f6b4cad5b2a8c0dd9a3b977f48fb87cf",
+      "meshHash": "61c7c184ef910727462f9b214441b05ce7ba91eb28779c2054b756b8ed655314",
       "water": true
     },
     {
@@ -597,11 +597,11 @@
       "variant": 0,
       "sockets": 5,
       "lodTriangles": [
-        1128,
-        532,
-        246
+        1176,
+        580,
+        294
       ],
-      "meshHash": "4f34b81e0e4a00d035cca429ecfc2f136b44153c7b09ff31f46026d912876a67",
+      "meshHash": "f527c8b9558ca5a3fcaed6ff06f7fc871c644444e6e5b87c7712038509e83a47",
       "water": true
     },
     {
@@ -611,11 +611,11 @@
       "variant": 1,
       "sockets": 5,
       "lodTriangles": [
-        1514,
-        706,
-        324
+        1562,
+        754,
+        372
       ],
-      "meshHash": "bb3e37ede12514283b1fc5b0770ae1509fd7d8982352ff25436680e389c96619",
+      "meshHash": "80d2f836f521573334804aea5f898a5c27b85efe17f50872d77c9b34354479a3",
       "water": true
     },
     {
@@ -625,11 +625,11 @@
       "variant": 2,
       "sockets": 5,
       "lodTriangles": [
-        1772,
-        1008,
-        510
+        1820,
+        1056,
+        558
       ],
-      "meshHash": "c9b9e40f7088f958788bc72e44f2a272a8e6af7f2d836da5d470cb72fe0f5e6f",
+      "meshHash": "a271b7a7df904f5b5f82d5810b6bc2a3d579ecef22eb9676cacb5eba0bd0c0b8",
       "water": true
     },
     {
@@ -639,11 +639,11 @@
       "variant": 3,
       "sockets": 5,
       "lodTriangles": [
-        1142,
-        630,
-        308
+        1190,
+        678,
+        356
       ],
-      "meshHash": "e3247c3bba8cc92c44acac37043b5d681dfac865e91e1612f013b6d95d8ea121",
+      "meshHash": "121b1b0d35847797b6d39d737e49c15af64c444fe8b27531501aafa39a2d4172",
       "water": true
     },
     {
@@ -653,11 +653,11 @@
       "variant": 4,
       "sockets": 5,
       "lodTriangles": [
-        1442,
-        670,
-        324
+        1490,
+        718,
+        372
       ],
-      "meshHash": "b05338181b1fb5d7bd7c96e526b0dc9e2e245a5ae5b80cda09f56af6edaaf9f6",
+      "meshHash": "1d15b4a4e17fb1d619f692480bb47c1717ba3ff0f057fae1a659bcd5fda6cecb",
       "water": true
     },
     {
@@ -667,11 +667,11 @@
       "variant": 5,
       "sockets": 5,
       "lodTriangles": [
-        1796,
-        984,
-        402
+        1844,
+        1032,
+        450
       ],
-      "meshHash": "98f7f30a27680ce1664f290726917ca57f25b3ae950eae42c02e21f61092479e",
+      "meshHash": "48f6829a29274e25f82c2a167fc61c8772d8cac29ee1e9f3bb8c16d3db84fa3a",
       "water": true
     },
     {
@@ -681,11 +681,11 @@
       "variant": 6,
       "sockets": 5,
       "lodTriangles": [
-        1538,
-        766,
-        420
+        1586,
+        814,
+        468
       ],
-      "meshHash": "49dfa43f28e8f9f15fd33dc299a79878fa3d28ebc1c8f271d44bc6fba68cdf46",
+      "meshHash": "37d86c80e6e9c39a92c99a7fb4436a8bcf97a524deefe26543015346b85ff2e8",
       "water": true
     },
     {
@@ -695,11 +695,11 @@
       "variant": 7,
       "sockets": 5,
       "lodTriangles": [
-        1218,
-        666,
-        304
+        1266,
+        714,
+        352
       ],
-      "meshHash": "5376673c49ad77c916fc6c21806c68a7cb637f3de6cf3a466e01fea5456301a8",
+      "meshHash": "113aab5cec9549582a1071b5a7223efd8980e59948412f059d86852cc79ae128",
       "water": true
     },
     {
@@ -821,11 +821,11 @@
       "variant": 0,
       "sockets": 3,
       "lodTriangles": [
-        1672,
-        1156,
-        518
+        1720,
+        1204,
+        566
       ],
-      "meshHash": "aa1956228484448d95c026b3ce4aa91e3e99347e0d7ec887077d4b0ae5b0851f",
+      "meshHash": "de79d7401bac4a238874cacdb1c4c94873fd1ff3b6435b425b15ab12a12510f2",
       "water": true
     },
     {
@@ -835,11 +835,11 @@
       "variant": 1,
       "sockets": 3,
       "lodTriangles": [
-        2474,
-        1650,
-        748
+        2522,
+        1698,
+        796
       ],
-      "meshHash": "0f48c6cebf85a4d1c8b3deb4e57750bbf2075e4904b9439b8393df88f47d2237",
+      "meshHash": "70c37fb981ae8ad421dca40279e7c5a43c1e7d0ea759ef11310eb506c8d1b9c7",
       "water": true
     },
     {
@@ -849,11 +849,11 @@
       "variant": 2,
       "sockets": 3,
       "lodTriangles": [
-        1820,
-        1232,
-        550
+        1868,
+        1280,
+        598
       ],
-      "meshHash": "40338fa4c6162665350b35a9b06867d8a73e773775f8bdead16cd54af638df4f",
+      "meshHash": "779f6e89390c61add26062741ac521e37b89d1db5d825adcbb2f3735a780d302",
       "water": true
     },
     {
@@ -863,11 +863,11 @@
       "variant": 3,
       "sockets": 3,
       "lodTriangles": [
-        1916,
-        1320,
-        594
+        1964,
+        1368,
+        642
       ],
-      "meshHash": "53348e8c15582bbb5cf438a1b7fc33b73349352807b8cb7c84b58f989866acff",
+      "meshHash": "e362b91c6c8742536913cbc4ddf8e745c6091b1293bd45066b284f192cfc2f2b",
       "water": true
     },
     {
@@ -877,11 +877,11 @@
       "variant": 4,
       "sockets": 3,
       "lodTriangles": [
-        2354,
-        1566,
-        700
+        2402,
+        1614,
+        748
       ],
-      "meshHash": "3f03e1824231a138211935e6824220b56bc998d87fd8b6c6e8a88a3bc4155cf1",
+      "meshHash": "7b7bdfb06da97f5c975e1e25e23aeeafec9e21c6dba91553aada6fda1a831cc9",
       "water": true
     },
     {
@@ -891,11 +891,11 @@
       "variant": 5,
       "sockets": 3,
       "lodTriangles": [
-        1988,
-        1352,
-        586
+        2036,
+        1400,
+        634
       ],
-      "meshHash": "b26e23a70c5f0f4d7bc72954990cda3123c77decf47f213422c3c732752e8fe3",
+      "meshHash": "009cf3e68db1615b7ab3015ab4fc2fab2723c8a80329e11902107c2f74137205",
       "water": true
     },
     {
@@ -905,11 +905,11 @@
       "variant": 6,
       "sockets": 3,
       "lodTriangles": [
-        1970,
-        1278,
-        580
+        2018,
+        1326,
+        628
       ],
-      "meshHash": "c48f18b38346b266d77881a482168011dcd5a555339478ab994f9affffdf2af5",
+      "meshHash": "ca97a9cfda5e14fac154975caea321f206f3f81fe984eaaf8db6affa51d7f566",
       "water": true
     },
     {
@@ -919,11 +919,11 @@
       "variant": 7,
       "sockets": 3,
       "lodTriangles": [
-        2360,
-        1628,
-        694
+        2408,
+        1676,
+        742
       ],
-      "meshHash": "0b56a016e160866e0926f880e4f13799d3b363e920d5c42391290306d24a6aa0",
+      "meshHash": "50eb393c0e2a9f1ad354b019e3ff90711375cf7f3cb1d79b8053859a72e3128e",
       "water": true
     },
     {
@@ -933,11 +933,11 @@
       "variant": 0,
       "sockets": 5,
       "lodTriangles": [
-        1128,
-        660,
-        270
+        1176,
+        708,
+        318
       ],
-      "meshHash": "94be58e6d2215a697f6cb8e3312d91c54e9a7ec1cab535771718c11ddda791f5",
+      "meshHash": "e49d8d87cf9a5999dc12f2da3154f738b093580757334db5e29bc50bd7c4ee6b",
       "water": true
     },
     {
@@ -947,11 +947,11 @@
       "variant": 1,
       "sockets": 5,
       "lodTriangles": [
-        1546,
-        866,
-        380
+        1594,
+        914,
+        428
       ],
-      "meshHash": "f0a9a7f62923a6636daaadcb0ad94999edd4b1e0319e50b5e1a93ec68c6e2a9d",
+      "meshHash": "f9acf62241ca28553a5d48280df1adbfc42e0e0e7de3b84fb0f702469ed04233",
       "water": true
     },
     {
@@ -961,11 +961,11 @@
       "variant": 2,
       "sockets": 5,
       "lodTriangles": [
-        1660,
-        1024,
-        422
+        1708,
+        1072,
+        470
       ],
-      "meshHash": "de3a77629f540d019a6bcebcc6dc51a0518cb4629d8375ab5adccc459a4d99e7",
+      "meshHash": "98111b35f8c78eae7228f7ed362405009651b39092714e52dbb101487d367e3a",
       "water": true
     },
     {
@@ -975,11 +975,11 @@
       "variant": 3,
       "sockets": 5,
       "lodTriangles": [
-        1372,
-        824,
-        346
+        1420,
+        872,
+        394
       ],
-      "meshHash": "40e9ebb2963946aea05aa8182fce333048c9fca57e729cd7fd100e2a5915877d",
+      "meshHash": "5b36b9fe28bf99995ed284b9f430b7a8b72a26da20b0cbfc446b477795816112",
       "water": true
     },
     {
@@ -989,11 +989,11 @@
       "variant": 4,
       "sockets": 5,
       "lodTriangles": [
-        1426,
-        782,
-        332
+        1474,
+        830,
+        380
       ],
-      "meshHash": "afb9fd8df2c9b2889784341ead7f7083de4d02fcbbf41fdf9e8cd5d709e7a9d2",
+      "meshHash": "25912caaa4070da97684b05918583fe7c58a1d2cddecb18d822f4fb7ea969b9d",
       "water": true
     },
     {
@@ -1003,11 +1003,11 @@
       "variant": 5,
       "sockets": 5,
       "lodTriangles": [
-        1828,
-        1144,
-        458
+        1876,
+        1192,
+        506
       ],
-      "meshHash": "57c30b7683f96d9da867bda74880ab612a57b7c07a6e00233441cc2116a89f5d",
+      "meshHash": "24c7dd4c2668b0dfa7600e1eac0b68bd998dc1d6e8913831e68db61e7edf0349",
       "water": true
     },
     {
@@ -1017,11 +1017,11 @@
       "variant": 6,
       "sockets": 5,
       "lodTriangles": [
-        1426,
-        782,
-        332
+        1474,
+        830,
+        380
       ],
-      "meshHash": "b2c7f4bea5bd5a350518f4046e95323946eeab3324219af8e0ea3067ad2b4c92",
+      "meshHash": "54fc42e91ca7f385e61440a880ab230ce284f1f097c6ad2983732bc249517fb0",
       "water": true
     },
     {
@@ -1031,11 +1031,11 @@
       "variant": 7,
       "sockets": 5,
       "lodTriangles": [
-        1432,
-        844,
-        326
+        1480,
+        892,
+        374
       ],
-      "meshHash": "b5c9df9a1222a5c607b0313f788c8034864d852b7e7da7d8ab3fab0f57fe11d6",
+      "meshHash": "7f7d83462e418784774c4b227735811156acd75b9a668fe72f8c936cff9d98dd",
       "water": true
     },
     {
@@ -1605,11 +1605,11 @@
       "variant": 0,
       "sockets": 11,
       "lodTriangles": [
-        1850,
-        1134,
-        476
+        1898,
+        1182,
+        524
       ],
-      "meshHash": "6503895d5790b11c9fada26b7ce0708236351efa7bcaa611e3d0e821b2ec85e6",
+      "meshHash": "8ee5002e2013e12e5c0b9552491061558f2782b238014d77ad536f440f68d030",
       "water": true
     },
     {
@@ -1619,11 +1619,11 @@
       "variant": 1,
       "sockets": 11,
       "lodTriangles": [
-        2268,
-        1340,
-        586
+        2316,
+        1388,
+        634
       ],
-      "meshHash": "b6c0347e556df87abd73b75a2a71739d12ffdb8c9de838de43dfc154663076dc",
+      "meshHash": "ed5f03bc67bfaa08b5c525688cf02e684ef33e80a62efc5ca25976c7fed89018",
       "water": true
     },
     {
@@ -1633,11 +1633,11 @@
       "variant": 2,
       "sockets": 11,
       "lodTriangles": [
-        2382,
-        1498,
-        628
+        2430,
+        1546,
+        676
       ],
-      "meshHash": "96b84277d19de2b112fc6f0fbc182ca81c2b0248f161c8fbd0f78cbfb617d621",
+      "meshHash": "aadc03248cb09b7eb1d7a943497e357dbf020282e97d0bbfe1439f897d9848f3",
       "water": true
     },
     {
@@ -1647,11 +1647,11 @@
       "variant": 3,
       "sockets": 11,
       "lodTriangles": [
-        2094,
-        1298,
-        552
+        2142,
+        1346,
+        600
       ],
-      "meshHash": "ee5f7b06022440b10760d8b111396bfc8392f3390ab70438480a52ca916f50a2",
+      "meshHash": "516267d8f8c01e844d50491f5cd9bc222e76b8720f9d4188dd5b0c47c5dcb254",
       "water": true
     },
     {
@@ -1661,11 +1661,11 @@
       "variant": 4,
       "sockets": 11,
       "lodTriangles": [
-        2148,
-        1256,
-        538
+        2196,
+        1304,
+        586
       ],
-      "meshHash": "825a10052001fb8f30469d5963438aad8aabec3f9b3a47e8c4ab17e664f9a0de",
+      "meshHash": "b6994829b6bc89b651846f6e7f696d25d353dbe39228e05f01fe2a3d5fbb5961",
       "water": true
     },
     {
@@ -1675,11 +1675,11 @@
       "variant": 5,
       "sockets": 11,
       "lodTriangles": [
-        2550,
-        1618,
-        664
+        2598,
+        1666,
+        712
       ],
-      "meshHash": "af51071bb1ca701433f4269e756012feca7f9f84ccc598c115b65361058dafd5",
+      "meshHash": "7dbdeb28aa4d8a33f006b575cc4cd6314f46a508c8dd476534d9a50b20d9079b",
       "water": true
     },
     {
@@ -1689,11 +1689,11 @@
       "variant": 6,
       "sockets": 11,
       "lodTriangles": [
-        2148,
-        1256,
-        538
+        2196,
+        1304,
+        586
       ],
-      "meshHash": "bf13fc0d2856b8f158dfee688e37ff758a030753076f3776b6d4d26219dbdadd",
+      "meshHash": "e683d98d45902479f2dc923d5c6834736fb1803bc30fa5ec2a8e7e8d458e1648",
       "water": true
     },
     {
@@ -1703,11 +1703,11 @@
       "variant": 7,
       "sockets": 11,
       "lodTriangles": [
-        2154,
-        1318,
-        532
+        2202,
+        1366,
+        580
       ],
-      "meshHash": "afb29f1210deb465afbd8fcf783181246b88db2970f9da0815015e5ff1af49f6",
+      "meshHash": "09637c8ec5517633b469d6d63ff85ba263ebbcefd81f2cfd1ccbdf9a4825a30d",
       "water": true
     },
     {

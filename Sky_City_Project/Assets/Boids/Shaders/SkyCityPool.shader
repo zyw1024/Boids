@@ -90,11 +90,14 @@ Shader "Boids/SkyCity/Reflecting Garden Water"
                 float3 halfVector=normalize(sun.direction+view);
                 float spec=pow(saturate(dot(normal,halfVector)),180)*1.6;
                 water+=sun.color*spec*sun.shadowAttenuation;
-                float foam=(1-smoothstep(.018,.22,depth))*(.55+.45*sin(p.x*19+p.y*13-t*4));
+                // Confine contact foam to a narrow edge. A periodic sine across
+                // all shallow pixels made small ornamental basins look striped.
+                float contact=1-smoothstep(.015,.075,depth);
+                float foam=contact*smoothstep(.45,.75,noise(p*7+flow*t*.4));
                 float spill=1-smoothstep(.2,2.5,min(length(toLeft),length(toRight)));
                 if(_MultipleElevations>.5)spill=0;
                 float driftingFoam=smoothstep(.60,.81,current)*(.04+spill*.22);
-                water=lerp(water,float3(1.05,1.07,.98),saturate(foam*.65+driftingFoam));
+                water=lerp(water,float3(1.05,1.07,.98),saturate(foam*.18+driftingFoam));
                 return half4(MixFog(water,i.fog),.97*_Reveal);
             }
             ENDHLSL

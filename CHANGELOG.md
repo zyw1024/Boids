@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-26 · Ornamental pool water
+
+- Replace the solid slab beneath each small pool with a recessed floor and four side walls. Keep the reflection plane unchanged. The water now has 10.5 cm of modeled depth, with at least 8.1 cm remaining at the lowest permitted wave height.
+- Replace the broad sine-stripe foam pattern with subtle, irregular contact foam near edges. Reflective water, flowing currents and the main island's spillways remain active.
+- Rebuild all 40 pool-bearing module variants across three LODs. Preserve existing mesh file IDs and prefab references when rebaking legacy meshes whose main asset lacks a `LOD0` suffix.
+- Verify 600 basin-interior samples, 128 module prefabs and 384 LOD meshes. The standalone build has zero errors and warnings. All 20 streamed-garden checks pass with zero runtime errors.
+- Refresh the 72-second, 1080p scene tour and current screenshots after the water fix; retain the existing camera route and project audio.
+
+Same-view images and reports: `Sky_City_Project/Captures/SkyCityWorld/WaterReview/`.
+
 ## 2026-09-26 · Refreshed classroom presentation
 
 - Publish the 15-slide English presentation, Chinese teaching notes and official tool links under `Teaching/`, with download links in the repository README.

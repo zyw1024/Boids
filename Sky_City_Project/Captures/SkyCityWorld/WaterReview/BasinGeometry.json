@@ -1,0 +1,609 @@
+{
+  "passed": true,
+  "basinLods": 120,
+  "interiorSamples": 600,
+  "waveAmplitudeBound": 0.024,
+  "minimumClearance": 0.08099998927116395,
+  "results": [
+    {
+      "module": 24,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 24,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 24,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 25,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 25,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 25,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 26,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 26,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 26,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 27,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 27,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 27,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 28,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 28,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 28,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 29,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 29,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 29,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 30,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 30,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 30,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 31,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 31,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 31,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 40,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 40,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 40,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 41,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 41,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 41,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 42,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 42,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 42,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 43,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 43,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 43,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 44,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 44,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 44,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 45,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 45,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 45,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 46,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 46,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 46,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 47,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 47,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 47,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 56,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 56,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 56,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 57,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 57,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 57,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 58,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 58,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 58,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 59,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 59,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 59,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 60,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 60,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 60,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 61,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 61,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 61,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 62,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 62,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 62,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 63,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 63,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 63,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 64,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 64,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 64,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 65,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 65,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 65,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 66,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 66,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 66,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 67,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 67,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 67,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 68,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 68,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 68,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 69,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 69,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 69,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 70,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 70,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 70,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 71,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 71,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 71,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 112,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 112,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 112,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 113,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 113,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 113,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 114,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 114,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 114,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 115,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 115,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 115,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 116,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 116,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 116,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 117,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 117,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 117,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 118,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 118,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 118,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 119,
+      "lod": 0,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 119,
+      "lod": 1,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    },
+    {
+      "module": 119,
+      "lod": 2,
+      "minimumClearanceAtWaveTrough": 0.08099998927116395
+    }
+  ]
+}

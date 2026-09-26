@@ -153,8 +153,13 @@ def parcel(f,v,lod):
             m.arch((x+off if alongX else x,y,z if alongX else z+off),span,h,rot=0 if alongX else pi/2)
         m.box((x,y+h+.14,z),((count*spacing+.2) if alongX else .55,.25,.55 if alongX else count*spacing+.2),TRIM)
     def pool(x,z,w=2.1,d=2.1):
-        # Deck .25; all reflecting pools share y=.30 for a single reflection camera.
-        m.box((x,.28,z),(w+.3,.16,d+.3),DARK)
+        # Keep the shared reflection plane at .38. A real basin floor at .275
+        # leaves .105 m of water above it, clear of the .024 m wave excursion.
+        # The old solid slab ended at .36 and intermittently pierced the water.
+        m.box((x,.235,z),(w,.08,d),DARK)
+        for side in [-1,1]:
+            m.box((x+side*(w+.15)*.5,.35,z),(.15,.20,d+.30),DARK)
+            m.box((x,.35,z+side*(d+.15)*.5),(w,.20,.15),DARK)
         water.face([(x-w*.5,.38,z-d*.5),(x-w*.5,.38,z+d*.5),(x+w*.5,.38,z+d*.5),(x+w*.5,.38,z-d*.5)],(1,1,1),0,[(0,0),(0,1),(1,1),(1,0)])
     def round_pavilion(x,z,r,h):
         # Four complete sides carry the roof; a single arcade row cannot support a dome.

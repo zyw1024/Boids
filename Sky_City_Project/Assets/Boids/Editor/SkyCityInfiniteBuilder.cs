@@ -155,7 +155,10 @@ public static class SkyCityInfiniteBuilder
                 {
                     var mesh=SkyCityModuleData.Upload(data.modules[id,lod,0],name+" LOD"+lod);
                     var saved=AssetDatabase.LoadAllAssetsAtPath(asset).OfType<Mesh>().FirstOrDefault(m=>m.name==mesh.name);
-                    if(saved!=null){EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}
+                    // Legacy main meshes use the parcel name without " LOD0".
+                    // Reuse that object so rebaking cannot replace its subasset IDs.
+                    if(saved==null&&lod==0)saved=AssetDatabase.LoadAssetAtPath<Mesh>(asset);
+                    if(saved!=null){mesh.name=saved.name;EditorUtility.CopySerialized(mesh,saved);Object.DestroyImmediate(mesh);mesh=saved;EditorUtility.SetDirty(mesh);}
                     else if(lod==0)AssetDatabase.CreateAsset(mesh,asset);else AssetDatabase.AddObjectToAsset(mesh,asset);
                     var child=new GameObject("LOD"+lod);child.transform.SetParent(root.transform,false);child.AddComponent<MeshFilter>().sharedMesh=mesh;
                     var renderer=child.AddComponent<MeshRenderer>();renderer.sharedMaterial=mat;lods[lod]=new LOD(new[]{.18f,.065f,.005f}[lod],new Renderer[]{renderer});

@@ -130,3 +130,11 @@ __pycache__/
 !/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/SameViewAfter.png
 !/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeFrontBefore.png
 !/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeAfter_1.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/
+/Sky_City_Project/Captures/SkyCityWorld/WaterReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/Before.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/After.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/MainIsland.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/BasinGeometry.json
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/AssetReferences.json
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/Runtime.json

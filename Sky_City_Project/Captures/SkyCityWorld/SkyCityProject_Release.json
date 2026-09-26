@@ -6,7 +6,7 @@
     "result": "Succeeded",
     "errors": 0,
     "warnings": 0,
-    "seconds": 10.1946868
+    "seconds": 8.1818147
   },
   "algorithms": true,
   "placement": true,
@@ -23,6 +23,6 @@
     "camera": "Scripted in-scene tour",
     "performanceBenchmark": false
   },
-  "visualReview": "Reproduced and repaired the pool-loggia cornice crossing the main flower beds. Same-view screenshots confirm the exposed planting. Full-grown mesh-edge checks cover all main tree depths/LODs and four maximum-breeze samples. Reproduced remote crown/arcade intersections were fixed by module-aware yaw. Reports document the sampled geometry scope.",
+  "visualReview": "Reproduced and repaired the pool-loggia cornice crossing the main flower beds. Same-view screenshots confirm the exposed planting. Full-grown mesh-edge checks cover all main tree depths/LODs and four maximum-breeze samples. Reproduced remote crown/arcade intersections were fixed by module-aware yaw. Reports document the sampled geometry scope. Ornamental pools now have recessed floors and irregular edge foam. Same-view comparison confirms the stripe artifact is gone; the authored island basin retains reflections and spillways. See WaterReview/.",
   "scope": "Unity project, refreshed scene tour and classroom presentation in Teaching/."
 }
