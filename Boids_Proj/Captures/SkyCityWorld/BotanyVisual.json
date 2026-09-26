@@ -1,0 +1,11 @@
+{
+  "playing": true,
+  "scene": "Assets/Boids/Scenes/SkyCityWorld.unity",
+  "missingGlyphs": "",
+  "gardenPage": true,
+  "pointerReleased": true,
+  "gardens": 4,
+  "soilCells": 372,
+  "sliderCount": 6,
+  "visualReview": "Inspected fresh Botany_Hero.png and Botany_Menu.png: tree attached to terrace, scene materials render correctly, all six garden sliders and bottom actions visible, Chinese labels readable without missing glyphs."
+}

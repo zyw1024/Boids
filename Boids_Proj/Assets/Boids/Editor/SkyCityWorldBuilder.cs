@@ -91,6 +91,7 @@ public static class SkyCityWorldBuilder
         EditorSceneManager.SaveScene(scene,ScenePath);AssetDatabase.SaveAssets();
         if(!EditorBuildSettings.scenes.Any(s=>s.path==ScenePath))EditorBuildSettings.scenes=EditorBuildSettings.scenes.Concat(new[]{new EditorBuildSettingsScene(ScenePath,true)}).ToArray();
         Debug.Log("Sky City World saved: authored arrival, first person flight, callable articulated flock and streamed WFC districts.");
+        SkyCityGardenBuilder.Build();
     }
     public static void BuildPlayer()
     {

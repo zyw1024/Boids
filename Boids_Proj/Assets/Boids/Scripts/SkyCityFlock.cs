@@ -41,6 +41,8 @@ namespace Boids.Art
         Vector3[] positions,velocities;
         Camera view;
         Vector3 invitation;
+        Vector3 gardenVisit;
+        float gardenVisitUntil;
         float invitedUntil,flightTime;
         readonly System.Random random=new System.Random(641903);
         static readonly Vector3[] obstacleCenters={new Vector3(-8,10,12),new Vector3(12,9,16),new Vector3(5.1f,6.4f,13),new Vector3(-6.5f,0,-2.8f)};
@@ -142,6 +144,8 @@ namespace Boids.Art
                 }
                 float thermal=Mathf.Sin(flightTime*.45f+a.phase*12);
                 var goal=groups[a.group].goal;
+                if(!invited&&a.group==0&&flightTime<gardenVisitUntil)
+                    goal=gardenVisit+new Vector3(Mathf.Cos(flightTime*.5f+a.phase*6)*5,4+Mathf.Sin(a.phase*8)*1.5f,Mathf.Sin(flightTime*.5f+a.phase*6)*5);
                 var wander=new Vector3(Mathf.PerlinNoise(a.phase*19,flightTime*.28f)-.5f,Mathf.PerlinNoise(a.phase*31,flightTime*.31f)-.5f,Mathf.PerlinNoise(a.phase*43,flightTime*.23f)-.5f)*5;
                 if(invited)
                 {
@@ -299,9 +303,15 @@ namespace Boids.Art
             if(InvitationActive)invitedUntil+=seconds-callDuration;
             callDuration=seconds;
         }
+        public void VisitGarden(Vector3 point)
+        {
+            if(view==null||(point-view.transform.position).sqrMagnitude>80*80)return;
+            gardenVisit=point;gardenVisitUntil=flightTime+14;
+        }
         void ShiftOrigin(Vector3 shift)
         {
             invitation-=shift;
+            gardenVisit-=shift;
             if(agents!=null)foreach(var a in agents)a.body.position-=shift;
             foreach(var g in groups)if(g!=null){g.goal-=shift;g.center-=shift;}
         }

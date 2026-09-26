@@ -10,7 +10,7 @@ from fontTools.varLib.instancer import instantiateVariableFont
 from fontTools import subset
 
 root = Path(__file__).resolve().parents[2]
-sources = [root / "Assets/Boids/Scripts" / name for name in ("SkyCityFlockMenu.cs", "SkyCityWfcMenu.cs")]
+sources = [root / "Assets/Boids/Scripts" / name for name in ("SkyCityFlockMenu.cs", "SkyCityWfcMenu.cs", "SkyCityGardenMenu.cs")]
 font = instantiateVariableFont(TTFont(sys.argv[1]), {"wght": 400}, inplace=True)
 options = subset.Options()
 options.name_IDs = [0, 1, 2, 3, 4, 5, 6, 13, 14]

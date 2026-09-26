@@ -57,8 +57,9 @@ namespace Boids.Art
             var accent=Image("Gold rule",panel.transform,Gold);Place(accent.rectTransform,0,0,480,2);
             Label(panel.transform,"SKY CITY   /   FIELD NOTES",26,21,428,20,12,Gold);
             Label(panel.transform,"场景设置",26,49,350,46,34,Paper);
-            flockTab=Button(panel.transform,"Flock tab","鸟群",26,103,207,true,()=>ShowWorldSettings(false),34);
-            worldTab=Button(panel.transform,"World tab","世界生成 · WFC",247,103,207,false,()=>ShowWorldSettings(true),34);
+            flockTab=Button(panel.transform,"Flock tab","鸟群",26,103,104,true,()=>ShowWorldSettings(false),34);
+            worldTab=Button(panel.transform,"World tab","世界 · WFC",140,103,148,false,()=>ShowWorldSettings(true),34);
+            gardenTab=Button(panel.transform,"Garden tab","空中花园",298,103,156,false,ShowGardenSettings,34);
             status=Label(panel.transform,"实时预览 · 64 只飞鸟",28,144,420,20,13,Teal);
             flockPage=Page(panel.transform,"Flock controls");
             Section(flockPage,"01   飞行",166);
@@ -77,7 +78,7 @@ namespace Boids.Art
             Button(flockPage,"Reset defaults","恢复默认",26,862,190,false,ResetDefaults);
             Button(flockPage,"Resume flight","继续飞行  Esc",228,862,226,true,()=>SetOpen(false));
             Label(flockPage,"参数即时生效 · 场景继续运行",26,921,428,22,13,Muted);
-            BuildWorldPage(panel.transform);ShowWorldSettings(false);
+            BuildWorldPage(panel.transform);BuildGardenPage(panel.transform);ShowWorldSettings(false);
             canvasRoot.SetActive(false);
         }
 
@@ -85,7 +86,8 @@ namespace Boids.Art
         {
             if(!IsOpen||Time.unscaledTime<nextStatus)return;
             nextStatus=Time.unscaledTime+.25f;
-            if(WorldPageActive)UpdateWorldStatus();
+            if(GardenPageActive)UpdateGardenStatus();
+            else if(WorldPageActive)UpdateWorldStatus();
             else status.text="实时预览 · "+flock.BirdCount+" 只飞鸟"+(flock.InvitationActive?" · 召集中":" · 自由飞行");
         }
         public void SetOpen(bool open)

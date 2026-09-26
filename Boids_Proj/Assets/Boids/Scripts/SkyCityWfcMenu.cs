@@ -55,6 +55,7 @@ namespace Boids.Art
         }
         public void ShowWorldSettings(bool value)
         {
+            GardenPageActive=false;if(gardenPage!=null)gardenPage.gameObject.SetActive(false);if(gardenTab!=null)StyleTab(gardenTab,false);
             WorldPageActive=value&&world!=null;flockPage.gameObject.SetActive(!WorldPageActive);worldPage.gameObject.SetActive(WorldPageActive);
             StyleTab(flockTab,!WorldPageActive);StyleTab(worldTab,WorldPageActive);
             if(WorldPageActive){foreach(var binding in worldBindings)binding.Refresh();UpdateWorldStatus();}

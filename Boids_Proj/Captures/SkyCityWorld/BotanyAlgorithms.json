@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "checks": {
+    "deterministicEvolution": true,
+    "propagationBeyondSeeds": true,
+    "synchronousSymmetry": true,
+    "soilMaskBlocksSpread": true,
+    "thresholdChangesBehaviour": true,
+    "noEdgeWrapping": true,
+    "deterministicBranchGeometry": true,
+    "outwardTrunkFaces": true,
+    "boundedBranchBudget": true,
+    "finiteGeometry": true
+  },
+  "branches": 139,
+  "lowestNormalAgreement": 0.861196935
+}
