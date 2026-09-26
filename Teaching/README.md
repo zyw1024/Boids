@@ -2,7 +2,9 @@
 
 [Download the PPTX](Game_Algorithms_Implementation.pptx?raw=true)
 
-The presentation contains 15 English slides with Chinese speaker notes. Slide 2 embeds a 72-second Unity runtime tour with the original project music. Its source version is `1c34b5ff3d5f3b480562a447acfca9ff929f2c8d`.
+The presentation contains 15 English slides with Chinese speaker notes and the HKUST (Guangzhou) logo on the cover. Slide 2 embeds a 72-second Unity runtime tour with the original project music, including the ornamental-pool water fix. Its source version is `468100c813f7cd349a018c2f5d462e683a156679`.
+
+This version incorporates the instructor's edits to the slide order, wording and image placement. Prompt labels read `PROMPT`; the revised slide order is reflected in the page numbers and Chinese notes.
 
 The six sections cover the project, a live scene demonstration, tools and official links, algorithm applications, prompts and visual iteration, and a recap.
 

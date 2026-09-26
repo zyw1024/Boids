@@ -1,30 +1,31 @@
 # Game Algorithms Implementation
 
-15 页英文 PPT，中文讲稿；约 39.5 分钟。第 2 页嵌入 72 秒实况视频。
+15 页英文 PPT，中文讲稿；约 39.5 分钟。封面使用香港科技大学（广州）Logo，第 2 页嵌入 72 秒实况视频。
 
 项目：https://github.com/zyw1024/Game-Algorithms-Implementation/tree/feat/redon-style-scene
 
-演示源码版本：1c34b5ff3d5f3b480562a447acfca9ff929f2c8d
+演示源码版本：468100c813f7cd349a018c2f5d462e683a156679
 
 ## 1. Game Algorithms Implementation
 
 建议 0.5 分钟。
 
-这是当前 Sky_City_Project 的真实运行截图。项目已经更名并推送到 GitHub；课堂版本位于 feat/redon-style-scene 分支，当前提交为 1c34b5f。按标题、实况、工具、算法用途、迭代过程、Recap 六部分展开。链接直接指向演示分支。项目目录是 Projects/Sky_City_Project/Sky_City_Project，本地保留独立课件副本，GitHub 仓库的 Teaching 目录提供当前 PPT、中文讲稿和工具链接。
+这是当前 Sky_City_Project 的真实运行截图。项目已经更名并推送到 GitHub；课堂版本位于 feat/redon-style-scene 分支，当前提交为 468100c。按标题、实况、工具、算法用途、迭代过程、Recap 六部分展开。链接直接指向演示分支。项目目录是 Projects/Sky_City_Project/Sky_City_Project，本地保留独立课件副本，GitHub 仓库的 Teaching 目录提供当前 PPT、中文讲稿和工具链接。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/LivingCity_Hero.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/CHANGELOG.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/LivingCity_Hero.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/CHANGELOG.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Teaching/Assets/HKUST_Guangzhou_Logo.png
 
 ## 2. Live demonstration
 
 建议 2 分钟。
 
-先播放 72 秒实况，再提问学生看到哪些规则在起作用。0:00 主岛与鸟群，0:08 分形树生长，0:26 花园元胞演化，0:34 花园控制，0:40 前往远方，0:45 远端街区花园，1:04 群岛全景。录像由 Unity Recorder 录制运行中的场景，镜头是编排的自动巡游，不能称为人工现场操作。云、水、鸟群、树、花园与加载系统均在运行。配乐为项目原创 Garden of Winds。视频已嵌入第二页，也提供独立 MP4 供课堂备用。 本版演示已替换为树木及花园与建筑净空修正后的实况。
+先播放 72 秒实况，再提问学生看到哪些规则在起作用。0:00 主岛与鸟群，0:08 分形树生长，0:26 花园元胞演化，0:34 花园控制，0:40 前往远方，0:45 远端街区花园，1:04 群岛全景。录像由 Unity Recorder 录制运行中的场景，镜头是编排的自动巡游，不能称为人工现场操作。云、水、鸟群、树、花园与加载系统均在运行。配乐为项目原创 Garden of Winds。视频已嵌入第二页，也提供独立 MP4 供课堂备用。 本版演示包含树木与建筑净空调整，以及小型水池的水深和泡沫修正。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.json
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Editor/SkyCityLivingWorldRecorder.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/Music/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.json
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Editor/SkyCityLivingWorldRecorder.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/Music/README.md
 
 ## 3. Tools for creating the world
 
@@ -38,8 +39,8 @@
 - https://www.python.org/
 - https://unity.com/
 - https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/index.html
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Setup/README.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/Music/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Setup/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/Music/README.md
 
 ## 4. Tools for connecting and sharing
 
@@ -53,8 +54,8 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 - https://ffmpeg.org/
 - https://git-scm.com/
 - https://github.com/
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Setup/README.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/Music/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Setup/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/Music/README.md
 
 ## 5. Supporting libraries and assets
 
@@ -69,8 +70,8 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 - https://fonttools.readthedocs.io/
 - https://versilian-studios.com/vsco-community/
 - https://fonts.google.com/noto/specimen/Noto+Sans+SC
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Setup/README.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/Music/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Setup/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/Music/README.md
 
 ## 6. Algorithms and applications
 
@@ -78,11 +79,11 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 每种算法用一句话对齐可见结果。当前 SkyCityFlock.cs 包括分离、对齐、凝聚三项，并叠加目标吸引、预测避障与转向约束；这与早期版本不同。WFC 用约束传播选取兼容模块，宏观构图与美术模块另有设计。分形树是参数化递归分枝，不应声称实现了字符串语法形式的 L-system。花园是八邻域同步更新的四状态元胞系统：Rest、Bud、Bloom、Recover；用户与风播种属于外部输入，不应把它说成凭空自发繁殖。这里只解释应用，不推导公式。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityFlock.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfc.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Editor/SkyCityBotanyGeometry.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityGardenAutomaton.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityLivingGarden.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityFlock.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfc.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Editor/SkyCityBotanyGeometry.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityGardenAutomaton.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityLivingGarden.cs
 
 ## 7. Rendering and runtime support
 
@@ -90,13 +91,13 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 云使用平滑 value noise 的 fBm 与 Worley 密度，沿视线 ray marching；不能因源码命名含 Perlin 就称为严格梯度 Perlin 噪声。水面把反射、Fresnel、吸收与动态流纹组合成可感知的材质。生成和加载是两件事：世界可持续扩展，但相机周围仅驻留有限区块；当前菜单提供 9、25、49 三档预算，并配合 LOD 与浮动原点。当前工作还让树木与花园随着区块加载、卸载，并在同一会话返回时恢复状态。运行负担会随驻留范围、场景和硬件变化，演示录像不能替代性能测量。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/HangingGardens/Water.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityInfiniteWorld.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictGardens.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Shaders/SkyCityCloudNoise.compute
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Shaders/SkyCityAtmosphere.shader
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Shaders/SkyCityPool.shader
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/DistrictGardens_Runtime.json
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/HangingGardens/Water.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityInfiniteWorld.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictGardens.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Shaders/SkyCityCloudNoise.compute
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Shaders/SkyCityAtmosphere.shader
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Shaders/SkyCityPool.shader
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/DistrictGardens_Runtime.json
 
 ## 8. 1. Give the project a visual direction
 
@@ -106,23 +107,11 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 课堂落点：先确定体验与视觉语言，再评估实现是否接近目标。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/SkyCity_Concept.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/provenance.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCity_Style.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/SkyCity_Concept.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/provenance.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCity_Style.png
 
-## 9. 2. Turn a scene into a living world
-
-建议 3 分钟。
-
-原话：“云要做体积云，水要用URP做效果，鸟飞的太不灵活。你是否理解我的意图，还有太多东西可以提升了。”随后：“水要有倒影和反射的效果”“流动也是必要的”“云要有运动，旗帜要有飘动。场景是动态的。”两张图是云与水的不同研究画面，不是同机位前后对比。结合刚才视频观察云的体积层次、水的反射、瀑布和鸟的动作；静态截图不能单独证明运动。
-
-课堂落点：把“更生动”拆成可观察的运动与光学响应。
-
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/HangingGardens/Clouds_Before.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/HangingGardens/Water.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/README.md
-
-## 10. 3. Expand through reusable modules
+## 9. 2. Expand through reusable modules
 
 建议 3 分钟。
 
@@ -130,10 +119,22 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 课堂落点：把世界内容、连接规则与运行预算一同提出。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityInfinite_128Modules.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityInfinite_Style.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/Infinite/module-catalog.json
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfc.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityInfinite_128Modules.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityInfinite_Style.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/Infinite/module-catalog.json
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfc.cs
+
+## 10. 3. Turn a scene into a living world
+
+建议 3 分钟。
+
+原话：“云要做体积云，水要用URP做效果，鸟飞的太不灵活。你是否理解我的意图，还有太多东西可以提升了。”随后：“水要有倒影和反射的效果”“流动也是必要的”“云要有运动，旗帜要有飘动。场景是动态的。”两张图是云与水的不同研究画面，不是同机位前后对比。结合刚才视频观察云的体积层次、水的反射、瀑布和鸟的动作；静态截图不能单独证明运动。
+
+课堂落点：把“更生动”拆成可观察的运动与光学响应。
+
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/HangingGardens/Clouds_Before.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/HangingGardens/Water.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/README.md
 
 ## 11. 4. Make feedback concrete and testable
 
@@ -143,11 +144,11 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 课堂落点：指出位置与关系，回到对应几何系统，比较同一视角。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityInfinite_StructureBefore.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityInfinite_StructureAfter.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityBridgeGeometry.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityInfinite_StructureBefore.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityInfinite_StructureAfter.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityBridgeGeometry.cs
 
-## 12. 5. Improve composition, not just quantity
+## 12. 5. Improve composition, light, shadow and materials
 
 建议 3 分钟。
 
@@ -155,9 +156,9 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 课堂落点：用地标、轮廓、层次与留白组织可重复模块。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityInfinite_Style.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/HangingGardens/Architecture.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/ArtSource/SkyCity/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityInfinite_Style.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/HangingGardens/Architecture.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/ArtSource/SkyCity/README.md
 
 ## 13. 6. Put the player inside the system
 
@@ -167,10 +168,10 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 课堂落点：把算法参数变成可以感受和调整的交互。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/FlockMenu.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/WfcSettings.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityFlockMenu.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfcMenu.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/FlockMenu.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/WfcSettings.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityFlockMenu.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityWfcMenu.cs
 
 ## 14. 7. Carry living systems across the city
 
@@ -178,14 +179,15 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 前一条原话是提问：“如果我还想把分形算法和元胞自动机算法加入这个场景，你有什么合适的建议吗”，建议后用户回复“赞同”。当前要求：“推广到无限街区”。因此页面第一句是压缩的英译节选，不应说成原始逐字命令。主岛已有递归树与元胞花园，本次将它们扩展到兼容的远端模块。不是给所有模块强行种植：空地、水道、圣所等不适合区域被排除，每街区最多四处花床与两棵树，保留通路和建筑净空。离开后释放对象，同一次会话返回恢复元胞状态；种子变化重新生成。后续反馈是“穿模了”，并明确为“树木或花园与建筑重叠”。修正将下层廊亭屋顶收回露台以下，收窄主树朝向建筑一侧的树冠，并让远端树冠朝向模块空地。这里应区分功能与空间关系：生长正常，不代表完整树冠和风动范围已经避开建筑。右图和第二页视频展示修正后的版本。
 
-课堂落点：把局部效果提升为可加载、可卸载、可恢复的世界系统。
+课堂落点：把局部效果提升为可加载、可卸载、可恢复的世界系统。 随后用户圈出小水池中的黑白斜纹，问“这是什么”。问题涉及两个层次：水面下面原本是过浅的实心底座，水波可能穿入底座；浅水泡沫又采用了规则条纹。修正为有深度的池盆，并将泡沫限制为边缘的细小、不规则变化。引导学生将视觉问题追溯到几何与着色两方面。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/Botany_Hero.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/LivingCity_RemoteGarden.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictBotanyLayout.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictGardens.cs
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/CHANGELOG.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/SameViewAfter.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/Botany_Hero.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/LivingCity_RemoteGarden.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictBotanyLayout.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Assets/Boids/Scripts/SkyCityDistrictGardens.cs
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/CHANGELOG.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/SameViewAfter.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/WaterReview/After.png
 
 ## 15. Recap
 
@@ -193,6 +195,6 @@ MCP 是工具连接协议。Unity MCP 在本次工作中固定指向 Sky_City_Pr
 
 回到四个问题：想得到什么可见体验？什么规则能支持它？运行时怎样检查？下一轮请求应具体到哪里？邀请学生选一个主题，如雨夜港口或沙漠遗迹，写一条体验目标、一种算法用途和一个验证方法。学习重点是持续的判断与迭代，不是把某句提示词当作一次生成完整作品的配方。最终工程已推送，学生可以从链接分支复现。
 
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/Sky_City_Project/Captures/SkyCityWorld/LivingCity_Archipelago.png
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/README.md
-- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/1c34b5ff3d5f3b480562a447acfca9ff929f2c8d/CHANGELOG.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/Sky_City_Project/Captures/SkyCityWorld/LivingCity_Archipelago.png
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/README.md
+- https://github.com/zyw1024/Game-Algorithms-Implementation/blob/468100c813f7cd349a018c2f5d462e683a156679/CHANGELOG.md

@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-26 · Instructor edits and HKUST Guangzhou cover
+
+- Merge the instructor's edits from the saved v2 presentation, including the reordered module/water slides, removed text, revised prompts and picture placement. Align page and section numbers with that order.
+- Restore the existing HKUST (Guangzhou) logo on the opening slide and use `PROMPT` for all remaining prompt labels.
+- Embed the new 72-second recording after the ornamental-pool fix, refresh the current screenshots, and update the Chinese notes to source revision `468100c`.
+- Render all 15 slides, verify the retained manual edits, 21 links and embedded video, and preserve the native algorithm table.
+
 ## 2026-09-26 · Ornamental pool water
 
 - Replace the solid slab beneath each small pool with a recessed floor and four side walls. Keep the reflection plane unchanged. The water now has 10.5 cm of modeled depth, with at least 8.1 cm remaining at the lowest permitted wave height.
