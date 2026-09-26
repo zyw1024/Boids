@@ -32,7 +32,16 @@ The current scene combines the authored Hanging Gardens island with streamed WFC
 
 [Controls and implementation](Sky_City_Project/Tools/SkyCityWorld/README.md) · [Change log](CHANGELOG.md) · [Streamed garden verification](Sky_City_Project/Captures/SkyCityWorld/DistrictGardens_Runtime.json)
 
-The Unity folder and product name are `Sky_City_Project`. Existing `Assets/Boids` paths and namespaces preserve asset references. GitHub remains `Game-Algorithms-Implementation`. Teaching decks and notes stay in the separate classroom workspace.
+The Unity folder and product name are `Sky_City_Project`. Existing `Assets/Boids` paths and namespaces preserve asset references. GitHub remains `Game-Algorithms-Implementation`.
+
+## Classroom materials
+
+- [Download the presentation](Teaching/Game_Algorithms_Implementation.pptx?raw=true): 15 English slides, Chinese speaker notes and an embedded 72-second video of the corrected scene.
+- [Chinese teaching notes](Teaching/Teaching_Notes_ZH.md)
+- [Official tool and resource links](Teaching/Tools_Official_Links.md)
+- [Standalone demo video](Sky_City_Project/Captures/SkyCityWorld/LivingCityJourney.mp4?raw=true)
+
+The current presentation and footage correspond to source revision `1c34b5f`. Download the PPTX to play its embedded video. The video above is also available separately for classroom playback.
 
 ## Earlier scenes and production history
 

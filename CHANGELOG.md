@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-09-26 · Refreshed classroom presentation
+
+- Publish the 15-slide English presentation, Chinese teaching notes and official tool links under `Teaching/`, with download links in the repository README.
+- Embed the corrected 72-second scene tour and refresh the cover, video poster, remote-garden screenshot and recap image. Preserve the other slide layouts, historical comparison images and clickable tool links.
+- Update speaker notes to describe the plant-clearance iteration and reference source revision `1c34b5f`.
+
 ## 2026-09-26 · Planting and architecture clearance
 
 - Refresh the 72-second, 1080p scene tour and current project screenshots after the clearance fixes. The tour retains its 30 fps video, original audio and scripted runtime camera route.
