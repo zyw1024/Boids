@@ -25,8 +25,8 @@ async def commands(session, mode, argument):
     await session.initialize()
     if mode == 'unity':
         instances = decode(await session.read_resource('mcpforunity://instances'))
-        active = [i for i in instances['instances'] if i['name'] == 'Boids_Proj']
-        if len(active) != 1: raise RuntimeError(f'Expected exactly one Boids editor: {instances}')
+        active = [i for i in instances['instances'] if i['name'] == 'Sky_City_Project']
+        if len(active) != 1: raise RuntimeError(f'Expected exactly one Sky_City_Project editor: {instances}')
         result = decode(await session.call_tool('set_active_instance', {'instance': active[0]['id']}))
         if result.get('success') is False: raise RuntimeError(result)
     if argument == 'schemas':
@@ -38,7 +38,7 @@ async def commands(session, mode, argument):
     if mode == 'blender':
         script = Path(argument).resolve()
         code = '__file__ = ' + repr(str(script)) + '\n' + script.read_text(encoding='utf-8')
-        result = await session.call_tool('execute_blender_code', {'code': code, 'user_prompt': 'Build the Moonveil fish model and animations for the Boids project.'})
+        result = await session.call_tool('execute_blender_code', {'code': code, 'user_prompt': 'Run the supplied Sky City asset authoring script.'})
         print(json.dumps(decode(result), ensure_ascii=False),flush=True)
         if result.isError: raise RuntimeError('Blender execution failed')
     else:

@@ -1,0 +1,14 @@
+{
+    "passed": true,
+    "prefabs": 128,
+    "distinctIds": 128,
+    "lodMeshes": 384,
+    "bootstrapDistricts": 0,
+    "shaderErrors": 0,
+    "compositions": 8,
+    "transparentCascadeLods": 24,
+    "waterCurrentMeshes": 24,
+    "compressedLibraryBytes": 101865082,
+    "sharedLibraryBytes": 293786796,
+    "error": ""
+}

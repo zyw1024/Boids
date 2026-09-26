@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "checks": {
+    "worldReady": true,
+    "thirdTabAndPointerRelease": true,
+    "depth3SelectsCachedGeometry": true,
+    "liveGardenControls": true,
+    "realStateOverlay": true,
+    "menuBlocksPlantingAndRecall": true,
+    "independentDefaults": true,
+    "clearRemovesAllActivity": true,
+    "aimedPlanting": true,
+    "solidGeometryBlocksSeeds": true,
+    "skyRejectsPlanting": true,
+    "rightClickRecallPreserved": true,
+    "branchGrowthProgresses": true,
+    "neighbourPropagationOccurs": true,
+    "distantSimulationFrozen": true,
+    "arrivalUnloadedVisually": true,
+    "returnPreservesCells": true,
+    "returnResumesEvolution": true,
+    "originRestored": true,
+    "treeFinishesGrowth": true,
+    "boundedStreaming": true,
+    "waterReflectionsRendered": true
+  },
+  "performance": true,
+  "phaseTimes": {
+    "nearGarden": {
+      "frames": 356,
+      "p95": 16.73549972474575,
+      "p99": 26.975600048899651,
+      "maximum": 35.899698734283447
+    },
+    "distantStreaming": {
+      "frames": 303,
+      "p95": 16.668399795889854,
+      "p99": 16.843600198626518,
+      "maximum": 20.993299782276154
+    },
+    "returnStreaming": {
+      "frames": 121,
+      "p95": 16.694400459527969,
+      "p99": 17.004799097776413,
+      "maximum": 17.187099903821945
+    },
+    "settledGarden": {
+      "frames": 900,
+      "p95": 16.668800264596939,
+      "p99": 16.797900199890137,
+      "maximum": 17.08340086042881
+    }
+  },
+  "baseline": false,
+  "standalone": true,
+  "frames": 1680,
+  "renderedFrames": 1680,
+  "seconds": 28.083334400000005,
+  "p95": 16.673000529408455,
+  "p99": 16.889799386262894,
+  "maximum": 35.899698734283447,
+  "errors": 0,
+  "cells": 558,
+  "PeakResident": 25,
+  "PeakPending": 3,
+  "PeakMainThreadMs": 8.1179,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "width": 1600,
+  "height": 900,
+  "renderPath": "Explicit URP Camera.Render into HDR render texture; hidden player window. Overlay UI visually verified separately in editor.",
+  "note": "Public planting and recall handlers plus actual UI callbacks; physical keyboard events are not synthesized. Garden is intentionally local to the authored island in this milestone."
+}

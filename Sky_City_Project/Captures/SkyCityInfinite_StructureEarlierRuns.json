@@ -1,0 +1,178 @@
+{
+    "passed": false,
+    "functionalPassed": true,
+    "performancePassed": false,
+    "standalonePlayer": true,
+    "returnedIdentical": true,
+    "zeroSceneDistrictsAtStart": true,
+    "renderCoveragePassed": true,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "unityVersion": "2022.3.62f2c1",
+    "note": "Real elapsed frames after warm-up; continuous travel, rapid million-district teleports, then return. No screenshots or file writes during measured frames. Main-thread budget is a scheduling budget; one atomic mesh upload can exceed it. Owned mesh bytes exclude driver overhead, textures and engine memory. GPU -1 means unavailable. 60 fps cap; functional and performance results are separate.",
+    "width": 1536,
+    "height": 1024,
+    "frames": 3516,
+    "renderedFrames": 3516,
+    "seed": 93641,
+    "completed": 202,
+    "unloaded": 177,
+    "cancelled": 46,
+    "errors": 0,
+    "peakResidents": 25,
+    "peakPending": 3,
+    "pool": 0,
+    "originShifts": 6,
+    "fallbacks": 0,
+    "seconds": 65.0128727,
+    "averageFrameMs": 18.48976498577517,
+    "p50FrameMs": 16.666799783706666,
+    "p95FrameMs": 16.67110063135624,
+    "p99FrameMs": 17.17109978199005,
+    "maxFrameMs": 1628.1402111053467,
+    "p95StreamingCpuMs": 1.9859,
+    "maxStreamingCpuMs": 3.7038,
+    "maxPatchUploadMs": 3.126,
+    "firstIslandMilliseconds": 3654.0918999999994,
+    "gpuP95Ms": 14.563328,
+    "ownedMeshPeakMiB": 163.08123779296876,
+    "sharedLibraryMiB": 161.1291275024414,
+    "unityAllocatedStartMiB": 67.09486198425293,
+    "unityAllocatedEndMiB": 67.80959129333496,
+    "frameOutliers": [
+        {
+            "elapsedSeconds": 8.611597900000002,
+            "frameMs": 143.50679516792298,
+            "streamMs": 0.0219,
+            "gcCollections": 160,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 9.175763299999998,
+            "frameMs": 541.1282181739807,
+            "streamMs": 0.0349,
+            "gcCollections": 160,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 9.791650899999999,
+            "frameMs": 177.61379480361939,
+            "streamMs": 0.0304,
+            "gcCollections": 160,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 9.793015599999999,
+            "frameMs": 445.9821879863739,
+            "streamMs": 0.0325,
+            "gcCollections": 160,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 9.992959699999999,
+            "frameMs": 133.18589329719544,
+            "streamMs": 0.0419,
+            "gcCollections": 163,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 10.428075699999999,
+            "frameMs": 295.3338027000427,
+            "streamMs": 0.0335,
+            "gcCollections": 169,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 10.5682058,
+            "frameMs": 130.03699481487275,
+            "streamMs": 0.0158,
+            "gcCollections": 169,
+            "pending": 0,
+            "residents": 25,
+            "focused": true
+        },
+        {
+            "elapsedSeconds": 43.756029999999999,
+            "frameMs": 571.2428092956543,
+            "streamMs": 0.0644,
+            "gcCollections": 535,
+            "pending": 0,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 44.3235925,
+            "frameMs": 143.0588960647583,
+            "streamMs": 0.0493,
+            "gcCollections": 535,
+            "pending": 2,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 44.325477,
+            "frameMs": 567.864716053009,
+            "streamMs": 0.0309,
+            "gcCollections": 535,
+            "pending": 2,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 44.861757,
+            "frameMs": 239.457905292511,
+            "streamMs": 2.3767,
+            "gcCollections": 537,
+            "pending": 2,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 44.8669313,
+            "frameMs": 298.5602021217346,
+            "streamMs": 2.139,
+            "gcCollections": 538,
+            "pending": 2,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 45.7528462,
+            "frameMs": 835.4734778404236,
+            "streamMs": 0.0418,
+            "gcCollections": 538,
+            "pending": 0,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 47.395261399999998,
+            "frameMs": 1628.1402111053467,
+            "streamMs": 1.7139,
+            "gcCollections": 538,
+            "pending": 0,
+            "residents": 25,
+            "focused": false
+        },
+        {
+            "elapsedSeconds": 47.5688648,
+            "frameMs": 136.44160330295564,
+            "streamMs": 0.0388,
+            "gcCollections": 538,
+            "pending": 0,
+            "residents": 25,
+            "focused": false
+        }
+    ]
+}

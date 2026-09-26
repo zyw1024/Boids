@@ -1,0 +1,1826 @@
+{
+  "moduleCount": 128,
+  "districtCompositions": 8,
+  "distinctGeometryHashes": 128,
+  "families": [
+    "Arcaded promenade",
+    "Turning loggia",
+    "Market colonnade",
+    "Fountain piazza",
+    "Hanging belvedere",
+    "Domed sanctuary",
+    "Bell campanile",
+    "Garden cloister",
+    "Terraced orchard",
+    "Palace library",
+    "Sky aqueduct",
+    "Curved skybridge",
+    "Ceremonial gate",
+    "Celestial observatory",
+    "Glass conservatory",
+    "Crown palace"
+  ],
+  "rotationsCountedAsModules": false,
+  "tileSize": 12,
+  "levelsOfDetail": 3,
+  "binaryBytes": 101865082,
+  "totalTrianglesByLOD": [
+    868288,
+    507444,
+    198164
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "name": "Arcaded promenade / Dawn",
+      "family": 0,
+      "variant": 0,
+      "sockets": 5,
+      "lodTriangles": [
+        3700,
+        2520,
+        998
+      ],
+      "meshHash": "8d5803991f9d329994f0bfcb31bdfad5ee040b2154150079d01853de492ff4fc",
+      "water": false
+    },
+    {
+      "id": 1,
+      "name": "Arcaded promenade / Iris",
+      "family": 0,
+      "variant": 1,
+      "sockets": 5,
+      "lodTriangles": [
+        5346,
+        3472,
+        1458
+      ],
+      "meshHash": "0cbb83bfd61d4bfb1a083dc0156d1b9647bb2e0b140253f92c607758021670ae",
+      "water": false
+    },
+    {
+      "id": 2,
+      "name": "Arcaded promenade / Cypress",
+      "family": 0,
+      "variant": 2,
+      "sockets": 5,
+      "lodTriangles": [
+        5800,
+        3600,
+        1448
+      ],
+      "meshHash": "15c4ff0e99411a671b6902acc8817b801843b0a6fe2332fa645259dd2766b60f",
+      "water": false
+    },
+    {
+      "id": 3,
+      "name": "Arcaded promenade / Pearl",
+      "family": 0,
+      "variant": 3,
+      "sockets": 5,
+      "lodTriangles": [
+        4056,
+        2752,
+        1098
+      ],
+      "meshHash": "03d6a6afbdcce752a8384fd7bcebc744825b0443dc8ab8034b35578f958d076b",
+      "water": false
+    },
+    {
+      "id": 4,
+      "name": "Arcaded promenade / Saffron",
+      "family": 0,
+      "variant": 4,
+      "sockets": 5,
+      "lodTriangles": [
+        5226,
+        3388,
+        1410
+      ],
+      "meshHash": "de9d9cb31d408bfca899d8ce9f6b1240cf926fbb14422f9d5660c37789c70c5a",
+      "water": false
+    },
+    {
+      "id": 5,
+      "name": "Arcaded promenade / Linden",
+      "family": 0,
+      "variant": 5,
+      "sockets": 5,
+      "lodTriangles": [
+        7888,
+        4896,
+        1826
+      ],
+      "meshHash": "325198d454a7f4b22adcd06e6b57ed3353d5b399c75ab50c6518e3ce53b40b94",
+      "water": false
+    },
+    {
+      "id": 6,
+      "name": "Arcaded promenade / Azure",
+      "family": 0,
+      "variant": 6,
+      "sockets": 5,
+      "lodTriangles": [
+        4650,
+        2956,
+        1170
+      ],
+      "meshHash": "3af5286da04110472f9100ae0abad8a441b602006b180951b850be76469c78f9",
+      "water": false
+    },
+    {
+      "id": 7,
+      "name": "Arcaded promenade / Solstice",
+      "family": 0,
+      "variant": 7,
+      "sockets": 5,
+      "lodTriangles": [
+        6628,
+        4212,
+        1772
+      ],
+      "meshHash": "111224edac228400ca4fb040aeaf5f8a3336af90f14d5c2591d244b69ce1dc87",
+      "water": false
+    },
+    {
+      "id": 8,
+      "name": "Turning loggia / Dawn",
+      "family": 1,
+      "variant": 0,
+      "sockets": 3,
+      "lodTriangles": [
+        4862,
+        3084,
+        1194
+      ],
+      "meshHash": "48d71eddbd1f064c9b5fc7da553ba332f91d1075c6570eea1a600aeaee26a948",
+      "water": false
+    },
+    {
+      "id": 9,
+      "name": "Turning loggia / Iris",
+      "family": 1,
+      "variant": 1,
+      "sockets": 3,
+      "lodTriangles": [
+        6444,
+        3996,
+        1630
+      ],
+      "meshHash": "93546f6913ae76c4553cbbcc881e9f97f2ab2bcd5f8e14530e647f085958c0ec",
+      "water": false
+    },
+    {
+      "id": 10,
+      "name": "Turning loggia / Cypress",
+      "family": 1,
+      "variant": 2,
+      "sockets": 3,
+      "lodTriangles": [
+        7114,
+        4268,
+        1716
+      ],
+      "meshHash": "724a0f24147907a08a345a180c4493166951a742a59cff987fdeecfdda611a12",
+      "water": false
+    },
+    {
+      "id": 11,
+      "name": "Turning loggia / Pearl",
+      "family": 1,
+      "variant": 3,
+      "sockets": 3,
+      "lodTriangles": [
+        5218,
+        3316,
+        1294
+      ],
+      "meshHash": "f6d8a788b775107d64b333ed51bbf3393d7c80fef5e36134642a2708ad51cbcc",
+      "water": false
+    },
+    {
+      "id": 12,
+      "name": "Turning loggia / Saffron",
+      "family": 1,
+      "variant": 4,
+      "sockets": 3,
+      "lodTriangles": [
+        6388,
+        3952,
+        1606
+      ],
+      "meshHash": "f0eb4884e668ba49535605e024327169704e9c74e9ff1472b84f81c445815f03",
+      "water": false
+    },
+    {
+      "id": 13,
+      "name": "Turning loggia / Linden",
+      "family": 1,
+      "variant": 5,
+      "sockets": 3,
+      "lodTriangles": [
+        8986,
+        5420,
+        1998
+      ],
+      "meshHash": "6c12dd21ff2ab7a44af7a9e56dd72c1f1dcbcb76bae7e170f8ba1138b457e570",
+      "water": false
+    },
+    {
+      "id": 14,
+      "name": "Turning loggia / Azure",
+      "family": 1,
+      "variant": 6,
+      "sockets": 3,
+      "lodTriangles": [
+        5964,
+        3624,
+        1438
+      ],
+      "meshHash": "88daa134f30504dc3d432692e7a25f79bb721da2444c86eb7d645f5e2a8d9c48",
+      "water": false
+    },
+    {
+      "id": 15,
+      "name": "Turning loggia / Solstice",
+      "family": 1,
+      "variant": 7,
+      "sockets": 3,
+      "lodTriangles": [
+        7790,
+        4776,
+        1968
+      ],
+      "meshHash": "2636810829d20037a011c2c852e6f2f77760b4774ddc9001985d3eed976e0a2b",
+      "water": false
+    },
+    {
+      "id": 16,
+      "name": "Market colonnade / Dawn",
+      "family": 2,
+      "variant": 0,
+      "sockets": 11,
+      "lodTriangles": [
+        4070,
+        2508,
+        894
+      ],
+      "meshHash": "e6ebef3fb0c0a703498be6fa85d9efbc1770009676a87bff10426885b036a847",
+      "water": false
+    },
+    {
+      "id": 17,
+      "name": "Market colonnade / Iris",
+      "family": 2,
+      "variant": 1,
+      "sockets": 11,
+      "lodTriangles": [
+        5076,
+        2988,
+        1090
+      ],
+      "meshHash": "dfa35e642b5851dab3a860418c939e02158483638f7403481d1c8b80e4ff8486",
+      "water": false
+    },
+    {
+      "id": 18,
+      "name": "Market colonnade / Cypress",
+      "family": 2,
+      "variant": 2,
+      "sockets": 11,
+      "lodTriangles": [
+        6898,
+        4124,
+        1656
+      ],
+      "meshHash": "425b578178c10590f4a11621f97d0bf4ddfadddc737b8abed4052a9657fff0f5",
+      "water": false
+    },
+    {
+      "id": 19,
+      "name": "Market colonnade / Pearl",
+      "family": 2,
+      "variant": 3,
+      "sockets": 11,
+      "lodTriangles": [
+        4426,
+        2740,
+        994
+      ],
+      "meshHash": "2bdcb5a899c08666cc7aace00c79e4d59b03f2265f3a101e0183a0747ffbbe9a",
+      "water": false
+    },
+    {
+      "id": 20,
+      "name": "Market colonnade / Saffron",
+      "family": 2,
+      "variant": 4,
+      "sockets": 11,
+      "lodTriangles": [
+        5020,
+        2944,
+        1066
+      ],
+      "meshHash": "f37894b1b60ee371c9b2085940e1c75d59f25f025f388bd879d69ef78eb1d458",
+      "water": false
+    },
+    {
+      "id": 21,
+      "name": "Market colonnade / Linden",
+      "family": 2,
+      "variant": 5,
+      "sockets": 11,
+      "lodTriangles": [
+        8770,
+        5276,
+        1938
+      ],
+      "meshHash": "41f660b5af3978bd12c1f8cc046920468517e61aeb0cc1290f52bcbb3d468aa0",
+      "water": false
+    },
+    {
+      "id": 22,
+      "name": "Market colonnade / Azure",
+      "family": 2,
+      "variant": 6,
+      "sockets": 11,
+      "lodTriangles": [
+        5172,
+        3048,
+        1138
+      ],
+      "meshHash": "1b3ca9ec074f7da2c4825f8d16230d204848c4084b900ba449028b450ac6d248",
+      "water": false
+    },
+    {
+      "id": 23,
+      "name": "Market colonnade / Solstice",
+      "family": 2,
+      "variant": 7,
+      "sockets": 11,
+      "lodTriangles": [
+        6422,
+        3768,
+        1428
+      ],
+      "meshHash": "0df9cf4266b515a36c0fd7497328f2a6042e21738040bf4d257a127440f47e27",
+      "water": false
+    },
+    {
+      "id": 24,
+      "name": "Fountain piazza / Dawn",
+      "family": 3,
+      "variant": 0,
+      "sockets": 15,
+      "lodTriangles": [
+        10002,
+        5464,
+        2100
+      ],
+      "meshHash": "449b5c7e8d3ddf6ec2d2fa1a707aa2a68e985f37a60df2d86d70e280ce05b74b",
+      "water": true
+    },
+    {
+      "id": 25,
+      "name": "Fountain piazza / Iris",
+      "family": 3,
+      "variant": 1,
+      "sockets": 15,
+      "lodTriangles": [
+        11072,
+        5984,
+        2320
+      ],
+      "meshHash": "fd4418f1b81827e4d8f496e4bd1a3cf617e34d3501330c8d2798be5582a013d1",
+      "water": true
+    },
+    {
+      "id": 26,
+      "name": "Fountain piazza / Cypress",
+      "family": 3,
+      "variant": 2,
+      "sockets": 15,
+      "lodTriangles": [
+        12678,
+        6976,
+        2790
+      ],
+      "meshHash": "9206df6c9279944bbdd1be876ce8afdf6c5b977e993de80558315bd06d3eed2c",
+      "water": true
+    },
+    {
+      "id": 27,
+      "name": "Fountain piazza / Pearl",
+      "family": 3,
+      "variant": 3,
+      "sockets": 15,
+      "lodTriangles": [
+        10358,
+        5696,
+        2200
+      ],
+      "meshHash": "8f53aee64120794859e3f414fe1e3afaeda5d238e91023d51855afa4b13d67e0",
+      "water": true
+    },
+    {
+      "id": 28,
+      "name": "Fountain piazza / Saffron",
+      "family": 3,
+      "variant": 4,
+      "sockets": 15,
+      "lodTriangles": [
+        10952,
+        5900,
+        2272
+      ],
+      "meshHash": "ba2dfbc5b494d0065f29d17b03fa08d654689e9f01cc618e93698f6af1879246",
+      "water": true
+    },
+    {
+      "id": 29,
+      "name": "Fountain piazza / Linden",
+      "family": 3,
+      "variant": 5,
+      "sockets": 15,
+      "lodTriangles": [
+        14766,
+        8272,
+        3168
+      ],
+      "meshHash": "0a50c1396dfca3a87f9bc9aa053731e34d5e71f6486b53f6bd5241d0f399da10",
+      "water": true
+    },
+    {
+      "id": 30,
+      "name": "Fountain piazza / Azure",
+      "family": 3,
+      "variant": 6,
+      "sockets": 15,
+      "lodTriangles": [
+        10952,
+        5900,
+        2272
+      ],
+      "meshHash": "bd33ddd3d3ce0fe3f30a0a51d39dbe39cbc461c736eb2c991b41b33738163018",
+      "water": true
+    },
+    {
+      "id": 31,
+      "name": "Fountain piazza / Solstice",
+      "family": 3,
+      "variant": 7,
+      "sockets": 15,
+      "lodTriangles": [
+        12354,
+        6724,
+        2634
+      ],
+      "meshHash": "046e4d703944ab5affcb6a5838357aad8faa777b48a815652ab1abec62258997",
+      "water": true
+    },
+    {
+      "id": 32,
+      "name": "Hanging belvedere / Dawn",
+      "family": 4,
+      "variant": 0,
+      "sockets": 1,
+      "lodTriangles": [
+        8642,
+        4932,
+        1926
+      ],
+      "meshHash": "a7d179af01aac47d61ead6f8df2bf22d62624a7cf6d30868878b69ebdba0e92e",
+      "water": false
+    },
+    {
+      "id": 33,
+      "name": "Hanging belvedere / Iris",
+      "family": 4,
+      "variant": 1,
+      "sockets": 1,
+      "lodTriangles": [
+        9712,
+        5452,
+        2146
+      ],
+      "meshHash": "4d8f38b10844f386c70c813e68f3ebe7c99f0be6fc4bf11b98ad35d2364f4d5f",
+      "water": false
+    },
+    {
+      "id": 34,
+      "name": "Hanging belvedere / Cypress",
+      "family": 4,
+      "variant": 2,
+      "sockets": 1,
+      "lodTriangles": [
+        11318,
+        6444,
+        2616
+      ],
+      "meshHash": "0dda129dc3233478675582dcf0fb6f5a22e3c9bb039e8e1e8788a09871a2f55d",
+      "water": false
+    },
+    {
+      "id": 35,
+      "name": "Hanging belvedere / Pearl",
+      "family": 4,
+      "variant": 3,
+      "sockets": 1,
+      "lodTriangles": [
+        8998,
+        5164,
+        2026
+      ],
+      "meshHash": "ca71e1f61164ff4f0d620b520817305d5b658ee67d51e282fa201428907b248e",
+      "water": false
+    },
+    {
+      "id": 36,
+      "name": "Hanging belvedere / Saffron",
+      "family": 4,
+      "variant": 4,
+      "sockets": 1,
+      "lodTriangles": [
+        9592,
+        5368,
+        2098
+      ],
+      "meshHash": "50efeeb11e187bb6b1067b22be439231b0b6eafbfd892b31def431e03c98a39e",
+      "water": false
+    },
+    {
+      "id": 37,
+      "name": "Hanging belvedere / Linden",
+      "family": 4,
+      "variant": 5,
+      "sockets": 1,
+      "lodTriangles": [
+        13406,
+        7740,
+        2994
+      ],
+      "meshHash": "7a9873c11f0d04969ff71319d4c5eb666c5455fb82da139291943ba04741ccba",
+      "water": false
+    },
+    {
+      "id": 38,
+      "name": "Hanging belvedere / Azure",
+      "family": 4,
+      "variant": 6,
+      "sockets": 1,
+      "lodTriangles": [
+        9592,
+        5368,
+        2098
+      ],
+      "meshHash": "eb0b629a2c476a0c694c3e627b4728427fdab9cb1e5e0cc176f661f223623b1f",
+      "water": false
+    },
+    {
+      "id": 39,
+      "name": "Hanging belvedere / Solstice",
+      "family": 4,
+      "variant": 7,
+      "sockets": 1,
+      "lodTriangles": [
+        10994,
+        6192,
+        2460
+      ],
+      "meshHash": "a5cdc9923596badf6433002a350f99be0c258fc7780db876a22ebe9a96e82f38",
+      "water": false
+    },
+    {
+      "id": 40,
+      "name": "Domed sanctuary / Dawn",
+      "family": 5,
+      "variant": 0,
+      "sockets": 5,
+      "lodTriangles": [
+        4320,
+        2376,
+        718
+      ],
+      "meshHash": "66fecca81d1073e376d23181d98c8ac70dcaa38e8ed1e59848d684be95d4fffc",
+      "water": true
+    },
+    {
+      "id": 41,
+      "name": "Domed sanctuary / Iris",
+      "family": 5,
+      "variant": 1,
+      "sockets": 5,
+      "lodTriangles": [
+        5262,
+        2816,
+        890
+      ],
+      "meshHash": "16b1a96acf6f53444752f5e3ef65af09eaa7bdb12b06705f000da16c9c6d9f40",
+      "water": true
+    },
+    {
+      "id": 42,
+      "name": "Domed sanctuary / Cypress",
+      "family": 5,
+      "variant": 2,
+      "sockets": 5,
+      "lodTriangles": [
+        7300,
+        4096,
+        1552
+      ],
+      "meshHash": "3515db9f25e6f4e0c073b60065c542441e864657e779c198a59ed9ea9fd48442",
+      "water": true
+    },
+    {
+      "id": 43,
+      "name": "Domed sanctuary / Pearl",
+      "family": 5,
+      "variant": 3,
+      "sockets": 5,
+      "lodTriangles": [
+        3858,
+        2264,
+        710
+      ],
+      "meshHash": "5da956de2869878a32f22d189db06cee4e01624943b28ae586248707b7997674",
+      "water": true
+    },
+    {
+      "id": 44,
+      "name": "Domed sanctuary / Saffron",
+      "family": 5,
+      "variant": 4,
+      "sockets": 5,
+      "lodTriangles": [
+        5270,
+        2812,
+        890
+      ],
+      "meshHash": "5477e08eb799672567780bcbee3b38caf9b7562999ed6d2ebf8d2f79cf36a345",
+      "water": true
+    },
+    {
+      "id": 45,
+      "name": "Domed sanctuary / Linden",
+      "family": 5,
+      "variant": 5,
+      "sockets": 5,
+      "lodTriangles": [
+        8956,
+        5104,
+        1738
+      ],
+      "meshHash": "0d745bde00cd3d741b62ea9d72f4f8d48ddfb44e158e669efa6b10996dea8c49",
+      "water": true
+    },
+    {
+      "id": 46,
+      "name": "Domed sanctuary / Azure",
+      "family": 5,
+      "variant": 6,
+      "sockets": 5,
+      "lodTriangles": [
+        5574,
+        3020,
+        1034
+      ],
+      "meshHash": "b0c48da2f0df172151ecbf0844f264387a479ea0814715efa770f1a7fa9dea0f",
+      "water": true
+    },
+    {
+      "id": 47,
+      "name": "Domed sanctuary / Solstice",
+      "family": 5,
+      "variant": 7,
+      "sockets": 5,
+      "lodTriangles": [
+        5854,
+        3292,
+        1144
+      ],
+      "meshHash": "56a24c3a0280e9667d7e53ac3dc8b922d13a35c1c2b8ad88f62b483f5d34e173",
+      "water": true
+    },
+    {
+      "id": 48,
+      "name": "Bell campanile / Dawn",
+      "family": 6,
+      "variant": 0,
+      "sockets": 1,
+      "lodTriangles": [
+        3410,
+        2028,
+        666
+      ],
+      "meshHash": "2b89e67311af94a434402e08d437dfe3f304278f00932f67f444b13b3cfbb813",
+      "water": false
+    },
+    {
+      "id": 49,
+      "name": "Bell campanile / Iris",
+      "family": 6,
+      "variant": 1,
+      "sockets": 1,
+      "lodTriangles": [
+        5092,
+        3016,
+        1150
+      ],
+      "meshHash": "50c04b535ab84e756bb1f3dfb30401405ef4960df064e38015f71d3abb58759e",
+      "water": false
+    },
+    {
+      "id": 50,
+      "name": "Bell campanile / Cypress",
+      "family": 6,
+      "variant": 2,
+      "sockets": 1,
+      "lodTriangles": [
+        6150,
+        3580,
+        1380
+      ],
+      "meshHash": "baa0ee4fa7f785f6a0379351f5c2c9dbcab0b9cc707a6ed754bd55d089d73cf7",
+      "water": false
+    },
+    {
+      "id": 51,
+      "name": "Bell campanile / Pearl",
+      "family": 6,
+      "variant": 3,
+      "sockets": 1,
+      "lodTriangles": [
+        3548,
+        2372,
+        910
+      ],
+      "meshHash": "9b4b0b5c0eb7fbbd87afeb8ecc55318ebde907b804758e52ee67bc47585d2246",
+      "water": false
+    },
+    {
+      "id": 52,
+      "name": "Bell campanile / Saffron",
+      "family": 6,
+      "variant": 4,
+      "sockets": 1,
+      "lodTriangles": [
+        4372,
+        2476,
+        850
+      ],
+      "meshHash": "cf815a67d6d569875dec83c6dbad98bc3207671248d3435b8359189e7b256db7",
+      "water": false
+    },
+    {
+      "id": 53,
+      "name": "Bell campanile / Linden",
+      "family": 6,
+      "variant": 5,
+      "sockets": 1,
+      "lodTriangles": [
+        8838,
+        5332,
+        2010
+      ],
+      "meshHash": "698f415960861647088238b78c4990df49e687418df759859999e5730beed1f1",
+      "water": false
+    },
+    {
+      "id": 54,
+      "name": "Bell campanile / Azure",
+      "family": 6,
+      "variant": 6,
+      "sockets": 1,
+      "lodTriangles": [
+        4360,
+        2464,
+        838
+      ],
+      "meshHash": "daf7b459dc9cad4eaf42db6a401902f074495f2729a42392d2446f4ad7b20cd0",
+      "water": false
+    },
+    {
+      "id": 55,
+      "name": "Bell campanile / Solstice",
+      "family": 6,
+      "variant": 7,
+      "sockets": 1,
+      "lodTriangles": [
+        5556,
+        3412,
+        1356
+      ],
+      "meshHash": "63de6acc893775fd0430021720bcb6039248c2c51ecf9385fb9d4be45e94afca",
+      "water": false
+    },
+    {
+      "id": 56,
+      "name": "Garden cloister / Dawn",
+      "family": 7,
+      "variant": 0,
+      "sockets": 3,
+      "lodTriangles": [
+        6112,
+        3840,
+        1592
+      ],
+      "meshHash": "a0fe51391e609db27e9bb8e352b843952547313bc94a3b90825c8954122fd21e",
+      "water": true
+    },
+    {
+      "id": 57,
+      "name": "Garden cloister / Iris",
+      "family": 7,
+      "variant": 1,
+      "sockets": 3,
+      "lodTriangles": [
+        7758,
+        4792,
+        2052
+      ],
+      "meshHash": "778b48720c8d34b9db6a3af81c9c41b2b2ef0c233e19e06155fc1d01244d3049",
+      "water": true
+    },
+    {
+      "id": 58,
+      "name": "Garden cloister / Cypress",
+      "family": 7,
+      "variant": 2,
+      "sockets": 3,
+      "lodTriangles": [
+        8212,
+        4920,
+        2042
+      ],
+      "meshHash": "72e2376ce34438ea2efc4a307b58c236caa6395af5b3fcbbb5446ca5c43f140c",
+      "water": true
+    },
+    {
+      "id": 59,
+      "name": "Garden cloister / Pearl",
+      "family": 7,
+      "variant": 3,
+      "sockets": 3,
+      "lodTriangles": [
+        6468,
+        4072,
+        1692
+      ],
+      "meshHash": "156d1a274923ed10b886ad9d104d89d72033473ceab8e62f41f22abc8c701a3b",
+      "water": true
+    },
+    {
+      "id": 60,
+      "name": "Garden cloister / Saffron",
+      "family": 7,
+      "variant": 4,
+      "sockets": 3,
+      "lodTriangles": [
+        7638,
+        4708,
+        2004
+      ],
+      "meshHash": "1fc04b340f4f7e53bb54bd7f7bdc7d3ba16e78be749c2d495560baf1fc3c0417",
+      "water": true
+    },
+    {
+      "id": 61,
+      "name": "Garden cloister / Linden",
+      "family": 7,
+      "variant": 5,
+      "sockets": 3,
+      "lodTriangles": [
+        10300,
+        6216,
+        2420
+      ],
+      "meshHash": "49ced2491dd6eb05cb1eef2a48312f8da3d7728f426cc535c87467c65993817b",
+      "water": true
+    },
+    {
+      "id": 62,
+      "name": "Garden cloister / Azure",
+      "family": 7,
+      "variant": 6,
+      "sockets": 3,
+      "lodTriangles": [
+        7062,
+        4276,
+        1764
+      ],
+      "meshHash": "fdaec7faa1e252755943998bb66d80e73277e93f9c03951e41153a8ef5dd8428",
+      "water": true
+    },
+    {
+      "id": 63,
+      "name": "Garden cloister / Solstice",
+      "family": 7,
+      "variant": 7,
+      "sockets": 3,
+      "lodTriangles": [
+        9040,
+        5532,
+        2366
+      ],
+      "meshHash": "36c5d418b8bf3fe5efe64e28bade28ac1009bc39a12b140d02c48a83a8ae2bbf",
+      "water": true
+    },
+    {
+      "id": 64,
+      "name": "Terraced orchard / Dawn",
+      "family": 8,
+      "variant": 0,
+      "sockets": 5,
+      "lodTriangles": [
+        9064,
+        5040,
+        1940
+      ],
+      "meshHash": "f71a3bd85e6e9239ef80428462a72377ffa2adf8b6596380b19d572e0c5f78b2",
+      "water": true
+    },
+    {
+      "id": 65,
+      "name": "Terraced orchard / Iris",
+      "family": 8,
+      "variant": 1,
+      "sockets": 5,
+      "lodTriangles": [
+        10134,
+        5560,
+        2160
+      ],
+      "meshHash": "3da4c3e29ac5e55b52062e45e860dbceacbeaa0af594481a8b814da4c0eac043",
+      "water": true
+    },
+    {
+      "id": 66,
+      "name": "Terraced orchard / Cypress",
+      "family": 8,
+      "variant": 2,
+      "sockets": 5,
+      "lodTriangles": [
+        11740,
+        6552,
+        2630
+      ],
+      "meshHash": "0ef9cffb8cc15bcd558dd2362f195a586eeb9640cd765554efe1d2a461b4a59e",
+      "water": true
+    },
+    {
+      "id": 67,
+      "name": "Terraced orchard / Pearl",
+      "family": 8,
+      "variant": 3,
+      "sockets": 5,
+      "lodTriangles": [
+        9420,
+        5272,
+        2040
+      ],
+      "meshHash": "67079543e5a2d1725efc91bf22785c27f56b4f8613e56b289ad5aa0499ff43f5",
+      "water": true
+    },
+    {
+      "id": 68,
+      "name": "Terraced orchard / Saffron",
+      "family": 8,
+      "variant": 4,
+      "sockets": 5,
+      "lodTriangles": [
+        10014,
+        5476,
+        2112
+      ],
+      "meshHash": "be6cce8d9b210002f87ff03577f1db871459665ae6c2600d88cf4d757c5bdd5a",
+      "water": true
+    },
+    {
+      "id": 69,
+      "name": "Terraced orchard / Linden",
+      "family": 8,
+      "variant": 5,
+      "sockets": 5,
+      "lodTriangles": [
+        13828,
+        7848,
+        3008
+      ],
+      "meshHash": "1ceb81f4e29c1caddbf63d59561cf1ea532f484ee960a3f41a3d60736cdbb2ef",
+      "water": true
+    },
+    {
+      "id": 70,
+      "name": "Terraced orchard / Azure",
+      "family": 8,
+      "variant": 6,
+      "sockets": 5,
+      "lodTriangles": [
+        10014,
+        5476,
+        2112
+      ],
+      "meshHash": "f5a6112918ca7aa47c496e47aa978c68dca7680cb2b8498cb3af6653b16ff63f",
+      "water": true
+    },
+    {
+      "id": 71,
+      "name": "Terraced orchard / Solstice",
+      "family": 8,
+      "variant": 7,
+      "sockets": 5,
+      "lodTriangles": [
+        11416,
+        6300,
+        2474
+      ],
+      "meshHash": "62c4582b3bf677b81e9d825f5628c1df71cd68667f262b95a483f411b30f0da9",
+      "water": true
+    },
+    {
+      "id": 72,
+      "name": "Palace library / Dawn",
+      "family": 9,
+      "variant": 0,
+      "sockets": 11,
+      "lodTriangles": [
+        5208,
+        3048,
+        1054
+      ],
+      "meshHash": "4bf617ef5c3d44e48423bd2df355ab7fe6003b807f4fb6d861554224ff6f75c7",
+      "water": false
+    },
+    {
+      "id": 73,
+      "name": "Palace library / Iris",
+      "family": 9,
+      "variant": 1,
+      "sockets": 11,
+      "lodTriangles": [
+        6438,
+        3704,
+        1346
+      ],
+      "meshHash": "e1369e70c11673ff8bf2913e3932d2c11253aa81027231008d965399d1d11cb2",
+      "water": false
+    },
+    {
+      "id": 74,
+      "name": "Palace library / Cypress",
+      "family": 9,
+      "variant": 2,
+      "sockets": 11,
+      "lodTriangles": [
+        7900,
+        4552,
+        1768
+      ],
+      "meshHash": "d6544f1dfe7b8f05c36fae45d91b7c4c821d0328cd70db05afc4e1099f369aa8",
+      "water": false
+    },
+    {
+      "id": 75,
+      "name": "Palace library / Pearl",
+      "family": 9,
+      "variant": 3,
+      "sockets": 11,
+      "lodTriangles": [
+        3928,
+        2592,
+        938
+      ],
+      "meshHash": "e8af8e4c574e51cee8a6e76221aaeb44ad7b5ff45698ff7bec1cc7086262030c",
+      "water": false
+    },
+    {
+      "id": 76,
+      "name": "Palace library / Saffron",
+      "family": 9,
+      "variant": 4,
+      "sockets": 11,
+      "lodTriangles": [
+        6446,
+        3700,
+        1346
+      ],
+      "meshHash": "ad72161018949604fa0b4522c381a404e86c43ff188e0d95b3b54edf7c70f262",
+      "water": false
+    },
+    {
+      "id": 77,
+      "name": "Palace library / Linden",
+      "family": 9,
+      "variant": 5,
+      "sockets": 11,
+      "lodTriangles": [
+        9556,
+        5560,
+        1954
+      ],
+      "meshHash": "cc7ba633cf0c9a8a313ab42c28f94cad6fc5c4cb2d99e5e17be44681d400ffb1",
+      "water": false
+    },
+    {
+      "id": 78,
+      "name": "Palace library / Azure",
+      "family": 9,
+      "variant": 6,
+      "sockets": 11,
+      "lodTriangles": [
+        6462,
+        3692,
+        1370
+      ],
+      "meshHash": "0741d50d4548236eeb2d2c4132c5f4fb543957a26b5d5fe5781437636bc77452",
+      "water": false
+    },
+    {
+      "id": 79,
+      "name": "Palace library / Solstice",
+      "family": 9,
+      "variant": 7,
+      "sockets": 11,
+      "lodTriangles": [
+        6212,
+        3836,
+        1492
+      ],
+      "meshHash": "695d143fe1c315b5d6e1bc0c665355df7aba1a5a96f1d0cda7d1275cea830692",
+      "water": false
+    },
+    {
+      "id": 80,
+      "name": "Sky aqueduct / Dawn",
+      "family": 10,
+      "variant": 0,
+      "sockets": 5,
+      "lodTriangles": [
+        1892,
+        1460,
+        884
+      ],
+      "meshHash": "7a060c938c212dc1b9d7eb20c5aa088e43ebf42bb480d2cf3cf9c4106a21b1ea",
+      "water": false
+    },
+    {
+      "id": 81,
+      "name": "Sky aqueduct / Iris",
+      "family": 10,
+      "variant": 1,
+      "sockets": 5,
+      "lodTriangles": [
+        2488,
+        1912,
+        1144
+      ],
+      "meshHash": "f5c3ca67fb6aa2cad001ab8e0101994ed5cac87d27f26b924bae5feb20f0992c",
+      "water": false
+    },
+    {
+      "id": 82,
+      "name": "Sky aqueduct / Cypress",
+      "family": 10,
+      "variant": 2,
+      "sockets": 5,
+      "lodTriangles": [
+        1932,
+        1500,
+        924
+      ],
+      "meshHash": "d5ef4ffe49b514faac64fead95de70539b7b4205759ad636a4b53b0c66709225",
+      "water": false
+    },
+    {
+      "id": 83,
+      "name": "Sky aqueduct / Pearl",
+      "family": 10,
+      "variant": 3,
+      "sockets": 5,
+      "lodTriangles": [
+        2528,
+        1952,
+        1184
+      ],
+      "meshHash": "a3b347ce69fb45e39b7f7bcd870634facf6b76147e127fa0acf6ea493dbf195e",
+      "water": false
+    },
+    {
+      "id": 84,
+      "name": "Sky aqueduct / Saffron",
+      "family": 10,
+      "variant": 4,
+      "sockets": 5,
+      "lodTriangles": [
+        1396,
+        1108,
+        724
+      ],
+      "meshHash": "59936d4cc1048845a6074a0328463f5ad22c5d0f5d02ab9874ff07bb9adb9038",
+      "water": false
+    },
+    {
+      "id": 85,
+      "name": "Sky aqueduct / Linden",
+      "family": 10,
+      "variant": 5,
+      "sockets": 5,
+      "lodTriangles": [
+        1992,
+        1560,
+        984
+      ],
+      "meshHash": "b3e93f2d6691d4219154a63e9d16335e441ecb2df2725ed8695c7f2e32bd8e95",
+      "water": false
+    },
+    {
+      "id": 86,
+      "name": "Sky aqueduct / Azure",
+      "family": 10,
+      "variant": 6,
+      "sockets": 5,
+      "lodTriangles": [
+        1436,
+        1148,
+        764
+      ],
+      "meshHash": "5d9fabe4c592a893ed5534b9b4f64affb5bf3f9f09bf5443185015206db6e5cd",
+      "water": false
+    },
+    {
+      "id": 87,
+      "name": "Sky aqueduct / Solstice",
+      "family": 10,
+      "variant": 7,
+      "sockets": 5,
+      "lodTriangles": [
+        2608,
+        2032,
+        1264
+      ],
+      "meshHash": "fa2c88082ef5804772ccb3af34a2b367660fc0c4076a23d45785188e75b3af5f",
+      "water": false
+    },
+    {
+      "id": 88,
+      "name": "Curved skybridge / Dawn",
+      "family": 11,
+      "variant": 0,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "57ed9c71f4123324075113fc85b9e1fa8d8fcb1cba39cc06c67ffecf0e064308",
+      "water": false
+    },
+    {
+      "id": 89,
+      "name": "Curved skybridge / Iris",
+      "family": 11,
+      "variant": 1,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "a9cad516ad4bb1c1f0094db027c36e8aa297d2bf8225839fba6b4f6cf79a1118",
+      "water": false
+    },
+    {
+      "id": 90,
+      "name": "Curved skybridge / Cypress",
+      "family": 11,
+      "variant": 2,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "5ff73b12a6d64ebcdc973b55aaaa2355c49df962a894c80b5a930b922469edfc",
+      "water": false
+    },
+    {
+      "id": 91,
+      "name": "Curved skybridge / Pearl",
+      "family": 11,
+      "variant": 3,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "310a81e2ce41040894b3195b3ed8e11a074273380807908787b07c23c495ff20",
+      "water": false
+    },
+    {
+      "id": 92,
+      "name": "Curved skybridge / Saffron",
+      "family": 11,
+      "variant": 4,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "2d256f47524bd6f0d9599d8819cdeafaa5bb30a4442636b0c1a8c068cf579c3c",
+      "water": false
+    },
+    {
+      "id": 93,
+      "name": "Curved skybridge / Linden",
+      "family": 11,
+      "variant": 5,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "a4e69c384db544cd888a6be686c6aa35c4c29e4c3fd1d79733b4f038de4e579c",
+      "water": false
+    },
+    {
+      "id": 94,
+      "name": "Curved skybridge / Azure",
+      "family": 11,
+      "variant": 6,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "4df83f880b0266f5fbf73a42ad2c859c4f9ff641c6f700457cf1e021bcacfdf1",
+      "water": false
+    },
+    {
+      "id": 95,
+      "name": "Curved skybridge / Solstice",
+      "family": 11,
+      "variant": 7,
+      "sockets": 3,
+      "lodTriangles": [
+        1848,
+        1416,
+        840
+      ],
+      "meshHash": "8f31f2caf8e49fd6c777a674de93c4777da8472a84641de8cd59acf2c52a8ec0",
+      "water": false
+    },
+    {
+      "id": 96,
+      "name": "Ceremonial gate / Dawn",
+      "family": 12,
+      "variant": 0,
+      "sockets": 5,
+      "lodTriangles": [
+        4560,
+        2544,
+        790
+      ],
+      "meshHash": "7d0bd42bf9501280fe99a5328d9447443cf23171eeebd202df341b9a1c7c936c",
+      "water": false
+    },
+    {
+      "id": 97,
+      "name": "Ceremonial gate / Iris",
+      "family": 12,
+      "variant": 1,
+      "sockets": 5,
+      "lodTriangles": [
+        5502,
+        2984,
+        962
+      ],
+      "meshHash": "8868c1a36a1c99404b8f601af7f2f79dade6c8ee9b8b0bca969743a626d08ec2",
+      "water": false
+    },
+    {
+      "id": 98,
+      "name": "Ceremonial gate / Cypress",
+      "family": 12,
+      "variant": 2,
+      "sockets": 5,
+      "lodTriangles": [
+        7540,
+        4264,
+        1624
+      ],
+      "meshHash": "baf82ae2c8c0137eb8e36a7f79984a38837f596fa34cca1a3d59d3a3fadf1fbd",
+      "water": false
+    },
+    {
+      "id": 99,
+      "name": "Ceremonial gate / Pearl",
+      "family": 12,
+      "variant": 3,
+      "sockets": 5,
+      "lodTriangles": [
+        3280,
+        2088,
+        674
+      ],
+      "meshHash": "5a9c2aaa5654b3b0e8d5720e2969ee7d138d043a01c2b84d413791dc974cfe23",
+      "water": false
+    },
+    {
+      "id": 100,
+      "name": "Ceremonial gate / Saffron",
+      "family": 12,
+      "variant": 4,
+      "sockets": 5,
+      "lodTriangles": [
+        5510,
+        2980,
+        962
+      ],
+      "meshHash": "1b1ebacf063fcabd3086879b6402322c6aa17862047ab286679251952a496f0a",
+      "water": false
+    },
+    {
+      "id": 101,
+      "name": "Ceremonial gate / Linden",
+      "family": 12,
+      "variant": 5,
+      "sockets": 5,
+      "lodTriangles": [
+        9196,
+        5272,
+        1810
+      ],
+      "meshHash": "86e8f46ee4a1bae04f43e94b4b3dc352296a22e08b2f097855cc5c0954958d89",
+      "water": false
+    },
+    {
+      "id": 102,
+      "name": "Ceremonial gate / Azure",
+      "family": 12,
+      "variant": 6,
+      "sockets": 5,
+      "lodTriangles": [
+        5814,
+        3188,
+        1106
+      ],
+      "meshHash": "e802c1aefcabafb6a8fe0676d4fd22773aa943f1a47bf9b75702e70626ac9bca",
+      "water": false
+    },
+    {
+      "id": 103,
+      "name": "Ceremonial gate / Solstice",
+      "family": 12,
+      "variant": 7,
+      "sockets": 5,
+      "lodTriangles": [
+        5276,
+        3116,
+        1108
+      ],
+      "meshHash": "431d98442d0d59432fb943ff3917c33cf6e16de2bf7a6a1dd79d8fb4087a563f",
+      "water": false
+    },
+    {
+      "id": 104,
+      "name": "Celestial observatory / Dawn",
+      "family": 13,
+      "variant": 0,
+      "sockets": 1,
+      "lodTriangles": [
+        3022,
+        1736,
+        438
+      ],
+      "meshHash": "e01ca88594593da2d7d2726473b211da58df905f8bd16a0f293cf279660dfa1d",
+      "water": false
+    },
+    {
+      "id": 105,
+      "name": "Celestial observatory / Iris",
+      "family": 13,
+      "variant": 1,
+      "sockets": 1,
+      "lodTriangles": [
+        4092,
+        2256,
+        658
+      ],
+      "meshHash": "19f95ae5d006e795ee9639f5579026139a7b4ee560373fdf0e771ef7d8068a2d",
+      "water": false
+    },
+    {
+      "id": 106,
+      "name": "Celestial observatory / Cypress",
+      "family": 13,
+      "variant": 2,
+      "sockets": 1,
+      "lodTriangles": [
+        5698,
+        3248,
+        1128
+      ],
+      "meshHash": "635638c8a69649bd024e20d99ac6e4bf1573fdde9f78625c58dab7836920bc7e",
+      "water": false
+    },
+    {
+      "id": 107,
+      "name": "Celestial observatory / Pearl",
+      "family": 13,
+      "variant": 3,
+      "sockets": 1,
+      "lodTriangles": [
+        3378,
+        1968,
+        538
+      ],
+      "meshHash": "9b6fd42dd6eb9d56a0b4185baa28f73f2c9a0ee59eacbfa577e23fa2f736280c",
+      "water": false
+    },
+    {
+      "id": 108,
+      "name": "Celestial observatory / Saffron",
+      "family": 13,
+      "variant": 4,
+      "sockets": 1,
+      "lodTriangles": [
+        3972,
+        2172,
+        610
+      ],
+      "meshHash": "3d54e820deea79f3985e637e77b2933ab874a317e88d7418e010fd62f84e0b73",
+      "water": false
+    },
+    {
+      "id": 109,
+      "name": "Celestial observatory / Linden",
+      "family": 13,
+      "variant": 5,
+      "sockets": 1,
+      "lodTriangles": [
+        7786,
+        4544,
+        1506
+      ],
+      "meshHash": "43383aca23c9f95fd2537ff82b21aeb3f21f6c06fa4fb41bab3578a83c1ce4c5",
+      "water": false
+    },
+    {
+      "id": 110,
+      "name": "Celestial observatory / Azure",
+      "family": 13,
+      "variant": 6,
+      "sockets": 1,
+      "lodTriangles": [
+        3972,
+        2172,
+        610
+      ],
+      "meshHash": "1adf15ca342b8e8a8da0ed49e630593daac9102bb9a0348a0cc0d276f1f5a4c2",
+      "water": false
+    },
+    {
+      "id": 111,
+      "name": "Celestial observatory / Solstice",
+      "family": 13,
+      "variant": 7,
+      "sockets": 1,
+      "lodTriangles": [
+        5374,
+        2996,
+        972
+      ],
+      "meshHash": "3b49e48a5ecc749c34aaa2febd8da0f7f48eaf10ab80db4b6262a0caf72bbe40",
+      "water": false
+    },
+    {
+      "id": 112,
+      "name": "Glass conservatory / Dawn",
+      "family": 14,
+      "variant": 0,
+      "sockets": 11,
+      "lodTriangles": [
+        8726,
+        5016,
+        2010
+      ],
+      "meshHash": "814007ef45cfb774fd3d233c6d00253c05f7554292e3e2548ecf4a4c00689c2b",
+      "water": true
+    },
+    {
+      "id": 113,
+      "name": "Glass conservatory / Iris",
+      "family": 14,
+      "variant": 1,
+      "sockets": 11,
+      "lodTriangles": [
+        9796,
+        5536,
+        2230
+      ],
+      "meshHash": "ee60352a67f97c3dddbd667b71b95128d1c68cb07b5fddc338f5c658478c349e",
+      "water": true
+    },
+    {
+      "id": 114,
+      "name": "Glass conservatory / Cypress",
+      "family": 14,
+      "variant": 2,
+      "sockets": 11,
+      "lodTriangles": [
+        11402,
+        6528,
+        2700
+      ],
+      "meshHash": "893a273f89e4a88734ff36150bc86c79c1b80fa91379e3927e2345a842871109",
+      "water": true
+    },
+    {
+      "id": 115,
+      "name": "Glass conservatory / Pearl",
+      "family": 14,
+      "variant": 3,
+      "sockets": 11,
+      "lodTriangles": [
+        9082,
+        5248,
+        2110
+      ],
+      "meshHash": "24cdb9709edfc92b157f3ffb55b25ff7ba4f8ed073f8ca2554506b8f1c283f5e",
+      "water": true
+    },
+    {
+      "id": 116,
+      "name": "Glass conservatory / Saffron",
+      "family": 14,
+      "variant": 4,
+      "sockets": 11,
+      "lodTriangles": [
+        9676,
+        5452,
+        2182
+      ],
+      "meshHash": "81dd0f87c49322f003f078f46c7bb53176fb1592698d4f19e436d517cb3324a7",
+      "water": true
+    },
+    {
+      "id": 117,
+      "name": "Glass conservatory / Linden",
+      "family": 14,
+      "variant": 5,
+      "sockets": 11,
+      "lodTriangles": [
+        13490,
+        7824,
+        3078
+      ],
+      "meshHash": "36fbb0bcdf1288cabfcf60a906cc5e3b1f9c29a3df120d6a9f1ced1efc2761b6",
+      "water": true
+    },
+    {
+      "id": 118,
+      "name": "Glass conservatory / Azure",
+      "family": 14,
+      "variant": 6,
+      "sockets": 11,
+      "lodTriangles": [
+        9676,
+        5452,
+        2182
+      ],
+      "meshHash": "25e480b95a47175617b7ea98c38831c43986ae27296945cf3671e7a6272060f1",
+      "water": true
+    },
+    {
+      "id": 119,
+      "name": "Glass conservatory / Solstice",
+      "family": 14,
+      "variant": 7,
+      "sockets": 11,
+      "lodTriangles": [
+        11078,
+        6276,
+        2544
+      ],
+      "meshHash": "f8cee0afe28ee4fc490bbd4f815323b19a72f2d6ee8186bfb5a1fde7ab4e394f",
+      "water": true
+    },
+    {
+      "id": 120,
+      "name": "Crown palace / Dawn",
+      "family": 15,
+      "variant": 0,
+      "sockets": 15,
+      "lodTriangles": [
+        7208,
+        3924,
+        1338
+      ],
+      "meshHash": "0079e2a6a73b5f29844bacdf3ce1f6d3dc7a01881637aee043816b7ee2a67fc7",
+      "water": false
+    },
+    {
+      "id": 121,
+      "name": "Crown palace / Iris",
+      "family": 15,
+      "variant": 1,
+      "sockets": 15,
+      "lodTriangles": [
+        8022,
+        4284,
+        1462
+      ],
+      "meshHash": "a3d54614a5b4dcd4d917bcbbf2d8d8041415dae6bcc684f8855c9d77da1b1cfe",
+      "water": false
+    },
+    {
+      "id": 122,
+      "name": "Crown palace / Cypress",
+      "family": 15,
+      "variant": 2,
+      "sockets": 15,
+      "lodTriangles": [
+        10492,
+        5852,
+        2316
+      ],
+      "meshHash": "3bf5f03fed8c425ecdf0073f236a1cee08c8527f2e20d01be8ad1070a497e171",
+      "water": false
+    },
+    {
+      "id": 123,
+      "name": "Crown palace / Pearl",
+      "family": 15,
+      "variant": 3,
+      "sockets": 15,
+      "lodTriangles": [
+        4292,
+        2780,
+        1006
+      ],
+      "meshHash": "ecf298b09a3820b6517e4d2a4947133fdf4ab1f2303ddca8233705efba7c6228",
+      "water": false
+    },
+    {
+      "id": 124,
+      "name": "Crown palace / Saffron",
+      "family": 15,
+      "variant": 4,
+      "sockets": 15,
+      "lodTriangles": [
+        8158,
+        4360,
+        1510
+      ],
+      "meshHash": "eb92bed908d284138fd2a53d07f52aa3472fe5f27d7729c775f87b170450394a",
+      "water": false
+    },
+    {
+      "id": 125,
+      "name": "Crown palace / Linden",
+      "family": 15,
+      "variant": 5,
+      "sockets": 15,
+      "lodTriangles": [
+        11716,
+        6572,
+        2310
+      ],
+      "meshHash": "2e68e867e3b54da1928fcd83346076a3e40ecb5b2c04338844e51a68f0da1c7e",
+      "water": false
+    },
+    {
+      "id": 126,
+      "name": "Crown palace / Azure",
+      "family": 15,
+      "variant": 6,
+      "sockets": 15,
+      "lodTriangles": [
+        8766,
+        4776,
+        1798
+      ],
+      "meshHash": "7963f8b2860738b479aeb7650feb15dc910a42006f61714c9c65886c2e42bf02",
+      "water": false
+    },
+    {
+      "id": 127,
+      "name": "Crown palace / Solstice",
+      "family": 15,
+      "variant": 7,
+      "sockets": 15,
+      "lodTriangles": [
+        6288,
+        3808,
+        1440
+      ],
+      "meshHash": "baf5fbf51b033ed63bfcf0ca4960265922d87b4dbd9857600b48a6cdc3ebdae7",
+      "water": false
+    }
+  ]
+}

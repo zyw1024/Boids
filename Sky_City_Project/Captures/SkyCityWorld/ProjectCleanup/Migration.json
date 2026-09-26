@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "preservedAssetGuids": 407,
+  "changedRetainedGuids": [],
+  "reorganizedFolderGuids": [
+    "Assets/SkyCity/Runtime"
+  ],
+  "deletedAssetGuids": 265,
+  "referencesToDeletedAssets": [],
+  "scenes": [
+    "Assets/SkyCity/Scenes/SkyCityWorld.unity"
+  ],
+  "pythonSourcesParsed": 17,
+  "brokenDocumentationLinks": [],
+  "note": "Asset GUIDs checked against the inventory before cleanup. Historical Changelog entries retain original release descriptions."
+}

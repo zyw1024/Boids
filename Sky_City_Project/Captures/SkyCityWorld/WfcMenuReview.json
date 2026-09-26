@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "missingGlyphs": "",
+  "worldSliders": [
+    "BridgeProbability",
+    "ShoreCompleteness",
+    "GardenWeight",
+    "TowerWeight",
+    "VariantCoherence",
+    "WfcAttempts",
+    "LoadRadius",
+    "FrameBudget"
+  ],
+  "seedInput": "93641",
+  "tabCallbacksVerified": true,
+  "independentDefaultsVerified": true,
+  "method": "Unity MCP execute_code, actual uGUI callbacks, live parameter readback and ScreenCapture"
+}

@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-26",
+  "unity": "2022.3.62f2c1",
+  "build": {
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 2.076909
+  },
+  "runtimeEvidence": "BotanyRuntime_Release.json",
+  "algorithmEvidence": "BotanyAlgorithms.json",
+  "menuEvidence": "BotanyVisual.json",
+  "sceneSha256": "E3B765D7C672EFD9DB327E423C3EA7FB4A535C4E3A25F43F722D3490477EBD43",
+  "playerAssemblySha256": "127758F9F32466DD670E94B390EA67E3BAC4F85385BE73D31A307CFC82C0264F",
+  "sourceFiles": [
+    {
+      "name": "SkyCityFlock.cs",
+      "sha256": "40763B541CC9EED31B5327C31AEDE0909CA07E14815A3486C70A7550F3945582"
+    },
+    {
+      "name": "SkyCityFlockMenu.cs",
+      "sha256": "93416E1B31D120CE95193766CC130762ED482FFE720BCFF08238DCAB7A8657CA"
+    },
+    {
+      "name": "SkyCityGardenAutomaton.cs",
+      "sha256": "E8A25D2FA66970B746F5858AAAD38A753CD0E629A715D6BD594E54CCB1A3B7B9"
+    },
+    {
+      "name": "SkyCityGardenDirector.cs",
+      "sha256": "378B48DF07621D1F13DA705A6CBC05BF52FA0B5489BCB6F0BB0D84E60516EF45"
+    },
+    {
+      "name": "SkyCityGardenMenu.cs",
+      "sha256": "D11017EF0892E7BC6F2A04C0C1D13F935B54B7C43F8CBCF6DF86487A142ABCCA"
+    },
+    {
+      "name": "SkyCityGardenProbe.cs",
+      "sha256": "A416365DC443CB3E54F3EB5C7CB23660EFC7DD1937B87D300DAD6897D61D9A61"
+    },
+    {
+      "name": "SkyCityLivingGarden.cs",
+      "sha256": "F5C0054612307D4F29AC8BF85C5ED659C647EAB29169288C7B29EFEE2F99CBAF"
+    },
+    {
+      "name": "SkyCityWfcMenu.cs",
+      "sha256": "BE0B152FED4391602E57A8F8DD988D8A2772C402B43E549E59E33C9E50226B67"
+    }
+  ],
+  "limitations": [
+    "Garden is local to the authored main island; no expansion to every streamed WFC district.",
+    "Cell state persists during this running session, without disk save.",
+    "Runtime controls are exercised through public handlers and actual UI callbacks; no synthetic physical keys.",
+    "Performance samples start after initial district loading; hidden window uses explicit URP HDR camera rendering.",
+    "Overlay menu is verified separately in Unity Game view."
+  ]
+}

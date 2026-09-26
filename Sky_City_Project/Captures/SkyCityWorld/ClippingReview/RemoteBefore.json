@@ -1,0 +1,172 @@
+{
+  "passed": false,
+  "mode": "streamed near LOD",
+  "meshes": 8,
+  "testedSegments": 851744,
+  "maximumBreeze": 2,
+  "windTimes": [
+    0.0,
+    1.7,
+    4.2,
+    7.5
+  ],
+  "results": [
+    {
+      "plant": "Living planter cell 52 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 52 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 12 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 12 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 4
+    },
+    {
+      "plant": "Living planter cell 30 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 30 / Recursive courtyard tree",
+      "segments": 48116,
+      "intersections": 12
+    },
+    {
+      "plant": "Living planter cell 41 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 41 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 3
+    }
+  ],
+  "findings": [
+    {
+      "plant": "Streaming island district / Living planter cell 12 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(2.8100, 20.2190, 140.4740)",
+      "windTime": 4.2
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 12 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(2.8100, 20.2198, 140.4710)",
+      "windTime": 4.2
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 12 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(2.8100, 20.2208, 140.4596)",
+      "windTime": 4.2
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 12 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(2.8100, 20.2203, 140.4539)",
+      "windTime": 4.2
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0325, 45.9511, -1.1248)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0332, 45.9515, -1.1282)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0341, 45.9513, -1.1306)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0659, 46.0017, -1.2512)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0639, 46.0015, -1.2490)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0613, 46.0001, -1.2454)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0710, 45.9992, -1.2557)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0685, 46.0007, -1.2537)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0658, 46.0052, -1.2528)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0660, 46.0054, -1.2531)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0695, 46.0065, -1.2575)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 30 / Recursive courtyard tree",
+      "architecture": "Architecture patch 1",
+      "point": "(189.0732, 46.0059, -1.2613)",
+      "windTime": 0.0
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 41 / Recursive courtyard tree",
+      "architecture": "Architecture patch 2",
+      "point": "(135.7520, 46.2200, 13.5842)",
+      "windTime": 7.5
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 41 / Recursive courtyard tree",
+      "architecture": "Architecture patch 2",
+      "point": "(135.7520, 46.2208, 13.5922)",
+      "windTime": 7.5
+    },
+    {
+      "plant": "Streaming island district / Living planter cell 41 / Recursive courtyard tree",
+      "architecture": "Architecture patch 2",
+      "point": "(135.7520, 46.2205, 13.5950)",
+      "windTime": 7.5
+    }
+  ],
+  "note": "Full-grown plant mesh edges against actual architecture collision surfaces; four maximum-breeze samples. This checks the reported overlap, not every possible wind time or every world seed."
+}

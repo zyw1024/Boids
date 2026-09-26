@@ -1,0 +1,85 @@
+{
+  "design": "Hanging Gardens",
+  "seed": 71309,
+  "objects": [
+    {
+      "name": "01 - Main palace and arcaded terraces",
+      "vertices": 117368,
+      "triangles": 61280,
+      "family": "Stone"
+    },
+    {
+      "name": "02 - Limestone cornices and balustrades",
+      "vertices": 501472,
+      "triangles": 344708,
+      "family": "Stone"
+    },
+    {
+      "name": "03 - Verdigris domes",
+      "vertices": 26190,
+      "triangles": 49920,
+      "family": "Copper"
+    },
+    {
+      "name": "04 - Gilded ribs and finials",
+      "vertices": 28642,
+      "triangles": 54704,
+      "family": "Brass"
+    },
+    {
+      "name": "05 - Recessed windows",
+      "vertices": 5856,
+      "triangles": 2928,
+      "family": "Dark"
+    },
+    {
+      "name": "06 - Suspended stratified cliffs",
+      "vertices": 84294,
+      "triangles": 153664,
+      "family": "Rock"
+    },
+    {
+      "name": "07 - Terrace gardens and hanging ivy",
+      "vertices": 1295730,
+      "triangles": 1163312,
+      "family": "Foliage"
+    },
+    {
+      "name": "08 - Roots and cypress trunks",
+      "vertices": 236960,
+      "triangles": 379210,
+      "family": "Wood"
+    },
+    {
+      "name": "09 - Falling water",
+      "vertices": 9675,
+      "triangles": 17640,
+      "family": "Water"
+    },
+    {
+      "name": "11 - Silk pennants",
+      "vertices": 609,
+      "triangles": 1008,
+      "family": "Cloth"
+    },
+    {
+      "name": "14 - Hand laid terracotta roofs",
+      "vertices": 120112,
+      "triangles": 120096,
+      "family": "Terracotta"
+    },
+    {
+      "name": "15 - Garden soil and moss",
+      "vertices": 3012,
+      "triangles": 2456,
+      "family": "Earth"
+    },
+    {
+      "name": "13 - Sheltered reflecting basin",
+      "vertices": 8,
+      "triangles": 4,
+      "family": "Pool"
+    }
+  ],
+  "seconds": 114.13
+}

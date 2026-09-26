@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "frames": 540,
+  "simulationSeconds": 18,
+  "errors": 0,
+  "maxPositionChange": 26.0982971,
+  "minDistance": 52.41194,
+  "resetPositionError": 2.02139563E-05,
+  "resetRotationError": 0.0,
+  "OrbitInputs": 120,
+  "ZoomInputs": 1,
+  "PanInputs": 1,
+  "ResetInputs": 1,
+  "audible": true,
+  "maxAudioPeak": 0.291324,
+  "looping": true,
+  "musicDuration": 80.0,
+  "listeners": 1
+}

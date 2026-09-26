@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "scene": "Assets/Boids/Scenes/RedonDream.unity",
+  "missingScripts": 0,
+  "fixedCamera": true,
+  "fishCount": 96,
+  "schoolReady": true,
+  "validPersistentVolume": true,
+  "generatedTexturesImported": true,
+  "shaderErrors": [],
+  "rendererCount": 760,
+  "materialCount": 33,
+  "device": "NVIDIA GeForce RTX 3090",
+  "unity": "2022.3.62f2c1",
+  "scope": "Fixed-camera painterly garden with live Boids, skeletal animation and click-to-feed interaction."
+}

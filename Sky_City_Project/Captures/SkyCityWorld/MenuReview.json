@@ -1,0 +1,54 @@
+{
+  "controls": 10,
+  "high": {
+    "BirdCount": 128,
+    "cruiseSpeed": 14.0,
+    "steeringLimit": 32.0,
+    "neighbourRadius": 12.0,
+    "separationRadius": 3.5,
+    "separationWeight": 8.0,
+    "alignmentWeight": 2.0,
+    "cohesionWeight": 0.6,
+    "callRadius": 12.0,
+    "callDuration": 40.0
+  },
+  "low": {
+    "BirdCount": 16,
+    "cruiseSpeed": 3.0,
+    "steeringLimit": 6.0,
+    "neighbourRadius": 2.0,
+    "separationRadius": 0.5,
+    "separationWeight": 0.0,
+    "alignmentWeight": 0.0,
+    "cohesionWeight": 0.0,
+    "callRadius": 2.0,
+    "callDuration": 5.0
+  },
+  "poolStable": true,
+  "defaults": {
+    "BirdCount": 64,
+    "cruiseSpeed": 7.4,
+    "steeringLimit": 17.0,
+    "neighbourRadius": 5.2,
+    "separationRadius": 1.35,
+    "separationWeight": 3.8,
+    "alignmentWeight": 0.36,
+    "cohesionWeight": 0.09,
+    "callRadius": 5.1,
+    "callDuration": 18.0
+  },
+  "noMovement": true,
+  "note": "Slider endpoints and defaults exercised through actual UI callbacks. Physical Escape open/close, pointer release, population drag to 128, Reset click, blocked W and blocked right-click separately observed.",
+  "finalMcpChecks": {
+    "activeBirdsAtMaximum": 128,
+    "menuOpenReleasesPointer": true,
+    "retainedPoolCapacity": 128,
+    "sliderHandleHeight": 16,
+    "activeBirdsAtMinimum": 16,
+    "menuTogglePreservesPose": true,
+    "compileErrors": 0,
+    "restoredBirds": 64,
+    "menuCloseRecapturesPointer": true,
+    "sliderFillHeight": 3
+  }
+}

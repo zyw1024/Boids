@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "frames": 150,
+  "simulationSeconds": 5,
+  "liveReflectionUpdates": 150,
+  "residentIslands": 25,
+  "failedJobs": 0,
+  "note": "Actual Unity render frames; fixed simulation time for motion review. This capture is not a performance measurement."
+}

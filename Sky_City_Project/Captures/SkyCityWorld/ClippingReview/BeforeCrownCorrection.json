@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "mode": "authored island: all branch depths and LODs",
+  "meshes": 10,
+  "testedSegments": 2206740,
+  "maximumBreeze": 2,
+  "windTimes": [
+    0.0,
+    1.7,
+    4.2,
+    7.5
+  ],
+  "results": [
+    {
+      "plant": "L-system generation 3 / Wind tree - generation 3 LOD 0",
+      "segments": 197928,
+      "intersections": 0
+    },
+    {
+      "plant": "L-system generation 3 / Wind tree - generation 3 LOD 1",
+      "segments": 58100,
+      "intersections": 0
+    },
+    {
+      "plant": "L-system generation 4 / Wind tree - generation 4 LOD 0",
+      "segments": 398088,
+      "intersections": 0
+    },
+    {
+      "plant": "L-system generation 4 / Wind tree - generation 4 LOD 1",
+      "segments": 116420,
+      "intersections": 0
+    },
+    {
+      "plant": "L-system generation 5 / Wind tree - generation 5 LOD 0",
+      "segments": 798408,
+      "intersections": 0
+    },
+    {
+      "plant": "L-system generation 5 / Wind tree - generation 5 LOD 1",
+      "segments": 233060,
+      "intersections": 0
+    },
+    {
+      "plant": "Lower terrace / Flowers - one combined surface",
+      "segments": 208896,
+      "intersections": 0
+    },
+    {
+      "plant": "Upper terrace / Flowers - one combined surface",
+      "segments": 156672,
+      "intersections": 0
+    },
+    {
+      "plant": "Pool garden west / Flowers - one combined surface",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Pool garden east / Flowers - one combined surface",
+      "segments": 13056,
+      "intersections": 0
+    }
+  ],
+  "findings": [],
+  "note": "Full-grown plant mesh edges against actual architecture collision surfaces; four maximum-breeze samples. This checks the reported overlap, not every possible wind time or every world seed."
+}

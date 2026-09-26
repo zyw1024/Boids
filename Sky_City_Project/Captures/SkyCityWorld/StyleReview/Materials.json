@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "shaderErrors": [],
+  "stoneParametersMatchReference": true,
+  "referenceScene": "Assets/SkyCity/Scenes/SkyCityWorld.unity",
+  "categories": [
+    "Static module plants: individual leaves and tapered branches at all LODs",
+    "District trees and cypresses: same leaf-spray geometry family",
+    "Living fractal trees and flowers: shared leaf surface response",
+    "Masonry: reference palette, window reveals, cornices, smoother curved profiles",
+    "Cliffs: reference island strata and buttresses",
+    "Ground boulders: irregular weathered ledges",
+    "Water: reference pool parameters and warm cascade tint",
+    "Clouds, birds and global lighting: existing authored-island systems"
+  ]
+}

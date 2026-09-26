@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "scene": "Assets/Boids/Scenes/RedonAtelier.unity",
+  "missingScripts": 0,
+  "fixedCamera": true,
+  "fishCount": 96,
+  "modeledForms": 33,
+  "schoolReady": true,
+  "shaderErrors": [],
+  "note": "Technical scene integrity only. Artistic quality requires camera review."
+}

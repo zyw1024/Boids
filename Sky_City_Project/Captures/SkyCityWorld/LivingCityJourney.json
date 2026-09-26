@@ -1,0 +1,18 @@
+{
+  "recorder": "Unity Recorder 4.0.3",
+  "scene": "SkyCityWorld",
+  "timelineFrames": 2160,
+  "fps": 30,
+  "audio": true,
+  "camera": "Scripted first-person camera inside the actual running scene",
+  "performanceBenchmark": false,
+  "chapters": [
+    "00:00 Arrival and bird call",
+    "00:08 Recursive tree growth",
+    "00:26 Cellular flower wave",
+    "00:34 Live garden controls",
+    "00:40 Travel to a streamed district",
+    "00:45 Remote living garden",
+    "01:04 Infinite archipelago"
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "library": "VSCO 2 Community Edition",
+  "license": "CC0-1.0",
+  "commit": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+  "samples": [
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_C2_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C2_pp_RR1.wav",
+      "sha256": "965d05d098e65226bfebbfff2951aa649d527c4a90545e6437e8ced9d703de08"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_C3_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C3_pp_RR1.wav",
+      "sha256": "2fbe80d44b96c24980762eb805594cff6b84a5b4ed06ddfed70a8f8c692b856f"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_C4_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C4_pp_RR1.wav",
+      "sha256": "0354bf405b644eb16b0d1223e304de93b4abef4e2191c552665563784d40f1ea"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_C5_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C5_pp_RR1.wav",
+      "sha256": "e0d5353f67afe55e4d6d49253651f2a8aa0c456603f538175e103769e1e1e73c"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_C6_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_C6_pp_RR1.wav",
+      "sha256": "d5c574169167c0a3186bda3a3c721073c4b5435d58357285182e09e18f957ea8"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_G2_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G2_pp_RR1.wav",
+      "sha256": "3ac70e5610a9fd33e0b5512fdd29a29e2d4abeecea7edda53644cab5a16a6aa8"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_G3_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G3_pp_RR1.wav",
+      "sha256": "328f35968d8c52f854baae364529e41d4b1eeffc3c42de6fefe506617ddb4e88"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_G4_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G4_pp_RR1.wav",
+      "sha256": "23c25a7d2757a0aaca9292b6e9a9197223fd34a946dc4fa19883fda1f7bed9a2"
+    },
+    {
+      "instrument": "piano",
+      "file": "Samples/piano/UR1_G5_pp_RR1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Keys/Upright%20Nr1/UR1_G5_pp_RR1.wav",
+      "sha256": "6006fc831f64d3f459825d58d5a51474ba77d59a009bd8282788abb410f7c174"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_A4_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_A4_mf.wav",
+      "sha256": "3665f3975cad4a33f46784aa4f896f4b4319ba2b7831e892d975bc38c9f09f23"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_B3_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_B3_mf.wav",
+      "sha256": "f6f71be8c640822ef48a448b245585659acdfcc7ed5774e10f37be2fc02fcab4"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_B5_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_B5_mf.wav",
+      "sha256": "f2757b674c6b7301bed52e17a1ae3e3d34d628b3f7edc5773ebb25798d2541f7"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_C3_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_C3_mf.wav",
+      "sha256": "e5d232771704e140959819de8cf2a3e0ba49d021ca77354c42664ce4fce6d9f3"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_C5_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_C5_mf.wav",
+      "sha256": "7c8b862f6fd3f1442ed87537af976d84bda8c05a5b4900e8907d570b5202a517"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_D4_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_D4_mf.wav",
+      "sha256": "ebfde8aab4411019e37e3426f4dd88d6a52a38c2d0261d7f10ec63d8ff584dc7"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_E3_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_E3_mf.wav",
+      "sha256": "aafa9d41ec0f77da8f2891055af8b3f9557e0ba1f1df93d53ae6e1fda07afae5"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_E5_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_E5_mf.wav",
+      "sha256": "95dd9ddb0bd15bee7687906e00f25aafcaa43020cc9501f0e8b6cabf0e9a53ec"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_F4_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_F4_mf.wav",
+      "sha256": "db27ebbb37334c10e06f2ae63f4d9ff555e4d11704fcc6f0bcf503863867e577"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_G3_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_G3_mf.wav",
+      "sha256": "62600eb1b37bc2829ca65351f7ca7e506c9ae472abd5bea0765a8b8fa7df2772"
+    },
+    {
+      "instrument": "harp",
+      "file": "Samples/harp/KSHarp_G5_mf.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Harp/KSHarp_G5_mf.wav",
+      "sha256": "f2004dfc617997fbabc6f849add2af06f4f859361c44a8fca0f993dc7f999540"
+    },
+    {
+      "instrument": "violin",
+      "file": "Samples/violin/VlnEns_susVib_A3_v1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_A3_v1.wav",
+      "sha256": "72817a53dfd2eb61eca94658c14e1cab6017629ca2f27bab8e394c6675bfaad7"
+    },
+    {
+      "instrument": "violin",
+      "file": "Samples/violin/VlnEns_susVib_B4_v1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_B4_v1.wav",
+      "sha256": "ec4cea41ac77f251bf5f4158fe9cbeeae13755e3785106e505808de18fdddc0d"
+    },
+    {
+      "instrument": "violin",
+      "file": "Samples/violin/VlnEns_susVib_C4_v1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_C4_v1.wav",
+      "sha256": "c07edd5b2119fa1da2207aba996961b50dd616f69bbcf2300ab271bc6c16239f"
+    },
+    {
+      "instrument": "violin",
+      "file": "Samples/violin/VlnEns_susVib_E4_v1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_E4_v1.wav",
+      "sha256": "787fb4bcfb47d5c88ee1573c8db15f32d345386301be4a8eea6a825847413ae2"
+    },
+    {
+      "instrument": "violin",
+      "file": "Samples/violin/VlnEns_susVib_G4_v1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_G4_v1.wav",
+      "sha256": "ed2a89cf254432d2af073699fa43ebfa16cfbc5552c7fc964a184fc434eaaa39"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_B1_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_B1_v1_1.wav",
+      "sha256": "4f95c087c4b8d87ee591e9d39c3c9caf085c6f1b9125eac3ca9e4e637da628ee"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_B3_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_B3_v1_1.wav",
+      "sha256": "bd25d66c1c4e73f5827bf3b931244e51ec8388594d8004529a762be81258097f"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_C1_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_C1_v1_1.wav",
+      "sha256": "abdcea431f384e135c469b0f3e4ac2a437f282f521dc5bcbe22abc221536e8de"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_C3_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_C3_v1_1.wav",
+      "sha256": "a614ee7ca821b44660236e47b89620cf914ec6ad27a99bc0d9764f47dbe512e1"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_D2_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_D2_v1_1.wav",
+      "sha256": "e8640dec9febc6e39fcf06b19d2c95a85d5ff8c38f13c9879e69f551eaf38ab8"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_E1_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_E1_v1_1.wav",
+      "sha256": "de31a61b02d4e1d5a79b8bc432b0f35fe2e434290ad34402cc0f2dd7dc278cde"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_E3_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_E3_v1_1.wav",
+      "sha256": "d2f961e30bf64021cf4acbd88e0e7a1fd1840943ae78c62a711bcce3d109216e"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_F2_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_F2_v1_1.wav",
+      "sha256": "162054eab4ba118924f8f8986cf1b17ccfd65211d1945743ffbae30b4953f901"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_G1_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_G1_v1_1.wav",
+      "sha256": "9e5d24e8e28d6c7f650f9bb2b33d43c13e341a8bd33124c64e23881378b181ba"
+    },
+    {
+      "instrument": "cello",
+      "file": "Samples/cello/susvib_G3_v1_1.wav",
+      "source": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Cello%20Section/susvib/susvib_G3_v1_1.wav",
+      "sha256": "8d658346b8d2054fd534b3222b5d7a23196d22a83a68c3a04ffb76b21853a3db"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "passed": true,
+    "standalonePlayer": true,
+    "renderCoverage": true,
+    "reflectionMoved": true,
+    "birdsMoved": true,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "unityVersion": "2022.3.62f2c1",
+    "note": "Real standalone elapsed frames: overview, close architecture, water reflection, side orbit. 6 second warmup. 60 fps cap. No screenshots or writes during timed frames. This measures the authored reference slice, not infinite streaming.",
+    "width": 1536,
+    "height": 1024,
+    "frames": 2400,
+    "renderedFrames": 2400,
+    "errors": 0,
+    "reflectionUpdates": 972,
+    "seconds": 40.006264300000008,
+    "p95FrameMs": 16.67040027678013,
+    "p99FrameMs": 16.72930084168911,
+    "maxFrameMs": 17.307600006461145,
+    "gpuP95Ms": 7.462912,
+    "allocatedMiB": 70.62499713897705
+}

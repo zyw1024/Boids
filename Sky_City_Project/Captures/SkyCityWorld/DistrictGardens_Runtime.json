@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "checks": {
+    "worldReady": true,
+    "streamedPlantsCreated": true,
+    "plantsBeyondMainIsland": true,
+    "remoteAimedPlanting": true,
+    "remoteMenuAndIsolation": true,
+    "remoteLiveRules": true,
+    "remoteTreeDepth": true,
+    "remoteCellPropagation": true,
+    "remoteTreeAnimation": true,
+    "oldPlantsUnloaded": true,
+    "stateWrittenWithoutResidentCopies": true,
+    "exactStateRestored": true,
+    "restoredCellsResume": true,
+    "generationChangeReplacesPlants": true,
+    "registryHasNoStaleGardens": true,
+    "shrinkBoundsPlants": true,
+    "expandedPlantBudget": true,
+    "mainIslandStillWorks": true,
+    "boundedPlantBudget": true,
+    "allMeshesShared": true
+  },
+  "errors": 0,
+  "performance": true,
+  "frames": 1254,
+  "renderedFrames": 1254,
+  "p95": 22.967899218201637,
+  "p99": 37.165101617574692,
+  "maximum": 70.879600942134857,
+  "phaseTimes": {
+    "remoteArrival": {
+      "frames": 41,
+      "p95": 36.844998598098755,
+      "p99": 47.788601368665695,
+      "maximum": 47.788601368665695
+    },
+    "remoteGarden": {
+      "frames": 348,
+      "p95": 16.7945995926857,
+      "p99": 48.017300665378571,
+      "maximum": 70.879600942134857
+    },
+    "unloadAndReturn": {
+      "frames": 194,
+      "p95": 16.67029969394207,
+      "p99": 16.74409955739975,
+      "maximum": 17.260899767279625
+    },
+    "seedReplacement": {
+      "frames": 154,
+      "p95": 16.67959988117218,
+      "p99": 17.121700569987297,
+      "maximum": 17.839899286627769
+    },
+    "maximumRadius": {
+      "frames": 42,
+      "p95": 16.66799932718277,
+      "p99": 16.945699229836464,
+      "maximum": 16.945699229836464
+    },
+    "homeReturn": {
+      "frames": 34,
+      "p95": 16.66799932718277,
+      "p99": 46.679098159074783,
+      "maximum": 46.679098159074783
+    },
+    "settledHome": {
+      "frames": 441,
+      "p95": 26.914099231362343,
+      "p99": 40.334101766347885,
+      "maximum": 47.470599412918091
+    }
+  },
+  "LiveGardens": 62,
+  "LiveTrees": 34,
+  "PeakDistricts": 49,
+  "SavedDistricts": 136,
+  "RestoredDistricts": 65,
+  "PeakResident": 49,
+  "PeakPending": 3,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "width": 1600,
+  "height": 900,
+  "note": "Explicit URP HDR camera rendering. Public input handlers and real menu callbacks. Includes remote generation, seed replacement and 9/49/25 resident limits. Session snapshots are deleted when the world closes."
+}

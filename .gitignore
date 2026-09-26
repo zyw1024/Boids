@@ -1,4 +1,4 @@
-# Unity-generated state (the project lives in Boids_Proj/).
+# Unity-generated state (the project lives in Sky_City_Project/).
 **/[Ll]ibrary/
 **/[Tt]emp/
 **/[Oo]bj/
@@ -61,7 +61,110 @@ __pycache__/
 !/Setup/UnityMCP/verify_connection.py
 
 # Keep the reviewed Unity screenshot and asset validation evidence.
-/Boids_Proj/Captures/*
-!/Boids_Proj/Captures/Moonveil_Unity.png
-!/Boids_Proj/Captures/Moonveil_Validation.json
-!/Boids_Proj/Captures/Moonveil_RuntimeValidation.json
+/Sky_City_Project/Captures/*
+!/Sky_City_Project/Captures/Moonveil_Unity.png
+!/Sky_City_Project/Captures/Moonveil_Validation.json
+!/Sky_City_Project/Captures/Moonveil_RuntimeValidation.json
+!/Sky_City_Project/Captures/Redon_Style.png
+!/Sky_City_Project/Captures/Redon_Style_v1.png
+!/Sky_City_Project/Captures/Redon_Feeding.png
+!/Sky_City_Project/Captures/Redon_Interaction.mp4
+!/Sky_City_Project/Captures/Redon_Preview.json
+!/Sky_City_Project/Captures/Redon_Validation.json
+!/Sky_City_Project/Captures/Redon_RuntimeValidation.json
+!/Sky_City_Project/Captures/Atelier_Style.png
+!/Sky_City_Project/Captures/Atelier_Feeding.png
+!/Sky_City_Project/Captures/Atelier_Interaction.mp4
+!/Sky_City_Project/Captures/Atelier_Preview.json
+!/Sky_City_Project/Captures/Atelier_Validation.json
+!/Sky_City_Project/Captures/Atelier_RuntimeValidation.json
+!/Sky_City_Project/Captures/SkyCity_Style.png
+!/Sky_City_Project/Captures/SkyCity_Flight.png
+!/Sky_City_Project/Captures/SkyCity_Flight.mp4
+!/Sky_City_Project/Captures/SkyCity_WaterFlow.mp4
+!/Sky_City_Project/Captures/SkyCity_LivingWorld.mp4
+!/Sky_City_Project/Captures/SkyCity_PresentationValidation.json
+!/Sky_City_Project/Captures/SkyCity_MotionValidation.json
+!/Sky_City_Project/Captures/SkyCity_ControlValidation.json
+!/Sky_City_Project/Captures/SkyCity_Validation.json
+!/Sky_City_Project/Captures/SkyCity_RuntimeValidation.json
+!/Sky_City_Project/Captures/SkyCity_LongFlightValidation.json
+!/Sky_City_Project/Captures/SkyCityInfinite_Style.png
+!/Sky_City_Project/Captures/SkyCityInfinite_128Modules.png
+!/Sky_City_Project/Captures/SkyCityInfinite_Travel.mp4
+!/Sky_City_Project/Captures/SkyCityInfinite_SolverValidation.json
+!/Sky_City_Project/Captures/SkyCityInfinite_AssetValidation.json
+!/Sky_City_Project/Captures/SkyCityInfinite_PlayerPerformance.json
+!/Sky_City_Project/Captures/SkyCityInfinite_Build.json
+!/Sky_City_Project/Captures/SkyCityInfinite_District*.png
+!/Sky_City_Project/Captures/SkyCityInfinite_Water.png
+!/Sky_City_Project/Captures/SkyCityInfinite_Water.mp4
+!/Sky_City_Project/Captures/SkyCityInfinite_WaterValidation.json
+!/Sky_City_Project/Captures/SkyCityInfinite_WaterEarlierRuns.json
+!/Sky_City_Project/Captures/SkyCityInfinite_Structure*.png
+!/Sky_City_Project/Captures/SkyCityInfinite_Structure*.json
+!/Sky_City_Project/Captures/SkyCity_Demo_Recorder.mp4
+!/Sky_City_Project/Captures/SkyCity_Demo_Recorder.json
+!/Sky_City_Project/Captures/SkyCity_Demo_Travel.png
+
+# Superseded local cloud-density experiments; the scene uses PerlinWorleyVolume.
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity.asset*
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity_v2.asset*
+/Sky_City_Project/Assets/SkyCity/Content/Shared/CloudDensity_v3.asset*
+
+# Sky City source sample cache and uncompressed audio master
+/ArtSource/SkyCity/Music/Samples/
+/ArtSource/SkyCity/Music/GardenOfWinds_master.wav
+
+# Reviewed planting-clearance evidence, excluding temporary capture files.
+!/Sky_City_Project/Captures/SkyCityWorld/
+/Sky_City_Project/Captures/SkyCityWorld/*
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/
+/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/BeforeCrownCorrection.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/MainIslandAfter.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RemoteBefore.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RemoteOriented.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RuntimeAfter.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/CurrentView.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/SameViewAfter.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeFrontBefore.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeAfter_1.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/
+/Sky_City_Project/Captures/SkyCityWorld/WaterReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/Before.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/After.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/MainIsland.png
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/BasinGeometry.json
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/AssetReferences.json
+!/Sky_City_Project/Captures/SkyCityWorld/WaterReview/Runtime.json
+
+# Reviewed cliff redesign evidence.
+!/Sky_City_Project/Captures/RockDiscussion/
+/Sky_City_Project/Captures/RockDiscussion/*
+!/Sky_City_Project/Captures/RockDiscussion/CurrentEditor.png
+!/Sky_City_Project/Captures/RockDiscussion/MainIsland_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/World_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/Cliff_Final.png
+!/Sky_City_Project/Captures/RockDiscussion/CliffValidation.json
+!/Sky_City_Project/Captures/RockDiscussion/SpillwayValidation.json
+!/Sky_City_Project/Captures/RockDiscussion/RuntimeValidation.json
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/
+/Sky_City_Project/Captures/SkyCityWorld/StyleReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Geometry.json
+!/Sky_City_Project/Captures/SkyCityWorld/StyleReview/Materials.json
+
+# Classroom deliverables are maintained outside the source repository.
+/Teaching/
+*.ppt
+*.pptx
+/ArtSource/SkyCity/Classroom_Demo.md
+
+# Reproducible single-scene cleanup validation.
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/
+/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/*
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/README.md
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Assets.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Migration.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Runtime.json
+!/Sky_City_Project/Captures/SkyCityWorld/ProjectCleanup/Build.json
