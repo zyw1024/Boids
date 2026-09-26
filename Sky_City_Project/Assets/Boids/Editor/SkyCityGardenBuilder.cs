@@ -47,7 +47,11 @@ public static class SkyCityGardenBuilder
         director.treeGenerations=new GameObject[3];var branchCounts=new List<int>();
         for(int depth=3;depth<=5;depth++)
         {
-            var generation=new GameObject("L-system generation "+depth);generation.transform.SetParent(treeRoot.transform,false);director.treeGenerations[depth-3]=generation;
+            var generation=new GameObject("L-system generation "+depth);generation.transform.SetParent(treeRoot.transform,false);
+            // Keep the complete crown (including leaf sprays and maximum wind)
+            // in front of the projecting upper cornice. The trunk alone is not
+            // a sufficient clearance check. Keep the stone collar unscaled.
+            generation.transform.localScale=new Vector3(1,1,.65f);director.treeGenerations[depth-3]=generation;
             var renderers=new MeshRenderer[2];
             for(int detail=0;detail<2;detail++)
             {

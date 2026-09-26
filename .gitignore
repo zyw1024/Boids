@@ -115,3 +115,18 @@ __pycache__/
 # Sky City source sample cache and uncompressed audio master
 /ArtSource/SkyCity/Music/Samples/
 /ArtSource/SkyCity/Music/GardenOfWinds_master.wav
+
+# Reviewed planting-clearance evidence, excluding temporary capture files.
+!/Sky_City_Project/Captures/SkyCityWorld/
+/Sky_City_Project/Captures/SkyCityWorld/*
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/
+/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/*
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/BeforeCrownCorrection.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/MainIslandAfter.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RemoteBefore.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RemoteOriented.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/RuntimeAfter.json
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/CurrentView.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/SameViewAfter.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeFrontBefore.png
+!/Sky_City_Project/Captures/SkyCityWorld/ClippingReview/TreeAfter_1.png

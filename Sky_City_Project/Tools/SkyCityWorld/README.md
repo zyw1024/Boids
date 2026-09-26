@@ -99,6 +99,8 @@ Play 模式执行 `SkyCityWorldReview.Record()`，用 Unity Recorder 录制 30 �
 
 `SkyCityLivingWorldRecorder.Record()` 录制 72 秒的最新游览，包含主岛鸟群召集、递归树生长、元胞花潮、真实菜单和远端街区花园；输出临时目录 `SkyCityWorld/LivingCityJourney.mp4`，同时保存章节说明及实际相机截图。它使用 Unity Recorder 和脚本相机路径，也不作为性能基准。
 
+`SkyCityBotanyClearanceReview.Run()` 检查主岛完整生长的花卉、三档树深度及两档 LOD，按四个最大风动时刻检测植物网格边与建筑碰撞面的交叉。远端 Play 模式调用 `Run("RemoteAfter", true)` 检查当前具有近景碰撞壳的街区；远景没有碰撞壳的 LOD 不计入样本。输出在 `Captures/SkyCityWorld/ClippingReview/`。这项检查用于捕捉花卉穿过屋顶、树冠转入拱廊等视觉错误，不能用一般功能测试通过替代。
+
 ## 验证记录（2026-09-26）
 
 Windows 独立程序，RTX 3090，1600×900，60 fps 上限，默认 64 只鸟：52.017 秒实际渲染 3120 帧，P95 16.671 ms、P99 16.786 ms，最大 17.582 ms；GPU P95 12.333 ms。鸟群与召集点平均距离从 37.93 m 降到 5.97 m。加载 128 个 / 卸载 104 个城区，峰值驻留 25 个、待处理 3 个任务，3 次浮动原点移动；百万坐标往返及主岛位置恢复通过，运行错误 0。构建错误与警告均为 0。

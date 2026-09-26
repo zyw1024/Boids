@@ -103,7 +103,7 @@ namespace Boids.Art
                 {
                     var tree=MeshObject(bed.transform,"Recursive courtyard tree",treeMeshes[2],treeMaterial);
                     tree.transform.localScale=Vector3.one*(.22f+((uint)slot.seed%4)*.025f);
-                    tree.transform.localRotation=Quaternion.Euler(0,((uint)slot.seed%4)*90,0);
+                    tree.transform.localRotation=Quaternion.Euler(0,slot.treeYaw,0);
                     district.trees.Add(tree.GetComponent<MeshFilter>());district.treeRenderers.Add(tree);
                 }
             }

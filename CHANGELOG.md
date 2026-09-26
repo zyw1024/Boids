@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-09-26 · Planting and architecture clearance
+
+- Refresh the 72-second, 1080p scene tour and current project screenshots after the clearance fixes. The tour retains its 30 fps video, original audio and scripted runtime camera route.
+- Correct the pool-side loggia roof: its cornice previously reached 6.48 m and cut through the main terrace's flower beds at 6.19 m. The rebuilt cornice now ends at 6.06 m, below the 6.0985 m paving. Rebuild all three architectural LODs, the editable Blender model and the world scene's baked lighting.
+- Leave more depth clearance between the main recursive tree crown and the upper arcade, including wind movement.
+- Orient streamed recursive crowns toward the module's open space. Seed-randomized yaw could rotate the asymmetric crown into arcade columns; plant seeds and growth behavior remain deterministic.
+- Add an opt-in geometry audit of fully grown plant mesh edges against actual architecture collision meshes at four maximum-breeze samples. The reproduced remote case had intersections on three trees before the orientation fix; the same eight near-LOD plant meshes pass afterward. The ten authored-island plant meshes also pass. These are specific geometric checks, not a claim that every possible world seed and wind instant has been exhaustively tested.
+
+Validation: the repaired standalone build has zero errors and warnings. All 20 streamed-garden regression checks pass with zero runtime errors; 1,307 of 1,307 sampled frames rendered at 1600 x 900 (RTX 3090), P95 16.668 ms, P99 16.739 ms, maximum 17.861 ms. See `Sky_City_Project/Captures/SkyCityWorld/ClippingReview/` for the same-view screenshots, geometry reports and `RuntimeAfter.json`.
+
 ## 2026-09-26 · Living gardens across the sky city
 
 - Extend recursive courtyard trees and cellular flower beds to streamed WFC districts. Planting slots follow the authored arcade, garden-cloister and terraced-orchard modules, including their rotation, district shape and elevation. Visual review corrected a planter crossing a column foot and moved arcade planting fully onto its deck.

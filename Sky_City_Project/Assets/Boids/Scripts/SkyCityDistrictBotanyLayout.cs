@@ -11,7 +11,7 @@ namespace Boids.Art
         public struct Slot
         {
             public int cell,seed;public Vector3 position,scale;public Quaternion rotation;
-            public bool tree;public bool raisedBed;
+            public bool tree;public bool raisedBed;public float treeYaw;
         }
         public static List<Slot> Create(SkyCityWfc.Result layout)
         {
@@ -35,7 +35,9 @@ namespace Boids.Art
                 var local=rotation*p+new Vector3(x*SkyCityWfc.TileSize,SkyCityWfc.Elevation(layout.composition),z*SkyCityWfc.TileSize);
                 local=new Vector3(42+(local.x-42)*shape.x,local.y,42+(local.z-42)*shape.y);
                 var scale=new Vector3(size.x/2.4f*(turn%2==0?shape.x:shape.y),1,size.y/1.5f*(turn%2==0?shape.y:shape.x));
-                candidates.Add(new Slot{cell=cell,position=local,rotation=rotation,scale=scale,tree=tree,raisedBed=raised,seed=unchecked((int)SkyCityWfc.Hash(layout.coord.x*64+cell,layout.coord.z,layout.seed))});
+                // The recursive crown is asymmetric. Point it into open air;
+                // random yaw can push branches through the adjacent arcade.
+                candidates.Add(new Slot{cell=cell,position=local,rotation=rotation,scale=scale,tree=tree,raisedBed=raised,treeYaw=family==0?180:0,seed=unchecked((int)SkyCityWfc.Hash(layout.coord.x*64+cell,layout.coord.z,layout.seed))});
             }
             candidates.Sort((a,b)=>((uint)a.seed).CompareTo((uint)b.seed));
             if(candidates.Count>4)candidates.RemoveRange(4,candidates.Count-4);

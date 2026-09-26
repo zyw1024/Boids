@@ -266,7 +266,9 @@ for x in (-16,-14.2,-12.4,-10.6,-8.8,-7):
     for face in (ends[0],list(reversed(ends[1]))):
         ids=[architecture.vert(p,IVORY) for p in face];architecture.f.append(tuple(ids))
     for j in range(3):architecture.quad([ends[0][j],ends[1][j],ends[1][(j+1)%3],ends[0][(j+1)%3]],IVORY)
-loggia((-16.4,3.58,3.5),4.2,2.8,2.5,2)
+# Its cornice is also the underside of the main terrace: finish below the
+# 6.0985 m paving, not at 6.48 m through the terrace's existing planting beds.
+loggia((-16.4,3.58,3.5),4.2,2.8,2.08,2)
 stair((-5.6,3.6,2.4),(-5.6,6.08,6.0),2.0)
 stair((-28.0,6.1,7.0),(-28.0,10.5,12.6),2.15)
 stair((-16.0,10.5,10.3),(-16.0,14.55,15.4),1.75)

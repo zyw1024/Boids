@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "mode": "streamed near LOD",
+  "meshes": 8,
+  "testedSegments": 1036688,
+  "maximumBreeze": 2,
+  "windTimes": [
+    0.0,
+    1.7,
+    4.2,
+    7.5
+  ],
+  "results": [
+    {
+      "plant": "Living planter cell 52 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 52 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 12 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 12 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 30 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 30 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 41 / Living lavender and ivory",
+      "segments": 26112,
+      "intersections": 0
+    },
+    {
+      "plant": "Living planter cell 41 / Recursive courtyard tree",
+      "segments": 233060,
+      "intersections": 0
+    }
+  ],
+  "findings": [],
+  "note": "Full-grown plant mesh edges against actual architecture collision surfaces; four maximum-breeze samples. This checks the reported overlap, not every possible wind time or every world seed."
+}
