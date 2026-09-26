@@ -10,7 +10,7 @@ from math import sin, cos, pi, exp
 
 BASE = Path(os.environ['BOIDS_ROOT']).resolve() if os.environ.get('BOIDS_ROOT') else Path(__file__).resolve().parents[2]
 SOURCE = BASE / 'ArtSource/Moonveil'
-OUT = BASE / 'Boids_Proj/Assets/Boids/Art/Moonveil'
+OUT = BASE / 'Sky_City_Project/Assets/Boids/Art/Moonveil'
 PREVIEW = SOURCE / 'Preview'
 for p in (SOURCE, OUT, OUT/'Textures', PREVIEW): p.mkdir(parents=True, exist_ok=True)
 

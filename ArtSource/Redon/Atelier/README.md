@@ -10,7 +10,7 @@ The concept image is not used as a backdrop or rendered scene texture.
   eroded reefs, rooted colonies, branching stems and surface paint marks.
 - `E_SubmergedGarden.blend` retains these as named mesh objects. The source was
   authored through Blender Python, not manually sculpted.
-- The matching FBX is in `Boids_Proj/Assets/Boids/Art/Atelier/`.
+- The matching FBX is in `Sky_City_Project/Assets/Boids/Art/Atelier/`.
 - Geometric ambient occlusion is stored in vertex alpha; pigment is stored in RGB.
 - `AtelierSceneBuilder.Build()` assembles `RedonAtelier.unity` and retains the
   existing animated fish, fixed camera, Boids controller and screen-point feeding.
@@ -64,7 +64,7 @@ surface variety, and moving fish together.
 
 ## Open and review the modeled scene
 
-Open `Boids_Proj/Assets/Boids/Scenes/RedonAtelier.unity` in Unity and enter Play
+Open `Sky_City_Project/Assets/Boids/Scenes/RedonAtelier.unity` in Unity and enter Play
 mode. Click the central water to feed the school. The original `RedonDream`
 scene remains available as the earlier study.
 
@@ -80,14 +80,14 @@ alpha stores geometric occlusion. These are real surfaces with depth, not
 camera-facing environment cards.
 
 For validation, use **Boids > Atelier > Check Reload and Play Mode**. Reports and
-actual camera captures are saved in `Boids_Proj/Captures/Atelier_*`. To regenerate
+actual camera captures are saved in `Sky_City_Project/Captures/Atelier_*`. To regenerate
 the motion preview, use **Boids > Atelier > Record Interaction Preview Frames**.
 This records 420 camera frames at a target 30 fps, at 1536 by 1024 pixels. The
 JSON records elapsed simulation time; this offline recording is not a frame-rate
 benchmark. Encode the frames with:
 
 ```powershell
-ffmpeg -framerate 30 -i 'Boids_Proj/Captures/AtelierInteractionFrames/frame_%04d.png' -c:v libx264 -crf 18 -pix_fmt yuv420p -movflags +faststart 'Boids_Proj/Captures/Atelier_Interaction.mp4'
+ffmpeg -framerate 30 -i 'Sky_City_Project/Captures/AtelierInteractionFrames/frame_%04d.png' -c:v libx264 -crf 18 -pix_fmt yuv420p -movflags +faststart 'Sky_City_Project/Captures/Atelier_Interaction.mp4'
 ```
 
 The concept remains the art reference. The camera captures show the implemented

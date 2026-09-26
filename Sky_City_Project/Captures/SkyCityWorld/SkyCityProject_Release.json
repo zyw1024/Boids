@@ -1,0 +1,28 @@
+{
+  "projectName": "Sky_City_Project",
+  "unityVersion": "2022.3.62f2c1",
+  "scene": "Assets/Boids/Scenes/SkyCityWorld.unity",
+  "build": {
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 0,
+    "seconds": 2.4784212
+  },
+  "algorithms": true,
+  "placement": true,
+  "streamedGardens": true,
+  "authoredIsland": true,
+  "video": {
+    "file": "LivingCityJourney.mp4",
+    "seconds": 72,
+    "frames": 2160,
+    "fps": 30,
+    "size": "1920x1080",
+    "audio": true,
+    "source": "Unity Recorder 4.0.3",
+    "camera": "Scripted in-scene tour",
+    "performanceBenchmark": false
+  },
+  "visualReview": "Main island, live Chinese menu, remote planter and archipelago reviewed. A column-foot overlap was corrected; a follow-up planter-volume query found no architectural collider.",
+  "scope": "Teaching decks remain outside this repository."
+}

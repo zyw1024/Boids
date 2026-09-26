@@ -10,7 +10,7 @@ from mathutils.noise import noise
 from math import sin, cos, pi, sqrt
 
 ROOT=Path(__file__).resolve().parents[2]
-OUT=ROOT/'Boids_Proj/Assets/Boids/Art/SkyCity'
+OUT=ROOT/'Sky_City_Project/Assets/Boids/Art/SkyCity'
 SOURCE=Path(__file__).resolve().parent
 OUT.mkdir(parents=True,exist_ok=True)
 random.seed(93641)

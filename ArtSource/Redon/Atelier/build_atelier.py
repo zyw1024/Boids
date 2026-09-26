@@ -12,7 +12,7 @@ from math import sin, cos, pi, exp, sqrt
 
 ROOT = Path(__file__).resolve().parents[3]
 SOURCE = Path(__file__).resolve().parent
-OUT = ROOT / 'Boids_Proj/Assets/Boids/Art/Atelier'
+OUT = ROOT / 'Sky_City_Project/Assets/Boids/Art/Atelier'
 OUT.mkdir(parents=True, exist_ok=True)
 random.seed(240923)
 scene = bpy.context.scene

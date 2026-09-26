@@ -35,7 +35,7 @@
       "loop": false
     }
   ],
-  "fbx": "Boids_Proj/Assets/Boids/Art/Moonveil/Moonveil.fbx",
+  "fbx": "Sky_City_Project/Assets/Boids/Art/Moonveil/Moonveil.fbx",
   "blend": "ArtSource/Moonveil/Moonveil.blend",
   "glb": "ArtSource/Moonveil/Moonveil.glb"
 }

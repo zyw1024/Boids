@@ -2,7 +2,7 @@
 
 2026-09-23，通过 Codex 内置 imagegen 生成。以下记录实际成功生成、并导入 Unity 的四次提示词；超时且没有返回素材的尝试不作为资产来源。没有使用概念图作为贴图，没有外部参考图片输入，生成结果没有做图像后期修改。
 
-原始 PNG 保存在 `Boids_Proj/Assets/Boids/Art/Redon/Textures/`，Unity 导入时最长边上限为 2048。前两张按线性遮罩数据读取，后两张按 sRGB 色彩读取。叶脉纹理采用 Clamp，按叶片 UV 完整铺开；抽象底色采用 Mirror。
+原始 PNG 保存在 `Sky_City_Project/Assets/Boids/Art/Redon/Textures/`，Unity 导入时最长边上限为 2048。前两张按线性遮罩数据读取，后两张按 sRGB 色彩读取。叶脉纹理采用 Clamp，按叶片 UV 完整铺开；抽象底色采用 Mirror。
 
 ## PigmentScumble.png
 

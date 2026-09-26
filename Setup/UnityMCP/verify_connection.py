@@ -7,7 +7,7 @@ from mcp import ClientSession
 from mcp.client.streamable_http import streamablehttp_client
 
 ROOT = Path(__file__).parent
-EXPECTED_PROJECT = ROOT.parent.parent / "Boids_Proj"
+EXPECTED_PROJECT = ROOT.parent.parent / "Sky_City_Project"
 
 def decode(result):
     blocks = getattr(result, "contents", None) or getattr(result, "content", [])
@@ -34,7 +34,7 @@ async def main():
                 raise RuntimeError("No Unity editor is connected yet")
             matches = [i for i in report["instances"].get("instances", []) if i.get("name") == EXPECTED_PROJECT.name]
             if len(matches) != 1:
-                raise RuntimeError("Expected exactly one connected Boids_Proj editor")
+                raise RuntimeError("Expected exactly one connected Sky_City_Project editor")
             report["selection"] = decode(await session.call_tool("set_active_instance", {"instance": matches[0]["id"]}))
             if report["selection"].get("success") is False:
                 raise RuntimeError(str(report["selection"]))
@@ -47,7 +47,7 @@ async def main():
             expected = str(EXPECTED_PROJECT.resolve()).replace("\\", "/").lower()
             project_text = json.dumps(report["project"], ensure_ascii=False).replace("\\\\", "/").lower()
             if expected not in project_text:
-                raise RuntimeError("Connected project does not match Boids project root")
+                raise RuntimeError("Connected project does not match Sky_City_Project root")
             report["scene"] = decode(await session.call_tool("manage_scene", {"action": "get_active"}))
             report["hierarchy"] = decode(await session.call_tool("manage_scene", {"action": "get_hierarchy", "max_depth": 2, "page_size": 20}))
             report["errors"] = decode(await session.call_tool("read_console", {"action": "get", "types": ["error"], "count": 20, "format": "detailed"}))

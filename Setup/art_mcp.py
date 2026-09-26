@@ -25,7 +25,7 @@ async def commands(session, mode, argument):
     await session.initialize()
     if mode == 'unity':
         instances = decode(await session.read_resource('mcpforunity://instances'))
-        active = [i for i in instances['instances'] if i['name'] == 'Boids_Proj']
+        active = [i for i in instances['instances'] if i['name'] == 'Sky_City_Project']
         if len(active) != 1: raise RuntimeError(f'Expected exactly one Boids editor: {instances}')
         result = decode(await session.call_tool('set_active_instance', {'instance': active[0]['id']}))
         if result.get('success') is False: raise RuntimeError(result)

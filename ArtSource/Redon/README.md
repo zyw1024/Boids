@@ -2,15 +2,15 @@
 
 这是 E 概念方向的实时美术与交互试验：一个三维海洋花园、完全固定的 3:2 镜头，以及 96 条会巡游和进食的月光鱼。此次重做左侧舒展叶片、中央杏粉花冠、下方花床和远景植物，强化紫蓝水域与杏金色光区。
 
-![Unity camera render](../../Boids_Proj/Captures/Redon_Style.png)
+![Unity camera render](../../Sky_City_Project/Captures/Redon_Style.png)
 
 上图由 Unity 场景相机直接渲染，1536 × 1024，没有后期图像修改。[概念图 E](../Concepts/ArtHistoryStudies/E-symbolist-dream-sea.png)只用于构图与色彩参考，没有作为背景板贴入场景。
 
-[实际 Unity 运行视频](../../Boids_Proj/Captures/Redon_Interaction.mp4) · [投喂截图](../../Boids_Proj/Captures/Redon_Feeding.png) · [上一版对照](../../Boids_Proj/Captures/Redon_Style_v1.png)
+[实际 Unity 运行视频](../../Sky_City_Project/Captures/Redon_Interaction.mp4) · [投喂截图](../../Sky_City_Project/Captures/Redon_Feeding.png) · [上一版对照](../../Sky_City_Project/Captures/Redon_Style_v1.png)
 
 ## 打开与复现
 
-1. 用 Unity 2022.3.62f2c1 打开仓库内的 `Boids_Proj`，URP 14.0.12。
+1. 用 Unity 2022.3.62f2c1 打开仓库内的 `Sky_City_Project`，URP 14.0.12。
 2. 打开 `Assets/Boids/Scenes/RedonDream.unity`，切到 Game 视图并按 Play。**鼠标左键点击中央水域**投放金色食物；附近鱼逐渐靠近、进食，吃完后短暂散开并恢复巡游。
 3. 不同窗口比例会留边以保留 3:2 构图。镜头位置、方向和正交尺寸不响应鼠标或键盘。
 4. `Boids > Redon > Capture Style Study` 将相机画面保存到 `Captures/Redon_Style.png`；`Validate Style Scene` 输出场景检查报告。
@@ -45,8 +45,8 @@
 
 ## 验证记录
 
-- [场景检查](../../Boids_Proj/Captures/Redon_Validation.json)：缺失脚本、四张纹理、材质与 Shader、固定机位、96 条鱼、控制器和 Volume 子资产持久化。
-- [运行与重载检查](../../Boids_Proj/Captures/Redon_RuntimeValidation.json)：实际 Play 模式下的鱼移动、骨骼动画、屏幕坐标投喂、靠近、18 份消耗、散开、画幅外点击拒绝与食物数量上限。
+- [场景检查](../../Sky_City_Project/Captures/Redon_Validation.json)：缺失脚本、四张纹理、材质与 Shader、固定机位、96 条鱼、控制器和 Volume 子资产持久化。
+- [运行与重载检查](../../Sky_City_Project/Captures/Redon_RuntimeValidation.json)：实际 Play 模式下的鱼移动、骨骼动画、屏幕坐标投喂、靠近、18 份消耗、散开、画幅外点击拒绝与食物数量上限。
 - 保存并重新打开场景后比较相机输出，保存 SHA-256 与逐像素差异；允许最多 0.01% 的像素出现不超过 2/255 的通道差异。动态运行画面预期会变化，不要求与静帧一致；镜头位置、旋转、尺寸和画幅仍要求完全一致。屏幕射线测试覆盖游戏输入处理路径，但不是操作系统鼠标事件回放。
 
 Shader 结构基于项目所用的 [URP 14 官方文档](https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/writing-shaders-urp-basic-unlit-structure.html)。目前只验证 Windows / D3D11 / RTX 3090 的编辑器渲染，尚未做独立 Player 构建或跨平台验证。

@@ -2,11 +2,11 @@
 
 一个独立的晨光空中花园场景：象牙白的拱廊宫殿、氧化铜穹顶、花园钟塔、悬桥、风化悬崖、垂藤与瀑布，以及穿过天空的燕群。
 
-![Unity 实际相机画面](../../Boids_Proj/Captures/SkyCity_Style.png)
+![Unity 实际相机画面](../../Sky_City_Project/Captures/SkyCity_Style.png)
 
 ## 运行
 
-在 Unity 2022.3.62f2c1 打开 `Boids_Proj/Assets/Boids/Scenes/SkyCity.unity`，切换 Game 后按 Play。相机以 3:2 构图开场，非 3:2 窗口自动留边；现在可以带缓动地探索场景。
+在 Unity 2022.3.62f2c1 打开 `Sky_City_Project/Assets/Boids/Scenes/SkyCity.unity`，切换 Game 后按 Play。相机以 3:2 构图开场，非 3:2 窗口自动留边；现在可以带缓动地探索场景。
 
 - **右键拖动**：围绕城市环视。
 - **滚轮**：拉近、拉远。
@@ -24,9 +24,9 @@
 - 新增悬空镜水庭园：实时平面倒影、菲涅耳反射、深度吸收、折射、双溢流口方向水流、漂移泡沫与连续瀑布。
 - 原来的海底场景继续保留，可直接从 Scenes 文件夹打开。
 
-[实际 Play 模式飞行视频](../../Boids_Proj/Captures/SkyCity_Flight.mp4)由 Unity 相机连续输出帧编码而成。18 秒、1536 × 1024、30 fps；这是固定时间步长的离线录制，不能作为实时帧率测试。
+[实际 Play 模式飞行视频](../../Sky_City_Project/Captures/SkyCity_Flight.mp4)由 Unity 相机连续输出帧编码而成。18 秒、1536 × 1024、30 fps；这是固定时间步长的离线录制，不能作为实时帧率测试。
 
-[水面流动与倒影近景](../../Boids_Proj/Captures/SkyCity_WaterFlow.mp4)截取上述录像第 2–10 秒的镜水庭园区域，并放大至 900 × 676，方便观察流向与反射扰动。
+[水面流动与倒影近景](../../Sky_City_Project/Captures/SkyCity_WaterFlow.mp4)截取上述录像第 2–10 秒的镜水庭园区域，并放大至 900 × 676，方便观察流向与反射扰动。
 
 ## 资产与制作边界
 
@@ -62,7 +62,7 @@
 编码命令（需要 FFmpeg）：
 
 ```powershell
-ffmpeg -y -framerate 30 -i Boids_Proj/Captures/SkyCityFrames/frame_%04d.png -frames:v 540 -c:v libx264 -crf 18 -pix_fmt yuv420p -movflags +faststart Boids_Proj/Captures/SkyCity_Flight.mp4
+ffmpeg -y -framerate 30 -i Sky_City_Project/Captures/SkyCityFrames/frame_%04d.png -frames:v 540 -c:v libx264 -crf 18 -pix_fmt yuv420p -movflags +faststart Sky_City_Project/Captures/SkyCity_Flight.mp4
 ```
 
 逐帧缓存不纳入版本控制。保留 Blender 源文件、FBX、材质、纹理、shader、场景、验证记录以及最终截图和视频。
@@ -73,7 +73,7 @@ ffmpeg -y -framerate 30 -i Boids_Proj/Captures/SkyCityFrames/frame_%04d.png -fra
 
 ## 风、配乐与相机预览
 
-[有声动态预览](../../Boids_Proj/Captures/SkyCity_LivingWorld.mp4)展示云和旗帜的运动、环视、缩放、平移与复位。视频来自 Unity 逐帧相机渲染，声音配入场景使用的同一首原创配乐，并匹配启动渐入；不作为实时帧率证据。
+[有声动态预览](../../Sky_City_Project/Captures/SkyCity_LivingWorld.mp4)展示云和旗帜的运动、环视、缩放、平移与复位。视频来自 Unity 逐帧相机渲染，声音配入场景使用的同一首原创配乐，并匹配启动渐入；不作为实时帧率证据。
 
 **Boids → Sky City → Record Wind Music and Camera** 检查相机位移、缩放、平移、复位误差和实际 AudioSource 输出，报告为 `Captures/SkyCity_PresentationValidation.json`。
 

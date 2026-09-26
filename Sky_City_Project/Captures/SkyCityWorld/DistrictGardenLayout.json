@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": {
+    "deterministicSlots": true,
+    "perDistrictPlantBudget": true,
+    "noWaterwayOrSanctuaryPlanting": true,
+    "plantingCoverage": true
+  },
+  "sampledDistricts": 35,
+  "plantingSlots": 72
+}

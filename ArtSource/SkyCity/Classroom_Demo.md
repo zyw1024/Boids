@@ -2,13 +2,13 @@
 
 This is the actual Unity scene captured with `com.unity.recorder@4.0.3`, including the original **Garden of Winds** piano, strings and harp score. It is not an AI-generated video.
 
-- [80-second 1080p / 30 fps H.264 + AAC recording](../../Boids_Proj/Captures/SkyCity_Demo_Recorder.mp4)
-- [Capture metadata](../../Boids_Proj/Captures/SkyCity_Demo_Recorder.json)
-- [Latest standalone performance report](../../Boids_Proj/Captures/SkyCityInfinite_PlayerPerformance.json)
+- [80-second 1080p / 30 fps H.264 + AAC recording](../../Sky_City_Project/Captures/SkyCity_Demo_Recorder.mp4)
+- [Capture metadata](../../Sky_City_Project/Captures/SkyCity_Demo_Recorder.json)
+- [Latest standalone performance report](../../Sky_City_Project/Captures/SkyCityInfinite_PlayerPerformance.json)
 
 ## Reproduce the take
 
-1. Use branch `feat/redon-style-scene`. Open `Boids_Proj` with Unity 2022.3 and wait for package import.
+1. Use branch `feat/redon-style-scene`. Open `Sky_City_Project` with Unity 2022.3 and wait for package import.
 2. Open `Assets/Boids/Scenes/SkyCityInfinite.unity` and enter Play mode.
 3. Choose **Boids > Sky City Infinite > Record classroom demo (80 seconds)**.
 4. The take waits for 25 resident districts and no pending work, disables camera input temporarily, and records four camera sections. The world, flock, clouds, flags and original score continue running.

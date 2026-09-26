@@ -7,7 +7,7 @@
 - 四段结构：主题、主题变奏、上行展开、柔和回归。
 - 微小的力度与起音变化、立体声声部位置、房间混响尾音跨循环衔接。
 - MIDI：`GardenOfWinds.mid`；完整事件谱：`score-events.json`。
-- 最终 Unity 音频：[GardenOfWinds.ogg](../../../Boids_Proj/Assets/Boids/Art/SkyCity/Audio/GardenOfWinds.ogg)。
+- 最终 Unity 音频：[GardenOfWinds.ogg](../../../Sky_City_Project/Assets/Boids/Art/SkyCity/Audio/GardenOfWinds.ogg)。
 
 ## 乐器采样
 

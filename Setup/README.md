@@ -8,7 +8,7 @@
 - Blender MCP：`mcp-for-blender` 2.0.3；Blender 已安装并启用对应插件。
 - Unity MCP：项目 `Packages/manifest.json` 已固定编辑器包 `v10.2.0`；对应服务端为 `mcpforunityserver` 10.2.0。
 
-Blender 工具读取本机 `~/.codex/config.toml` 的 `mcp_servers.blender` 配置；该配置及凭据不进入仓库。Unity 工具默认使用 `http://127.0.0.1:8080/mcp`，并明确选中名为 `Boids_Proj` 的编辑器实例。
+Blender 工具读取本机 `~/.codex/config.toml` 的 `mcp_servers.blender` 配置；该配置及凭据不进入仓库。Unity 工具默认使用 `http://127.0.0.1:8080/mcp`，并明确选中名为 `Sky_City_Project` 的编辑器实例。
 
 ## 使用
 

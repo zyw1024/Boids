@@ -1,6 +1,6 @@
 # 天空之城 · 无尽风之庭园
 
-打开 `Boids_Proj/Assets/Boids/Scenes/SkyCityInfinite.unity` 并进入 Play。这是一张沿相机旅行持续生成的天空群岛地图。原来的精修固定城市仍在 `SkyCity.unity`。
+打开 `Sky_City_Project/Assets/Boids/Scenes/SkyCityInfinite.unity` 并进入 Play。这是一张沿相机旅行持续生成的天空群岛地图。原来的精修固定城市仍在 `SkyCity.unity`。
 
 ## 游览
 
@@ -25,7 +25,7 @@
 
 - 可编辑 Blender 文件：`SkyCity_Modules.blend`。
 - Unity 模块：`Assets/Boids/Art/SkyCityInfinite/Modules/` 中的 **128 个 Prefab**；每个含 LOD0 / LOD1 / LOD2 和连接标记。选中模块可看四向连接点。
-- [模块总览](../../../Boids_Proj/Captures/SkyCityInfinite_128Modules.png)：每列一个家族，每行一个变体，来自实际 Unity 网格渲染。
+- [模块总览](../../../Sky_City_Project/Captures/SkyCityInfinite_128Modules.png)：每列一个家族，每行一个变体，来自实际 Unity 网格渲染。
 - 运行时使用 `Assets/Boids/Resources/SkyCityInfinite/Modules.bytes` 的压缩共享模型词汇，按需组合区块；不会实例化所有 Prefab。
 
 ## 构图与变化
@@ -59,7 +59,7 @@
 
 桥的两端都加载后才同步显现；卸载任一端时，同一帧隐藏连接桥，避免加载边缘出现指向空中的半座桥。可见性编码保存在桥网格中，继续使用原有四个建筑批次，不增加逐桥 GameObject、绘制批次或上传次数。
 
-- [同视角修复前](../../../Boids_Proj/Captures/SkyCityInfinite_StructureBefore.png)、[修复后](../../../Boids_Proj/Captures/SkyCityInfinite_StructureAfter.png)、[完整桥梁](../../../Boids_Proj/Captures/SkyCityInfinite_StructureBridge.png)。
+- [同视角修复前](../../../Sky_City_Project/Captures/SkyCityInfinite_StructureBefore.png)、[修复后](../../../Sky_City_Project/Captures/SkyCityInfinite_StructureAfter.png)、[完整桥梁](../../../Sky_City_Project/Captures/SkyCityInfinite_StructureBridge.png)。
 - `SkyCityInfinite_StructureValidation.json`：48 个桥梁 LOD、6 个尖顶 LOD、8 种岛形的 388 条连接、4,656 个桥面/廊顶接缝采样点，另检查 96 个拼装 LOD 的三角形法线与可见性标记。
 - `SkyCityInfinite_StructureRuntime.json`：实际驻留集合与渲染属性核对，包括可见桥、隐藏桥和缺少对岸的异常桥计数。
 - 八种地标的更新实拍见 [Gallery.md](Gallery.md)。这些检查验证视觉构造和网格连接；场景仍使用飞行游览相机，没有新增步行碰撞或室内路线。
@@ -70,8 +70,8 @@
 
 水庭经石砌水渠流向岛缘，下落曲面采用重力轨迹，流纹沿轨迹加速，宽度逐渐收束。独立透明材质提供背景折射、柔边、碎水和末端渐隐；少量 GPU 水雾随区块一起加载、卸载，无逐粒子 CPU 更新。生成建筑和种植为溢流口留出空间。池面保留实时倒影，并用随模块旋转的局部水流方向替代原固定场景的世界坐标出口。
 
-- [实际运行近景](../../../Boids_Proj/Captures/SkyCityInfinite_Water.png)
-- [5 秒实际水流录像](../../../Boids_Proj/Captures/SkyCityInfinite_Water.mp4)
+- [实际运行近景](../../../Sky_City_Project/Captures/SkyCityInfinite_Water.png)
+- [5 秒实际水流录像](../../../Sky_City_Project/Captures/SkyCityInfinite_Water.mp4)
 - `SkyCityInfinite_WaterValidation.json` 记录录像帧数和实时反射更新次数；录像采用固定模拟步长，不作为性能测量。
 - 资产验证覆盖八种岛屿的三档细节，检查瀑布未混入建筑、流动 UV、水雾与透明材质。Blender 文件内也分别保留水面与瀑布对象。
 

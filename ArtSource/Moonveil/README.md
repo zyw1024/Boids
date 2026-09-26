@@ -6,12 +6,12 @@
 
 - `Moonveil.blend`：Blender 5.2 源文件，包含模型、13 根骨骼、四段 NLA 动画、打包贴图与展示灯光。展示场景是 `Moonveil_Studio`。
 - `Moonveil.glb`：供后续 HTML / Three.js 项目使用，内含材质、贴图和四段动画。
-- `../../Boids_Proj/Assets/Boids/Art/Moonveil/Moonveil.fbx`：Unity 导入模型。
-- `../../Boids_Proj/Assets/Boids/Art/Moonveil/Moonveil.prefab`：已经配置 URP 材质与 Animator 的可用预制体。
-- `../../Boids_Proj/Assets/Boids/Scenes/MoonveilPreview.unity`：Unity 动作预览场景。
+- `../../Sky_City_Project/Assets/Boids/Art/Moonveil/Moonveil.fbx`：Unity 导入模型。
+- `../../Sky_City_Project/Assets/Boids/Art/Moonveil/Moonveil.prefab`：已经配置 URP 材质与 Animator 的可用预制体。
+- `../../Sky_City_Project/Assets/Boids/Scenes/MoonveilPreview.unity`：Unity 动作预览场景。
 - `Preview/Moonveil_Hero.png`、`Moonveil_Side.png`、`Moonveil_Front.png`：Blender 展示与检查图。
 - `Preview/Moonveil_Motions.mp4`：四段动画连续预览，画面来源于 Blender。
-- `../../Boids_Proj/Captures/Moonveil_Unity.png`：Unity 中的实际材质效果。
+- `../../Sky_City_Project/Captures/Moonveil_Unity.png`：Unity 中的实际材质效果。
 
 ## Unity 使用
 
@@ -36,7 +36,7 @@ Animator 参数：`Speed`（float）在 0 / 0.45 / 1 分别对应 Hover / Swim /
 - 两个蒙皮网格、两个材质槽：不透明鱼身和透明鳍膜。眼睛及鳃线颜色合入鱼身贴图，避免每条鱼携带大量材质。
 - 鱼身颜色图及法线图：1024×576；鳍膜 RGBA：512×512。透明鳍采用双面渲染。
 - `Preview/blender-animation-validation.json`：蒙皮权重和动画起止位置检查。
-- `../../Boids_Proj/Captures/Moonveil_Validation.json`：Unity 导入后再次烘焙蒙皮顶点，检查动画确有运动、循环接缝和朝向。
+- `../../Sky_City_Project/Captures/Moonveil_Validation.json`：Unity 导入后再次烘焙蒙皮顶点，检查动画确有运动、循环接缝和朝向。
 
 这是第一条风格基准鱼，当前预览用于检查造型与动作。成群时的数量预算、LOD、海水雾、光束及食物粒子将在 Boids 场景里实际测量与调校。
 

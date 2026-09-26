@@ -9,7 +9,7 @@ from mathutils import Vector
 
 SOURCE = Path(__file__).resolve().parent
 ROOT = SOURCE.parents[2]
-OUT = ROOT / 'Boids_Proj/Assets/Boids/Resources/SkyCityInfinite'
+OUT = ROOT / 'Sky_City_Project/Assets/Boids/Resources/SkyCityInfinite'
 OUT.mkdir(parents=True, exist_ok=True)
 for ob in list(bpy.data.objects): bpy.data.objects.remove(ob, do_unlink=True)
 
